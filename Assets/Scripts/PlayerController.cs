@@ -13,7 +13,21 @@ public class PlayerController : MonoBehaviour {
     public float tilt = 2;
     public Boundary boundary;
 
-    private void FixedUpdate()
+    public GameObject shot;
+    public Transform shotSpawn;
+    public float fireRate = 0.25f;
+    private float nextFire = 0.5f;
+
+    void Update()
+    {
+        if ((Input.GetButton("Fire1") || Input.GetKeyDown("space")) && (Time.time > nextFire))
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+        }
+    }
+
+    void FixedUpdate()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         float moveHorizontal = Input.GetAxis("Horizontal");
