@@ -9,26 +9,38 @@ public class Boundary
 }
 
 public class PlayerController : MonoBehaviour {
+    private AudioSource audioSource;
+
     public float speed = 10;
     public float tilt = 2;
     public Boundary boundary;
 
     public GameObject shot;
+    public AudioClip shotSound;
     public Transform shotSpawn;
     public float fireRate = 0.25f;
     private float nextFire = 0.5f;
 
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
+        // Shooting
         if ((Input.GetButton("Fire1") || Input.GetKeyDown("space")) && (Time.time > nextFire))
         {
             nextFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            audioSource.clip = shotSound;
+            audioSource.Play();
         }
     }
 
     void FixedUpdate()
     {
+        // Movement
         Rigidbody rb = GetComponent<Rigidbody>();
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
