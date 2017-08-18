@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour {
     public Text scoreText;
     private int score;
 
+    public Text addScoreText;
     public Text restartText;
     public Text gameOverText;
 
@@ -25,6 +26,7 @@ public class GameController : MonoBehaviour {
     {
         gameOver = false;
         restart = false;
+        addScoreText.text = "";
         restartText.text = "";
         gameOverText.text = "";
         score = 0;
@@ -42,6 +44,10 @@ public class GameController : MonoBehaviour {
     {
         score += newScoreValue;
         UpdateScore();
+        if (newScoreValue > 0)
+        {
+            StartCoroutine(AddScoreMessage("+" + newScoreValue, 2));
+        }
     }
 
     void Update()
@@ -92,4 +98,22 @@ public class GameController : MonoBehaviour {
             }
         }
 	}
+
+    IEnumerator AddScoreMessage(string message, float delay)
+    {
+        addScoreText.text = message;
+        addScoreText.enabled = true;
+        StartCoroutine(FadeTextToZeroAlpha(5f, addScoreText));
+        yield return new WaitForSeconds(delay);
+    }
+
+    public IEnumerator FadeTextToZeroAlpha(float t, Text i)
+    {
+        i.color = new Color(i.color.r, i.color.g, i.color.b, 1);
+        while (i.color.a > 0.0f)
+        {
+            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
+            yield return null;
+        }
+    }
 }

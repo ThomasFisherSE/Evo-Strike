@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DestroyByContact : MonoBehaviour {
     public int scoreValue;
-
     private GameController gameController;
     public GameObject explosion;
     public GameObject playerExplosion;
