@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour {
     public Text scoreText;
     private int score;
 
+    public float scoreFadeTime;
+
     public Text addScoreText;
     public Text restartText;
     public Text gameOverText;
@@ -15,9 +17,11 @@ public class GameController : MonoBehaviour {
     private bool gameOver;
     private bool restart;
 
+    public GameObject[] powerUps;
     public GameObject[] hazards;
     public Vector3 spawnValues;
     public int hazardCount;
+    public float powerUpChance;
     public float spawnWait;
     public float startWait;
     public float waveWait;
@@ -88,6 +92,15 @@ public class GameController : MonoBehaviour {
                 yield return new WaitForSeconds(spawnWait);
             }
 
+            if (Random.value <= powerUpChance)
+            {
+                Debug.Log("Power up");
+                GameObject powerUp = powerUps[Random.Range(0, powerUps.Length)];
+                Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+                Quaternion spawnRotation = Quaternion.identity;
+                Instantiate(powerUp, spawnPosition, spawnRotation);
+            }
+
             yield return new WaitForSeconds(waveWait);
 
             if (gameOver)
@@ -103,7 +116,8 @@ public class GameController : MonoBehaviour {
     {
         addScoreText.text = message;
         addScoreText.enabled = true;
-        StartCoroutine(FadeTextToZeroAlpha(5f, addScoreText));
+        //StartCoroutine(FadeTextToZeroAlpha(5f, addScoreText));
+        StartCoroutine(FadeTextToZeroAlpha(scoreFadeTime, addScoreText));
         yield return new WaitForSeconds(delay);
     }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Mover : MonoBehaviour {
-    public float speed = 20;
+    public float speed = 5;
 
     private void Start()
     {

@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject shot;
     public AudioClip shotSound;
-    public Transform shotSpawn;
+    public Transform[] shotSpawns;
     public float fireRate = 0.25f;
     private float nextFire = 0.5f;
 
@@ -32,7 +32,12 @@ public class PlayerController : MonoBehaviour {
         if ((Input.GetButton("Fire1") || Input.GetKeyDown("space")) && (Time.time > nextFire))
         {
             nextFire = Time.time + fireRate;
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+
+            foreach(var shotSpawn in shotSpawns)
+            {
+                Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            }
+            
             audioSource.clip = shotSound;
             audioSource.Play();
         }

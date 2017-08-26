@@ -12,12 +12,20 @@ public class EvasiveManeuver : MonoBehaviour {
     public Vector2 maneuverWait;
     public Boundary boundary;
 
+    private Transform playerTransform;
     private float currentSpeed;
     private float targetManeuver;
     private Rigidbody rb;
 
 	void Start () {
         rb = GetComponent<Rigidbody>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player != null)
+        {
+            playerTransform = player.transform;
+        }
+        
         currentSpeed = rb.velocity.z;
         StartCoroutine(Evade());
 	}
@@ -40,8 +48,17 @@ public class EvasiveManeuver : MonoBehaviour {
 
         while (true)
         {
-            // Dodge inwards (i.e. to the right if x is -ve / left if x is +ve
-            targetManeuver = Random.Range(1, dodge) * -Mathf.Sign(transform.position.x);
+            if (playerTransform != null)
+            {
+                // Dodge towards the player
+                targetManeuver = playerTransform.position.x;
+            } else
+            {
+                // Dodge inwards (i.e. to the right if x is -ve / left if x is +ve
+                targetManeuver = Random.Range(1, dodge) * -Mathf.Sign(transform.position.x);
+            }
+            
+
             // Wait for maneuver to complete
             yield return new WaitForSeconds(Random.Range(maneuverTime.x, maneuverTime.y));
             // Set the target back to 0
