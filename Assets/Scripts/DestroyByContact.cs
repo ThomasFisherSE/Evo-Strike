@@ -33,6 +33,17 @@ public class DestroyByContact : MonoBehaviour {
             return;
         }
 
+        // If powerup, pick up with no explosions
+        if (gameObject.CompareTag("PowerUp"))
+        {
+            if (other.CompareTag("Player"))
+            {
+                Debug.Log("Picked up power up");
+                Destroy(gameObject);
+            }
+            return;
+        }
+
         if (explosion != null)
         {
             // Create an explosion on the GameObject
@@ -49,6 +60,7 @@ public class DestroyByContact : MonoBehaviour {
 
         gameController.AddScore(scoreValue);
 
+        Debug.Log("DestroyByContact: " + other.gameObject.name + " and " + gameObject.name);
         Destroy(other.gameObject);
         Destroy(gameObject);
     }

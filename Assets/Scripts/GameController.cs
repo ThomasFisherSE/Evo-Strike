@@ -94,7 +94,7 @@ public class GameController : MonoBehaviour {
 
             if (Random.value <= powerUpChance)
             {
-                Debug.Log("Power up");
+                Debug.Log("Spawned power up");
                 GameObject powerUp = powerUps[Random.Range(0, powerUps.Length)];
                 Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;

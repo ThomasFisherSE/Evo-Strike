@@ -6,6 +6,7 @@ public class DestroyByBoundary : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
+        Debug.Log("DestroyByBoundary: " + other.gameObject.name);
         Destroy(other.gameObject);
     }
 }
