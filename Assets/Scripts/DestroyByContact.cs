@@ -26,21 +26,10 @@ public class DestroyByContact : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        // Do nothing if colliding with boundary
+        // Do nothing if colliding with boundary / enemy / powerup
         //if (other.tag == "Boundary" || other.tag == "Enemy")
-        if (other.CompareTag("Boundary") || other.CompareTag("Enemy"))
+        if (other.CompareTag("Boundary") || other.CompareTag("Enemy") || other.CompareTag("PowerUp"))
         {
-            return;
-        }
-
-        // If powerup, pick up with no explosions
-        if (gameObject.CompareTag("PowerUp"))
-        {
-            if (other.CompareTag("Player"))
-            {
-                Debug.Log("Picked up power up");
-                Destroy(gameObject);
-            }
             return;
         }
 

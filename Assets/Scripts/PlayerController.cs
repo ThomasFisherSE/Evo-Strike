@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject shot;
     public AudioClip shotSound;
     public Transform[] shotSpawns;
-    public float fireRate = 0.25f;
+    public static float fireRate = 0.25f;
     private float nextFire = 0.5f;
 
     void Start()
