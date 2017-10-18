@@ -5,12 +5,29 @@ using UnityEngine;
 [System.Serializable]
 public class Boundary
 {
-    public float xMin, xMax, zMin, zMax;
+    public float zMin, zMax;
+    private float xMin, xMax;
+
+    public float getXMin()
+    {
+        return xMin;
+    }
+
+    public float getXMax()
+    {
+        return xMax;
+    }
+
+    public void SetX(float min, float max)
+    {
+        xMin = min;
+        xMax = max;
+    }
 }
 
 public class PlayerController : MonoBehaviour {
     private AudioSource audioSource;
-
+   
     public float speed = 10;
     public float tilt = 2;
     public Boundary boundary;
@@ -24,6 +41,12 @@ public class PlayerController : MonoBehaviour {
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
+        float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
+        Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
+        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
+
+        boundary.SetX(bottomCorner.x, topCorner.x);
     }
 
     void Update()
@@ -55,7 +78,7 @@ public class PlayerController : MonoBehaviour {
         rb.velocity = movement * speed;
 
         rb.position = new Vector3(
-            Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax), 
+            Mathf.Clamp(rb.position.x, boundary.getXMin(), boundary.getXMax()), 
             0.0f, 
             Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax));
 

@@ -18,6 +18,12 @@ public class EvasiveManeuver : MonoBehaviour {
     private Rigidbody rb;
 
 	void Start () {
+        float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
+        Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
+        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
+
+        boundary.SetX(bottomCorner.x, topCorner.x);
+
         rb = GetComponent<Rigidbody>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
@@ -35,7 +41,7 @@ public class EvasiveManeuver : MonoBehaviour {
         rb.velocity = new Vector3(newManeuver, 0.0f, currentSpeed);
 
         rb.position = new Vector3(
-            Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
+            Mathf.Clamp(rb.position.x, boundary.getXMin(), boundary.getXMax()),
             0.0f,
             Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax));
 
