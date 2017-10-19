@@ -25,18 +25,19 @@ public class EvasiveManeuver : MonoBehaviour {
         boundary.SetX(bottomCorner.x, topCorner.x);
 
         rb = GetComponent<Rigidbody>();
+
+        currentSpeed = rb.velocity.z;
+        StartCoroutine(Evade());
+	}
+	
+	void FixedUpdate () {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         if (player != null)
         {
             playerTransform = player.transform;
         }
-        
-        currentSpeed = rb.velocity.z;
-        StartCoroutine(Evade());
-	}
-	
-	void FixedUpdate () {
+
         float newManeuver = Mathf.MoveTowards(rb.velocity.x, targetManeuver, Time.deltaTime * smoothing);
         rb.velocity = new Vector3(newManeuver, 0.0f, currentSpeed);
 
@@ -57,7 +58,11 @@ public class EvasiveManeuver : MonoBehaviour {
             if (playerTransform != null)
             {
                 // Dodge towards the player
-                targetManeuver = playerTransform.position.x;
+                //targetManeuver = Random.Range(1,dodge) * playerTransform.position.x;
+                
+                // Dodge inwards (i.e. to the right if x is -ve / left if x is +ve
+                targetManeuver = Random.Range(1, dodge) * -Mathf.Sign(transform.position.x);
+
             } else
             {
                 // Dodge inwards (i.e. to the right if x is -ve / left if x is +ve

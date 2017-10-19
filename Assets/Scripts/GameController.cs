@@ -56,11 +56,22 @@ public class GameController : MonoBehaviour {
 
     void Update()
     {
+        if (gameOver)
+        {
+            restartText.text = "Press 'R' to Restart!\n(or 'M' for Main Menu)";
+            restart = true;
+        }
+
         if (restart)
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
                 RestartLevel();
+            }
+
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                SceneManager.LoadScene(0);
             }
         }
     }
@@ -77,14 +88,19 @@ public class GameController : MonoBehaviour {
     }
 
     IEnumerator SpawnWaves () {
+        float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
+        Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
+        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
+
         yield return new WaitForSeconds(startWait);
 
         while (true)
         {
+
             for (int i = 0; i < hazardCount; i++)
             {
                 GameObject hazard = hazards[Random.Range(0,hazards.Length)];
-                Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+                Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), spawnValues.y, spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
 
                 Instantiate(hazard, spawnPosition, spawnRotation);
@@ -96,19 +112,12 @@ public class GameController : MonoBehaviour {
             {
                 Debug.Log("Spawned power up");
                 GameObject powerUp = powerUps[Random.Range(0, powerUps.Length)];
-                Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+                Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), spawnValues.y, spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
                 Instantiate(powerUp, spawnPosition, spawnRotation);
             }
-
+            
             yield return new WaitForSeconds(waveWait);
-
-            if (gameOver)
-            {
-                restartText.text = "Press 'R' to Restart!";
-                restart = true;
-                break;
-            }
         }
 	}
 
