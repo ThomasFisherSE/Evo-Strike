@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour {
     void Update()
     {
         // Shooting
-        if ((Input.GetButton("Fire1") || Input.GetKeyDown("space")) && (Time.time > nextFire))
+        if ((Input.GetButton("Fire1") || Input.GetKey("space")) && (Time.time > nextFire))
         {
             nextFire = Time.time + fireRate;
 
