@@ -26,9 +26,8 @@ public class DestroyByContact : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        // Do nothing if colliding with boundary / enemy / powerup
-        //if (other.tag == "Boundary" || other.tag == "Enemy")
-        if (other.CompareTag("Boundary") || other.CompareTag("Enemy") || other.CompareTag("PowerUp"))
+        // Do nothing if colliding with boundary / enemy / powerup / controller
+        if (other.CompareTag("Boundary") || other.CompareTag("Enemy") || other.CompareTag("PowerUp") || other.CompareTag("Controller"))
         {
             return;
         }
