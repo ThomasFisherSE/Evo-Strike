@@ -6,7 +6,13 @@ public class BoidFlocking : MonoBehaviour
 {
 	internal BoidController controller;
 
-	IEnumerator Start()
+    void Update()
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -5);
+    }
+
+    IEnumerator Start()
 	{
         Rigidbody rb = GetComponent<Rigidbody>();
 
@@ -25,8 +31,8 @@ public class BoidFlocking : MonoBehaviour
                     rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z * -1);
                 }
 
-				// enforce minimum and maximum speeds for the boids
-				float speed = rb.velocity.magnitude;
+                // enforce minimum and maximum speeds for the boids
+                float speed = rb.velocity.magnitude;
 				if (speed > controller.maxVelocity)
 				{
 					GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity.normalized * controller.maxVelocity;

@@ -22,10 +22,14 @@ public class DestroyByContact : MonoBehaviour {
         {
             Debug.Log("Could not find GameController script.");
         }
+
+        Rigidbody rb = GetComponent<Rigidbody>();
+
     }
 
     void OnTriggerEnter(Collider other)
     {
+
         // Do nothing if colliding with boundary / enemy / powerup / controller
         if (other.CompareTag("Boundary") || other.CompareTag("Enemy") || other.CompareTag("PowerUp") || other.CompareTag("Controller"))
         {
@@ -48,7 +52,7 @@ public class DestroyByContact : MonoBehaviour {
 
         gameController.AddScore(scoreValue);
 
-        Debug.Log("DestroyByContact: " + other.gameObject.name + " and " + gameObject.name);
+        //Debug.Log("DestroyByContact: " + other.gameObject.name + " and " + gameObject.name);
         Destroy(other.gameObject);
         Destroy(gameObject);
     }

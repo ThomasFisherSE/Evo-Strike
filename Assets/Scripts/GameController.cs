@@ -8,11 +8,12 @@ public class GameController : MonoBehaviour {
     public Text scoreText;
     private int score;
 
-    public float scoreFadeTime;
+    public float scoreFadeTime = 1;
 
     public Text addScoreText;
     public Text restartText;
     public Text gameOverText;
+    public Text waveText;
 
     private bool gameOver;
     private bool restart;
@@ -44,13 +45,13 @@ public class GameController : MonoBehaviour {
         gameOver = true;
     }
 
-    public void AddScore(int newScoreValue)
+    public void AddScore(int scoreToAdd)
     {
-        score += newScoreValue;
+        score += scoreToAdd;
         UpdateScore();
-        if (newScoreValue > 0)
+        if (scoreToAdd > 0)
         {
-            StartCoroutine(AddScoreMessage("+" + newScoreValue, 2));
+            StartCoroutine(AddScoreMessage("+" + scoreToAdd, 2));
         }
     }
 
@@ -88,35 +89,50 @@ public class GameController : MonoBehaviour {
     }
 
     IEnumerator SpawnWaves () {
+        // Get x and y cooridantes of corners of the screen, based off camera distance
         float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
         Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
         Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
 
+        // Wait to spawn first wave
         yield return new WaitForSeconds(startWait);
+
+        int waveNumber = 0;
 
         while (true)
         {
+            waveNumber++;
 
+            waveText.text = "Wave: " + waveNumber;
+
+            // Add wave bonus
+            AddScore((int) Mathf.Pow(2, waveNumber));
+
+            // Spawn hazardCount hazards
             for (int i = 0; i < hazardCount; i++)
             {
+                // Randomly select the type of hazard to spawn
                 GameObject hazard = hazards[Random.Range(0,hazards.Length)];
+                
+                // Set the spawn position to be at a random x value along the top of the screen
                 Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), spawnValues.y, spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
 
                 Instantiate(hazard, spawnPosition, spawnRotation);
-
+                
+                // Wait before spawning next wave
                 yield return new WaitForSeconds(spawnWait);
             }
 
             if (Random.value <= powerUpChance)
             {
-                Debug.Log("Spawned power up");
+                //Debug.Log("Spawned power up");
                 GameObject powerUp = powerUps[Random.Range(0, powerUps.Length)];
                 Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), spawnValues.y, spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
                 Instantiate(powerUp, spawnPosition, spawnRotation);
             }
-            
+
             yield return new WaitForSeconds(waveWait);
         }
 	}
@@ -125,17 +141,19 @@ public class GameController : MonoBehaviour {
     {
         addScoreText.text = message;
         addScoreText.enabled = true;
-        //StartCoroutine(FadeTextToZeroAlpha(5f, addScoreText));
         StartCoroutine(FadeTextToZeroAlpha(scoreFadeTime, addScoreText));
         yield return new WaitForSeconds(delay);
     }
 
-    public IEnumerator FadeTextToZeroAlpha(float t, Text i)
+    public IEnumerator FadeTextToZeroAlpha(float fadeTime, Text text)
     {
-        i.color = new Color(i.color.r, i.color.g, i.color.b, 1);
-        while (i.color.a > 0.0f)
+        // Set text color's red, green, blue, and alpha components
+        text.color = new Color(text.color.r, text.color.g, text.color.b, 1);
+
+        while (text.color.a > 0.0f)
         {
-            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
+            // Subtract from the alpha value of the text color based on time passed and fade time
+            text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a - (Time.deltaTime / fadeTime));
             yield return null;
         }
     }

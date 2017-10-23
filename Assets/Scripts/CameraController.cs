@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 
     public Camera mainCamera;
-    public Camera forwardFacingCamera;
+    public Camera thirdPersonCamera;
 
     private Queue<Camera> cameraQueue;
 
@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour {
         // Create camera queue, with highest priority camera (main camera) first
         cameraQueue = new Queue<Camera>();
         cameraQueue.Enqueue(mainCamera);
-        cameraQueue.Enqueue(forwardFacingCamera);
+        cameraQueue.Enqueue(thirdPersonCamera);
 	}
 	
 	// Update is called once per frame

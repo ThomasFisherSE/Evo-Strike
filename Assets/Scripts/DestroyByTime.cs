@@ -7,7 +7,7 @@ public class DestroyByTime : MonoBehaviour {
 
     void Start()
     {
-        Debug.Log("DestroyByTime: " + gameObject.name);
+        //Debug.Log("DestroyByTime: " + gameObject.name);
         Destroy(gameObject, lifeTime);
     }
 }

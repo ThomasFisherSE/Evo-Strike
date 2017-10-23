@@ -22,17 +22,29 @@ public class BoidController : MonoBehaviour
 
 	void Start()
 	{
-		for (int i = 0; i < flockSize; i++)
-		{
-			BoidFlocking boid = Instantiate(prefab, transform.position, transform.rotation) as BoidFlocking;
-			boid.transform.parent = transform;
-			boid.transform.localPosition = new Vector3(
-							Random.value * GetComponent<Collider>().bounds.size.x, 0,
-							Random.value * GetComponent<Collider>().bounds.size.z) - GetComponent<Collider>().bounds.extents;
-			boid.controller = this;
-			boids.Add(boid);
-		}
+        SpawnWave();
 	}
+    
+    void SpawnWave()
+    {
+        for (int i = 0; i < flockSize; i++)
+        {
+            // Instantiate a new enemy at the transform position of the controller
+            BoidFlocking boid = Instantiate(prefab, transform.position, transform.rotation) as BoidFlocking;
+            boid.transform.parent = transform;
+            Vector3 boidLocalPosition = new Vector3(
+                            Random.value * GetComponent<Collider>().bounds.size.x,
+                            Random.value * GetComponent<Collider>().bounds.size.y,
+                            Random.value * GetComponent<Collider>().bounds.size.z) - GetComponent<Collider>().bounds.extents;
+
+            // Set y value to 0
+            boidLocalPosition = new Vector3(boidLocalPosition.x, 0, boidLocalPosition.z);
+
+            boid.transform.localPosition = boidLocalPosition;
+            boid.controller = this;
+            boids.Add(boid);
+        }
+    }
 
 	void Update()
 	{

@@ -8,7 +8,7 @@ public class DestroyByBoundary : MonoBehaviour {
     {
         if (!other.CompareTag("Controller"))
         {
-            Debug.Log("DestroyByBoundary: " + other.gameObject.name);
+            //Debug.Log("DestroyByBoundary: " + other.gameObject.name);
             Destroy(other.gameObject);
         }
     }
