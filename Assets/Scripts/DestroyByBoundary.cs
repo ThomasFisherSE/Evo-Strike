@@ -6,10 +6,19 @@ public class DestroyByBoundary : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag("Controller"))
+        if (other.CompareTag("Shot"))
         {
-            //Debug.Log("DestroyByBoundary: " + other.gameObject.name);
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
         }
+        else
+        {
+            if (!other.CompareTag("Controller"))
+            {
+                //Debug.Log("DestroyByBoundary: " + other.gameObject.name);
+                Destroy(other.gameObject);
+            }
+        }
+
+        
     }
 }

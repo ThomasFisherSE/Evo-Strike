@@ -58,7 +58,17 @@ public class PlayerController : MonoBehaviour {
 
             foreach(var shotSpawn in shotSpawns)
             {
-                Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+                // Get the bullet from the object pooler
+                GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
+               
+                if (bullet != null)
+                {
+                    // Move the bullet to the location of the shotSpawn, and activate it
+                    bullet.transform.position = shotSpawn.transform.position;
+                    bullet.transform.rotation = shotSpawn.transform.rotation;
+                    bullet.SetActive(true);
+                }
+                //Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
             }
             
             audioSource.clip = shotSound;
