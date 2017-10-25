@@ -49,8 +49,15 @@ public class Individual : MonoBehaviour {
 		
 	}
 
-    void CalculateFitness()
+    public float CalculateFitness()
     {
-        
+        // Calculate fitness here
+
+        return fitness;
+    }
+
+    public float GetFitness()
+    {
+        return fitness;
     }
 }

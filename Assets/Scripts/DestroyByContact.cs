@@ -23,8 +23,6 @@ public class DestroyByContact : MonoBehaviour {
             Debug.Log("Could not find GameController script.");
         }
 
-        Rigidbody rb = GetComponent<Rigidbody>();
-
     }
 
     void OnTriggerEnter(Collider other)
