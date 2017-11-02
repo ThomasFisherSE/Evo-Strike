@@ -27,7 +27,6 @@ public class Individual : MonoBehaviour {
         weaponController = GetComponent<WeaponController>();
 
         // Set random attributes:
-
         evasiveManeuver.dodge = Random.Range(minDodge, maxDodge);
 
         float myMinManeuverTime = Random.Range(minManeuverTime, maxManeuverTime);

@@ -14,6 +14,21 @@ public class ObjectPooler : MonoBehaviour {
         SharedInstance = this;
     }
 
+    void Start()
+    {
+        // Create a new list of pooled objects
+        pooledObjects = new List<GameObject>();
+
+        // Instantiate amountToPool game objects, and set them as inactive
+        for (int i = 0; i < amountToPool; i++)
+        {
+            GameObject obj = (GameObject)Instantiate(objectToPool);
+            obj.SetActive(false);
+            // Add the instantiated objects to the list of pooled objects
+            pooledObjects.Add(obj);
+        }
+    }
+
     public GameObject GetPooledObject()
     {
         // Try to find an object that is not currently active, and return it
@@ -27,19 +42,6 @@ public class ObjectPooler : MonoBehaviour {
         
         // If all objects in pooledObjects were active, return null
         return null;
-    }
-
-    void Start () {
-        // Create a new list of pooled objects
-        pooledObjects = new List<GameObject>();
-        for (int i = 0; i < amountToPool; i++)
-        {
-            // Instantiate amountToPool game objects, and set them as inactive
-            GameObject obj = (GameObject)Instantiate(objectToPool);
-            obj.SetActive(false);
-            // Add the instantiated objects to the list of pooled objects
-            pooledObjects.Add(obj);
-        }
     }
 
     // Update is called once per frame

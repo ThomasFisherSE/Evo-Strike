@@ -8,10 +8,12 @@ public class EvolutionController : MonoBehaviour {
     public float mutationRate;
     public float crossoverRate;
 
-    private List<Individual> population = new List<Individual>();
+    public GameObject individual;
+
+    private List<GameObject> population = new List<GameObject>();
     private int chromosomeLength;
 
-    private Individual fittestIndividual;
+    private GameObject fittestIndividual;
     private float bestFitnessScore;
 
     // Use this for initialization
@@ -24,13 +26,38 @@ public class EvolutionController : MonoBehaviour {
 		
 	}
 
-    void CreateInitialPopulation()
+    public void CreateInitialPopulation()
     {
+        Debug.Log("Creating initial population");
+
         for (int i = 0; i < populationSize; i++)
         {
-            Individual enemy = new Individual();
-            population.Add(enemy);
+            // Get x and y cooridantes of corners of the screen, based off camera distance
+            float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
+            Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
+            Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
+
+            // Set the spawn position to be at a random x value along the top of the screen
+            Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), 0, 31);
+            Quaternion spawnRotation = Quaternion.identity;
+
+            population.Add(Instantiate(individual, spawnPosition, spawnRotation));
         }
+
+        StartCoroutine(StartEvolution());
+    }
+
+    private IEnumerator StartEvolution()
+    {
+        /*
+        while (true)
+        {
+            UpdateFitnessScores();
+
+            Debug.Log("evolution");
+        }
+        */
+        yield return new WaitForSeconds(1);
     }
 
     void UpdateFitnessScores()
@@ -41,10 +68,10 @@ public class EvolutionController : MonoBehaviour {
         for (int i = 0; i < populationSize; i++)
         {
             // Find the fittest individual
-            if (population[i].CalculateFitness() > bestFitnessScore)
+            if (population[i].GetComponent<Individual>().CalculateFitness() > bestFitnessScore)
             {
                 fittestIndividual = population[i];
-                bestFitnessScore = population[i].GetFitness();
+                bestFitnessScore = population[i].GetComponent<Individual>().GetFitness();
             }
         }
     }

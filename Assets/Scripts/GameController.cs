@@ -27,6 +27,8 @@ public class GameController : MonoBehaviour {
     public float startWait;
     public float waveWait;
 
+    private EvolutionController evolutionController;
+
     private void Start()
     {
         gameOver = false;
@@ -37,6 +39,7 @@ public class GameController : MonoBehaviour {
         score = 0;
         UpdateScore();
         StartCoroutine(SpawnWaves());
+        evolutionController = GetComponent<EvolutionController>();
     }
 
     public void GameOver()
@@ -88,6 +91,7 @@ public class GameController : MonoBehaviour {
         scoreText.text = "Score: " + score;
     }
 
+  
     IEnumerator SpawnWaves () {
         // Get x and y cooridantes of corners of the screen, based off camera distance
         float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
@@ -98,7 +102,10 @@ public class GameController : MonoBehaviour {
         yield return new WaitForSeconds(startWait);
 
         int waveNumber = 0;
+        
+        evolutionController.CreateInitialPopulation();
 
+        /*
         while (true)
         {
             waveNumber++;
@@ -135,6 +142,7 @@ public class GameController : MonoBehaviour {
 
             yield return new WaitForSeconds(waveWait);
         }
+        */
 	}
 
     IEnumerator AddScoreMessage(string message, float delay)
