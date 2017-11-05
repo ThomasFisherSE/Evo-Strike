@@ -2,84 +2,94 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EvolutionController : MonoBehaviour {
-    
+public class EvolutionController : MonoBehaviour
+{
+
     public int populationSize;
+    private int generation = 0;
     public float mutationRate;
     public float crossoverRate;
+    public float spawnWait;
 
     public GameObject individual;
 
-    private List<GameObject> population = new List<GameObject>();
+    private List<GameObject> livingPopulation = new List<GameObject>();
+    private List<Individual> prevPopulation = new List<Individual>();
     private int chromosomeLength;
 
-    private GameObject fittestIndividual;
+    private Individual fittestIndividual;
     private float bestFitnessScore;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         // CreateInitialPopulation();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
 
-    public void CreateInitialPopulation()
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public IEnumerator CreateInitialPopulation()
     {
         Debug.Log("Creating initial population");
+        generation++;
+
+        // Get x and y cooridantes of corners of the screen, based off camera distance
+        float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
+        Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
+        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
 
         for (int i = 0; i < populationSize; i++)
         {
-            // Get x and y cooridantes of corners of the screen, based off camera distance
-            float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
-            Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
-            Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
-
             // Set the spawn position to be at a random x value along the top of the screen
             Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), 0, 31);
             Quaternion spawnRotation = Quaternion.identity;
 
-            population.Add(Instantiate(individual, spawnPosition, spawnRotation));
-        }
+            livingPopulation.Add(Instantiate(individual, spawnPosition, spawnRotation));
 
-        StartCoroutine(StartEvolution());
+            // Wait before spawning next enemy
+            yield return new WaitForSeconds(spawnWait);
+        }
     }
 
-    private IEnumerator StartEvolution()
-    {
-        /*
-        while (true)
-        {
-            UpdateFitnessScores();
-
-            Debug.Log("evolution");
-        }
-        */
-        yield return new WaitForSeconds(1);
-    }
-
-    void UpdateFitnessScores()
+    void UpdateFitnessScores(List<Individual> population)
     {
         fittestIndividual = population[0];
         bestFitnessScore = 0;
 
-        for (int i = 0; i < populationSize; i++)
+        for (int i = 0; i < population.Count; i++)
         {
             // Find the fittest individual
-            if (population[i].GetComponent<Individual>().CalculateFitness() > bestFitnessScore)
+            if (population[i] != null)
             {
-                fittestIndividual = population[i];
-                bestFitnessScore = population[i].GetComponent<Individual>().GetFitness();
+                Individual individual = population[i].GetComponent<Individual>();
+
+                if (individual.CalculateFitness() > bestFitnessScore)
+                {
+                    fittestIndividual = population[i];
+                    bestFitnessScore = population[i].GetComponent<Individual>().GetFitness();
+                }
             }
         }
+    }
+
+    public void AddCompleteIndividual(Individual individual)
+    {
+        prevPopulation.Add(individual);
+    }
+
+    void Remove(GameObject individual)
+    {
+        livingPopulation.Remove(individual);
     }
 
     void Mutate(List<int> bits)
     {
         // Mutate by flipping random bits
-        for(int i = 0; i < bits.Count; i++)
+        for (int i = 0; i < bits.Count; i++)
         {
             if (UnityEngine.Random.value < mutationRate)
             {
@@ -95,7 +105,8 @@ public class EvolutionController : MonoBehaviour {
         {
             // Just copy from one of the parents
             baby.AddRange(father);
-        } else
+        }
+        else
         {
             System.Random rnd = new System.Random();
 
@@ -115,5 +126,51 @@ public class EvolutionController : MonoBehaviour {
                 baby[i] = mother[i];
             }
         }
+    }
+
+    private void CrossoverStage()
+    {
+
+    }
+
+    private void MutationStage()
+    {
+
+    }
+
+    private IEnumerator SpawnPopulation()
+    {
+        // Clear the populatuion
+        livingPopulation.Clear();
+
+        // Get x and y cooridantes of corners of the screen, based off camera distance
+        float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
+        Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
+        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
+
+        for (int i = 0; i < populationSize; i++)
+        {
+            // Set the spawn position to be at a random x value along the top of the screen
+            Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), 0, 31);
+            Quaternion spawnRotation = Quaternion.identity;
+
+            livingPopulation.Add(Instantiate(individual, spawnPosition, spawnRotation));
+
+            // Wait before spawning next enemy
+            yield return new WaitForSeconds(spawnWait);
+        }
+    }
+
+    public void NextGeneration()
+    {
+        UpdateFitnessScores(prevPopulation);
+
+        CrossoverStage();
+        MutationStage();
+        
+        StartCoroutine(SpawnPopulation());
+
+        generation++;
+        Debug.Log("Generation " + generation + " spawned.");
     }
 }

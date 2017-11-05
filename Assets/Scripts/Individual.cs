@@ -19,8 +19,7 @@ public class Individual : MonoBehaviour {
     public float minFireRate = 0.1f, maxFireRate = 2.0f;
 
     private float fitness;
-
-	// Use this for initialization
+    
 	void Start () {
         evasiveManeuver = GetComponent<EvasiveManeuver>();
         mover = GetComponent<Mover>();
@@ -42,11 +41,17 @@ public class Individual : MonoBehaviour {
         weaponController.minFireRate = myMinFireRate;
         weaponController.maxFireRate = myMaxFireRate;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    private void OnDestroy()
+    {
+        GameObject gc = GameObject.Find("Game Controller");
+
+        if (gc != null)
+        {
+            EvolutionController ec = gc.GetComponent<EvolutionController>();
+            ec.AddCompleteIndividual(this);
+        }       
+    }
 
     public float CalculateFitness()
     {

@@ -102,8 +102,26 @@ public class GameController : MonoBehaviour {
         yield return new WaitForSeconds(startWait);
 
         int waveNumber = 0;
-        
-        evolutionController.CreateInitialPopulation();
+
+        StartCoroutine(evolutionController.CreateInitialPopulation());
+
+        while (true)
+        {
+            if (waveNumber != 0)
+            {
+                evolutionController.NextGeneration();
+            }
+
+            waveNumber++;
+
+            waveText.text = "Wave: " + waveNumber;
+
+            // Add wave bonus
+            AddScore((int)Mathf.Pow(2, waveNumber));
+
+            // Wait before spawning next wave
+            yield return new WaitForSeconds(waveWait);
+        }
 
         /*
         while (true)
@@ -127,7 +145,7 @@ public class GameController : MonoBehaviour {
 
                 Instantiate(hazard, spawnPosition, spawnRotation);
                 
-                // Wait before spawning next wave
+                // Wait before spawning next enemy
                 yield return new WaitForSeconds(spawnWait);
             }
 
@@ -140,6 +158,7 @@ public class GameController : MonoBehaviour {
                 Instantiate(powerUp, spawnPosition, spawnRotation);
             }
 
+            // Wait before spawning next wave
             yield return new WaitForSeconds(waveWait);
         }
         */
