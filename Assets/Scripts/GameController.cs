@@ -91,6 +91,29 @@ public class GameController : MonoBehaviour {
         scoreText.text = "Score: " + score;
     }
 
+    IEnumerator SpawnHazards()
+    {
+        // Get x and y cooridantes of corners of the screen, based off camera distance
+        float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
+        Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
+        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
+
+        // Spawn hazardCount hazards
+        for (int i = 0; i < hazardCount; i++)
+        {
+            // Randomly select the type of hazard to spawn
+            GameObject hazard = hazards[Random.Range(0, hazards.Length)];
+
+            // Set the spawn position to be at a random x value along the top of the screen
+            Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), spawnValues.y, spawnValues.z);
+            Quaternion spawnRotation = Quaternion.identity;
+
+            Instantiate(hazard, spawnPosition, spawnRotation);
+
+            // Wait before spawning next enemy
+            yield return new WaitForSeconds(spawnWait);
+        }
+    }
   
     IEnumerator SpawnWaves () {
         // Get x and y cooridantes of corners of the screen, based off camera distance
@@ -103,8 +126,9 @@ public class GameController : MonoBehaviour {
 
         int waveNumber = 0;
 
+        StartCoroutine(SpawnHazards());
         StartCoroutine(evolutionController.CreateInitialPopulation());
-
+        
         while (true)
         {
             if (waveNumber != 0)
@@ -133,21 +157,7 @@ public class GameController : MonoBehaviour {
             // Add wave bonus
             AddScore((int) Mathf.Pow(2, waveNumber));
 
-            // Spawn hazardCount hazards
-            for (int i = 0; i < hazardCount; i++)
-            {
-                // Randomly select the type of hazard to spawn
-                GameObject hazard = hazards[Random.Range(0,hazards.Length)];
-                
-                // Set the spawn position to be at a random x value along the top of the screen
-                Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), spawnValues.y, spawnValues.z);
-                Quaternion spawnRotation = Quaternion.identity;
-
-                Instantiate(hazard, spawnPosition, spawnRotation);
-                
-                // Wait before spawning next enemy
-                yield return new WaitForSeconds(spawnWait);
-            }
+         
 
             if (Random.value <= powerUpChance)
             {
