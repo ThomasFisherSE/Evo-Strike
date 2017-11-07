@@ -34,7 +34,7 @@ public class Individual : MonoBehaviour {
         float myMinManeuverWait = Random.Range(minManeuverWait, maxManeuverWait);
         evasiveManeuver.maneuverWait = new Vector2(myMinManeuverWait, Random.Range(myMinManeuverWait, maxManeuverWait));
 
-        mover.speed = Random.Range(minSpeed, maxSpeed);
+        mover.setSpeed(Random.Range(minSpeed, maxSpeed));
 
         float myMinFireRate = Random.Range(minFireRate, maxFireRate);
         float myMaxFireRate = Random.Range(myMinFireRate, maxFireRate);

@@ -5,9 +5,17 @@ using UnityEngine;
 public class Mover : MonoBehaviour {
     public float speed = 5;
 
+    private Rigidbody rb;
+
     private void Start()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+        rb.velocity = transform.forward * speed;
+    }
+
+    public void setSpeed(float s)
+    {
+        speed = s;
         rb.velocity = transform.forward * speed;
     }
 }
