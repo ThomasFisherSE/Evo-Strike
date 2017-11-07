@@ -131,9 +131,15 @@ public class GameController : MonoBehaviour {
         
         while (true)
         {
-            if (waveNumber != 0)
+            if (gameOver)
+            {
+                break;
+            }
+
+            if (waveNumber != 0 && !gameOver)
             {
                 evolutionController.NextGeneration();
+                StartCoroutine(SpawnHazards());
             }
 
             waveNumber++;
@@ -141,7 +147,7 @@ public class GameController : MonoBehaviour {
             waveText.text = "Wave: " + waveNumber;
 
             // Add wave bonus
-            AddScore((int)Mathf.Pow(2, waveNumber));
+            AddScore(waveNumber * 100);
 
             // Wait before spawning next wave
             yield return new WaitForSeconds(waveWait);
