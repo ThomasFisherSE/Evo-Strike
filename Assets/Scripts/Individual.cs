@@ -26,21 +26,51 @@ public class Individual : MonoBehaviour {
         weaponController = GetComponent<WeaponController>();
 
         // Set random attributes:
-        evasiveManeuver.dodge = Random.Range(minDodge, maxDodge);
+        SetDodge(Random.Range(minDodge, maxDodge));
+        // evasiveManeuver.dodge = Random.Range(minDodge, maxDodge);
 
         float myMinManeuverTime = Random.Range(minManeuverTime, maxManeuverTime);
-        evasiveManeuver.maneuverTime = new Vector2(myMinManeuverTime, Random.Range(myMinManeuverTime, maxManeuverTime));
+        SetManeuverTime(myMinManeuverTime, Random.Range(myMinManeuverTime, maxManeuverTime));
+        // evasiveManeuver.maneuverTime = new Vector2(myMinManeuverTime, Random.Range(myMinManeuverTime, maxManeuverTime));
 
         float myMinManeuverWait = Random.Range(minManeuverWait, maxManeuverWait);
-        evasiveManeuver.maneuverWait = new Vector2(myMinManeuverWait, Random.Range(myMinManeuverWait, maxManeuverWait));
+        SetManeuverWait(myMinManeuverWait, Random.Range(myMinManeuverWait, maxManeuverWait));
+        // evasiveManeuver.maneuverWait = new Vector2(myMinManeuverWait, Random.Range(myMinManeuverWait, maxManeuverWait));
 
-        mover.setSpeed(Random.Range(minSpeed, maxSpeed));
+        SetSpeed(Random.Range(minSpeed, maxSpeed));
+        // mover.setSpeed(Random.Range(minSpeed, maxSpeed));
 
         float myMinFireRate = Random.Range(minFireRate, maxFireRate);
         float myMaxFireRate = Random.Range(myMinFireRate, maxFireRate);
-        weaponController.minFireRate = myMinFireRate;
-        weaponController.maxFireRate = myMaxFireRate;
+        SetFireRate(myMinFireRate, myMaxFireRate);
+        // weaponController.minFireRate = myMinFireRate;
+        // weaponController.maxFireRate = myMaxFireRate;
 	}
+
+    public void SetDodge(float dodge)
+    {
+        evasiveManeuver.dodge = dodge;
+    }
+
+    public void SetManeuverTime(float minManeuverTime, float maxManeuverTime)
+    {
+        evasiveManeuver.maneuverTime = new Vector2(minManeuverTime, maxManeuverTime);
+    }
+
+    public void SetManeuverWait(float minManeuverWait, float maxManeuverWait)
+    {
+        evasiveManeuver.maneuverWait = new Vector2(minManeuverWait, maxManeuverWait);
+    }
+
+    public void SetSpeed(float speed)
+    {
+        mover.setSpeed(speed);
+    }
+
+    public void SetFireRate(float minFireRate, float maxFireRate)
+    {
+        weaponController.fireRate = new Vector2(minFireRate, maxFireRate);
+    }
 
     private void OnDestroy()
     {

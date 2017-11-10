@@ -20,18 +20,6 @@ public class EvolutionController : MonoBehaviour
     private Individual fittestIndividual;
     private float bestFitnessScore;
 
-    // Use this for initialization
-    void Start()
-    {
-        // CreateInitialPopulation();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public IEnumerator CreateInitialPopulation()
     {
         Debug.Log("Creating initial population");
