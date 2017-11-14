@@ -151,7 +151,7 @@ public class EvolutionController : MonoBehaviour
 
     public void NextGeneration()
     {
-        UpdateFitnessScores(prevPopulation);
+        //UpdateFitnessScores(prevPopulation);
 
         CrossoverStage();
         MutationStage();
