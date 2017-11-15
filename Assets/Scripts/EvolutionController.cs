@@ -13,7 +13,8 @@ public class EvolutionController : MonoBehaviour
 
     public GameObject individual;
 
-    private List<GameObject> livingPopulation = new List<GameObject>();
+    private List<Individual> newPopulation = new List<Individual>();
+    private List<Individual> livingPopulation = new List<Individual>();
     private List<Individual> prevPopulation = new List<Individual>();
     private int chromosomeLength;
 
@@ -36,7 +37,7 @@ public class EvolutionController : MonoBehaviour
             Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), 0, 31);
             Quaternion spawnRotation = Quaternion.identity;
 
-            livingPopulation.Add(Instantiate(individual, spawnPosition, spawnRotation));
+            livingPopulation.Add(Instantiate(individual, spawnPosition, spawnRotation).GetComponent<Individual>());
 
             // Wait before spawning next enemy
             yield return new WaitForSeconds(spawnWait);
@@ -69,7 +70,7 @@ public class EvolutionController : MonoBehaviour
         prevPopulation.Add(individual);
     }
 
-    void Remove(GameObject individual)
+    void Remove(Individual individual)
     {
         livingPopulation.Remove(individual);
     }
@@ -87,12 +88,13 @@ public class EvolutionController : MonoBehaviour
         }
     }
 
-    void Crossover(List<int> father, List<int> mother, List<int> baby)
+    void Crossover(List<int> father, List<int> mother, List<int> babyF, List<int> babyM)
     {
         if (UnityEngine.Random.value > crossoverRate || father == mother)
         {
-            // Just copy from one of the parents
-            baby.AddRange(father);
+            // Just copy entire parent genome
+            babyF.AddRange(father);
+            babyM.AddRange(mother);
         }
         else
         {
@@ -101,29 +103,49 @@ public class EvolutionController : MonoBehaviour
             // Choose point at which genes come from mother instead of father
             int crossoverPoint = rnd.Next(0, chromosomeLength - 1);
 
+            // Set new genes before crossover point
             for (int i = 0; i < crossoverPoint; i++)
             {
-                // Take genes from father
-                baby[i] = father[i];
-
+                babyF.Add(father[i]);
+                babyM.Add(mother[i]);
             }
 
+            // Set new genes after crossover point
             for (int i = crossoverPoint; i < mother.Count; i++)
             {
-                // Take genes from mother
-                baby[i] = mother[i];
+                babyF.Add(mother[i]);
+                babyM.Add(father[i]);
             }
         }
     }
 
-    private void CrossoverStage()
+    private void CrossoverAndMutate()
     {
+        int newEnemiesCount = 0;
 
-    }
+        while (newEnemiesCount < populationSize)
+        {
+            Individual[] parents = new Individual[2];
+            Individual[] babies = new Individual[2];
+            
+            for (int i = 0; i < babies.Length; i++)
+            {
+                babies[i] = new Individual();
+                babies[i] = new Individual();
+            }
 
-    private void MutationStage()
-    {
+            //Crossover(parents[0], parents[1], babies[0], babies[1]);
+            // Mutate(babies[0]);
+            // Mutate(babies[1]);
 
+            for (int i = 0; i < 2; i++)
+            {
+                newPopulation.Add(babies[i]);
+            }
+            
+
+            newEnemiesCount += 2;
+        }
     }
 
     private IEnumerator SpawnPopulation()
@@ -142,7 +164,7 @@ public class EvolutionController : MonoBehaviour
             Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), 0, 31);
             Quaternion spawnRotation = Quaternion.identity;
 
-            livingPopulation.Add(Instantiate(individual, spawnPosition, spawnRotation));
+            livingPopulation.Add(Instantiate(individual, spawnPosition, spawnRotation).GetComponent<Individual>());
 
             // Wait before spawning next enemy
             yield return new WaitForSeconds(spawnWait);
@@ -153,8 +175,7 @@ public class EvolutionController : MonoBehaviour
     {
         //UpdateFitnessScores(prevPopulation);
 
-        CrossoverStage();
-        MutationStage();
+        CrossoverAndMutate();
         
         StartCoroutine(SpawnPopulation());
 
