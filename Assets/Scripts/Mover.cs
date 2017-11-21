@@ -16,6 +16,8 @@ public class Mover : MonoBehaviour {
     public void setSpeed(float s)
     {
         speed = s;
-        rb.velocity = transform.forward * speed;
+
+        if (rb != null && transform != null)
+            rb.velocity = transform.forward * speed;
     }
 }

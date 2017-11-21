@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Individual {
-    GameObject gameObject;
+    //GameObject gameObject;
     private EvasiveManeuver evasiveManeuver;
     private Mover mover;
     private WeaponController weaponController;
@@ -23,10 +23,36 @@ public class Individual {
     
     public Individual(GameObject gameObject)
     {
-        gameObject = this.gameObject;
+        //gameObject = this.gameObject;
+
+        evasiveManeuver = gameObject.GetComponent<EvasiveManeuver>();
+        mover = gameObject.GetComponent<Mover>();
+        weaponController = gameObject.GetComponent<WeaponController>();
+
+        // Set random attributes:
+        SetDodge(Random.Range(minDodge, maxDodge));
+        // evasiveManeuver.dodge = Random.Range(minDodge, maxDodge);
+
+        float myMinManeuverTime = Random.Range(minManeuverTime, maxManeuverTime);
+        SetManeuverTime(myMinManeuverTime, Random.Range(myMinManeuverTime, maxManeuverTime));
+        // evasiveManeuver.maneuverTime = new Vector2(myMinManeuverTime, Random.Range(myMinManeuverTime, maxManeuverTime));
+
+        float myMinManeuverWait = Random.Range(minManeuverWait, maxManeuverWait);
+        SetManeuverWait(myMinManeuverWait, Random.Range(myMinManeuverWait, maxManeuverWait));
+        // evasiveManeuver.maneuverWait = new Vector2(myMinManeuverWait, Random.Range(myMinManeuverWait, maxManeuverWait));
+
+        SetSpeed(Random.Range(minSpeed, maxSpeed));
+        // mover.setSpeed(Random.Range(minSpeed, maxSpeed));
+
+        float myMinFireRate = Random.Range(minFireRate, maxFireRate);
+        float myMaxFireRate = Random.Range(myMinFireRate, maxFireRate);
+        SetFireRate(myMinFireRate, myMaxFireRate);
+        // weaponController.minFireRate = myMinFireRate;
+        // weaponController.maxFireRate = myMaxFireRate;
     }
 
-	void Start () {
+    /*
+    void Start () {
         evasiveManeuver = gameObject.GetComponent<EvasiveManeuver>();
         mover = gameObject.GetComponent<Mover>();
         weaponController = gameObject.GetComponent<WeaponController>();
@@ -52,6 +78,7 @@ public class Individual {
         // weaponController.minFireRate = myMinFireRate;
         // weaponController.maxFireRate = myMaxFireRate;
 	}
+    */
 
     public void SetDodge(float dodge)
     {

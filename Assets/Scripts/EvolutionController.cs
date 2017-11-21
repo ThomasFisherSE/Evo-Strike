@@ -39,6 +39,7 @@ public class EvolutionController : MonoBehaviour
         }
     }
 
+    // Instantiate enemy ship and pair it with an Individual object.
     private void createIndividual()
     {
         // Get x and y cooridantes of corners of the screen, based off camera distance
