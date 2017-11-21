@@ -56,7 +56,8 @@ public class EvolutionController : MonoBehaviour
         enemyShips.Add(newEnemy);
 
         // Create individual
-        Individual newIndividual = new Individual(newEnemy);
+        Individual newIndividual = new Individual();
+        newIndividual.SetAttributes(newEnemy);
 
         livingPopulation.Add(newIndividual);
     }
@@ -78,7 +79,7 @@ public class EvolutionController : MonoBehaviour
                 {
                     fittestIndividual = population[i];
                     // bestFitnessScore = population[i].GetComponent<Individual>().GetFitness();
-                    bestFitnessScore = population[i].GetFitness();
+                    bestFitnessScore = population[i].Fitness;
                 }
             }
         }
