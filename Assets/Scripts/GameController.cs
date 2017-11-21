@@ -127,7 +127,9 @@ public class GameController : MonoBehaviour {
         int waveNumber = 0;
 
         StartCoroutine(SpawnHazards());
-        StartCoroutine(evolutionController.CreateInitialPopulation());
+        
+        // Spawn initial population
+        StartCoroutine(evolutionController.SpawnPopulation());
         
         while (true)
         {

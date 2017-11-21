@@ -11,8 +11,9 @@ public class EvolutionController : MonoBehaviour
     public float crossoverRate;
     public float spawnWait;
 
-    public GameObject individual;
+    public GameObject enemyShipPrefab;
 
+    private List<GameObject> enemyShips = new List<GameObject>();
     private List<Individual> newPopulation = new List<Individual>();
     private List<Individual> livingPopulation = new List<Individual>();
     private List<Individual> prevPopulation = new List<Individual>();
@@ -21,27 +22,42 @@ public class EvolutionController : MonoBehaviour
     private Individual fittestIndividual;
     private float bestFitnessScore;
 
-    public IEnumerator CreateInitialPopulation()
+    public IEnumerator SpawnPopulation()
     {
-        Debug.Log("Creating initial population");
         generation++;
+        Debug.Log("Spawning: Generation " + generation);
 
+        // Clear the populatuion
+        livingPopulation.Clear();
+
+        for (int i = 0; i < populationSize; i++)
+        {
+            createIndividual();
+
+            // Wait before spawning next enemy
+            yield return new WaitForSeconds(spawnWait);
+        }
+    }
+
+    private void createIndividual()
+    {
         // Get x and y cooridantes of corners of the screen, based off camera distance
         float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
         Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
         Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
 
-        for (int i = 0; i < populationSize; i++)
-        {
-            // Set the spawn position to be at a random x value along the top of the screen
-            Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), 0, 31);
-            Quaternion spawnRotation = Quaternion.identity;
+        // Set the spawn position to be at a random x value along the top of the screen
+        Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), 0, 31);
+        Quaternion spawnRotation = Quaternion.identity;
 
-            livingPopulation.Add(Instantiate(individual, spawnPosition, spawnRotation).GetComponent<Individual>());
+        // Instantiate enemy ship
+        GameObject newEnemy = Instantiate(enemyShipPrefab, spawnPosition, spawnRotation);
+        enemyShips.Add(newEnemy);
 
-            // Wait before spawning next enemy
-            yield return new WaitForSeconds(spawnWait);
-        }
+        // Create individual
+        Individual newIndividual = new Individual(newEnemy);
+
+        livingPopulation.Add(newIndividual);
     }
 
     void UpdateFitnessScores(List<Individual> population)
@@ -54,12 +70,14 @@ public class EvolutionController : MonoBehaviour
             // Find the fittest individual
             if (population[i] != null)
             {
-                Individual individual = population[i].GetComponent<Individual>();
+                // Individual individual = population[i].GetComponent<Individual>();
+                Individual individual = population[i];
 
                 if (individual.CalculateFitness() > bestFitnessScore)
                 {
                     fittestIndividual = population[i];
-                    bestFitnessScore = population[i].GetComponent<Individual>().GetFitness();
+                    // bestFitnessScore = population[i].GetComponent<Individual>().GetFitness();
+                    bestFitnessScore = population[i].GetFitness();
                 }
             }
         }
@@ -130,8 +148,8 @@ public class EvolutionController : MonoBehaviour
             
             for (int i = 0; i < babies.Length; i++)
             {
-                babies[i] = new Individual();
-                babies[i] = new Individual();
+                babies[i] = new Individual(enemyShips[i]);
+                babies[i] = new Individual(enemyShips[i]);
             }
 
             //Crossover(parents[0], parents[1], babies[0], babies[1]);
@@ -148,29 +166,6 @@ public class EvolutionController : MonoBehaviour
         }
     }
 
-    private IEnumerator SpawnPopulation()
-    {
-        // Clear the populatuion
-        livingPopulation.Clear();
-
-        // Get x and y cooridantes of corners of the screen, based off camera distance
-        float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
-        Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
-        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
-
-        for (int i = 0; i < populationSize; i++)
-        {
-            // Set the spawn position to be at a random x value along the top of the screen
-            Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), 0, 31);
-            Quaternion spawnRotation = Quaternion.identity;
-
-            livingPopulation.Add(Instantiate(individual, spawnPosition, spawnRotation).GetComponent<Individual>());
-
-            // Wait before spawning next enemy
-            yield return new WaitForSeconds(spawnWait);
-        }
-    }
-
     public void NextGeneration()
     {
         //UpdateFitnessScores(prevPopulation);
@@ -178,8 +173,5 @@ public class EvolutionController : MonoBehaviour
         CrossoverAndMutate();
         
         StartCoroutine(SpawnPopulation());
-
-        generation++;
-        Debug.Log("Generation " + generation + " spawned.");
     }
 }

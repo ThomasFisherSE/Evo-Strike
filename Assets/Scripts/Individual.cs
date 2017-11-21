@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Individual : MonoBehaviour {
+public class Individual {
+    GameObject gameObject;
     private EvasiveManeuver evasiveManeuver;
     private Mover mover;
     private WeaponController weaponController;
@@ -20,10 +21,15 @@ public class Individual : MonoBehaviour {
 
     private float fitness;
     
+    public Individual(GameObject gameObject)
+    {
+        gameObject = this.gameObject;
+    }
+
 	void Start () {
-        evasiveManeuver = GetComponent<EvasiveManeuver>();
-        mover = GetComponent<Mover>();
-        weaponController = GetComponent<WeaponController>();
+        evasiveManeuver = gameObject.GetComponent<EvasiveManeuver>();
+        mover = gameObject.GetComponent<Mover>();
+        weaponController = gameObject.GetComponent<WeaponController>();
 
         // Set random attributes:
         SetDodge(Random.Range(minDodge, maxDodge));
