@@ -20,6 +20,88 @@ public class Individual {
 
     private float fitness;
 
+    public Individual(GameObject gameObject)
+    {
+        SetAttributes(gameObject);
+    }
+
+    public Individual()
+    {
+
+    }
+
+    public void SetAttributes(GameObject enemyShip)
+    {
+        if (enemyShip == null)
+        {
+            return;
+        }
+
+        EvasiveManeuver = enemyShip.GetComponent<EvasiveManeuver>();
+        Mover = enemyShip.GetComponent<Mover>();
+        WeaponController = enemyShip.GetComponent<WeaponController>();
+
+        // Set random attributes:
+        RandomDodge(MinDodge, MaxDodge);
+        
+        RandomManeuverTime(MinManeuverTime, MaxManeuverTime);
+        
+        RandomManeuverWait(MinManeuverWait, MaxManeuverWait);
+
+        RandomVerticalSpeed(MinSpeed, MaxSpeed);
+        
+        RandomFireRate(MinFireRate, MaxFireRate);
+    }
+
+    public void RandomDodge(float minDodge, float maxDodge)
+    {
+        EvasiveManeuver.dodge = Random.Range(minDodge, maxDodge); ;
+    }
+
+    public void RandomManeuverTime(float minManeuverTime, float maxManeuverTime)
+    {
+        float myMinManeuverTime = Random.Range(minManeuverTime, maxManeuverTime);
+        float myMaxManeuverTime = Random.Range(myMinManeuverTime, maxManeuverTime);
+        EvasiveManeuver.maneuverTime = new Vector2(myMinManeuverTime, myMaxManeuverTime);
+    }
+
+    public void RandomManeuverWait(float minManeuverWait, float maxManeuverWait)
+    {
+        float myMinManeuverWait = Random.Range(minManeuverWait, maxManeuverWait);
+        float myMaxManeuverWait = Random.Range(myMinManeuverWait, maxManeuverWait);
+        EvasiveManeuver.maneuverWait = new Vector2(minManeuverWait, maxManeuverWait);
+    }
+
+    public void RandomVerticalSpeed(float minSpeed, float maxSpeed)
+    {
+        Mover.setSpeed(Random.Range(minSpeed, maxSpeed));
+    }
+
+    public void RandomFireRate(float minFireRate, float maxFireRate)
+    {
+        float myMinFireRate = Random.Range(minFireRate, maxFireRate);
+        float myMaxFireRate = Random.Range(myMinFireRate, maxFireRate);
+        WeaponController.fireRate = new Vector2(myMinFireRate, myMaxFireRate);
+    }
+
+    private void OnDestroy()
+    {
+        GameObject gc = GameObject.Find("Game Controller");
+
+        if (gc != null)
+        {
+            EvolutionController ec = gc.GetComponent<EvolutionController>();
+            ec.AddCompleteIndividual(this);
+        }       
+    }
+
+    public float CalculateFitness()
+    {
+        // Calculate fitness here
+
+        return Fitness;
+    }
+
     public int MinDodge
     {
         get
@@ -163,85 +245,42 @@ public class Individual {
         }
     }
 
-    public Individual(GameObject gameObject)
+    public EvasiveManeuver EvasiveManeuver
     {
-        SetAttributes(gameObject);
-    }
-
-    public Individual()
-    {
-
-    }
-
-    public void SetAttributes(GameObject enemyShip)
-    {
-        if (enemyShip == null)
+        get
         {
-            return;
+            return evasiveManeuver;
         }
 
-        evasiveManeuver = enemyShip.GetComponent<EvasiveManeuver>();
-        mover = enemyShip.GetComponent<Mover>();
-        weaponController = enemyShip.GetComponent<WeaponController>();
-
-        // Set random attributes:
-        RandomDodge(MinDodge, MaxDodge);
-        
-        RandomManeuverTime(MinManeuverTime, MaxManeuverTime);
-        
-        RandomManeuverWait(MinManeuverWait, MaxManeuverWait);
-
-        RandomVerticalSpeed(MinSpeed, MaxSpeed);
-        
-        RandomFireRate(MinFireRate, MaxFireRate);
-    }
-
-    public void RandomDodge(float minDodge, float maxDodge)
-    {
-        evasiveManeuver.dodge = Random.Range(minDodge, maxDodge); ;
-    }
-
-    public void RandomManeuverTime(float minManeuverTime, float maxManeuverTime)
-    {
-        float myMinManeuverTime = Random.Range(minManeuverTime, maxManeuverTime);
-        float myMaxManeuverTime = Random.Range(myMinManeuverTime, maxManeuverTime);
-        evasiveManeuver.maneuverTime = new Vector2(myMinManeuverTime, myMaxManeuverTime);
-    }
-
-    public void RandomManeuverWait(float minManeuverWait, float maxManeuverWait)
-    {
-        float myMinManeuverWait = Random.Range(minManeuverWait, maxManeuverWait);
-        float myMaxManeuverWait = Random.Range(myMinManeuverWait, maxManeuverWait);
-        evasiveManeuver.maneuverWait = new Vector2(minManeuverWait, maxManeuverWait);
-    }
-
-    public void RandomVerticalSpeed(float minSpeed, float maxSpeed)
-    {
-        mover.setSpeed(Random.Range(minSpeed, maxSpeed));
-    }
-
-    public void RandomFireRate(float minFireRate, float maxFireRate)
-    {
-        float myMinFireRate = Random.Range(minFireRate, maxFireRate);
-        float myMaxFireRate = Random.Range(myMinFireRate, maxFireRate);
-        weaponController.fireRate = new Vector2(myMinFireRate, myMaxFireRate);
-    }
-
-    private void OnDestroy()
-    {
-        GameObject gc = GameObject.Find("Game Controller");
-
-        if (gc != null)
+        set
         {
-            EvolutionController ec = gc.GetComponent<EvolutionController>();
-            ec.AddCompleteIndividual(this);
-        }       
+            evasiveManeuver = value;
+        }
     }
 
-    public float CalculateFitness()
+    public Mover Mover
     {
-        // Calculate fitness here
+        get
+        {
+            return mover;
+        }
 
-        return Fitness;
+        set
+        {
+            mover = value;
+        }
+    }
+
+    public WeaponController WeaponController
+    {
+        get
+        {
+            return weaponController;
+        }
+
+        set
+        {
+            weaponController = value;
+        }
     }
 }

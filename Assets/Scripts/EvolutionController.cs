@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EvolutionController : MonoBehaviour
@@ -110,6 +111,7 @@ public class EvolutionController : MonoBehaviour
 
     void Crossover(List<int> father, List<int> mother, List<int> babyF, List<int> babyM)
     {
+        chromosomeLength = father.Count;
         if (UnityEngine.Random.value > crossoverRate || father == mother)
         {
             // Just copy entire parent genome
@@ -139,32 +141,64 @@ public class EvolutionController : MonoBehaviour
         }
     }
 
+    private void individualToBits(Individual i, List<int> bits)
+    {
+        byte[] bytes = System.BitConverter.GetBytes(i.Mover.speed);
+
+        bits = Enumerable.Range(0, bytes.Length / 4)
+                         .Select(bit => System.BitConverter.ToInt32(bytes, bit * 4))
+                         .ToList();
+    }
+
     private void CrossoverAndMutate()
     {
         int newEnemiesCount = 0;
 
-        while (newEnemiesCount < populationSize)
+        while (newEnemiesCount < populationSize - 1)
         {
             Individual[] parents = new Individual[2];
             Individual[] babies = new Individual[2];
-            
+
+            parents[0] = livingPopulation[newEnemiesCount];
+            parents[1] = livingPopulation[newEnemiesCount + 1];
+
             for (int i = 0; i < babies.Length; i++)
             {
                 babies[i] = new Individual(enemyShips[i]);
-                babies[i] = new Individual(enemyShips[i]);
             }
 
-            //Crossover(parents[0], parents[1], babies[0], babies[1]);
-            // Mutate(babies[0]);
-            // Mutate(babies[1]);
+            /* 
+            List<int>[] pBits = new List<int>[parents.Length];
+            List<int>[] b = new List<int>[babies.Length];
+
+            for (int i = 0; i < parents.Length; i++)
+            {
+                individualToBits(parents[i], pBits[i]);
+                
+                Debug.Log("p[" + i + "] = " + string.Join(",", pBits[i].Select(n => n.ToString()).ToArray()));
+            }
+
+            for (int i = 0; i <babies.Length; i++)
+            {
+                b[i] = new List<int>();
+            }
+
+            Crossover(pBits[0], pBits[1], b[0], b[1]);
+            
+            Debug.Log("b[0]: " + string.Join(",", b[0].Select(n => n.ToString()).ToArray()) + " b[1]: " + string.Join(",", b[1].Select(n => n.ToString()).ToArray()));
+
+            for (int i = 0; i < babies.Length; i++)
+            {
+                // Mutate(babies[i]);
+            }
+            */
 
             for (int i = 0; i < 2; i++)
             {
                 newPopulation.Add(babies[i]);
             }
             
-
-            newEnemiesCount += 2;
+            newEnemiesCount += babies.Length;
         }
     }
 
