@@ -57,8 +57,8 @@ public class EvolutionController : MonoBehaviour
         enemyShips.Add(newEnemy);
 
         // Create individual
-        Individual newIndividual = new Individual();
-        newIndividual.SetAttributes(newEnemy);
+        Individual newIndividual = new Individual(newEnemy);
+        newIndividual.SetRandomAttributes();
 
         livingPopulation.Add(newIndividual);
     }
@@ -109,17 +109,20 @@ public class EvolutionController : MonoBehaviour
         }
     }
 
-    void Crossover(List<int> father, List<int> mother, List<int> babyF, List<int> babyM)
+    void Crossover(Individual father, Individual mother, Individual babyF, Individual babyM)
     {
-        chromosomeLength = father.Count;
         if (UnityEngine.Random.value > crossoverRate || father == mother)
         {
             // Just copy entire parent genome
-            babyF.AddRange(father);
-            babyM.AddRange(mother);
+            babyF = father;
+            babyM = mother;
         }
         else
         {
+            babyF.CrossoverAttributes(father, mother);
+            babyM.CrossoverAttributes(father, mother);
+
+            /*
             System.Random rnd = new System.Random();
 
             // Choose point at which genes come from mother instead of father
@@ -138,16 +141,8 @@ public class EvolutionController : MonoBehaviour
                 babyF.Add(mother[i]);
                 babyM.Add(father[i]);
             }
+            */
         }
-    }
-
-    private void individualToBits(Individual i, List<int> bits)
-    {
-        byte[] bytes = System.BitConverter.GetBytes(i.Mover.speed);
-
-        bits = Enumerable.Range(0, bytes.Length / 4)
-                         .Select(bit => System.BitConverter.ToInt32(bytes, bit * 4))
-                         .ToList();
     }
 
     private void CrossoverAndMutate()
@@ -166,6 +161,8 @@ public class EvolutionController : MonoBehaviour
             {
                 babies[i] = new Individual(enemyShips[i]);
             }
+
+            
 
             /* 
             List<int>[] pBits = new List<int>[parents.Length];

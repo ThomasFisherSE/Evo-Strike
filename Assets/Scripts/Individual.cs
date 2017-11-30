@@ -2,97 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Individual {
+public class Individual
+{
     private EvasiveManeuver evasiveManeuver;
     private Mover mover;
     private WeaponController weaponController;
 
-    // Evasive Maneuver attribute boundaries
-    private int minDodge = 0, maxDodge = 15;
-    private float minManeuverTime = 0.01f, maxManeuverTime = 2.0f;
-    private float minManeuverWait = 0.0f, maxManeuverWait = 2.0f;
+    private GameObject enemyShip;
 
-    // Mover attribute boundaries
-    private float minSpeed = -15.0f, maxSpeed = -3f;
-
-    // Weapon Controller attribute boundaries
-    private float minFireRate = 0.1f, maxFireRate = 2.0f;
+    // Genes
+    private float speed, dodge, minManeuverTime, maxManeuverTime,
+        minManeuverWait, maxManeuverWait, minFireRate, maxFireRate;
 
     private float fitness;
 
-    public Individual(GameObject gameObject)
-    {
-        SetAttributes(gameObject);
-    }
+    // Evasive Maneuver attribute boundaries
+    private int minDodgeBound = 0, maxDodgeBound = 15;
+    private float minManeuverTimeBound = 0.01f, maxManeuverTimeBound = 2.0f;
+    private float minManeuverWaitBound = 0.0f, maxManeuverWaitBound = 2.0f;
 
-    public Individual()
-    {
+    // Mover attribute boundaries
+    private float minSpeedBound = -15.0f, maxSpeedBound = -3f;
 
-    }
+    // Weapon Controller attribute boundaries
+    private float minFireRateBound = 0.1f, maxFireRateBound = 2.0f;
 
-    public void SetAttributes(GameObject enemyShip)
+    public Individual(GameObject enemyShipObject)
     {
-        if (enemyShip == null)
+        enemyShip = enemyShipObject;
+        if (enemyShip != null)
         {
-            return;
+            evasiveManeuver = enemyShip.GetComponent<EvasiveManeuver>();
+            mover = enemyShip.GetComponent<Mover>();
+            weaponController = enemyShip.GetComponent<WeaponController>();
+
+            SetRandomAttributes();
         }
-
-        EvasiveManeuver = enemyShip.GetComponent<EvasiveManeuver>();
-        Mover = enemyShip.GetComponent<Mover>();
-        WeaponController = enemyShip.GetComponent<WeaponController>();
-
-        // Set random attributes:
-        RandomDodge(MinDodge, MaxDodge);
-        
-        RandomManeuverTime(MinManeuverTime, MaxManeuverTime);
-        
-        RandomManeuverWait(MinManeuverWait, MaxManeuverWait);
-
-        RandomVerticalSpeed(MinSpeed, MaxSpeed);
-        
-        RandomFireRate(MinFireRate, MaxFireRate);
     }
 
-    public void RandomDodge(float minDodge, float maxDodge)
+    private float CrossoverPoint(float x, float y)
     {
-        EvasiveManeuver.dodge = Random.Range(minDodge, maxDodge); ;
-    }
-
-    public void RandomManeuverTime(float minManeuverTime, float maxManeuverTime)
-    {
-        float myMinManeuverTime = Random.Range(minManeuverTime, maxManeuverTime);
-        float myMaxManeuverTime = Random.Range(myMinManeuverTime, maxManeuverTime);
-        EvasiveManeuver.maneuverTime = new Vector2(myMinManeuverTime, myMaxManeuverTime);
-    }
-
-    public void RandomManeuverWait(float minManeuverWait, float maxManeuverWait)
-    {
-        float myMinManeuverWait = Random.Range(minManeuverWait, maxManeuverWait);
-        float myMaxManeuverWait = Random.Range(myMinManeuverWait, maxManeuverWait);
-        EvasiveManeuver.maneuverWait = new Vector2(minManeuverWait, maxManeuverWait);
-    }
-
-    public void RandomVerticalSpeed(float minSpeed, float maxSpeed)
-    {
-        Mover.setSpeed(Random.Range(minSpeed, maxSpeed));
-    }
-
-    public void RandomFireRate(float minFireRate, float maxFireRate)
-    {
-        float myMinFireRate = Random.Range(minFireRate, maxFireRate);
-        float myMaxFireRate = Random.Range(myMinFireRate, maxFireRate);
-        WeaponController.fireRate = new Vector2(myMinFireRate, myMaxFireRate);
-    }
-
-    private void OnDestroy()
-    {
-        GameObject gc = GameObject.Find("Game Controller");
-
-        if (gc != null)
-        {
-            EvolutionController ec = gc.GetComponent<EvolutionController>();
-            ec.AddCompleteIndividual(this);
-        }       
+        return (x + y) / 2;
     }
 
     public float CalculateFitness()
@@ -102,29 +52,263 @@ public class Individual {
         return Fitness;
     }
 
-    public int MinDodge
+    public void CrossoverAttributes(Individual father, Individual mother)
+    {
+        SetSpeed(CrossoverPoint(father.Speed, mother.Speed));
+
+        SetDodge(CrossoverPoint(father.Dodge, mother.Dodge));
+
+        SetManeuverTimeRange(
+            CrossoverPoint(father.MinManeuverTime, mother.MinManeuverTime),
+            CrossoverPoint(father.MaxManeuverTime, mother.MaxManeuverTime));
+
+        SetManeuverWaitRange(
+            CrossoverPoint(father.MinManeuverWait, mother.MinManeuverWait),
+            CrossoverPoint(father.MaxManeuverWait, mother.MaxManeuverWait));
+
+        SetFireRateRange(
+            CrossoverPoint(father.MinFireRate, mother.MinFireRate),
+            CrossoverPoint(father.MaxFireRate, mother.MaxFireRate));
+    }
+
+    public void SetRandomAttributes()
+    {
+        if (enemyShip == null)
+        {
+            return;
+        }
+
+        // Set random attributes:
+        RandomDodge(MinDodgeBound, MaxDodgeBound);
+
+        RandomManeuverTime(MinManeuverTimeBound, MaxManeuverTimeBound);
+
+        RandomManeuverWait(MinManeuverWaitBound, MaxManeuverWaitBound);
+
+        RandomVerticalSpeed(MinSpeedBound, MaxSpeedBound);
+
+        RandomFireRate(MinFireRateBound, MaxFireRateBound);
+    }
+
+    public void RandomDodge(float minDodge, float maxDodge)
+    {
+        SetDodge(Random.Range(minDodge, maxDodge));
+    }
+
+    public void RandomManeuverTime(float minManeuverTime, float maxManeuverTime)
+    {
+        float myMinManeuverTime = Random.Range(minManeuverTime, maxManeuverTime);
+        float myMaxManeuverTime = Random.Range(myMinManeuverTime, maxManeuverTime);
+        SetManeuverTimeRange(myMinManeuverTime, myMaxManeuverTime);
+    }
+
+    public void RandomManeuverWait(float minManeuverWait, float maxManeuverWait)
+    {
+        float myMinManeuverWait = Random.Range(minManeuverWait, maxManeuverWait);
+        float myMaxManeuverWait = Random.Range(myMinManeuverWait, maxManeuverWait);
+        SetManeuverWaitRange(myMinManeuverWait, myMaxManeuverWait);
+    }
+
+    public void RandomVerticalSpeed(float minSpeed, float maxSpeed)
+    {
+        SetSpeed(Random.Range(minSpeed, maxSpeed));
+    }
+
+    public void RandomFireRate(float minFireRate, float maxFireRate)
+    {
+        float myMinFireRate = Random.Range(minFireRate, maxFireRate);
+        float myMaxFireRate = Random.Range(myMinFireRate, maxFireRate);
+        SetFireRateRange(myMinFireRate, myMaxFireRate);
+    }
+
+    /** Accessors and Mutators **/
+
+    public void SetSpeed(float s)
+    {
+        mover.setSpeed(s);
+        Speed = s;
+    }
+
+    public void SetDodge(float d)
+    {
+        evasiveManeuver.dodge = d;
+        Dodge = d;
+    }
+
+    public void SetManeuverTimeRange(float min, float max)
+    {
+        evasiveManeuver.maneuverTime = new Vector2(min, max);
+        MinManeuverTime = min;
+        MaxManeuverTime = max;
+    }
+
+    public void SetManeuverWaitRange(float min, float max)
+    {
+        evasiveManeuver.maneuverWait = new Vector2(min, max);
+        MinManeuverWait = min;
+        MaxManeuverWait = max;
+    }
+
+    public void SetFireRateRange(float min, float max)
+    {
+        weaponController.fireRate = new Vector2(min, max);
+        MinFireRate = min;
+        MaxFireRate = max;
+    }
+
+    public int MinDodgeBound
     {
         get
         {
-            return minDodge;
+            return minDodgeBound;
         }
 
         set
         {
-            minDodge = value;
+            minDodgeBound = value;
         }
     }
 
-    public int MaxDodge
+    public int MaxDodgeBound
     {
         get
         {
-            return maxDodge;
+            return maxDodgeBound;
         }
 
         set
         {
-            maxDodge = value;
+            maxDodgeBound = value;
+        }
+    }
+
+    public float MinManeuverTimeBound
+    {
+        get
+        {
+            return minManeuverTimeBound;
+        }
+
+        set
+        {
+            minManeuverTimeBound = value;
+        }
+    }
+
+    public float MaxManeuverTimeBound
+    {
+        get
+        {
+            return maxManeuverTimeBound;
+        }
+
+        set
+        {
+            maxManeuverTimeBound = value;
+        }
+    }
+
+    public float MinManeuverWaitBound
+    {
+        get
+        {
+            return minManeuverWaitBound;
+        }
+
+        set
+        {
+            minManeuverWaitBound = value;
+        }
+    }
+
+    public float MaxManeuverWaitBound
+    {
+        get
+        {
+            return maxManeuverWaitBound;
+        }
+
+        set
+        {
+            maxManeuverWaitBound = value;
+        }
+    }
+
+    public float MinSpeedBound
+    {
+        get
+        {
+            return minSpeedBound;
+        }
+
+        set
+        {
+            minSpeedBound = value;
+        }
+    }
+
+    public float MaxSpeedBound
+    {
+        get
+        {
+            return maxSpeedBound;
+        }
+
+        set
+        {
+            maxSpeedBound = value;
+        }
+    }
+
+    public float MinFireRateBound
+    {
+        get
+        {
+            return minFireRateBound;
+        }
+
+        set
+        {
+            minFireRateBound = value;
+        }
+    }
+
+    public float MaxFireRateBound
+    {
+        get
+        {
+            return maxFireRateBound;
+        }
+
+        set
+        {
+            maxFireRateBound = value;
+        }
+    }
+
+    public float Speed
+    {
+        get
+        {
+            return speed;
+        }
+
+        set
+        {
+            speed = value;
+        }
+    }
+
+    public float Dodge
+    {
+        get
+        {
+            return dodge;
+        }
+
+        set
+        {
+            dodge = value;
         }
     }
 
@@ -180,32 +364,6 @@ public class Individual {
         }
     }
 
-    public float MinSpeed
-    {
-        get
-        {
-            return minSpeed;
-        }
-
-        set
-        {
-            minSpeed = value;
-        }
-    }
-
-    public float MaxSpeed
-    {
-        get
-        {
-            return maxSpeed;
-        }
-
-        set
-        {
-            maxSpeed = value;
-        }
-    }
-
     public float MinFireRate
     {
         get
@@ -242,45 +400,6 @@ public class Individual {
         set
         {
             fitness = value;
-        }
-    }
-
-    public EvasiveManeuver EvasiveManeuver
-    {
-        get
-        {
-            return evasiveManeuver;
-        }
-
-        set
-        {
-            evasiveManeuver = value;
-        }
-    }
-
-    public Mover Mover
-    {
-        get
-        {
-            return mover;
-        }
-
-        set
-        {
-            mover = value;
-        }
-    }
-
-    public WeaponController WeaponController
-    {
-        get
-        {
-            return weaponController;
-        }
-
-        set
-        {
-            weaponController = value;
         }
     }
 }

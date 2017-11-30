@@ -25,6 +25,9 @@ public class WeaponController : MonoBehaviour {
 	void Fire()
     {
         Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-        audioSource.Play();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
     }
 }
