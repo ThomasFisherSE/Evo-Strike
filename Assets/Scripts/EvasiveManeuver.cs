@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EvasiveManeuver : MonoBehaviour {
 
+    private GameController gc;
+
     public float tilt;
     public float dodge;
     public float smoothing;
@@ -18,11 +20,10 @@ public class EvasiveManeuver : MonoBehaviour {
     private Rigidbody rb;
 
 	void Start () {
-        float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
-        Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
-        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
-
-        boundary.SetX(bottomCorner.x, topCorner.x);
+        GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+        gc = gameControllerObject.GetComponent<GameController>();
+        
+        boundary.SetX(gc.MinXSpawn, gc.MaxXSpawn);
 
         rb = GetComponent<Rigidbody>();
 

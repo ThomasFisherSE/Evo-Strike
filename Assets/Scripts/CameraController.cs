@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour {
     public Camera thirdPersonCamera;
 
     private Queue<Camera> cameraQueue;
+    private GameObject bg;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +16,9 @@ public class CameraController : MonoBehaviour {
         cameraQueue = new Queue<Camera>();
         cameraQueue.Enqueue(mainCamera);
         cameraQueue.Enqueue(thirdPersonCamera);
-	}
+
+        bg = GameObject.FindWithTag("Background");
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -32,6 +35,9 @@ public class CameraController : MonoBehaviour {
             Debug.Log("Next Camera: " + nextCamera);
             nextCamera.enabled = true;
             cameraQueue.Enqueue(originalCamera);
+
+
+            bg.SetActive(mainCamera.enabled);
         }
     }
 }
