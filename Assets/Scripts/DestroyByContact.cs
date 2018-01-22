@@ -6,13 +6,16 @@ using UnityEngine.UI;
 public class DestroyByContact : MonoBehaviour {
     public int scoreValue;
     private GameController gameController;
+    private EvolutionController evolutionController;
     public GameObject explosion;
     public GameObject playerExplosion;
 
     void Start()
     {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
-        
+
+        evolutionController = gameControllerObject.GetComponent<EvolutionController>();
+
         if (gameControllerObject != null)
         {
             gameController = gameControllerObject.GetComponent<GameController>();
@@ -27,7 +30,6 @@ public class DestroyByContact : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-
         // Do nothing if colliding with boundary / enemy / powerup / controller
         if (other.CompareTag("Boundary") || other.CompareTag("Enemy") || other.CompareTag("PowerUp") || other.CompareTag("Controller"))
         {
@@ -53,6 +55,12 @@ public class DestroyByContact : MonoBehaviour {
         //Debug.Log("DestroyByContact: " + other.gameObject.name + " and " + gameObject.name);
         other.gameObject.SetActive(false);
         //Destroy(other.gameObject);
+
+        if (gameObject.CompareTag("Enemy"))
+        {
+            evolutionController.AddCompletedEnemy(gameObject.GetComponent<Individual>());
+        }
+
         Destroy(gameObject);
     }
 }

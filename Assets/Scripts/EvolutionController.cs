@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EvolutionController : MonoBehaviour
 {
+    private GameController gc;
 
     public int populationSize;
     private int generation = 0;
@@ -22,6 +23,12 @@ public class EvolutionController : MonoBehaviour
 
     private Individual fittestIndividual;
     private float bestFitnessScore;
+
+    public void Start()
+    {
+        GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+        gc = gameControllerObject.GetComponent<GameController>();
+    }
 
     public IEnumerator SpawnPopulation()
     {
@@ -43,13 +50,9 @@ public class EvolutionController : MonoBehaviour
     // Instantiate enemy ship and pair it with an Individual object.
     private void createIndividual()
     {
-        // Get x and y cooridantes of corners of the screen, based off camera distance
-        float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
-        Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
-        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
 
         // Set the spawn position to be at a random x value along the top of the screen
-        Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), 0, 31);
+        Vector3 spawnPosition = new Vector3(Random.Range(gc.MinXSpawn, gc.MaxXSpawn), 0, gc.spawnValues.z);
         Quaternion spawnRotation = Quaternion.identity;
 
         // Instantiate enemy ship
@@ -86,9 +89,9 @@ public class EvolutionController : MonoBehaviour
         }
     }
 
-    public void AddCompleteIndividual(Individual individual)
+    public void AddCompletedEnemy(Individual enemy)
     {
-        prevPopulation.Add(individual);
+        prevPopulation.Add(enemy);
     }
 
     void Remove(Individual individual)
@@ -96,106 +99,62 @@ public class EvolutionController : MonoBehaviour
         livingPopulation.Remove(individual);
     }
 
-    void Mutate(List<int> bits)
-    {
-        // Mutate by flipping random bits
-        for (int i = 0; i < bits.Count; i++)
-        {
-            if (UnityEngine.Random.value < mutationRate)
-            {
-                // Flip the 'i'th bit in bits
-                bits[i] = bits[i] == 0 ? 1 : 0;
-            }
-        }
-    }
-
     void Crossover(Individual father, Individual mother, Individual babyF, Individual babyM)
     {
         if (UnityEngine.Random.value > crossoverRate || father == mother)
         {
-            // Just copy entire parent genome
+            // Just copy entire parent genomes
             babyF = father;
             babyM = mother;
         }
         else
         {
+            // Perform crossover between father and mother for each baby
             babyF.CrossoverAttributes(father, mother);
             babyM.CrossoverAttributes(father, mother);
-
-            /*
-            System.Random rnd = new System.Random();
-
-            // Choose point at which genes come from mother instead of father
-            int crossoverPoint = rnd.Next(0, chromosomeLength - 1);
-
-            // Set new genes before crossover point
-            for (int i = 0; i < crossoverPoint; i++)
-            {
-                babyF.Add(father[i]);
-                babyM.Add(mother[i]);
-            }
-
-            // Set new genes after crossover point
-            for (int i = crossoverPoint; i < mother.Count; i++)
-            {
-                babyF.Add(mother[i]);
-                babyM.Add(father[i]);
-            }
-            */
         }
     }
 
     private void CrossoverAndMutate()
     {
-        int newEnemiesCount = 0;
+        int newlyCreatedEnemies = 0;
 
-        while (newEnemiesCount < populationSize - 1)
+        while (newlyCreatedEnemies < populationSize - 1)
         {
             Individual[] parents = new Individual[2];
             Individual[] babies = new Individual[2];
+            
+            // Select 2 parents
+            parents[0] = prevPopulation[newlyCreatedEnemies];
+            parents[1] = prevPopulation[newlyCreatedEnemies + 1];
 
-            parents[0] = livingPopulation[newEnemiesCount];
-            parents[1] = livingPopulation[newEnemiesCount + 1];
-
+            // Create 2 new baby individuals
             for (int i = 0; i < babies.Length; i++)
             {
-                babies[i] = new Individual(enemyShips[i]);
+                // Set the spawn position to be at a random x value along the top of the screen
+                Vector3 spawnPosition = new Vector3(Random.Range(gc.MinXSpawn, gc.MaxXSpawn), 0, gc.spawnValues.z);
+                Quaternion spawnRotation = Quaternion.identity;
+
+                GameObject newEnemy = Instantiate(enemyShipPrefab, spawnPosition, spawnRotation);
+                babies[i] = new Individual(newEnemy);
             }
 
+            // Perform crossover of parents to create 2 babies
+            Crossover(parents[0], parents[1], babies[0], babies[1]);
             
-
-            /* 
-            List<int>[] pBits = new List<int>[parents.Length];
-            List<int>[] b = new List<int>[babies.Length];
-
-            for (int i = 0; i < parents.Length; i++)
-            {
-                individualToBits(parents[i], pBits[i]);
-                
-                Debug.Log("p[" + i + "] = " + string.Join(",", pBits[i].Select(n => n.ToString()).ToArray()));
-            }
-
-            for (int i = 0; i <babies.Length; i++)
-            {
-                b[i] = new List<int>();
-            }
-
-            Crossover(pBits[0], pBits[1], b[0], b[1]);
-            
-            Debug.Log("b[0]: " + string.Join(",", b[0].Select(n => n.ToString()).ToArray()) + " b[1]: " + string.Join(",", b[1].Select(n => n.ToString()).ToArray()));
-
             for (int i = 0; i < babies.Length; i++)
             {
-                // Mutate(babies[i]);
+                babies[i].MutateAttributes();
             }
-            */
 
+            // Add the new babies to the new population
             for (int i = 0; i < 2; i++)
             {
                 newPopulation.Add(babies[i]);
             }
             
-            newEnemiesCount += babies.Length;
+            // Add the new babies to the number of new enemies
+            newlyCreatedEnemies += babies.Length;
         }
     }
 
@@ -205,6 +164,6 @@ public class EvolutionController : MonoBehaviour
 
         CrossoverAndMutate();
         
-        StartCoroutine(SpawnPopulation());
+        //StartCoroutine(SpawnPopulation());
     }
 }

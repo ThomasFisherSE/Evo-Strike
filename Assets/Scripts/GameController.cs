@@ -28,6 +28,37 @@ public class GameController : MonoBehaviour {
     public float waveWait;
 
     private EvolutionController evolutionController;
+    private float camDistance;
+
+    private Vector2 bottomCorner, topCorner;
+
+    private float minXSpawn, maxXSpawn, zSpawn;
+
+    public float MinXSpawn
+    {
+        get
+        {
+            return minXSpawn;
+        }
+
+        set
+        {
+            minXSpawn = value;
+        }
+    }
+
+    public float MaxXSpawn
+    {
+        get
+        {
+            return maxXSpawn;
+        }
+
+        set
+        {
+            maxXSpawn = value;
+        }
+    }
 
     private void Start()
     {
@@ -40,6 +71,14 @@ public class GameController : MonoBehaviour {
         UpdateScore();
         StartCoroutine(SpawnWaves());
         evolutionController = GetComponent<EvolutionController>();
+
+        // Get x and y cooridantes of corners of the screen, based off camera distance
+        camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
+        bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
+        topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
+
+        MinXSpawn = bottomCorner.x;
+        MaxXSpawn = topCorner.x;
     }
 
     public void GameOver()
@@ -93,11 +132,6 @@ public class GameController : MonoBehaviour {
 
     IEnumerator SpawnHazards()
     {
-        // Get x and y cooridantes of corners of the screen, based off camera distance
-        float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
-        Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
-        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
-
         // Spawn hazardCount hazards
         for (int i = 0; i < hazardCount; i++)
         {
@@ -105,7 +139,7 @@ public class GameController : MonoBehaviour {
             GameObject hazard = hazards[Random.Range(0, hazards.Length)];
 
             // Set the spawn position to be at a random x value along the top of the screen
-            Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), spawnValues.y, spawnValues.z);
+            Vector3 spawnPosition = new Vector3(Random.Range(MinXSpawn, MaxXSpawn), spawnValues.y, spawnValues.z);
             Quaternion spawnRotation = Quaternion.identity;
 
             Instantiate(hazard, spawnPosition, spawnRotation);
@@ -116,11 +150,6 @@ public class GameController : MonoBehaviour {
     }
   
     IEnumerator SpawnWaves () {
-        // Get x and y cooridantes of corners of the screen, based off camera distance
-        float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
-        Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
-        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
-
         // Wait to spawn first wave
         yield return new WaitForSeconds(startWait);
 

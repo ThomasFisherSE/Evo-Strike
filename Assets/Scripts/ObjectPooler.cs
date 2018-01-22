@@ -43,9 +43,4 @@ public class ObjectPooler : MonoBehaviour {
         // If all objects in pooledObjects were active, return null
         return null;
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }

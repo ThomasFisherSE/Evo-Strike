@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Individual
+public class Individual : MonoBehaviour
 {
     private EvasiveManeuver evasiveManeuver;
     private Mover mover;
@@ -69,6 +69,19 @@ public class Individual
         SetFireRateRange(
             CrossoverPoint(father.MinFireRate, mother.MinFireRate),
             CrossoverPoint(father.MaxFireRate, mother.MaxFireRate));
+    }
+
+    public void MutateAttributes()
+    {
+        RandomVerticalSpeed(speed-speed/10, speed+speed/10);
+
+        RandomDodge(dodge - dodge / 10, dodge + dodge / 10);
+
+        // POSSIBLE BUG: Between current min - 10% and current max + 10%, continuously increasing??
+        // May need to tweak random methods for maneuver time, maneuver wait and fire rate.
+        RandomManeuverTime(minManeuverTime - minManeuverTime / 10, maxManeuverTime + maxManeuverTime / 10);
+        RandomManeuverWait(minManeuverWait - minManeuverWait / 10, maxManeuverWait + maxManeuverWait / 10);
+        RandomFireRate(minFireRate - minFireRate / 10, maxFireRate + maxFireRate / 10);
     }
 
     public void SetRandomAttributes()
