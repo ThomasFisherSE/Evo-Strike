@@ -127,39 +127,44 @@ public class EvolutionController : MonoBehaviour
         {
             Individual[] parents = new Individual[2];
             Individual[] babies = new Individual[2];
-            
+
             // Select 2 parents
+            /*
             parents[0] = prevPopulation[newlyCreatedEnemies];
             parents[1] = prevPopulation[newlyCreatedEnemies + 1];
+            */
+            parents[0] = fittestIndividual;
+            parents[1] = prevPopulation[newlyCreatedEnemies];
 
             // Create 2 new baby individuals
-            for (int i = 0; i < babies.Length; i++)
+            for (int j = 0; j < babies.Length; j++)
             {
                 // Set the spawn position to be at a random x value along the top of the screen
                 Vector3 spawnPosition = new Vector3(Random.Range(gc.MinXSpawn, gc.MaxXSpawn), 0, gc.spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
 
                 GameObject newEnemy = Instantiate(enemyShipPrefab, spawnPosition, spawnRotation);
-                babies[i] = new Individual(newEnemy);
+                babies[j] = new Individual(newEnemy);
+
+                newlyCreatedEnemies++;
             }
 
             // Perform crossover of parents to create 2 babies
             Crossover(parents[0], parents[1], babies[0], babies[1]);
-            
-            for (int i = 0; i < babies.Length; i++)
+
+            for (int j = 0; j < babies.Length; j++)
             {
-                babies[i].MutateAttributes();
+                babies[j].MutateAttributes();
             }
 
             // Add the new babies to the new population
-            for (int i = 0; i < 2; i++)
+            for (int j = 0; j < 2; j++)
             {
-                livingPopulation.Add(babies[i]);
+                livingPopulation.Add(babies[j]);
             }
-            
-            // Add the new babies to the number of new enemies
-            newlyCreatedEnemies += babies.Length;
         }
+
+        Debug.Log(livingPopulation.Count + " enemies created.");
 
         prevPopulation.Clear();
     }
