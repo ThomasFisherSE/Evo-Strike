@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Individual : MonoBehaviour
 {
+    public const float MUTATION_MULT = 0.1f;
+
     private EvasiveManeuver evasiveManeuver;
     private Mover mover;
     private WeaponController weaponController;
@@ -17,27 +19,36 @@ public class Individual : MonoBehaviour
     private float fitness;
 
     // Evasive Maneuver attribute boundaries
-    private int minDodgeBound = 0, maxDodgeBound = 15;
-    private float minManeuverTimeBound = 0.01f, maxManeuverTimeBound = 2.0f;
-    private float minManeuverWaitBound = 0.0f, maxManeuverWaitBound = 2.0f;
+    private int minDodgeBound = 0, maxDodgeBound = 10;
+    private float minManeuverTimeBound = 0.1f, maxManeuverTimeBound = 2.0f;
+    private float minManeuverWaitBound = 0.1f, maxManeuverWaitBound = 3.0f;
 
     // Mover attribute boundaries
-    private float minSpeedBound = -15.0f, maxSpeedBound = -3f;
+    private float minSpeedBound = -6.0f, maxSpeedBound = -2f;
 
     // Weapon Controller attribute boundaries
-    private float minFireRateBound = 0.1f, maxFireRateBound = 2.0f;
+    private float minFireRateBound = 1.5f, maxFireRateBound = 4.0f;
+
+    private float creationTime, lifetime;
 
     public Individual(GameObject enemyShipObject)
     {
-        enemyShip = enemyShipObject;
-        if (enemyShip != null)
+        EnemyShip = enemyShipObject;
+        if (EnemyShip != null)
         {
-            evasiveManeuver = enemyShip.GetComponent<EvasiveManeuver>();
-            mover = enemyShip.GetComponent<Mover>();
-            weaponController = enemyShip.GetComponent<WeaponController>();
+            evasiveManeuver = EnemyShip.GetComponent<EvasiveManeuver>();
+            mover = EnemyShip.GetComponent<Mover>();
+            weaponController = EnemyShip.GetComponent<WeaponController>();
 
             SetRandomAttributes();
         }
+
+        creationTime = Time.time;
+    }
+
+    public void Complete()
+    {
+        lifetime = Time.time - creationTime;
     }
 
     private float CrossoverPoint(float x, float y)
@@ -48,6 +59,7 @@ public class Individual : MonoBehaviour
     public float CalculateFitness()
     {
         // Calculate fitness here
+        Fitness = lifetime;
 
         return Fitness;
     }
@@ -79,14 +91,16 @@ public class Individual : MonoBehaviour
 
         // POSSIBLE BUG: Between current min - 10% and current max + 10%, continuously increasing??
         // May need to tweak random methods for maneuver time, maneuver wait and fire rate.
-        RandomManeuverTime(minManeuverTime - minManeuverTime / 10, maxManeuverTime + maxManeuverTime / 10);
-        RandomManeuverWait(minManeuverWait - minManeuverWait / 10, maxManeuverWait + maxManeuverWait / 10);
-        RandomFireRate(minFireRate - minFireRate / 10, maxFireRate + maxFireRate / 10);
+        RandomManeuverTime(minManeuverTime - minManeuverTime * MUTATION_MULT, maxManeuverTime + maxManeuverTime * MUTATION_MULT);
+        RandomManeuverWait(minManeuverWait - minManeuverWait * MUTATION_MULT, maxManeuverWait + maxManeuverWait * MUTATION_MULT);
+        RandomFireRate(minFireRate - minFireRate * MUTATION_MULT, maxFireRate + maxFireRate * MUTATION_MULT);
     }
+
+    /* Set Random Attributes */
 
     public void SetRandomAttributes()
     {
-        if (enemyShip == null)
+        if (EnemyShip == null)
         {
             return;
         }
@@ -138,7 +152,7 @@ public class Individual : MonoBehaviour
 
     public void SetSpeed(float s)
     {
-        mover.setSpeed(s);
+        mover.SetSpeed(s);
         Speed = s;
     }
 
@@ -413,6 +427,19 @@ public class Individual : MonoBehaviour
         set
         {
             fitness = value;
+        }
+    }
+
+    public GameObject EnemyShip
+    {
+        get
+        {
+            return enemyShip;
+        }
+
+        set
+        {
+            enemyShip = value;
         }
     }
 }

@@ -15,6 +15,8 @@ public class WeaponController : MonoBehaviour {
 
     private AudioSource audioSource;
 
+    private int numberOfShots = 0;
+
 	// Use this for initialization
 	void Start () {
         float myFireRate = Random.Range(fireRate.x, fireRate.y);
@@ -29,5 +31,7 @@ public class WeaponController : MonoBehaviour {
         {
             audioSource.Play();
         }
+
+        numberOfShots++;
     }
 }

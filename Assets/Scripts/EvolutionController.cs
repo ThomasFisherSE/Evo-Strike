@@ -16,7 +16,6 @@ public class EvolutionController : MonoBehaviour
     public GameObject enemyShipPrefab;
 
     private List<GameObject> enemyShips = new List<GameObject>();
-    private List<Individual> newPopulation = new List<Individual>();
     private List<Individual> livingPopulation = new List<Individual>();
     private List<Individual> prevPopulation = new List<Individual>();
     private int chromosomeLength;
@@ -40,7 +39,7 @@ public class EvolutionController : MonoBehaviour
 
         for (int i = 0; i < populationSize; i++)
         {
-            createIndividual();
+            CreateIndividual();
 
             // Wait before spawning next enemy
             yield return new WaitForSeconds(spawnWait);
@@ -48,9 +47,8 @@ public class EvolutionController : MonoBehaviour
     }
 
     // Instantiate enemy ship and pair it with an Individual object.
-    private void createIndividual()
+    private void CreateIndividual()
     {
-
         // Set the spawn position to be at a random x value along the top of the screen
         Vector3 spawnPosition = new Vector3(Random.Range(gc.MinXSpawn, gc.MaxXSpawn), 0, gc.spawnValues.z);
         Quaternion spawnRotation = Quaternion.identity;
@@ -73,25 +71,29 @@ public class EvolutionController : MonoBehaviour
 
         for (int i = 0; i < population.Count; i++)
         {
-            // Find the fittest individual
-            if (population[i] != null)
-            {
-                // Individual individual = population[i].GetComponent<Individual>();
-                Individual individual = population[i];
+            Individual currentIndividual = population[i];
 
-                if (individual.CalculateFitness() > bestFitnessScore)
-                {
-                    fittestIndividual = population[i];
-                    // bestFitnessScore = population[i].GetComponent<Individual>().GetFitness();
-                    bestFitnessScore = population[i].Fitness;
-                }
+            if (currentIndividual.CalculateFitness() > bestFitnessScore)
+            {
+                fittestIndividual = currentIndividual;
+                bestFitnessScore = currentIndividual.Fitness;
             }
         }
+
+        Debug.Log("Highest Fitness Score of Wave: " + bestFitnessScore);
     }
 
-    public void AddCompletedEnemy(Individual enemy)
+    public void AddCompletedEnemy(GameObject enemy)
     {
-        prevPopulation.Add(enemy);
+        for (int i = 0; i < livingPopulation.Count; i++)
+        {
+            if (livingPopulation[i].EnemyShip.Equals(enemy))
+            {
+                livingPopulation[i].Complete();
+                prevPopulation.Add(livingPopulation[i]);
+            }
+        }
+
     }
 
     void Remove(Individual individual)
@@ -115,9 +117,11 @@ public class EvolutionController : MonoBehaviour
         }
     }
 
-    private void CrossoverAndMutate()
+    private void EvolveEnemies()
     {
         int newlyCreatedEnemies = 0;
+
+        livingPopulation.Clear();
 
         while (newlyCreatedEnemies < populationSize - 1)
         {
@@ -150,20 +154,20 @@ public class EvolutionController : MonoBehaviour
             // Add the new babies to the new population
             for (int i = 0; i < 2; i++)
             {
-                newPopulation.Add(babies[i]);
+                livingPopulation.Add(babies[i]);
             }
             
             // Add the new babies to the number of new enemies
             newlyCreatedEnemies += babies.Length;
         }
+
+        prevPopulation.Clear();
     }
 
     public void NextGeneration()
     {
-        //UpdateFitnessScores(prevPopulation);
+        UpdateFitnessScores(prevPopulation);
 
-        CrossoverAndMutate();
-        
-        //StartCoroutine(SpawnPopulation());
+        EvolveEnemies();
     }
 }

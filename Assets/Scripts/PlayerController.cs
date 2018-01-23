@@ -8,12 +8,12 @@ public class Boundary
     public float zMin, zMax;
     private float xMin, xMax;
 
-    public float getXMin()
+    public float GetXMin()
     {
         return xMin;
     }
 
-    public float getXMax()
+    public float GetXMax()
     {
         return xMax;
     }
@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour {
         rb.velocity = movement * speed;
 
         rb.position = new Vector3(
-            Mathf.Clamp(rb.position.x, boundary.getXMin(), boundary.getXMax()), 
+            Mathf.Clamp(rb.position.x, boundary.GetXMin(), boundary.GetXMax()), 
             0.0f, 
             Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax));
 

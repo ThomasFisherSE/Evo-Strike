@@ -43,7 +43,7 @@ public class EvasiveManeuver : MonoBehaviour {
         rb.velocity = new Vector3(newManeuver, 0.0f, currentSpeed);
 
         rb.position = new Vector3(
-            Mathf.Clamp(rb.position.x, boundary.getXMin(), boundary.getXMax()),
+            Mathf.Clamp(rb.position.x, boundary.GetXMin(), boundary.GetXMax()),
             0.0f,
             Mathf.Clamp(rb.position.z, boundary.zMin - 1, boundary.zMax));
 
