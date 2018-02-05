@@ -91,6 +91,7 @@ public class EvolutionController : MonoBehaviour
             {
                 livingPopulation[i].Complete();
                 prevPopulation.Add(livingPopulation[i]);
+                Debug.Log("Added " + livingPopulation[i] + " to previous population.");
             }
         }
 
@@ -123,7 +124,7 @@ public class EvolutionController : MonoBehaviour
 
         livingPopulation.Clear();
 
-        while (newlyCreatedEnemies < populationSize - 1)
+        while (newlyCreatedEnemies < prevPopulation.Count - 1)
         {
             Individual[] parents = new Individual[2];
             Individual[] babies = new Individual[2];
@@ -133,6 +134,7 @@ public class EvolutionController : MonoBehaviour
             parents[0] = prevPopulation[newlyCreatedEnemies];
             parents[1] = prevPopulation[newlyCreatedEnemies + 1];
             */
+
             parents[0] = fittestIndividual;
             parents[1] = prevPopulation[newlyCreatedEnemies];
 
@@ -171,6 +173,7 @@ public class EvolutionController : MonoBehaviour
 
     public void NextGeneration()
     {
+        Debug.Log("Updating fitness scores for " + prevPopulation.Count + " enemies.");
         UpdateFitnessScores(prevPopulation);
 
         EvolveEnemies();
