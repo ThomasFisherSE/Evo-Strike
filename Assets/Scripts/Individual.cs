@@ -85,9 +85,8 @@ public class Individual : MonoBehaviour
 
     public void MutateAttributes()
     {
-        RandomVerticalSpeed(speed-speed/10, speed+speed/10);
-
-        RandomDodge(dodge - dodge / 10, dodge + dodge / 10);
+        RandomVerticalSpeed(speed*(1-MUTATION_MULT), speed*(1+MUTATION_MULT));
+        RandomDodge(dodge*(1-MUTATION_MULT), dodge*(dodge+MUTATION_MULT));
 
         // POSSIBLE BUG: Between current min - 10% and current max + 10%, continuously increasing??
         // May need to tweak random methods for maneuver time, maneuver wait and fire rate.
