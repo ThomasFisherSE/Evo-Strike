@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Individual : MonoBehaviour
+public class Individual
 {
     public const float MUTATION_MULT = 0.1f;
 

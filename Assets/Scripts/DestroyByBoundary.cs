@@ -14,7 +14,15 @@ public class DestroyByBoundary : MonoBehaviour {
         {
             if (!other.CompareTag("Controller"))
             {
-                // Debug.Log("DestroyByBoundary: " + other.gameObject.name);
+                if (other.CompareTag("Enemy"))
+                {
+                    GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+                    EvolutionController ec = gameControllerObject.GetComponent<EvolutionController>();
+                    ec.AddCompletedEnemy(other.gameObject);
+                    Debug.Log("Enemy completed by boundary.");
+                }
+
+                Debug.Log("DestroyByBoundary: " + other.gameObject.name);
                 Destroy(other.gameObject);
             }
         }

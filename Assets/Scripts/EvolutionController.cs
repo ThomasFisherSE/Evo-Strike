@@ -23,6 +23,8 @@ public class EvolutionController : MonoBehaviour
     private Individual fittestIndividual;
     private float bestFitnessScore;
 
+    private bool waveComplete;
+
     public void Start()
     {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
@@ -39,7 +41,8 @@ public class EvolutionController : MonoBehaviour
 
         for (int i = 0; i < populationSize; i++)
         {
-            CreateIndividual();
+            Individual newIndividual = NewIndividual();
+            livingPopulation.Add(newIndividual);
 
             // Wait before spawning next enemy
             yield return new WaitForSeconds(spawnWait);
@@ -47,7 +50,7 @@ public class EvolutionController : MonoBehaviour
     }
 
     // Instantiate enemy ship and pair it with an Individual object.
-    private void CreateIndividual()
+    private Individual NewIndividual()
     {
         // Set the spawn position to be at a random x value along the top of the screen
         Vector3 spawnPosition = new Vector3(Random.Range(gc.MinXSpawn, gc.MaxXSpawn), 0, gc.spawnValues.z);
@@ -60,8 +63,7 @@ public class EvolutionController : MonoBehaviour
         // Create individual
         Individual newIndividual = new Individual(newEnemy);
         newIndividual.SetRandomAttributes();
-
-        livingPopulation.Add(newIndividual);
+        return newIndividual;
     }
 
     void UpdateFitnessScores(List<Individual> population)
@@ -80,7 +82,7 @@ public class EvolutionController : MonoBehaviour
             }
         }
 
-        Debug.Log("Highest Fitness Score of Wave: " + bestFitnessScore);
+        Debug.Log("Highest fitness score of wave: " + bestFitnessScore);
     }
 
     public void AddCompletedEnemy(GameObject enemy)
@@ -91,19 +93,22 @@ public class EvolutionController : MonoBehaviour
             {
                 livingPopulation[i].Complete();
                 prevPopulation.Add(livingPopulation[i]);
-                Debug.Log("Added " + livingPopulation[i] + " to previous population.");
+                livingPopulation.Remove(livingPopulation[i]);
             }
         }
 
-    }
+        if (livingPopulation.Count == 0)
+        {
+            WaveComplete = true;
+        }
 
-    void Remove(Individual individual)
-    {
-        livingPopulation.Remove(individual);
+        //Debug.Log("Living population size = " + livingPopulation.Count);
     }
 
     void Crossover(Individual father, Individual mother, Individual babyF, Individual babyM)
     {
+        //Debug.Log("Performing crossover with " + father + " and " + mother + ".");
+
         if (UnityEngine.Random.value > crossoverRate || father == mother)
         {
             // Just copy entire parent genomes
@@ -118,14 +123,16 @@ public class EvolutionController : MonoBehaviour
         }
     }
 
-    private void EvolveEnemies()
+    private IEnumerator EvolveEnemies()
     {
         int newlyCreatedEnemies = 0;
 
         livingPopulation.Clear();
 
-        while (newlyCreatedEnemies < prevPopulation.Count - 1)
+        while (newlyCreatedEnemies < populationSize)
         {
+            int index = 0;
+
             Individual[] parents = new Individual[2];
             Individual[] babies = new Individual[2];
 
@@ -136,7 +143,7 @@ public class EvolutionController : MonoBehaviour
             */
 
             parents[0] = fittestIndividual;
-            parents[1] = prevPopulation[newlyCreatedEnemies];
+            parents[1] = prevPopulation[index];
 
             // Create 2 new baby individuals
             for (int j = 0; j < babies.Length; j++)
@@ -149,6 +156,8 @@ public class EvolutionController : MonoBehaviour
                 babies[j] = new Individual(newEnemy);
 
                 newlyCreatedEnemies++;
+             
+                yield return new WaitForSeconds(spawnWait);
             }
 
             // Perform crossover of parents to create 2 babies
@@ -164,6 +173,8 @@ public class EvolutionController : MonoBehaviour
             {
                 livingPopulation.Add(babies[j]);
             }
+
+            index++;
         }
 
         Debug.Log(livingPopulation.Count + " enemies created.");
@@ -176,6 +187,20 @@ public class EvolutionController : MonoBehaviour
         Debug.Log("Updating fitness scores for " + prevPopulation.Count + " enemies.");
         UpdateFitnessScores(prevPopulation);
 
-        EvolveEnemies();
+        WaveComplete = false;
+        StartCoroutine(EvolveEnemies());
+    }
+
+    public bool WaveComplete
+    {
+        get
+        {
+            return waveComplete;
+        }
+
+        set
+        {
+            waveComplete = value;
+        }
     }
 }

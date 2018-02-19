@@ -181,7 +181,14 @@ public class GameController : MonoBehaviour {
             AddScore(waveNumber * 100);
 
             // Wait before spawning next wave
-            yield return new WaitForSeconds(waveWait);
+            while(!evolutionController.WaveComplete)
+            {
+                yield return null;
+            }
+
+            //yield return new WaitUntil(() => evolutionController.WaveComplete() == true);
+
+            //yield return new WaitForSeconds(waveWait);
         }
 
         /*
@@ -209,7 +216,7 @@ public class GameController : MonoBehaviour {
             yield return new WaitForSeconds(waveWait);
         }
         */
-	}
+    }
 
     IEnumerator AddScoreMessage(string message, float delay)
     {
