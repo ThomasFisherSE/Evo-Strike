@@ -187,8 +187,7 @@ public class GameController : MonoBehaviour {
             }
 
             //yield return new WaitUntil(() => evolutionController.WaveComplete() == true);
-
-            //yield return new WaitForSeconds(waveWait);
+            yield return new WaitForSeconds(waveWait);
         }
 
         /*
