@@ -18,11 +18,11 @@ public class DestroyByBoundary : MonoBehaviour {
                 {
                     GameObject gameControllerObject = GameObject.FindWithTag("GameController");
                     EvolutionController ec = gameControllerObject.GetComponent<EvolutionController>();
-                    ec.AddCompletedEnemy(other.gameObject);
-                    Debug.Log("Enemy completed by boundary.");
+                    ec.AddCompletedEnemy(other.gameObject, true);
+                    //Debug.Log("Enemy completed by hitting boundary.");
                 }
 
-                Debug.Log("DestroyByBoundary: " + other.gameObject.name);
+                //Debug.Log("DestroyByBoundary: " + other.gameObject.name);
                 Destroy(other.gameObject);
             }
         }

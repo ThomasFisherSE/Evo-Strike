@@ -75,7 +75,7 @@ public class EvolutionController : MonoBehaviour
         {
             Individual currentIndividual = population[i];
 
-            if (currentIndividual.CalculateFitness() > bestFitnessScore)
+            if (currentIndividual.CalculateFitness(Individual.SURVIVAL_FUNC) > bestFitnessScore)
             {
                 fittestIndividual = currentIndividual;
                 bestFitnessScore = currentIndividual.Fitness;
@@ -85,13 +85,13 @@ public class EvolutionController : MonoBehaviour
         Debug.Log("Highest fitness score of wave: " + bestFitnessScore);
     }
 
-    public void AddCompletedEnemy(GameObject enemy)
+    public void AddCompletedEnemy(GameObject enemy, bool survivedWave)
     {
         for (int i = 0; i < livingPopulation.Count; i++)
         {
             if (livingPopulation[i].EnemyShip.Equals(enemy))
             {
-                livingPopulation[i].Complete();
+                livingPopulation[i].Complete(survivedWave);
                 prevPopulation.Add(livingPopulation[i]);
                 livingPopulation.Remove(livingPopulation[i]);
             }
@@ -107,16 +107,21 @@ public class EvolutionController : MonoBehaviour
 
     void Crossover(Individual father, Individual mother, Individual babyF, Individual babyM)
     {
-        //Debug.Log("Performing crossover with " + father + " and " + mother + ".");
+        float rand = UnityEngine.Random.value;
 
-        if (UnityEngine.Random.value > crossoverRate || father == mother)
+        if (rand > crossoverRate || father == mother)
         {
+            Debug.Log("Crossover RNG = " + rand + "(>" + crossoverRate + 
+                ", so setting baby to equal parent)");
             // Just copy entire parent genomes
             babyF = father;
+            Debug.Log("babyF.Speed = " + babyF.Speed + " | father.Speed = " + father.Speed +
+                " | babyM.Speed = " + babyM.Speed + " mother.Speed = " + mother.Speed);
             babyM = mother;
         }
         else
         {
+            Debug.Log("Crossover RNG  = " + rand + "(<" + crossoverRate + ", so performing average crossover.");
             // Perform crossover between father and mother for each baby
             babyF.CrossoverAttributes(father, mother);
             babyM.CrossoverAttributes(father, mother);
@@ -163,10 +168,19 @@ public class EvolutionController : MonoBehaviour
             // Perform crossover of parents to create 2 babies
             Crossover(parents[0], parents[1], babies[0], babies[1]);
 
+            Debug.Log("parents[0] speed = " + parents[0].Speed +
+                " | parents[1] speed = " + parents[1].Speed + 
+                "\nbabies[0] speed = " + babies[0].Speed +
+                " | babies[1] speed = " + babies[1].Speed);
+
             for (int j = 0; j < babies.Length; j++)
             {
                 babies[j].MutateAttributes();
+                
             }
+
+            Debug.Log("Mutated babies to speeds of " + 
+                babies[0].Speed + " and " + babies[1].Speed + " respectively.)");
 
             // Add the new babies to the new population
             for (int j = 0; j < 2; j++)

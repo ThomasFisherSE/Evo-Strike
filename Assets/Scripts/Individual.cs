@@ -6,6 +6,8 @@ public class Individual
 {
     public const float MUTATION_MULT = 0.1f;
 
+    public const int LIFETIME_FUNC = 0, SURVIVAL_FUNC = 1;
+
     private EvasiveManeuver evasiveManeuver;
     private Mover mover;
     private WeaponController weaponController;
@@ -31,6 +33,8 @@ public class Individual
 
     private float creationTime, lifetime;
 
+    private bool survived;
+
     public Individual(GameObject enemyShipObject)
     {
         EnemyShip = enemyShipObject;
@@ -46,9 +50,10 @@ public class Individual
         creationTime = Time.time;
     }
 
-    public void Complete()
+    public void Complete(bool survivedWave)
     {
         lifetime = Time.time - creationTime;
+        survived = survivedWave;
     }
 
     private float CrossoverPoint(float x, float y)
@@ -56,12 +61,34 @@ public class Individual
         return (x + y) / 2;
     }
 
-    public float CalculateFitness()
+    public float LifetimeFitness()
     {
-        // Calculate fitness here
         Fitness = lifetime;
-
         return Fitness;
+    }
+    
+    public float SurvivalFitness()
+    {
+        Fitness = System.Convert.ToInt32(survived);
+        return Fitness;
+    }
+
+    public float CalculateFitness(int selectedFunction)
+    {
+        // Use the selected fitness function (from method parameters)
+
+        switch (selectedFunction)
+        {
+            case 0:
+                return LifetimeFitness();
+
+            case 1:
+                return SurvivalFitness();
+
+            // Default fitness function
+            default:
+                return LifetimeFitness();
+        }
     }
 
     public void CrossoverAttributes(Individual father, Individual mother)
