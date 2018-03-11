@@ -158,7 +158,7 @@ public class GameController : MonoBehaviour {
         StartCoroutine(SpawnHazards());
         
         // Spawn initial population
-        StartCoroutine(evolutionController.SpawnPopulation());
+        StartCoroutine(evolutionController.SpawnInitialPopulation());
         
         while (true)
         {
@@ -166,6 +166,8 @@ public class GameController : MonoBehaviour {
             {
                 break;
             }
+
+            Debug.Log("************* Spawning next wave ************");
 
             if (waveNumber != 0 && !gameOver)
             {
@@ -186,8 +188,10 @@ public class GameController : MonoBehaviour {
                 yield return null;
             }
 
+
             //yield return new WaitUntil(() => evolutionController.WaveComplete() == true);
             yield return new WaitForSeconds(waveWait);
+        
         }
 
         /*

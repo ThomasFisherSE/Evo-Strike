@@ -23,6 +23,8 @@ public class EvolutionController : MonoBehaviour
     private Individual fittestIndividual;
     private float bestFitnessScore;
 
+    private int enemiesLeft;
+    private bool spawningComplete = false;
     private bool waveComplete;
 
     public void Start()
@@ -31,9 +33,10 @@ public class EvolutionController : MonoBehaviour
         gc = gameControllerObject.GetComponent<GameController>();
     }
 
-    public IEnumerator SpawnPopulation()
+    public IEnumerator SpawnInitialPopulation()
     {
         generation++;
+        enemiesLeft = populationSize;
         Debug.Log("Spawning: Generation " + generation);
 
         // Clear the populatuion
@@ -47,6 +50,8 @@ public class EvolutionController : MonoBehaviour
             // Wait before spawning next enemy
             yield return new WaitForSeconds(spawnWait);
         }
+
+        spawningComplete = true;
     }
 
     // Instantiate enemy ship and pair it with an Individual object.
@@ -75,69 +80,88 @@ public class EvolutionController : MonoBehaviour
         {
             Individual currentIndividual = population[i];
 
-            if (currentIndividual.CalculateFitness(Individual.SURVIVAL_FUNC) > bestFitnessScore)
+            if (currentIndividual.CalculateFitness(Individual.LIFETIME_FUNC) > bestFitnessScore)
             {
                 fittestIndividual = currentIndividual;
                 bestFitnessScore = currentIndividual.Fitness;
             }
         }
 
-        Debug.Log("Highest fitness score of wave: " + bestFitnessScore);
+        //Debug.Log("Highest fitness score of wave: " + bestFitnessScore);
     }
 
     public void AddCompletedEnemy(GameObject enemy, bool survivedWave)
     {
+        Debug.Log("Adding completed enemy whilst livingPopulation size is " + livingPopulation.Count);
         for (int i = 0; i < livingPopulation.Count; i++)
         {
             if (livingPopulation[i].EnemyShip.Equals(enemy))
             {
                 livingPopulation[i].Complete(survivedWave);
                 prevPopulation.Add(livingPopulation[i]);
-                livingPopulation.Remove(livingPopulation[i]);
+                enemiesLeft--;
+                Debug.Log("[AddCompletedEnemy] " + enemiesLeft + " enemies remaining.");
+                livingPopulation.Remove(livingPopulation[i]);     
             }
         }
 
-        if (livingPopulation.Count == 0)
+        if (enemiesLeft == 0 && spawningComplete)
         {
             WaveComplete = true;
+            Debug.Log("[AddCompletedEnemy] Wave Complete");
         }
 
-        //Debug.Log("Living population size = " + livingPopulation.Count);
+        //Debug.Log("[AddCompletedEnemy] Prev population size = " + prevPopulation.Count);
     }
 
     void Crossover(Individual father, Individual mother, Individual babyF, Individual babyM)
     {
         float rand = UnityEngine.Random.value;
 
-        if (rand > crossoverRate || father == mother)
+        if (rand < crossoverRate || father == mother)
         {
-            Debug.Log("Crossover RNG = " + rand + "(>" + crossoverRate + 
-                ", so setting baby to equal parent)");
+            /*Debug.Log("Crossover RNG = " + rand + "(>" + crossoverRate + 
+                ", so setting baby to equal parent)");*/
             // Just copy entire parent genomes
             babyF = father;
-            Debug.Log("babyF.Speed = " + babyF.Speed + " | father.Speed = " + father.Speed +
-                " | babyM.Speed = " + babyM.Speed + " mother.Speed = " + mother.Speed);
             babyM = mother;
+            /*Debug.Log("babyF.Speed = " + babyF.Speed + " | father.Speed = " + father.Speed +
+                " | babyM.Speed = " + babyM.Speed + " mother.Speed = " + mother.Speed);*/
         }
         else
         {
-            Debug.Log("Crossover RNG  = " + rand + "(<" + crossoverRate + ", so performing average crossover.");
+            //Debug.Log("Crossover RNG  = " + rand + "(<" + crossoverRate + ", so performing average crossover.");
             // Perform crossover between father and mother for each baby
             babyF.CrossoverAttributes(father, mother);
             babyM.CrossoverAttributes(father, mother);
         }
     }
 
+    
+
     private IEnumerator EvolveEnemies()
     {
         int newlyCreatedEnemies = 0;
+        spawningComplete = false;
+        enemiesLeft = populationSize;
 
         livingPopulation.Clear();
 
+        List<Individual> potentialParents = new List<Individual>(prevPopulation.Count);
+
+        prevPopulation.ForEach((item) =>
+        {
+            potentialParents.Add(new Individual(item));
+        });
+
+        prevPopulation.Clear();
+
+        Debug.Log("Potential parents: " + potentialParents.Count);
+
+        int index = 0;
+
         while (newlyCreatedEnemies < populationSize)
         {
-            int index = 0;
-
             Individual[] parents = new Individual[2];
             Individual[] babies = new Individual[2];
 
@@ -148,7 +172,10 @@ public class EvolutionController : MonoBehaviour
             */
 
             parents[0] = fittestIndividual;
-            parents[1] = prevPopulation[index];
+
+            Debug.Log("Number of potential parents: " + potentialParents.Count + " | Index = " + index);
+
+            parents[1] = potentialParents[index];
 
             // Create 2 new baby individuals
             for (int j = 0; j < babies.Length; j++)
@@ -168,19 +195,18 @@ public class EvolutionController : MonoBehaviour
             // Perform crossover of parents to create 2 babies
             Crossover(parents[0], parents[1], babies[0], babies[1]);
 
-            Debug.Log("parents[0] speed = " + parents[0].Speed +
+            /*Debug.Log("parents[0] speed = " + parents[0].Speed +
                 " | parents[1] speed = " + parents[1].Speed + 
                 "\nbabies[0] speed = " + babies[0].Speed +
-                " | babies[1] speed = " + babies[1].Speed);
+                " | babies[1] speed = " + babies[1].Speed);*/
 
             for (int j = 0; j < babies.Length; j++)
             {
-                babies[j].MutateAttributes();
-                
+                babies[j].MutateAttributes();  
             }
 
-            Debug.Log("Mutated babies to speeds of " + 
-                babies[0].Speed + " and " + babies[1].Speed + " respectively.)");
+            /*Debug.Log("Mutated babies to speeds of " + 
+                babies[0].Speed + " and " + babies[1].Speed + " respectively.)");*/
 
             // Add the new babies to the new population
             for (int j = 0; j < 2; j++)
@@ -191,16 +217,16 @@ public class EvolutionController : MonoBehaviour
             index++;
         }
 
-        Debug.Log(livingPopulation.Count + " enemies created.");
+        spawningComplete = true;
+        Debug.Log("**** Spawning Compete, " + newlyCreatedEnemies + " enemies created. ****");
 
-        prevPopulation.Clear();
+        potentialParents.Clear();
     }
 
     public void NextGeneration()
     {
         Debug.Log("Updating fitness scores for " + prevPopulation.Count + " enemies.");
         UpdateFitnessScores(prevPopulation);
-
         WaveComplete = false;
         StartCoroutine(EvolveEnemies());
     }

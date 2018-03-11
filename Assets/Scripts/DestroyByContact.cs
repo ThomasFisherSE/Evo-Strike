@@ -58,7 +58,11 @@ public class DestroyByContact : MonoBehaviour {
 
         if (gameObject.CompareTag("Enemy"))
         {
-            evolutionController.AddCompletedEnemy(gameObject, false);
+            if (gameObject != null)
+            {
+                evolutionController.AddCompletedEnemy(gameObject, false);
+            }
+            
             //gameObject.SetActive(false);
             //Debug.Log(gameObject + " disabled.");
             Destroy(gameObject);

@@ -34,6 +34,7 @@ public class Individual
     private float creationTime, lifetime;
 
     private bool survived;
+    private Individual item;
 
     public Individual(GameObject enemyShipObject)
     {
@@ -48,6 +49,27 @@ public class Individual
         }
 
         creationTime = Time.time;
+    }
+
+    public Individual(Individual copy)
+    {
+        CopyGenes(copy);
+    }
+
+    public void CopyGenes(Individual src)
+    {
+        Speed = src.Speed;
+
+        Dodge = src.Dodge;
+
+        MinManeuverTime = src.MinManeuverTime;
+        MaxManeuverTime = src.MaxManeuverTime;
+
+        MinManeuverWait = src.MinManeuverWait;
+        MaxManeuverWait = src.MaxManeuverWait;
+
+        MinFireRate = src.MinFireRate;
+        MaxFireRate = src.MaxFireRate;
     }
 
     public void Complete(bool survivedWave)
