@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponController : MonoBehaviour {
+public class WeaponController : MonoBehaviour
+{
 
     public GameObject shot;
     public Transform shotSpawn;
@@ -15,23 +16,54 @@ public class WeaponController : MonoBehaviour {
 
     private AudioSource audioSource;
 
-    private int numberOfShots = 0;
+    private int nbShots;
+    private int nbShotsOnTarget;
 
-	// Use this for initialization
-	void Start () {
+    private float accuracy; // Accuracy between 0 and 1
+
+    // Use this for initialization
+    void Start()
+    {
         float myFireRate = Random.Range(fireRate.x, fireRate.y);
+        nbShots = 0;
+        nbShotsOnTarget = 0;
         audioSource = GetComponent<AudioSource>();
         InvokeRepeating("Fire", delay, myFireRate);
-	}
-	
-	void Fire()
-    {
-        Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-        if (audioSource != null)
-        {
-            audioSource.Play();
-        }
+    }
 
-        numberOfShots++;
+    void Fire()
+    {
+        if (this.gameObject.activeSelf)
+        {
+            nbShots++;
+
+            GameObject projectile = Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+
+            projectile.GetComponent<Projectile>().SetWeaponController(this);
+
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+        }
+    }
+
+    public void OnTargetShot()
+    {
+        nbShotsOnTarget++;
+
+        accuracy = nbShotsOnTarget / (float)nbShots;
+
+        //Debug.Log("nbShotsOnTarget = " + nbShotsOnTarget + " | nbShots = " + nbShots + "\nShot on target, new accuracy = " + accuracy);
+    }
+
+    public float GetAccuracy()
+    {
+        return accuracy;
+    }
+
+    public int GetNbShotsOnTarget()
+    {
+        return nbShotsOnTarget;
     }
 }

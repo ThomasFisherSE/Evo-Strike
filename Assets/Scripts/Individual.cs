@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Individual
 {
+    #region Constants
     public const float MUTATION_MULT = 0.1f;
 
-    public const int LIFETIME_FUNC = 0, SURVIVAL_FUNC = 1;
-
+    public const int LIFETIME_FUNC = 0, SURVIVAL_FUNC = 1, ACCURACY_FUNC = 2, NB_ON_TARGET_FUNC = 3;
+    #endregion
+    #region Properties
     private EvasiveManeuver evasiveManeuver;
     private Mover mover;
     private WeaponController weaponController;
@@ -35,7 +37,9 @@ public class Individual
 
     private bool survived;
     private Individual item;
+    #endregion
 
+    #region Constructors
     public Individual(GameObject enemyShipObject)
     {
         EnemyShip = enemyShipObject;
@@ -55,6 +59,7 @@ public class Individual
     {
         CopyGenes(copy);
     }
+#endregion
 
     public void CopyGenes(Individual src)
     {
@@ -83,36 +88,6 @@ public class Individual
         return (x + y) / 2;
     }
 
-    public float LifetimeFitness()
-    {
-        Fitness = lifetime;
-        return Fitness;
-    }
-    
-    public float SurvivalFitness()
-    {
-        Fitness = System.Convert.ToInt32(survived);
-        return Fitness;
-    }
-
-    public float CalculateFitness(int selectedFunction)
-    {
-        // Use the selected fitness function (from method parameters)
-
-        switch (selectedFunction)
-        {
-            case 0:
-                return LifetimeFitness();
-
-            case 1:
-                return SurvivalFitness();
-
-            // Default fitness function
-            default:
-                return LifetimeFitness();
-        }
-    }
-
     public void CrossoverAttributes(Individual father, Individual mother)
     {
         SetSpeed(CrossoverPoint(father.Speed, mother.Speed));
@@ -134,7 +109,7 @@ public class Individual
 
     public void MutateAttributes()
     {
-        RandomVerticalSpeed(speed-speed/10, speed+speed/10);
+        RandomVerticalSpeed(speed - speed / 10, speed + speed / 10);
 
         RandomDodge(dodge - dodge / 10, dodge + dodge / 10);
 
@@ -145,6 +120,62 @@ public class Individual
         RandomFireRate(minFireRate - minFireRate * MUTATION_MULT, maxFireRate + maxFireRate * MUTATION_MULT);
     }
 
+    #region Fitness Functions
+
+    public float LifetimeFunc()
+    {
+        return lifetime;
+    }
+    
+    public float SurvivalFunc()
+    {
+        return System.Convert.ToInt32(survived);
+    }
+
+    public float AccuracyFunc()
+    {
+        return weaponController.GetAccuracy();
+    }
+
+    public float NbOnTargetFunc()
+    {
+        return weaponController.GetNbShotsOnTarget();
+    }
+
+    public float CalculateFitness(int selectedFunction)
+    {
+        // Use the selected fitness function (from method parameters)
+
+        switch (selectedFunction)
+        {
+            case LIFETIME_FUNC:
+                Fitness = LifetimeFunc();
+                break;
+
+            case SURVIVAL_FUNC:
+                Fitness =SurvivalFunc();
+                break;
+
+            case ACCURACY_FUNC:
+                Fitness = AccuracyFunc();
+                break;
+
+            case NB_ON_TARGET_FUNC:
+                Fitness = NbOnTargetFunc();
+                break;
+
+            // Default fitness function
+            default:
+                Fitness = LifetimeFunc();
+                break;
+        }
+
+        return Fitness;
+    }
+
+#endregion
+
+    #region Set Random Attributes
     /* Set Random Attributes */
 
     public void SetRandomAttributes()
@@ -196,8 +227,9 @@ public class Individual
         float myMaxFireRate = Random.Range(myMinFireRate, maxFireRate);
         SetFireRateRange(myMinFireRate, myMaxFireRate);
     }
+#endregion
 
-    /** Accessors and Mutators **/
+    #region Accessors and Mutators
 
     public void SetSpeed(float s)
     {
@@ -232,6 +264,7 @@ public class Individual
         MaxFireRate = max;
     }
 
+    #region Field Accesors and Mutators
     public int MinDodgeBound
     {
         get
@@ -491,4 +524,6 @@ public class Individual
             enemyShip = value;
         }
     }
+    #endregion
+#endregion
 }

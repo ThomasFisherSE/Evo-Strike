@@ -74,25 +74,27 @@ public class EvolutionController : MonoBehaviour
     void UpdateFitnessScores(List<Individual> population)
     {
         fittestIndividual = population[0];
-        bestFitnessScore = 0;
+        bestFitnessScore = 0.0f;
 
         for (int i = 0; i < population.Count; i++)
         {
             Individual currentIndividual = population[i];
 
-            if (currentIndividual.CalculateFitness(Individual.LIFETIME_FUNC) > bestFitnessScore)
+            float currentFitness = currentIndividual.CalculateFitness(Individual.NB_ON_TARGET_FUNC);
+            
+            if (currentFitness > bestFitnessScore)
             {
                 fittestIndividual = currentIndividual;
                 bestFitnessScore = currentIndividual.Fitness;
+                //Debug.Log("New best fitness = " + bestFitnessScore);
             }
         }
 
-        //Debug.Log("Highest fitness score of wave: " + bestFitnessScore);
+        Debug.Log("The highest fitness score of the wave was: " + bestFitnessScore);
     }
 
     public void AddCompletedEnemy(GameObject enemy, bool survivedWave)
     {
-        Debug.Log("Adding completed enemy whilst livingPopulation size is " + livingPopulation.Count);
         for (int i = 0; i < livingPopulation.Count; i++)
         {
             if (livingPopulation[i].EnemyShip.Equals(enemy))
@@ -100,7 +102,7 @@ public class EvolutionController : MonoBehaviour
                 livingPopulation[i].Complete(survivedWave);
                 prevPopulation.Add(livingPopulation[i]);
                 enemiesLeft--;
-                Debug.Log("[AddCompletedEnemy] " + enemiesLeft + " enemies remaining.");
+                //Debug.Log("[AddCompletedEnemy] " + enemiesLeft + " enemies remaining.");
                 livingPopulation.Remove(livingPopulation[i]);     
             }
         }
@@ -108,7 +110,7 @@ public class EvolutionController : MonoBehaviour
         if (enemiesLeft == 0 && spawningComplete)
         {
             WaveComplete = true;
-            Debug.Log("[AddCompletedEnemy] Wave Complete");
+            //Debug.Log("[AddCompletedEnemy] Wave Complete");
         }
 
         //Debug.Log("[AddCompletedEnemy] Prev population size = " + prevPopulation.Count);
@@ -156,7 +158,7 @@ public class EvolutionController : MonoBehaviour
 
         prevPopulation.Clear();
 
-        Debug.Log("Potential parents: " + potentialParents.Count);
+        //Debug.Log("Potential parents: " + potentialParents.Count);
 
         int index = 0;
 
@@ -173,7 +175,7 @@ public class EvolutionController : MonoBehaviour
 
             parents[0] = fittestIndividual;
 
-            Debug.Log("Number of potential parents: " + potentialParents.Count + " | Index = " + index);
+            //Debug.Log("Number of potential parents: " + potentialParents.Count + " | Index = " + index);
 
             parents[1] = potentialParents[index];
 
@@ -218,14 +220,14 @@ public class EvolutionController : MonoBehaviour
         }
 
         spawningComplete = true;
-        Debug.Log("**** Spawning Compete, " + newlyCreatedEnemies + " enemies created. ****");
+        //Debug.Log("**** Spawning Compete, " + newlyCreatedEnemies + " enemies created. ****");
 
         potentialParents.Clear();
     }
 
     public void NextGeneration()
     {
-        Debug.Log("Updating fitness scores for " + prevPopulation.Count + " enemies.");
+        //Debug.Log("Updating fitness scores for " + prevPopulation.Count + " enemies.");
         UpdateFitnessScores(prevPopulation);
         WaveComplete = false;
         StartCoroutine(EvolveEnemies());
