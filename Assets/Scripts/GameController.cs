@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour {
     public Text restartText;
     public Text gameOverText;
     public Text waveText;
+    public Text healthText;
 
     private bool gameOver;
     private bool restart;
@@ -27,38 +28,13 @@ public class GameController : MonoBehaviour {
     public float startWait;
     public float waveWait;
 
+    private PlayerController playerController;
     private EvolutionController evolutionController;
     private float camDistance;
 
     private Vector2 bottomCorner, topCorner;
 
     private float minXSpawn, maxXSpawn, zSpawn;
-
-    public float MinXSpawn
-    {
-        get
-        {
-            return minXSpawn;
-        }
-
-        set
-        {
-            minXSpawn = value;
-        }
-    }
-
-    public float MaxXSpawn
-    {
-        get
-        {
-            return maxXSpawn;
-        }
-
-        set
-        {
-            maxXSpawn = value;
-        }
-    }
 
     private void Start()
     {
@@ -69,8 +45,13 @@ public class GameController : MonoBehaviour {
         gameOverText.text = "";
         score = 0;
         UpdateScore();
+        
         StartCoroutine(SpawnWaves());
         evolutionController = GetComponent<EvolutionController>();
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
+        UpdateHealth();
 
         // Get x and y cooridantes of corners of the screen, based off camera distance
         camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
@@ -79,6 +60,11 @@ public class GameController : MonoBehaviour {
 
         MinXSpawn = bottomCorner.x;
         MaxXSpawn = topCorner.x;
+    }
+
+    public void UpdateHealth()
+    {
+        healthText.text = "Health: " + playerController.health;
     }
 
     public void GameOver()
@@ -220,7 +206,7 @@ public class GameController : MonoBehaviour {
         }
         */
     }
-
+    
     IEnumerator AddScoreMessage(string message, float delay)
     {
         addScoreText.text = message;
@@ -241,4 +227,32 @@ public class GameController : MonoBehaviour {
             yield return null;
         }
     }
+
+    #region Accessors and Mutators
+    public float MinXSpawn
+    {
+        get
+        {
+            return minXSpawn;
+        }
+
+        set
+        {
+            minXSpawn = value;
+        }
+    }
+
+    public float MaxXSpawn
+    {
+        get
+        {
+            return maxXSpawn;
+        }
+
+        set
+        {
+            maxXSpawn = value;
+        }
+    }
+#endregion
 }

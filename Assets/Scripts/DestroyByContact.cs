@@ -3,18 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DestroyByContact : MonoBehaviour {
+public class DestroyByContact : MonoBehaviour
+{
     public int scoreValue;
     private GameController gameController;
     private EvolutionController evolutionController;
+    private PlayerController playerController;
     public GameObject explosion;
     public GameObject playerExplosion;
+    public GameObject playerDamaged;
 
     void Start()
     {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
 
         evolutionController = gameControllerObject.GetComponent<EvolutionController>();
+
+        GameObject playerObject = GameObject.FindWithTag("Player");
+
+        if (playerObject != null)
+        {
+            playerController = playerObject.GetComponent<PlayerController>();
+        }
+        else
+        {
+            Debug.Log("Could not find player object. It may have been destroyed.");
+        }
 
         if (gameControllerObject != null)
         {
@@ -42,27 +56,13 @@ public class DestroyByContact : MonoBehaviour {
             Instantiate(explosion, transform.position, transform.rotation);
         }
 
-        // If colliding with a player, create an explosion on the player
-        //if (other.tag == "Player")
-        if (other.CompareTag("Player"))
-        {
-            Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-            gameController.GameOver();
-        }
-
-        gameController.AddScore(scoreValue);
-
-        //Debug.Log("DestroyByContact: " + other.gameObject.name + " and " + gameObject.name);
-        other.gameObject.SetActive(false);
-        //Destroy(other.gameObject);
-
         if (gameObject.CompareTag("Enemy"))
         {
             if (gameObject != null)
             {
                 evolutionController.AddCompletedEnemy(gameObject, false);
             }
-            
+
             //gameObject.SetActive(false);
             //Debug.Log(gameObject + " disabled.");
             Destroy(gameObject);
@@ -72,5 +72,38 @@ public class DestroyByContact : MonoBehaviour {
             Debug.Log(gameObject + " destroyed.");
             Destroy(gameObject);
         }
+
+        // Player collision
+        if (other.CompareTag("Player"))
+        {
+            playerController.health--;
+            gameController.UpdateHealth();
+
+            if (playerController.health <= 0)
+            {
+                Debug.Log("Player destroyed.");
+                Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+                
+                gameController.AddScore(scoreValue);
+                other.gameObject.SetActive(false);
+                gameController.GameOver();
+            } else
+            {
+                Instantiate(playerDamaged, transform.position, transform.rotation);
+            }
+
+            gameObject.SetActive(false);
+
+            return;
+        }
+
+        gameController.AddScore(scoreValue);
+
+        //Debug.Log("DestroyByContact: " + other.gameObject.name + " and " + gameObject.name);
+
+        other.gameObject.SetActive(false);
+        //Destroy(other.gameObject);
+
+        
     }
 }

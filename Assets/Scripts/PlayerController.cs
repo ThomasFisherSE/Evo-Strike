@@ -25,9 +25,11 @@ public class Boundary
     }
 }
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
     private AudioSource audioSource;
-   
+
+    public int health = 1;
     public float speed = 10;
     public float tilt = 2;
     public Boundary boundary;
@@ -56,11 +58,11 @@ public class PlayerController : MonoBehaviour {
         {
             nextFire = Time.time + fireRate;
 
-            foreach(var shotSpawn in shotSpawns)
+            foreach (var shotSpawn in shotSpawns)
             {
                 // Get the bullet from the object pooler
                 GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
-               
+
                 if (bullet != null)
                 {
                     // Move the bullet to the location of the shotSpawn, and activate it
@@ -70,7 +72,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 //Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
             }
-            
+
             audioSource.clip = shotSound;
             audioSource.Play();
         }
@@ -82,14 +84,14 @@ public class PlayerController : MonoBehaviour {
         Rigidbody rb = GetComponent<Rigidbody>();
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        
+
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
         rb.velocity = movement * speed;
 
         rb.position = new Vector3(
-            Mathf.Clamp(rb.position.x, boundary.GetXMin(), boundary.GetXMax()), 
-            0.0f, 
+            Mathf.Clamp(rb.position.x, boundary.GetXMin(), boundary.GetXMax()),
+            0.0f,
             Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax));
 
         rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
