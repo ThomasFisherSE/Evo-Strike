@@ -45,10 +45,10 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
-        Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
-        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
+        float leftLimit = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance)).x;
+        float rightLimit = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance)).x;
 
-        boundary.SetX(bottomCorner.x, topCorner.x);
+        boundary.SetX(leftLimit, rightLimit);
     }
 
     void Update()

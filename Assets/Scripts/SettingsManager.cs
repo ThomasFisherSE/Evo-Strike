@@ -10,9 +10,11 @@ public class SettingsManager : MonoBehaviour {
     public Dropdown antiAliasingDropdown;
     public Dropdown vSyncDropdown;
     public Slider volumeSlider;
-
+    
     public Resolution[] resolutions;
     public GameSettings gameSettings;
+
+    public AudioSource audio;
     
 	void OnEnable () {
         gameSettings = new GameSettings();
@@ -26,36 +28,40 @@ public class SettingsManager : MonoBehaviour {
 
         resolutions = Screen.resolutions;
 
+        foreach(Resolution resolution in resolutions)
+        {
+            resolutionDropdown.options.Add(new Dropdown.OptionData(resolution.ToString()));
+        }
 	}
 	
 	public void OnFullscreenToggle()
     {
-        Screen.fullscreen = fullscreenToggle.isOn;
+        gameSettings.fullscreen = Screen.fullScreen = fullscreenToggle.isOn;
     }
 
     public void OnResolutionChange()
     {
-
+        Screen.SetResolution(resolutions[resolutionDropdown.value].width, resolutions[resolutionDropdown.value].height, Screen.fullScreen);
     }
 
     public void OnTextureQualityChange()
     {
-
+        QualitySettings.masterTextureLimit = gameSettings.textureQuality = textureQualityDropdown.value;
     }
 
     public void OnAntiAliasingChange()
     {
-
+        QualitySettings.antiAliasing = gameSettings.antiAliasing = (int) Mathf.Pow(2, antiAliasingDropdown.value);
     }
 
     public void OnVSyncChange()
     {
-
+        QualitySettings.vSyncCount = gameSettings.vSync = vSyncDropdown.value;
     }
 
     public void OnVolumeChange()
     {
-
+        audio.volume = gameSettings.globalVolume = volumeSlider.value;
     }
 
     public void SaveSettings()
