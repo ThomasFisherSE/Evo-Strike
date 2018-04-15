@@ -1,0 +1,240 @@
+fileFormatVersion: 2
+guid: 3dae223e3d08c334faa24b3ee191cc9f
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Button_1_Select
+    21300002: Button_1_Idle
+    21300004: Button_1_Press
+    21300006: BlackBox
+    21300008: GrayBox
+    21300010: CelesteBox
+    21300012: Button_2_Idle
+    21300014: Button_2_Select
+    21300016: Button_2_Press
+    21300018: Window_1
+    21300020: Window_2
+    21300022: WhitteBox
+    21300024: Button_3_Select
+    21300026: Button_3_Idle
+    21300028: Button_3_Press
+    21300030: Transparent
+    21300032: Dumb_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Button_1_Select
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 818
+        width: 127
+        height: 65
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Button_1_Idle
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 820
+        width: 129
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Button_1_Press
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 556
+        width: 98
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlackBox
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 713
+        width: 174
+        height: 46
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GrayBox
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 670
+        width: 171
+        height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CelesteBox
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 615
+        width: 157
+        height: 38
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Button_2_Idle
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 701
+        width: 91
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Button_2_Select
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 657
+        width: 91
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Button_2_Press
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 614
+        width: 91
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Window_1
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 504
+        width: 147
+        height: 157
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Window_2
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 334
+        width: 278
+        height: 106
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WhitteBox
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 459
+        width: 237
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Button_3_Select
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 672
+        width: 65
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Button_3_Idle
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 673
+        width: 65
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Button_3_Press
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 556
+        width: 83
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Transparent
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 787
+        width: 39
+        height: 21
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dumb_1
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 720
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
