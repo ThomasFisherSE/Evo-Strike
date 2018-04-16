@@ -94,7 +94,7 @@ public class EvolutionController : MonoBehaviour
         {
             Individual currentIndividual = population[i];
 
-            float currentFitness = currentIndividual.CalculateFitness(Individual.NB_ON_TARGET_FUNC);
+            float currentFitness = currentIndividual.CalculateFitness(Individual.ACCURATE_LONG_LIFE_FUNC);
             
             if (currentFitness > bestFitnessScore)
             {

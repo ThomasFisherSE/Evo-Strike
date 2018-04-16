@@ -7,7 +7,7 @@ public class Individual
     #region Constants
     public const float MUTATION_MULT = 0.1f;
 
-    public const int LIFETIME_FUNC = 0, SURVIVAL_FUNC = 1, ACCURACY_FUNC = 2, NB_ON_TARGET_FUNC = 3;
+    public const int LIFETIME_FUNC = 0, SURVIVAL_FUNC = 1, ACCURACY_FUNC = 2, NB_ON_TARGET_FUNC = 3, ACCURATE_LONG_LIFE_FUNC = 4;
     #endregion
     #region Properties
     private EvasiveManeuver evasiveManeuver;
@@ -157,6 +157,11 @@ public class Individual
         return nbShotsOnTarget;
     }
 
+    public float AccurateLongLifeFunc()
+    {
+        return GetAccuracy() * Lifetime;
+    }
+
     public float CalculateFitness(int selectedFunction)
     {
         // Use the selected fitness function (from method parameters)
@@ -177,6 +182,10 @@ public class Individual
 
             case NB_ON_TARGET_FUNC:
                 Fitness = NbOnTargetFunc();
+                break;
+
+            case ACCURATE_LONG_LIFE_FUNC:
+                Fitness = AccurateLongLifeFunc();
                 break;
 
             // Default fitness function
