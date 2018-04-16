@@ -35,6 +35,9 @@ public class Individual
 
     private float creationTime, lifetime;
 
+    private float accuracy;
+    private int nbShotsOnTarget;
+
     private bool survived;
     private Individual item;
     #endregion
@@ -79,8 +82,8 @@ public class Individual
 
     public void Complete(bool survivedWave)
     {
-        lifetime = Time.time - creationTime;
-        survived = survivedWave;
+        Lifetime = Time.time - creationTime;
+        Survived = survivedWave;
     }
 
     private float CrossoverPoint(float x, float y)
@@ -124,22 +127,34 @@ public class Individual
 
     public float LifetimeFunc()
     {
-        return lifetime;
+        return Lifetime;
     }
     
     public float SurvivalFunc()
     {
-        return System.Convert.ToInt32(survived);
+        return System.Convert.ToInt32(Survived);
     }
 
     public float AccuracyFunc()
     {
-        return weaponController.GetAccuracy();
+        return GetAccuracy();
     }
 
     public float NbOnTargetFunc()
     {
-        return weaponController.GetNbShotsOnTarget();
+        return GetNbShotsOnTarget();
+    }
+
+    public float GetAccuracy()
+    {
+        accuracy = weaponController.GetAccuracy();
+        return accuracy;
+    }
+
+    public float GetNbShotsOnTarget()
+    {
+        nbShotsOnTarget = weaponController.GetNbShotsOnTarget();
+        return nbShotsOnTarget;
     }
 
     public float CalculateFitness(int selectedFunction)
@@ -524,6 +539,32 @@ public class Individual
             enemyShip = value;
         }
     }
+
+    public float Lifetime
+    {
+        get
+        {
+            return lifetime;
+        }
+
+        set
+        {
+            lifetime = value;
+        }
+    }
+
+    public bool Survived
+    {
+        get
+        {
+            return survived;
+        }
+
+        set
+        {
+            survived = value;
+        }
+    }
     #endregion
-#endregion
+    #endregion
 }

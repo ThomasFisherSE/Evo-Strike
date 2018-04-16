@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EvolutionController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class EvolutionController : MonoBehaviour
     public float mutationRate;
     public float crossoverRate;
     public float spawnWait;
+    public float enemyStatsWait;
 
     public GameObject enemyShipPrefab;
 
@@ -26,6 +28,18 @@ public class EvolutionController : MonoBehaviour
     private int enemiesLeft;
     private bool spawningComplete = false;
     private bool waveComplete;
+
+    public Text enemyStatsTitleText;
+    public Text speedText;
+    public Text fireRateText;
+    public Text dodgeText;
+    public Text maneuverabilityText;
+    public Text timeAliveText;
+    public Text survivedText;
+    public Text accuracyText;
+    public Text shotsOnTargetText;
+
+    public GameObject statsPanel;
 
     public void Start()
     {
@@ -229,8 +243,44 @@ public class EvolutionController : MonoBehaviour
     {
         //Debug.Log("Updating fitness scores for " + prevPopulation.Count + " enemies.");
         UpdateFitnessScores(prevPopulation);
+        StartCoroutine(DisplayMostPowerfulEnemy());
+        
         WaveComplete = false;
         StartCoroutine(EvolveEnemies());
+    }
+    
+    public IEnumerator DisplayMostPowerfulEnemy()
+    {
+        statsPanel.SetActive(true);
+
+        enemyStatsTitleText.text = "Most Powerful Enemy (Wave " + gc.WaveNumber + "):";
+
+        speedText.text = "Speed: " + (fittestIndividual.Speed*-1).ToString();
+
+        float avgFireRate = (fittestIndividual.MinFireRate + fittestIndividual.MaxFireRate) / 2;
+        fireRateText.text = "Fire Rate: " + (1/avgFireRate).ToString();
+
+        dodgeText.text = "Dodge Level: " + fittestIndividual.Dodge.ToString();
+
+        float avgManeuverability = (fittestIndividual.MinManeuverWait + fittestIndividual.MaxManeuverWait) / 2;
+        maneuverabilityText.text = "Maneuverability Level: " + avgManeuverability.ToString();
+
+        timeAliveText.text = "Time Spent Alive: " + fittestIndividual.Lifetime.ToString() + " seconds";
+
+        if (fittestIndividual.Survived)
+        {
+            survivedText.text = "Survived Wave?: Yes";
+        } else
+        {
+            survivedText.text = "Survived Wave?: No";
+        }
+
+        accuracyText.text = "Accuracy: " + fittestIndividual.GetAccuracy().ToString() + "%";
+
+        shotsOnTargetText.text = "Shots On Target: " + fittestIndividual.GetNbShotsOnTarget().ToString();
+
+        yield return new WaitForSeconds(enemyStatsWait);
+        statsPanel.SetActive(false);
     }
 
     public bool WaveComplete

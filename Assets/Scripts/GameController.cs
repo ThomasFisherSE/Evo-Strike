@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour {
     public Text waveText;
     public Text healthText;
 
+    private int waveNumber;
+
     private bool gameOver;
     private bool restart;
 
@@ -139,7 +141,7 @@ public class GameController : MonoBehaviour {
         // Wait to spawn first wave
         yield return new WaitForSeconds(startWait);
 
-        int waveNumber = 0;
+        WaveNumber = 0;
 
         StartCoroutine(SpawnHazards());
         
@@ -155,18 +157,18 @@ public class GameController : MonoBehaviour {
 
             Debug.Log("************* Spawning next wave ************");
 
-            if (waveNumber != 0 && !gameOver)
+            if (WaveNumber != 0 && !gameOver)
             {
                 evolutionController.NextGeneration();
                 StartCoroutine(SpawnHazards());
             }
 
-            waveNumber++;
+            WaveNumber++;
 
-            waveText.text = "Wave: " + waveNumber;
+            waveText.text = "Wave: " + WaveNumber;
 
             // Add wave bonus
-            AddScore(waveNumber * 100);
+            AddScore(WaveNumber * 100);
 
             // Wait before spawning next wave
             while(!evolutionController.WaveComplete)
@@ -254,5 +256,18 @@ public class GameController : MonoBehaviour {
             maxXSpawn = value;
         }
     }
-#endregion
+
+    public int WaveNumber
+    {
+        get
+        {
+            return waveNumber;
+        }
+
+        set
+        {
+            waveNumber = value;
+        }
+    }
+    #endregion
 }
