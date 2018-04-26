@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class PickUpPowerUp : MonoBehaviour
 {
+    public int powerUpScore = 100;
+    public float fireRateMultiplier = 2.5f;
+    public int healthBoost = 1;
+
+    public float boostTimer = 5.0f; // in seconds
+
     public AudioClip pickUpSound;
 
     private GameObject player;
     private GameController gc;
     private PlayerController pc;
-    private AudioSource audioSrc;
+
+    private bool isTriggered = false;
+ 
 
     // Use this for initialization
     void Start()
     {
         gc = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         player = GameObject.FindWithTag("Player");
-        audioSrc = GetComponent<AudioSource>();
 
         if (player != null)
         {
@@ -26,28 +33,38 @@ public class PickUpPowerUp : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!other.CompareTag("Player"))
         {
-            //Debug.Log("Picked up " + gameObject.name + " power up");
+            return; // Only do something if colliding with player's ship
+        }
 
-            AudioSource audioSrc = player.GetComponent<AudioSource>();
-            audioSrc.PlayOneShot(pickUpSound);
+        if (isTriggered) // Only trigger once
+            return;
+
+        isTriggered = true;
+        //Debug.Log("Picked up " + gameObject.name + " power up");
+
+        AudioSource audioSrc = player.GetComponent<AudioSource>();
+        audioSrc.PlayOneShot(pickUpSound);
             
-            Destroy(gameObject);
+        Destroy(gameObject);
 
-            switch (gameObject.name)
-            {
-                case "+FireRate(Clone)":
-                    Debug.Log("Fire rate increased");
-                    // Increase fire rate by 10%
-                    pc.fireRate *= 1.1f;
-                    break;
-                case "+Health":
-                    Debug.Log("Health increased.");
-                    pc.health++;
-                    gc.UpdateHealth();
-                    break;
-            }
+        switch (gameObject.name)
+        {
+            case "+FireRate(Clone)":
+                Debug.Log("Fire rate increased by x" + fireRateMultiplier + " for " + boostTimer + "s.");
+                // Increase fire rate
+                pc.FireRateBoost(fireRateMultiplier, boostTimer);
+                break;
+            case "+Health(Clone)":
+                Debug.Log("Health increased.");
+                pc.health += healthBoost;
+                gc.UpdateHealth();
+                break;
+            case "+Points(Clone)":
+                Debug.Log("+" + powerUpScore + " points.");
+                gc.AddScore(powerUpScore);
+                break;
         }
     }
 }

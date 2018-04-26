@@ -13,9 +13,11 @@ public class DestroyByContact : MonoBehaviour
     public GameObject playerExplosion;
     public GameObject playerDamaged;
 
-    public GameObject powerUp;
+    public GameObject[] powerUps;
 
     public float powerUpRate = 1.0f;
+
+    private bool isTriggered = false;
 
     void Start()
     {
@@ -48,12 +50,14 @@ public class DestroyByContact : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Do nothing if colliding with boundary / enemy / powerup / controller
-        if (other.CompareTag("Boundary") || other.tag.Contains("Enemy") || other.CompareTag("PowerUp") || other.CompareTag("Controller"))
+        // Do nothing if colliding with boundary / enemy / powerup / controller / if already triggered
+        if (other.CompareTag("Boundary") || other.tag.Contains("Enemy") || other.CompareTag("PowerUp") || other.CompareTag("Controller") || isTriggered)
         {
             //Debug.Log(gameObject.name + " collided with " + other.gameObject.name + ". Nothing was destroyed.");
             return;
         }
+
+        isTriggered = true;
 
         if (explosion != null)
         {
@@ -73,7 +77,8 @@ public class DestroyByContact : MonoBehaviour
 
                 if (rand < powerUpRate)
                 {
-                    Instantiate(powerUp, transform.position, transform.rotation);
+                    int powerUpId = Random.Range(0, powerUps.Length);
+                    Instantiate(powerUps[powerUpId], transform.position, transform.rotation);
                 }
                 //Debug.Log("Rolled for power up, got " + rand + ", needed under " + powerUpRate);
             }

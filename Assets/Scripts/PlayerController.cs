@@ -78,6 +78,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /**
+     * Temporarily boost fire-rate
+     */
+    public void FireRateBoost(float multiplier, float secs)
+    {
+        StartCoroutine(TempFireRateBoost(multiplier, secs));
+    }
+
+    private IEnumerator TempFireRateBoost(float multiplier, float secs)
+    {
+        fireRate *= multiplier;
+        yield return new WaitForSeconds(secs);
+        Debug.Log("Fire rate power-up wore off.");
+        fireRate /= multiplier;
+    }
+
     void FixedUpdate()
     {
         // Movement
