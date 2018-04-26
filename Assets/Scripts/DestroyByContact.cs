@@ -13,6 +13,10 @@ public class DestroyByContact : MonoBehaviour
     public GameObject playerExplosion;
     public GameObject playerDamaged;
 
+    public GameObject powerUp;
+
+    public float powerUpRate = 1.0f;
+
     void Start()
     {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
@@ -45,8 +49,9 @@ public class DestroyByContact : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Do nothing if colliding with boundary / enemy / powerup / controller
-        if (other.CompareTag("Boundary") || other.CompareTag("Enemy") || other.CompareTag("PowerUp") || other.CompareTag("Controller"))
+        if (other.CompareTag("Boundary") || other.tag.Contains("Enemy") || other.CompareTag("PowerUp") || other.CompareTag("Controller"))
         {
+            //Debug.Log(gameObject.name + " collided with " + other.gameObject.name + ". Nothing was destroyed.");
             return;
         }
 
@@ -56,20 +61,30 @@ public class DestroyByContact : MonoBehaviour
             Instantiate(explosion, transform.position, transform.rotation);
         }
 
-        if (gameObject.CompareTag("Enemy"))
+        // Enemy ship collision
+        if (gameObject.CompareTag("EnemyShip"))
         {
             if (gameObject != null)
             {
                 evolutionController.AddCompletedEnemy(gameObject, false);
+
+                // Roll for power-up
+                float rand = Random.value;
+
+                if (rand < powerUpRate)
+                {
+                    Instantiate(powerUp, transform.position, transform.rotation);
+                }
+                //Debug.Log("Rolled for power up, got " + rand + ", needed under " + powerUpRate);
             }
 
             //gameObject.SetActive(false);
-            //Debug.Log(gameObject + " disabled.");
+            //Debug.Log(gameObject + " destroyed.");
             Destroy(gameObject);
         }
         else
         {
-            Debug.Log(gameObject + " destroyed.");
+            //Debug.Log(gameObject + " destroyed.");
             Destroy(gameObject);
         }
 

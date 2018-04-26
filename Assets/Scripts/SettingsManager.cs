@@ -14,7 +14,7 @@ public class SettingsManager : MonoBehaviour {
     public Resolution[] resolutions;
     public GameSettings gameSettings;
 
-    public AudioSource audio;
+    public AudioSource audioSrc;
     
 	void OnEnable () {
         gameSettings = new GameSettings();
@@ -61,7 +61,7 @@ public class SettingsManager : MonoBehaviour {
 
     public void OnVolumeChange()
     {
-        audio.volume = gameSettings.globalVolume = volumeSlider.value;
+        audioSrc.volume = gameSettings.globalVolume = volumeSlider.value;
     }
 
     public void SaveSettings()

@@ -14,7 +14,7 @@ public class DestroyByBoundary : MonoBehaviour {
         {
             if (!other.CompareTag("Controller"))
             {
-                if (other.CompareTag("Enemy"))
+                if (other.CompareTag("EnemyShip"))
                 {
                     GameObject gameControllerObject = GameObject.FindWithTag("GameController");
                     EvolutionController ec = gameControllerObject.GetComponent<EvolutionController>();
