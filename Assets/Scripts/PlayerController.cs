@@ -48,7 +48,13 @@ public class PlayerController : MonoBehaviour
         float leftLimit = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance)).x;
         float rightLimit = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance)).x;
 
+        float screenHeight = Camera.main.orthographicSize * 2;
+        float screenWidth = screenHeight * Screen.width / Screen.height;
+
         boundary.SetX(leftLimit, rightLimit);
+        GameObject destroyBoundary = GameObject.FindGameObjectWithTag("Boundary");
+        destroyBoundary.transform.localScale = new Vector3(screenWidth, 1, screenHeight);
+        destroyBoundary.transform.position = new Vector3(0,0,Camera.main.transform.position.z);
     }
 
     void Update()
