@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -41,10 +42,24 @@ public class EvolutionController : MonoBehaviour
 
     public GameObject statsPanel;
 
+    private StreamWriter sw;
+
     public void Start()
     {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
         gc = gameControllerObject.GetComponent<GameController>();
+
+        sw = new StreamWriter("statistics.txt");
+        sw.WriteLine("------------------------------------------------------------------");
+        sw.WriteLine("This file contains the statistics for the last played game.\n" +
+            "To retain this data, rename or move the file.");
+        sw.WriteLine("------------------------------------------------------------------\n\n");
+    }
+
+    private void OnDestroy()
+    {
+        sw.WriteLine("--------------------------- End of Game ---------------------------");
+        sw.Close();
     }
 
     public IEnumerator SpawnInitialPopulation()
@@ -52,6 +67,8 @@ public class EvolutionController : MonoBehaviour
         generation++;
         enemiesLeft = populationSize;
         Debug.Log("Spawning: Generation " + generation);
+       
+        sw.WriteLine("-------- Generation " + generation + " --------");
 
         // Clear the populatuion
         livingPopulation.Clear();
@@ -95,7 +112,7 @@ public class EvolutionController : MonoBehaviour
             Individual currentIndividual = population[i];
 
             float currentFitness = currentIndividual.CalculateFitness(Individual.ACCURATE_LONG_LIFE_FUNC);
-            
+
             if (currentFitness > bestFitnessScore)
             {
                 fittestIndividual = currentIndividual;
@@ -104,7 +121,9 @@ public class EvolutionController : MonoBehaviour
             }
         }
 
-        Debug.Log("The highest fitness score of the wave was: " + bestFitnessScore);
+        Debug.Log("The highest fitness score generation " + generation + " was: " + bestFitnessScore);
+        
+        sw.WriteLine("Highest Fitness: " + bestFitnessScore);
     }
 
     public void AddCompletedEnemy(GameObject enemy, bool survivedWave)
@@ -244,7 +263,10 @@ public class EvolutionController : MonoBehaviour
         //Debug.Log("Updating fitness scores for " + prevPopulation.Count + " enemies.");
         UpdateFitnessScores(prevPopulation);
         StartCoroutine(DisplayMostPowerfulEnemy());
-        
+
+        generation++;
+        sw.WriteLine("-------- Generation " + generation + " --------");
+
         WaveComplete = false;
         StartCoroutine(EvolveEnemies());
     }
