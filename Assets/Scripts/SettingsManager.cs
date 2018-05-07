@@ -15,8 +15,13 @@ public class SettingsManager : MonoBehaviour {
     public GameSettings gameSettings;
 
     public AudioSource audioSrc;
-    
-	void OnEnable () {
+
+    private void Start()
+    {
+        volumeSlider.value = PlayerPrefs.GetFloat("MasterVol");
+    }
+
+    void OnEnable () {
         gameSettings = new GameSettings();
 
         fullscreenToggle.onValueChanged.AddListener(delegate { OnFullscreenToggle(); });
@@ -62,6 +67,8 @@ public class SettingsManager : MonoBehaviour {
     public void OnVolumeChange()
     {
         audioSrc.volume = gameSettings.globalVolume = volumeSlider.value;
+        PlayerPrefs.SetFloat("MasterVol", audioSrc.volume);
+        PlayerPrefs.Save();
     }
 
     public void SaveSettings()

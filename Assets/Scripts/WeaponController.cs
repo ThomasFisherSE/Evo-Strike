@@ -28,6 +28,12 @@ public class WeaponController : MonoBehaviour
         nbShots = 0;
         nbShotsOnTarget = 0;
         audioSource = GetComponent<AudioSource>();
+
+        if (audioSource != null)
+        {
+            audioSource.volume = PlayerPrefs.GetFloat("MasterVol");
+        }
+
         InvokeRepeating("Fire", delay, myFireRate);
     }
 

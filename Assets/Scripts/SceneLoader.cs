@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
 
+    private void Start()
+    {
+        AudioSource audioSrc = GetComponent<AudioSource>();
+
+        if (audioSrc != null)
+        {
+            audioSrc.volume = PlayerPrefs.GetFloat("MasterVol");
+        }
+    }
+
     public void LoadScene(int level)
     {
         SceneManager.LoadScene(level);
@@ -18,14 +28,4 @@ public class SceneLoader : MonoBehaviour {
         Application.Quit ();
 #endif
     }
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

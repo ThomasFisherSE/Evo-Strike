@@ -44,6 +44,11 @@ public class PlayerController : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
 
+        if (audioSource != null)
+        {
+            audioSource.volume = PlayerPrefs.GetFloat("MasterVol");
+        }
+
         float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
         float leftLimit = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance)).x;
         float rightLimit = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance)).x;

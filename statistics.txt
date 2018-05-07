@@ -5,10 +5,8 @@ To retain this data, rename or move the file.
 
 
 -------- Generation 1 --------
-Highest Fitness: 7.960375
+Highest Fitness: 4.615829
 -------- Generation 2 --------
-Highest Fitness: 11.0917
+Highest Fitness: 3.622504
 -------- Generation 3 --------
-Highest Fitness: 7.000481
--------- Generation 4 --------
 --------------------------- End of Game ---------------------------

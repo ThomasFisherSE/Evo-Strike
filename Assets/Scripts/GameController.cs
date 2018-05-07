@@ -40,6 +40,13 @@ public class GameController : MonoBehaviour {
 
     private void Start()
     {
+        AudioSource audio =  GetComponent<AudioSource>();
+
+        if (audio != null)
+        {
+            audio.volume = PlayerPrefs.GetFloat("MasterVol");
+        }
+
         gameOver = false;
         restart = false;
         addScoreText.text = "";
