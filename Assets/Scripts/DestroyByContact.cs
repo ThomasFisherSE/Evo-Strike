@@ -56,7 +56,13 @@ public class DestroyByContact : MonoBehaviour
             //Debug.Log(gameObject.name + " collided with " + other.gameObject.name + ". Nothing was destroyed.");
             return;
         }
+        
+        // Do nothing if two shots collide
+        if (gameObject.tag.Contains("Shot") && other.tag.Contains("Shot")) {
+            return;
+        }
 
+        // Otherwise, triggered
         isTriggered = true;
 
         if (explosion != null)

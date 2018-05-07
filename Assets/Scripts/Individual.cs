@@ -43,6 +43,9 @@ public class Individual
     #endregion
 
     #region Constructors
+    /*
+     * Create an individual from an enemy ship prefab
+     */
     public Individual(GameObject enemyShipObject)
     {
         EnemyShip = enemyShipObject;
@@ -58,12 +61,18 @@ public class Individual
         creationTime = Time.time;
     }
 
+    /*
+     * Create an individual from another individual
+     */
     public Individual(Individual copy)
     {
         CopyGenes(copy);
     }
 #endregion
 
+    /*
+     * Copy genes from an individual
+     */
     public void CopyGenes(Individual src)
     {
         Speed = src.Speed;
@@ -80,22 +89,31 @@ public class Individual
         MaxFireRate = src.MaxFireRate;
     }
 
+    /* 
+     * Called when the enemy completes a wave
+     */
     public void Complete(bool survivedWave)
     {
         Lifetime = Time.time - creationTime;
         Survived = survivedWave;
     }
 
+    /* 
+     * Calculate the crossover point between x and y
+     */
     private float CrossoverPoint(float x, float y)
     {
-        return (x + y) / 2;
+        return (x + y) / 2; // basic mean
     }
 
+    /*
+     * Perform crossover with two parents (father, mother), keeping attributes within bounds
+     */
     public void CrossoverAttributes(Individual father, Individual mother)
     {
-        SetSpeed(CrossoverPoint(father.Speed, mother.Speed));
+        SetSpeed(System.Math.Min(CrossoverPoint(father.Speed, mother.Speed), maxSpeedBound));
 
-        SetDodge(CrossoverPoint(father.Dodge, mother.Dodge));
+        SetDodge(System.Math.Min(CrossoverPoint(father.Dodge, mother.Dodge), maxDodgeBound));
 
         SetManeuverTimeRange(
             CrossoverPoint(father.MinManeuverTime, mother.MinManeuverTime),
@@ -107,17 +125,18 @@ public class Individual
 
         SetFireRateRange(
             CrossoverPoint(father.MinFireRate, mother.MinFireRate),
-            CrossoverPoint(father.MaxFireRate, mother.MaxFireRate));
+            System.Math.Min(CrossoverPoint(father.MaxFireRate, mother.MaxFireRate), maxFireRateBound));
     }
 
+    /*
+     * Mutate the attributes of the individual
+     */
     public void MutateAttributes()
     {
-        RandomVerticalSpeed(speed - speed / 10, speed + speed / 10);
+        RandomVerticalSpeed(speed - speed*MUTATION_MULT, speed + speed*MUTATION_MULT);
 
-        RandomDodge(dodge - dodge / 10, dodge + dodge / 10);
-
-        // POSSIBLE BUG: Between current min - 10% and current max + 10%, continuously increasing??
-        // May need to tweak random methods for maneuver time, maneuver wait and fire rate.
+        RandomDodge(dodge - dodge*MUTATION_MULT, dodge + dodge*MUTATION_MULT);
+        
         RandomManeuverTime(minManeuverTime - minManeuverTime * MUTATION_MULT, maxManeuverTime + maxManeuverTime * MUTATION_MULT);
         RandomManeuverWait(minManeuverWait - minManeuverWait * MUTATION_MULT, maxManeuverWait + maxManeuverWait * MUTATION_MULT);
         RandomFireRate(minFireRate - minFireRate * MUTATION_MULT, maxFireRate + maxFireRate * MUTATION_MULT);
