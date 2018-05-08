@@ -34,7 +34,7 @@ public class EvolutionController : MonoBehaviour
     public Text speedText;
     public Text fireRateText;
     public Text dodgeText;
-    public Text maneuverabilityText;
+    public Text dodgeFrequencyText;
     public Text timeAliveText;
     public Text survivedText;
     public Text accuracyText;
@@ -44,6 +44,9 @@ public class EvolutionController : MonoBehaviour
 
     private StreamWriter sw;
 
+    /// <summary>
+    /// Prepare attributes which need to be set at run-time, and write the header of the statistics file.
+    /// </summary>
     public void Start()
     {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
@@ -56,12 +59,19 @@ public class EvolutionController : MonoBehaviour
         sw.WriteLine("------------------------------------------------------------------\n\n");
     }
 
+    /// <summary>
+    /// Finish and close the statistics file.
+    /// </summary>
     private void OnDestroy()
     {
         sw.WriteLine("--------------------------- End of Game ---------------------------");
         sw.Close();
     }
 
+    /// <summary>
+    /// Spawn the initial population of enemies.
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator SpawnInitialPopulation()
     {
         generation++;
@@ -85,7 +95,10 @@ public class EvolutionController : MonoBehaviour
         spawningComplete = true;
     }
 
-    // Instantiate enemy ship and pair it with an Individual object.
+    /// <summary>
+    /// Instantiate an enemy ship and pair it with an Individual object.
+    /// </summary>
+    /// <returns>The newly created individual.</returns>
     private Individual NewIndividual()
     {
         // Set the spawn position to be at a random x value along the top of the screen
@@ -102,6 +115,10 @@ public class EvolutionController : MonoBehaviour
         return newIndividual;
     }
 
+    /// <summary>
+    /// Update fitness scores for a population.
+    /// </summary>
+    /// <param name="population">The list of individuals for which fitness scores will be calculated.</param>
     void UpdateFitnessScores(List<Individual> population)
     {
         fittestIndividual = population[0];
@@ -126,6 +143,13 @@ public class EvolutionController : MonoBehaviour
         sw.WriteLine("Highest Fitness: " + bestFitnessScore);
     }
 
+
+    /// <summary>
+    /// Mark that an enemy has completed the wave (whether it survived or not).
+    /// Use this to check if the wave is complete (all enemies completed the wave).
+    /// </summary>
+    /// <param name="enemy">The enemy that has completed the wave.</param>
+    /// <param name="survivedWave">Whether or not the enemy survived.</param>
     public void AddCompletedEnemy(GameObject enemy, bool survivedWave)
     {
         for (int i = 0; i < livingPopulation.Count; i++)
@@ -149,6 +173,13 @@ public class EvolutionController : MonoBehaviour
         //Debug.Log("[AddCompletedEnemy] Prev population size = " + prevPopulation.Count);
     }
 
+    /// <summary>
+    /// Perform crossover between a father and mother to produce two offspring.
+    /// </summary>
+    /// <param name="father">The first parent.</param>
+    /// <param name="mother">The second parent.</param>
+    /// <param name="babyF">A baby that favors the genes of its father.</param>
+    /// <param name="babyM">A baby that favors the genes of its mother.</param>
     void Crossover(Individual father, Individual mother, Individual babyF, Individual babyM)
     {
         float rand = UnityEngine.Random.value;
@@ -172,8 +203,10 @@ public class EvolutionController : MonoBehaviour
         }
     }
 
-    
-
+    /// <summary>
+    /// Evolve all the enemies from the previous population.
+    /// </summary>
+    /// <returns>A WaitForSeconds IEnumerator, allowing the coroutine to wait for some time.</returns>
     private IEnumerator EvolveEnemies()
     {
         int newlyCreatedEnemies = 0;
@@ -258,6 +291,9 @@ public class EvolutionController : MonoBehaviour
         potentialParents.Clear();
     }
 
+    /// <summary>
+    /// Start the next generation of enemies.
+    /// </summary>
     public void NextGeneration()
     {
         //Debug.Log("Updating fitness scores for " + prevPopulation.Count + " enemies.");
@@ -271,6 +307,10 @@ public class EvolutionController : MonoBehaviour
         StartCoroutine(EvolveEnemies());
     }
     
+    /// <summary>
+    /// Display the most powerful enemy panel.
+    /// </summary>
+    /// <returns>A WaitForSeconds IEnumerator, allowing the coroutine to wait for some time.</returns>
     public IEnumerator DisplayMostPowerfulEnemy()
     {
         statsPanel.SetActive(true);
@@ -282,12 +322,12 @@ public class EvolutionController : MonoBehaviour
         float avgFireRate = (fittestIndividual.MinFireRate + fittestIndividual.MaxFireRate) / 2;
         fireRateText.text = "Fire Rate: " + (1/avgFireRate).ToString();
 
-        dodgeText.text = "Dodge Level: " + fittestIndividual.Dodge.ToString();
+        dodgeText.text = "Max Dodge: " + fittestIndividual.Dodge.ToString();
 
-        float avgManeuverability = (fittestIndividual.MinManeuverWait + fittestIndividual.MaxManeuverWait) / 2;
-        maneuverabilityText.text = "Maneuverability Level: " + avgManeuverability.ToString();
+        float avgDodgeWait = (fittestIndividual.MinDodgeWait + fittestIndividual.MaxDodgeWait) / 2;
+        dodgeFrequencyText.text = "Dodge Freq.: " + avgDodgeWait.ToString();
 
-        timeAliveText.text = "Time Spent Alive: " + fittestIndividual.Lifetime.ToString() + " seconds";
+        timeAliveText.text = "Time Alive: " + fittestIndividual.Lifetime.ToString() + " secs";
 
         if (fittestIndividual.Survived)
         {
@@ -297,7 +337,7 @@ public class EvolutionController : MonoBehaviour
             survivedText.text = "Survived Wave?: No";
         }
 
-        accuracyText.text = "Accuracy: " + fittestIndividual.GetAccuracy().ToString() + "%";
+        accuracyText.text = "Accuracy: " + (fittestIndividual.GetAccuracy()*100).ToString() + "%";
 
         shotsOnTargetText.text = "Shots On Target: " + fittestIndividual.GetNbShotsOnTarget().ToString();
 
@@ -305,6 +345,9 @@ public class EvolutionController : MonoBehaviour
         statsPanel.SetActive(false);
     }
 
+    /// <summary>
+    /// Accessor and mutator for waveComplete attribute.
+    /// </summary>
     public bool WaveComplete
     {
         get

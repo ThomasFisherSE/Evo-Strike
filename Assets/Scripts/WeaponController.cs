@@ -9,8 +9,6 @@ public class WeaponController : MonoBehaviour
     public Transform shotSpawn;
 
     public Vector2 fireRate;
-    //public float minFireRate;
-    //public float maxFireRate;
 
     public float delay;
 
@@ -20,8 +18,11 @@ public class WeaponController : MonoBehaviour
     private int nbShotsOnTarget;
 
     private float accuracy; // Accuracy between 0 and 1
-
-    // Use this for initialization
+    
+    /// <summary>
+    /// Initialize properties that should be set during run-time.
+    /// Start automatic firing.
+    /// </summary>
     void Start()
     {
         float myFireRate = Random.Range(fireRate.x, fireRate.y);
@@ -37,6 +38,9 @@ public class WeaponController : MonoBehaviour
         InvokeRepeating("Fire", delay, myFireRate);
     }
 
+    /// <summary>
+    /// Fire a projectile.
+    /// </summary>
     void Fire()
     {
         if (this.gameObject.activeSelf)
@@ -54,20 +58,30 @@ public class WeaponController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Mark that a shot was on target, and update the accuracy.
+    /// </summary>
     public void OnTargetShot()
     {
         nbShotsOnTarget++;
 
         accuracy = nbShotsOnTarget / (float)nbShots;
-
         //Debug.Log("nbShotsOnTarget = " + nbShotsOnTarget + " | nbShots = " + nbShots + "\nShot on target, new accuracy = " + accuracy);
     }
 
+    /// <summary>
+    /// Accessor for the accuracy attribute.
+    /// </summary>
+    /// <returns>The value of accuracy.</returns>
     public float GetAccuracy()
     {
         return accuracy;
     }
 
+    /// <summary>
+    /// Accessor for the nbShotsOnTarget attribute.
+    /// </summary>
+    /// <returns>The value of nbShotsOnTarget</returns>
     public int GetNbShotsOnTarget()
     {
         return nbShotsOnTarget;

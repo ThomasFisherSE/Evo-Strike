@@ -18,8 +18,9 @@ public class PickUpPowerUp : MonoBehaviour
 
     private bool isTriggered = false;
  
-
-    // Use this for initialization
+    /// <summary>
+    /// Initialize properties that should be set during run-time.
+    /// </summary>
     void Start()
     {
         gc = GameObject.FindWithTag("GameController").GetComponent<GameController>();
@@ -31,6 +32,10 @@ public class PickUpPowerUp : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handle collisions with other objects with colliders.
+    /// </summary>
+    /// <param name="other">The object that has been collided with.</param>
     void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player"))

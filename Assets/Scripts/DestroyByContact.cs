@@ -19,6 +19,9 @@ public class DestroyByContact : MonoBehaviour
 
     private bool isTriggered = false;
 
+    /// <summary>
+    /// Prepare class properties that need to be set during run-time
+    /// </summary>
     void Start()
     {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
@@ -48,6 +51,10 @@ public class DestroyByContact : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Handle collisions with other objects
+    /// </summary>
+    /// <param name="other">The collider of the object that is being collided with.</param>
     void OnTriggerEnter(Collider other)
     {
         // Do nothing if colliding with boundary / enemy / powerup / controller / if already triggered
@@ -129,7 +136,5 @@ public class DestroyByContact : MonoBehaviour
 
         other.gameObject.SetActive(false);
         //Destroy(other.gameObject);
-
-        
     }
 }

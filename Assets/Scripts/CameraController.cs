@@ -9,9 +9,11 @@ public class CameraController : MonoBehaviour {
 
     private Queue<Camera> cameraQueue;
     private GameObject bg;
-
-	// Use this for initialization
-	void Start () {
+    
+	/// <summary>
+    /// Initialize camera queue and prepare properties that need to be found during run-time.
+    /// </summary>
+    void Start () {
         // Create camera queue, with highest priority camera (main camera) first
         cameraQueue = new Queue<Camera>();
         cameraQueue.Enqueue(mainCamera);
@@ -20,8 +22,10 @@ public class CameraController : MonoBehaviour {
         bg = GameObject.FindWithTag("Background");
     }
 	
-	// Update is called once per frame
-	void Update () {
+	/// <summary>
+    /// When 'ChangeView' is pressed, change the selected camera view
+    /// </summary>
+    void Update () {
         if (Input.GetButtonDown("ChangeView"))
         {
             // Remove original camera from the queue and disable it

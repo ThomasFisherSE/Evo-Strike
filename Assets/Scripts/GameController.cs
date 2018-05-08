@@ -38,6 +38,9 @@ public class GameController : MonoBehaviour {
 
     private float minXSpawn, maxXSpawn, zSpawn;
 
+    /// <summary>
+    /// Initialise properties that need to be set during run-time.
+    /// </summary>
     private void Start()
     {
         AudioSource audio =  GetComponent<AudioSource>();
@@ -71,17 +74,27 @@ public class GameController : MonoBehaviour {
         MaxXSpawn = topCorner.x;
     }
 
+    /// <summary>
+    /// Update the health UI
+    /// </summary>
     public void UpdateHealth()
     {
         healthText.text = "Health: " + playerController.health;
     }
 
+    /// <summary>
+    /// Mark that the game is over.
+    /// </summary>
     public void GameOver()
     {
         gameOverText.text = "Game Over";
         gameOver = true;
     }
 
+    /// <summary>
+    /// Add to the player's score.
+    /// </summary>
+    /// <param name="scoreToAdd">The number of points to add to the score.</param>
     public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
@@ -92,6 +105,9 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Check for input from the player to restart the game / go to the main menu.
+    /// </summary>
     void Update()
     {
         if (gameOver)
@@ -114,17 +130,27 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Restart the level.
+    /// </summary>
     void RestartLevel()
     {
         int scene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 
+    /// <summary>
+    /// Update the score UI
+    /// </summary>
     void UpdateScore()
     {
         scoreText.text = "Score: " + score;
     }
 
+    /// <summary>
+    /// Spawn asteroids for the wave.
+    /// </summary>
+    /// <returns>A WaitForSeconds IEnumerator, allowing the couroutine to wait for some time.</returns>
     IEnumerator SpawnHazards()
     {
         // Spawn hazardCount hazards
@@ -144,6 +170,10 @@ public class GameController : MonoBehaviour {
         }
     }
   
+    /// <summary>
+    /// Continuously spawns waves until the game is over.
+    /// </summary>
+    /// <returns>A WaitForSeconds IEnumerator, allowing the couroutine to wait for some time.</returns>
     IEnumerator SpawnWaves () {
         // Wait to spawn first wave
         yield return new WaitForSeconds(startWait);
@@ -188,43 +218,29 @@ public class GameController : MonoBehaviour {
             yield return new WaitForSeconds(waveWait);
         
         }
-
-        /*
-        while (true)
-        {
-            waveNumber++;
-
-            waveText.text = "Wave: " + waveNumber;
-
-            // Add wave bonus
-            AddScore((int) Mathf.Pow(2, waveNumber));
-
-         
-
-            if (Random.value <= powerUpChance)
-            {
-                //Debug.Log("Spawned power up");
-                GameObject powerUp = powerUps[Random.Range(0, powerUps.Length)];
-                Vector3 spawnPosition = new Vector3(Random.Range(bottomCorner.x, topCorner.x), spawnValues.y, spawnValues.z);
-                Quaternion spawnRotation = Quaternion.identity;
-                Instantiate(powerUp, spawnPosition, spawnRotation);
-            }
-
-            // Wait before spawning next wave
-            yield return new WaitForSeconds(waveWait);
-        }
-        */
     }
     
+    /// <summary>
+    /// Display a temporary UI message showing recently added points.
+    /// </summary>
+    /// <param name="message">The message to display.</param>
+    /// <param name="delay">The time the message should be displayed for.</param>
+    /// <returns>A WaitForSeconds IEnumerator, allowing the couroutine to wait for some time.</returns>
     IEnumerator AddScoreMessage(string message, float delay)
     {
         addScoreText.text = message;
         addScoreText.enabled = true;
-        StartCoroutine(FadeTextToZeroAlpha(scoreFadeTime, addScoreText));
+        StartCoroutine(FadeText(scoreFadeTime, addScoreText));
         yield return new WaitForSeconds(delay);
     }
 
-    public IEnumerator FadeTextToZeroAlpha(float fadeTime, Text text)
+    /// <summary>
+    /// Fade UI text until it is transparent.
+    /// </summary>
+    /// <param name="fadeTime">The time that the text takes to fade completely.</param>
+    /// <param name="text">The text to be faded.</param>
+    /// <returns>A null IENumerator, so that the method can be ran as a couroutine.</returns>
+    public IEnumerator FadeText(float fadeTime, Text text)
     {
         // Set text color's red, green, blue, and alpha components
         text.color = new Color(text.color.r, text.color.g, text.color.b, 1);
@@ -238,6 +254,9 @@ public class GameController : MonoBehaviour {
     }
 
     #region Accessors and Mutators
+    /// <summary>
+    /// Accessors and mutators for minXSpawn
+    /// </summary>
     public float MinXSpawn
     {
         get
@@ -251,6 +270,9 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Accessors and mutators for maxXSpawn
+    /// </summary>
     public float MaxXSpawn
     {
         get
@@ -264,6 +286,9 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Accessors and mutators for waveNumber
+    /// </summary>
     public int WaveNumber
     {
         get

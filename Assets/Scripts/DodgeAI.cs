@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EvasiveManeuver : MonoBehaviour {
+public class DodgeAI : MonoBehaviour {
 
     private GameController gc;
 
     public float tilt;
-    public float dodge;
+    public float maxDodgeAmount;
     public float smoothing;
     public Vector2 startWait;
-    public Vector2 maneuverTime;
-    public Vector2 maneuverWait;
+    public Vector2 dodgeTime;
+    public Vector2 dodgeWait;
     public Boundary boundary;
 
     private Transform playerTransform;
     private float currentSpeed;
-    private float targetManeuver;
+    private float targetPosition;
     private Rigidbody rb;
 
-	void Start () {
+	/// <summary>
+    /// Prepare properties that need to be set at run-time, and start the dodge algorithm.
+    /// </summary>
+    void Start () {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
         gc = gameControllerObject.GetComponent<GameController>();
         
@@ -28,10 +31,13 @@ public class EvasiveManeuver : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
 
         currentSpeed = rb.velocity.z;
-        StartCoroutine(Evade());
+        StartCoroutine(Dodge());
 	}
 	
-	void FixedUpdate () {
+	/// <summary>
+    /// Move towards the dodge target
+    /// </summary>
+    void FixedUpdate () {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         if (player != null)
@@ -39,8 +45,8 @@ public class EvasiveManeuver : MonoBehaviour {
             playerTransform = player.transform;
         }
 
-        float newManeuver = Mathf.MoveTowards(rb.velocity.x, targetManeuver, Time.deltaTime * smoothing);
-        rb.velocity = new Vector3(newManeuver, 0.0f, currentSpeed);
+        float newDodge = Mathf.MoveTowards(rb.velocity.x, targetPosition, Time.deltaTime * smoothing);
+        rb.velocity = new Vector3(newDodge, 0.0f, currentSpeed);
 
         rb.position = new Vector3(
             Mathf.Clamp(rb.position.x, boundary.GetXMin(), boundary.GetXMax()),
@@ -50,7 +56,11 @@ public class EvasiveManeuver : MonoBehaviour {
         rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
     }
 
-    IEnumerator Evade()
+    /// <summary>
+    /// Set a random dodge target position
+    /// </summary>
+    /// <returns>A WaitForSeconds IENumerator, causing the coroutine to wait for some time.</returns>
+    IEnumerator Dodge()
     {
         yield return new WaitForSeconds(Random.Range(startWait.x, startWait.y));
 
@@ -59,24 +69,24 @@ public class EvasiveManeuver : MonoBehaviour {
             if (playerTransform != null)
             {
                 // Dodge towards the player
-                //targetManeuver = Random.Range(1,dodge) * playerTransform.position.x;
+                //targetPosition = Random.Range(1,dodge) * playerTransform.position.x;
                 
                 // Dodge inwards (i.e. to the right if x is -ve / left if x is +ve
-                targetManeuver = Random.Range(1, dodge) * -Mathf.Sign(transform.position.x);
+                targetPosition = Random.Range(1, maxDodgeAmount) * -Mathf.Sign(transform.position.x);
 
             } else
             {
                 // Dodge inwards (i.e. to the right if x is -ve / left if x is +ve
-                targetManeuver = Random.Range(1, dodge) * -Mathf.Sign(transform.position.x);
+                targetPosition = Random.Range(1, maxDodgeAmount) * -Mathf.Sign(transform.position.x);
             }
             
 
-            // Wait for maneuver to complete
-            yield return new WaitForSeconds(Random.Range(maneuverTime.x, maneuverTime.y));
+            // Wait for dodge to complete
+            yield return new WaitForSeconds(Random.Range(dodgeTime.x, dodgeTime.y));
             // Set the target back to 0
-            targetManeuver = 0;
-            // Wait for some time before being able to maneuver again
-            yield return new WaitForSeconds(Random.Range(maneuverWait.x, maneuverWait.y));
+            targetPosition = 0;
+            // Wait for some time before being able to dodge again
+            yield return new WaitForSeconds(Random.Range(dodgeWait.x, dodgeWait.y));
         }
     }
 }

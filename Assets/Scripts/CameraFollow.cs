@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollowPlayer : MonoBehaviour {
+public class CameraFollow : MonoBehaviour {
     public Transform target;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
-	// Update is called once per frame
-	void Update () {
+	/// <summary>
+    /// Make the camera follow the target
+    /// </summary>
+    void Update () {
         if (GetComponent<Camera>().enabled && target != null)
         {
             transform.position = target.position + new Vector3(0, 10, -15);

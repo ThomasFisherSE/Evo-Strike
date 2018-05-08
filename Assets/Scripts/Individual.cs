@@ -10,22 +10,22 @@ public class Individual
     public const int LIFETIME_FUNC = 0, SURVIVAL_FUNC = 1, ACCURACY_FUNC = 2, NB_ON_TARGET_FUNC = 3, ACCURATE_LONG_LIFE_FUNC = 4;
     #endregion
     #region Properties
-    private EvasiveManeuver evasiveManeuver;
+    private DodgeAI dodgeAI;
     private Mover mover;
     private WeaponController weaponController;
 
     private GameObject enemyShip;
 
     // Genes
-    private float speed, dodge, minManeuverTime, maxManeuverTime,
-        minManeuverWait, maxManeuverWait, minFireRate, maxFireRate;
+    private float speed, dodge, minDodgeTime, maxDodgeTime,
+        minDodgeWait, maxDodgeWait, minFireRate, maxFireRate;
 
     private float fitness;
 
-    // Evasive Maneuver attribute boundaries
+    // DodgeAI attribute boundaries
     private int minDodgeBound = 0, maxDodgeBound = 10;
-    private float minManeuverTimeBound = 0.1f, maxManeuverTimeBound = 2.0f;
-    private float minManeuverWaitBound = 0.1f, maxManeuverWaitBound = 3.0f;
+    private float minDodgeTimeBound = 0.1f, maxDodgeTimeBound = 2.0f;
+    private float minDodgeWaitBound = 0.1f, maxDodgeWaitBound = 3.0f;
 
     // Mover attribute boundaries
     private float minSpeedBound = -6.0f, maxSpeedBound = -2f;
@@ -43,15 +43,17 @@ public class Individual
     #endregion
 
     #region Constructors
-    /*
-     * Create an individual from an enemy ship prefab
-     */
+
+    /// <summary>
+    /// Create an individual from an enemy ship prefab.
+    /// </summary>
+    /// <param name="enemyShipObject">The enemy ship to create an individual from.</param>
     public Individual(GameObject enemyShipObject)
     {
         EnemyShip = enemyShipObject;
         if (EnemyShip != null)
         {
-            evasiveManeuver = EnemyShip.GetComponent<EvasiveManeuver>();
+            dodgeAI = EnemyShip.GetComponent<DodgeAI>();
             mover = EnemyShip.GetComponent<Mover>();
             weaponController = EnemyShip.GetComponent<WeaponController>();
 
@@ -61,126 +63,167 @@ public class Individual
         creationTime = Time.time;
     }
 
-    /*
-     * Create an individual from another individual
-     */
+    /// <summary>
+    /// Create an individual given another individual
+    /// </summary>
+    /// <param name="copy">The individual to copy.</param>
     public Individual(Individual copy)
     {
         CopyGenes(copy);
     }
 #endregion
 
-    /*
-     * Copy genes from an individual
-     */
+    /// <summary>
+    /// Copy genes from an individual
+    /// </summary>
+    /// <param name="src">The individual to copy genes from.</param>
     public void CopyGenes(Individual src)
     {
         Speed = src.Speed;
 
         Dodge = src.Dodge;
 
-        MinManeuverTime = src.MinManeuverTime;
-        MaxManeuverTime = src.MaxManeuverTime;
+        MinDodgeTime = src.MinDodgeTime;
+        MaxDodgeTime = src.MaxDodgeTime;
 
-        MinManeuverWait = src.MinManeuverWait;
-        MaxManeuverWait = src.MaxManeuverWait;
+        MinDodgeWait = src.MinDodgeWait;
+        MaxDodgeWait = src.MaxDodgeWait;
 
         MinFireRate = src.MinFireRate;
         MaxFireRate = src.MaxFireRate;
     }
 
-    /* 
-     * Called when the enemy completes a wave
-     */
+    /// <summary>
+    /// Mark that the individual has completed the wave.
+    /// </summary>
+    /// <param name="survivedWave">Whether the the individual survived or not.</param>
     public void Complete(bool survivedWave)
     {
         Lifetime = Time.time - creationTime;
         Survived = survivedWave;
     }
 
-    /* 
-     * Calculate the crossover point between x and y
-     */
+    /// <summary>
+    /// Calculate the crossover point between two values.
+    /// </summary>
+    /// <param name="x">The first value.</param>
+    /// <param name="y">The second value.</param>
+    /// <returns>The calculated crossover point between x and y.</returns>
     private float CrossoverPoint(float x, float y)
     {
         return (x + y) / 2; // basic mean
     }
 
-    /*
-     * Perform crossover with two parents (father, mother), keeping attributes within bounds
-     */
+    /// <summary>
+    /// Perform crossover between two parents, keeping attributes within set bounds.
+    /// </summary>
+    /// <param name="father">The first parent.</param>
+    /// <param name="mother">The second parent.</param>
     public void CrossoverAttributes(Individual father, Individual mother)
     {
         SetSpeed(System.Math.Min(CrossoverPoint(father.Speed, mother.Speed), maxSpeedBound));
 
         SetDodge(System.Math.Min(CrossoverPoint(father.Dodge, mother.Dodge), maxDodgeBound));
 
-        SetManeuverTimeRange(
-            CrossoverPoint(father.MinManeuverTime, mother.MinManeuverTime),
-            CrossoverPoint(father.MaxManeuverTime, mother.MaxManeuverTime));
+        SetDodgeTimeRange(
+            CrossoverPoint(father.MinDodgeTime, mother.MinDodgeTime),
+            CrossoverPoint(father.MaxDodgeTime, mother.MaxDodgeTime));
 
-        SetManeuverWaitRange(
-            CrossoverPoint(father.MinManeuverWait, mother.MinManeuverWait),
-            CrossoverPoint(father.MaxManeuverWait, mother.MaxManeuverWait));
+        SetDodgeWaitRange(
+            CrossoverPoint(father.MinDodgeWait, mother.MinDodgeWait),
+            CrossoverPoint(father.MaxDodgeWait, mother.MaxDodgeWait));
 
         SetFireRateRange(
             CrossoverPoint(father.MinFireRate, mother.MinFireRate),
             System.Math.Min(CrossoverPoint(father.MaxFireRate, mother.MaxFireRate), maxFireRateBound));
     }
 
-    /*
-     * Mutate the attributes of the individual
-     */
+    /// <summary>
+    /// Mutate the attributes of an individual
+    /// </summary>
     public void MutateAttributes()
     {
         RandomVerticalSpeed(speed - speed*MUTATION_MULT, speed + speed*MUTATION_MULT);
 
         RandomDodge(dodge - dodge*MUTATION_MULT, dodge + dodge*MUTATION_MULT);
         
-        RandomManeuverTime(minManeuverTime - minManeuverTime * MUTATION_MULT, maxManeuverTime + maxManeuverTime * MUTATION_MULT);
-        RandomManeuverWait(minManeuverWait - minManeuverWait * MUTATION_MULT, maxManeuverWait + maxManeuverWait * MUTATION_MULT);
+        RandomDodgeTime(minDodgeTime - minDodgeTime * MUTATION_MULT, maxDodgeTime + maxDodgeTime * MUTATION_MULT);
+        RandomDodgeWait(minDodgeWait - minDodgeWait * MUTATION_MULT, maxDodgeWait + maxDodgeWait * MUTATION_MULT);
         RandomFireRate(minFireRate - minFireRate * MUTATION_MULT, maxFireRate + maxFireRate * MUTATION_MULT);
     }
 
     #region Fitness Functions
 
+    /// <summary>
+    /// Calculate fitness based on lifetime.
+    /// </summary>
+    /// <returns>The calculated fitness score.</returns>
     public float LifetimeFunc()
     {
         return Lifetime;
     }
     
+    /// <summary>
+    /// Calculate fitness based on survival.
+    /// </summary>
+    /// <returns>The calculated fitness score.</returns>
     public float SurvivalFunc()
     {
         return System.Convert.ToInt32(Survived);
     }
 
+    /// <summary>
+    /// Calculate fitness based on accuracy.
+    /// </summary>
+    /// <returns>The calculated fitness score.</returns>
     public float AccuracyFunc()
     {
         return GetAccuracy();
     }
 
+    /// <summary>
+    /// Calculate fitness based on the number of shots on target.
+    /// </summary>
+    /// <returns>The calculated fitness score.</returns>
     public float NbOnTargetFunc()
     {
         return GetNbShotsOnTarget();
     }
 
+    /// <summary>
+    /// Get the accuracy of the individual.
+    /// </summary>
+    /// <returns>The accuracy value of the individual.</returns>
     public float GetAccuracy()
     {
         accuracy = weaponController.GetAccuracy();
         return accuracy;
     }
 
+    /// <summary>
+    /// Get the number of shots on target the individual made.
+    /// </summary>
+    /// <returns>The number of shots on target of the individual.</returns>
     public float GetNbShotsOnTarget()
     {
         nbShotsOnTarget = weaponController.GetNbShotsOnTarget();
         return nbShotsOnTarget;
     }
 
+    /// <summary>
+    /// Calculate fitness based on lifetime and accuracy.
+    /// </summary>
+    /// <returns>The calculated fitness score.</returns>
     public float AccurateLongLifeFunc()
     {
         return GetAccuracy() * Lifetime;
     }
 
+    /// <summary>
+    /// Calculate the fitness of the individual.
+    /// </summary>
+    /// <param name="selectedFunction">The index of the selected fitness function.</param>
+    /// <returns>The calculated fitness score.</returns>
     public float CalculateFitness(int selectedFunction)
     {
         // Use the selected fitness function (from method parameters)
@@ -219,8 +262,10 @@ public class Individual
 #endregion
 
     #region Set Random Attributes
-    /* Set Random Attributes */
 
+    /// <summary>
+    /// Set attributes randomly.
+    /// </summary>
     public void SetRandomAttributes()
     {
         if (EnemyShip == null)
@@ -231,39 +276,64 @@ public class Individual
         // Set random attributes:
         RandomDodge(MinDodgeBound, MaxDodgeBound);
 
-        RandomManeuverTime(MinManeuverTimeBound, MaxManeuverTimeBound);
+        RandomDodgeTime(MinDodgeTimeBound, MaxDodgeTimeBound);
 
-        RandomManeuverWait(MinManeuverWaitBound, MaxManeuverWaitBound);
+        RandomDodgeWait(MinDodgeWaitBound, MaxDodgeWaitBound);
 
         RandomVerticalSpeed(MinSpeedBound, MaxSpeedBound);
 
         RandomFireRate(MinFireRateBound, MaxFireRateBound);
     }
 
+    /// <summary>
+    /// Set dodge randomly within a range.
+    /// </summary>
+    /// <param name="minDodge">The minimum dodge value.</param>
+    /// <param name="maxDodge">The maximum dodge value.</param>
     public void RandomDodge(float minDodge, float maxDodge)
     {
         SetDodge(Random.Range(minDodge, maxDodge));
     }
 
-    public void RandomManeuverTime(float minManeuverTime, float maxManeuverTime)
+    /// <summary>
+    /// Set dodge time randomly within a range.
+    /// </summary>
+    /// <param name="minDodgeTime">The minimum dodge time.</param>
+    /// <param name="maxDodgeTime">The maximum dodge time.</param>
+    public void RandomDodgeTime(float minDodgeTime, float maxDodgeTime)
     {
-        float myMinManeuverTime = Random.Range(minManeuverTime, maxManeuverTime);
-        float myMaxManeuverTime = Random.Range(myMinManeuverTime, maxManeuverTime);
-        SetManeuverTimeRange(myMinManeuverTime, myMaxManeuverTime);
+        float myMinDodgeTime = Random.Range(minDodgeTime, maxDodgeTime);
+        float myMaxDodgeTime = Random.Range(myMinDodgeTime, maxDodgeTime);
+        SetDodgeTimeRange(myMinDodgeTime, myMaxDodgeTime);
     }
 
-    public void RandomManeuverWait(float minManeuverWait, float maxManeuverWait)
+    /// <summary>
+    /// Set dodge wait randomly within a range.
+    /// </summary>
+    /// <param name="minDodgeWait">The minimum dodge wait.</param>
+    /// <param name="maxDodgeWait">The maximum dodge wait.</param>
+    public void RandomDodgeWait(float minDodgeWait, float maxDodgeWait)
     {
-        float myMinManeuverWait = Random.Range(minManeuverWait, maxManeuverWait);
-        float myMaxManeuverWait = Random.Range(myMinManeuverWait, maxManeuverWait);
-        SetManeuverWaitRange(myMinManeuverWait, myMaxManeuverWait);
+        float myMinDodgeWait = Random.Range(minDodgeWait, maxDodgeWait);
+        float myMaxDodgeWait = Random.Range(myMinDodgeWait, maxDodgeWait);
+        SetDodgeWaitRange(myMinDodgeWait, myMaxDodgeWait);
     }
 
+    /// <summary>
+    /// Set speed randomly within a range.
+    /// </summary>
+    /// <param name="minSpeed">The minimum speed value.</param>
+    /// <param name="maxSpeed">The maximum speed value.</param>
     public void RandomVerticalSpeed(float minSpeed, float maxSpeed)
     {
         SetSpeed(Random.Range(minSpeed, maxSpeed));
     }
 
+    /// <summary>
+    /// Set fire rate randomly within a range.
+    /// </summary>
+    /// <param name="minFireRate">The minimum fire rate value.</param>
+    /// <param name="maxFireRate">The maximum fire rate value.</param>
     public void RandomFireRate(float minFireRate, float maxFireRate)
     {
         float myMinFireRate = Random.Range(minFireRate, maxFireRate);
@@ -274,32 +344,55 @@ public class Individual
 
     #region Accessors and Mutators
 
+    /// <summary>
+    /// Set a new speed value.
+    /// </summary>
+    /// <param name="s">The new speed value.</param>
     public void SetSpeed(float s)
     {
         mover.SetSpeed(s);
         Speed = s;
     }
 
+    /// <summary>
+    /// Set a new dodge value.
+    /// </summary>
+    /// <param name="d">The new dodge value.</param>
     public void SetDodge(float d)
     {
-        evasiveManeuver.dodge = d;
+        dodgeAI.maxDodgeAmount = d;
         Dodge = d;
     }
 
-    public void SetManeuverTimeRange(float min, float max)
+    /// <summary>
+    /// Set a new dodge time range.
+    /// </summary>
+    /// <param name="min">The new minimum dodge time.</param>
+    /// <param name="max">The new maximum dodge time.</param>
+    public void SetDodgeTimeRange(float min, float max)
     {
-        evasiveManeuver.maneuverTime = new Vector2(min, max);
-        MinManeuverTime = min;
-        MaxManeuverTime = max;
+        dodgeAI.dodgeTime = new Vector2(min, max);
+        MinDodgeTime = min;
+        MaxDodgeTime = max;
     }
 
-    public void SetManeuverWaitRange(float min, float max)
+    /// <summary>
+    /// Set a new dodge wait range.
+    /// </summary>
+    /// <param name="min">The new minimum dodge wait.</param>
+    /// <param name="max">The new maximum dodge wait.</param>
+    public void SetDodgeWaitRange(float min, float max)
     {
-        evasiveManeuver.maneuverWait = new Vector2(min, max);
-        MinManeuverWait = min;
-        MaxManeuverWait = max;
+        dodgeAI.dodgeWait = new Vector2(min, max);
+        MinDodgeWait = min;
+        MaxDodgeWait = max;
     }
 
+    /// <summary>
+    /// Set a new fire rate range.
+    /// </summary>
+    /// <param name="min">The new minimum fire rate.</param>
+    /// <param name="max">The new maximum fire rate.</param>
     public void SetFireRateRange(float min, float max)
     {
         weaponController.fireRate = new Vector2(min, max);
@@ -308,6 +401,9 @@ public class Individual
     }
 
     #region Field Accesors and Mutators
+    /// <summary>
+    /// Accessor and Mutator for minDodgeBound.
+    /// </summary>
     public int MinDodgeBound
     {
         get
@@ -321,6 +417,9 @@ public class Individual
         }
     }
 
+    /// <summary>
+    /// Accessor and Mutator for maxDodgeBound.
+    /// </summary>
     public int MaxDodgeBound
     {
         get
@@ -334,58 +433,73 @@ public class Individual
         }
     }
 
-    public float MinManeuverTimeBound
+    /// <summary>
+    /// Accessor and Mutator for minDodgeTimeBound.
+    /// </summary>
+    public float MinDodgeTimeBound
     {
         get
         {
-            return minManeuverTimeBound;
+            return minDodgeTimeBound;
         }
 
         set
         {
-            minManeuverTimeBound = value;
+            minDodgeTimeBound = value;
         }
     }
 
-    public float MaxManeuverTimeBound
+    /// <summary>
+    /// Accessor and Mutator for maxDodgeTimeBound.
+    /// </summary>
+    public float MaxDodgeTimeBound
     {
         get
         {
-            return maxManeuverTimeBound;
+            return maxDodgeTimeBound;
         }
 
         set
         {
-            maxManeuverTimeBound = value;
+            maxDodgeTimeBound = value;
         }
     }
 
-    public float MinManeuverWaitBound
+    /// <summary>
+    /// Accessor and Mutator for minDodgeWaitBound.
+    /// </summary>
+    public float MinDodgeWaitBound
     {
         get
         {
-            return minManeuverWaitBound;
+            return minDodgeWaitBound;
         }
 
         set
         {
-            minManeuverWaitBound = value;
+            minDodgeWaitBound = value;
         }
     }
 
-    public float MaxManeuverWaitBound
+    /// <summary>
+    /// Accessor and Mutator for maxDodgeWaitBound.
+    /// </summary>
+    public float MaxDodgeWaitBound
     {
         get
         {
-            return maxManeuverWaitBound;
+            return maxDodgeWaitBound;
         }
 
         set
         {
-            maxManeuverWaitBound = value;
+            maxDodgeWaitBound = value;
         }
     }
 
+    /// <summary>
+    /// Accessor and Mutator for minSpeedBound.
+    /// </summary>
     public float MinSpeedBound
     {
         get
@@ -399,6 +513,9 @@ public class Individual
         }
     }
 
+    /// <summary>
+    /// Accessor and Mutator for maxSpeedBound.
+    /// </summary>
     public float MaxSpeedBound
     {
         get
@@ -412,6 +529,9 @@ public class Individual
         }
     }
 
+    /// <summary>
+    /// Accessor and Mutator for minFireRateBound.
+    /// </summary>
     public float MinFireRateBound
     {
         get
@@ -425,6 +545,9 @@ public class Individual
         }
     }
 
+    /// <summary>
+    /// Accessor and Mutator for maxFireRateBound.
+    /// </summary>
     public float MaxFireRateBound
     {
         get
@@ -438,6 +561,9 @@ public class Individual
         }
     }
 
+    /// <summary>
+    /// Accessor and Mutator for speed.
+    /// </summary>
     public float Speed
     {
         get
@@ -451,6 +577,9 @@ public class Individual
         }
     }
 
+    /// <summary>
+    /// Accessor and Mutator for dodge.
+    /// </summary>
     public float Dodge
     {
         get
@@ -464,58 +593,73 @@ public class Individual
         }
     }
 
-    public float MinManeuverTime
+    /// <summary>
+    /// Accessor and Mutator for minDodgeTime.
+    /// </summary>
+    public float MinDodgeTime
     {
         get
         {
-            return minManeuverTime;
+            return minDodgeTime;
         }
 
         set
         {
-            minManeuverTime = value;
+            minDodgeTime = value;
         }
     }
 
-    public float MaxManeuverTime
+    /// <summary>
+    /// Accessor and Mutator for maxDodgeTime.
+    /// </summary>
+    public float MaxDodgeTime
     {
         get
         {
-            return maxManeuverTime;
+            return maxDodgeTime;
         }
 
         set
         {
-            maxManeuverTime = value;
+            maxDodgeTime = value;
         }
     }
 
-    public float MinManeuverWait
+    /// <summary>
+    /// Accessor and Mutator for minDodgeWait.
+    /// </summary>
+    public float MinDodgeWait
     {
         get
         {
-            return minManeuverWait;
+            return minDodgeWait;
         }
 
         set
         {
-            minManeuverWait = value;
+            minDodgeWait = value;
         }
     }
 
-    public float MaxManeuverWait
+    /// <summary>
+    /// Accessor and Mutator for minDodgeWait.
+    /// </summary>
+    public float MaxDodgeWait
     {
         get
         {
-            return maxManeuverWait;
+            return maxDodgeWait;
         }
 
         set
         {
-            maxManeuverWait = value;
+            maxDodgeWait = value;
         }
     }
 
+    /// <summary>
+    /// Accessor and Mutator for minFireRate.
+    /// </summary>
     public float MinFireRate
     {
         get
@@ -529,6 +673,9 @@ public class Individual
         }
     }
 
+    /// <summary>
+    /// Accessor and Mutator for maxFireRate.
+    /// </summary>
     public float MaxFireRate
     {
         get
@@ -542,6 +689,9 @@ public class Individual
         }
     }
 
+    /// <summary>
+    /// Accessor and Mutator for fitness.
+    /// </summary>
     public float Fitness
     {
         get
@@ -555,6 +705,9 @@ public class Individual
         }
     }
 
+    /// <summary>
+    /// Accessor and Mutator for enemyShip.
+    /// </summary>
     public GameObject EnemyShip
     {
         get
@@ -568,6 +721,9 @@ public class Individual
         }
     }
 
+    /// <summary>
+    /// Accessor and Mutator for lifetime.
+    /// </summary>
     public float Lifetime
     {
         get
@@ -581,6 +737,9 @@ public class Individual
         }
     }
 
+    /// <summary>
+    /// Accessor and Mutator for survived.
+    /// </summary>
     public bool Survived
     {
         get

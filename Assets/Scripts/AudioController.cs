@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour {
     
-    /*
-     * Prepare the audio source on the game object the script is attached to
-     */
-	void Start () {
+    /// <summary>
+    /// Prepare the audio source on the game object the script is attached to
+    /// </summary>
+    void Start () {
         AudioSource audioSrc = GetComponent<AudioSource>();
 
         if (audioSrc != null)

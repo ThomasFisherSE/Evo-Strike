@@ -8,16 +8,29 @@ public class Boundary
     public float zMin, zMax;
     private float xMin, xMax;
 
+    /// <summary>
+    /// Accessor for the minimum x value of the boundary.
+    /// </summary>
+    /// <returns>The value of xMin.</returns>
     public float GetXMin()
     {
         return xMin;
     }
 
+    /// <summary>
+    /// Accessor for the maximum x value of the boundary.
+    /// </summary>
+    /// <returns>The value of xMax.</returns>
     public float GetXMax()
     {
         return xMax;
     }
-
+    
+    /// <summary>
+    /// Set a new range in x for the boundary.
+    /// </summary>
+    /// <param name="min">The new minimum x value of the boundary.</param>
+    /// <param name="max">The new maximum x value of the boundary.</param>
     public void SetX(float min, float max)
     {
         xMin = min;
@@ -40,6 +53,9 @@ public class PlayerController : MonoBehaviour
     public float fireRate = 4.0f;
     private float nextFire = 0.5f;
 
+    /// <summary>
+    /// Initialize properties that should be set during run-time.
+    /// </summary>
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -62,6 +78,9 @@ public class PlayerController : MonoBehaviour
         destroyBoundary.transform.position = new Vector3(0,0,Camera.main.transform.position.z);
     }
 
+    /// <summary>
+    /// Handles firing of weapons.
+    /// </summary>
     void Update()
     {
         // Shooting
@@ -89,14 +108,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /**
-     * Temporarily boost fire-rate
-     */
+    /// <summary>
+    /// Temporarily boost the player's fire-rate.
+    /// </summary>
+    /// <param name="multiplier">The multiplier to boost the fire-rate by.</param>
+    /// <param name="secs">The time for which the fire-rate is increased.</param>
     public void FireRateBoost(float multiplier, float secs)
     {
         StartCoroutine(TempFireRateBoost(multiplier, secs));
     }
 
+    /// <summary>
+    /// Coroutine for temporarily boosting the player's fire-rate.
+    /// </summary>
+    /// <param name="multiplier">The multiplier to boost the fire-rate by.</param>
+    /// <param name="secs">The time for which the fire-rate is increased.</param>
+    /// <returns>A WaitForSeconds IEnumerator, allowing the coroutine to wait for some time.</returns>
     private IEnumerator TempFireRateBoost(float multiplier, float secs)
     {
         fireRate *= multiplier;
@@ -105,6 +132,9 @@ public class PlayerController : MonoBehaviour
         fireRate /= multiplier;
     }
 
+    /// <summary>
+    /// Handles player movement.
+    /// </summary>
     void FixedUpdate()
     {
         // Movement

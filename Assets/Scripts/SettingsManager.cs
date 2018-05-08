@@ -16,11 +16,19 @@ public class SettingsManager : MonoBehaviour {
 
     public AudioSource audioSrc;
 
+    /// <summary>
+    /// Initialize properties that should be set during run-time.
+    /// Set the default values of UI components.
+    /// </summary>
     private void Start()
     {
         volumeSlider.value = PlayerPrefs.GetFloat("MasterVol");
     }
 
+    /// <summary>
+    /// Initialize the values of options UI components.
+    /// Sets up listeners for UI components.
+    /// </summary>
     void OnEnable () {
         gameSettings = new GameSettings();
 
@@ -39,45 +47,53 @@ public class SettingsManager : MonoBehaviour {
         }
 	}
 	
-	public void OnFullscreenToggle()
+	/// <summary>
+    /// Toggle fullscreen mode.
+    /// </summary>
+    public void OnFullscreenToggle()
     {
         gameSettings.fullscreen = Screen.fullScreen = fullscreenToggle.isOn;
     }
 
+    /// <summary>
+    /// Change the screen resolution to the chosen option.
+    /// </summary>
     public void OnResolutionChange()
     {
         Screen.SetResolution(resolutions[resolutionDropdown.value].width, resolutions[resolutionDropdown.value].height, Screen.fullScreen);
     }
 
+    /// <summary>
+    /// Change the texture quality to the chosen option.
+    /// </summary>
     public void OnTextureQualityChange()
     {
         QualitySettings.masterTextureLimit = gameSettings.textureQuality = textureQualityDropdown.value;
     }
 
+    /// <summary>
+    /// Change the anti-aliasing method to the chosen option.
+    /// </summary>
     public void OnAntiAliasingChange()
     {
         QualitySettings.antiAliasing = gameSettings.antiAliasing = (int) Mathf.Pow(2, antiAliasingDropdown.value);
     }
 
+    /// <summary>
+    /// Change the V-Sync method to the chosen option.
+    /// </summary>
     public void OnVSyncChange()
     {
         QualitySettings.vSyncCount = gameSettings.vSync = vSyncDropdown.value;
     }
 
+    /// <summary>
+    /// Change and save the volume to the chosen value.
+    /// </summary>
     public void OnVolumeChange()
     {
         audioSrc.volume = gameSettings.globalVolume = volumeSlider.value;
         PlayerPrefs.SetFloat("MasterVol", audioSrc.volume);
         PlayerPrefs.Save();
-    }
-
-    public void SaveSettings()
-    {
-
-    }
-
-    public void LoadSettings()
-    {
-
     }
 }

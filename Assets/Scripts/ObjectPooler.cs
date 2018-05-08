@@ -9,11 +9,17 @@ public class ObjectPooler : MonoBehaviour {
     public GameObject objectToPool;
     public int amountToPool;
 
+    /// <summary>
+    /// Set the static object pooler shared instance.
+    /// </summary>
     void Awake()
     {
         SharedInstance = this;
     }
 
+    /// <summary>
+    /// Initialize properties that should be set during run-time.
+    /// </summary>
     void Start()
     {
         // Create a new list of pooled objects
@@ -29,6 +35,10 @@ public class ObjectPooler : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Find an inactive pooled object from the list of pooled objects.
+    /// </summary>
+    /// <returns></returns>
     public GameObject GetPooledObject()
     {
         // Try to find an object that is not currently active, and return it
