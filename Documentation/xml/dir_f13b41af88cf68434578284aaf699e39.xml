@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_f13b41af88cf68434578284aaf699e39" kind="dir">
+    <compoundname>Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts</compoundname>
+    <innerfile refid="_audio_controller_8cs">AudioController.cs</innerfile>
+    <innerfile refid="_b_g_scroller_8cs">BGScroller.cs</innerfile>
+    <innerfile refid="_camera_controller_8cs">CameraController.cs</innerfile>
+    <innerfile refid="_camera_follow_8cs">CameraFollow.cs</innerfile>
+    <innerfile refid="_destroy_by_boundary_8cs">DestroyByBoundary.cs</innerfile>
+    <innerfile refid="_destroy_by_contact_8cs">DestroyByContact.cs</innerfile>
+    <innerfile refid="_destroy_by_time_8cs">DestroyByTime.cs</innerfile>
+    <innerfile refid="_dodge_a_i_8cs">DodgeAI.cs</innerfile>
+    <innerfile refid="_evolution_controller_8cs">EvolutionController.cs</innerfile>
+    <innerfile refid="_game_controller_8cs">GameController.cs</innerfile>
+    <innerfile refid="_game_settings_8cs">GameSettings.cs</innerfile>
+    <innerfile refid="_individual_8cs">Individual.cs</innerfile>
+    <innerfile refid="_mover_8cs">Mover.cs</innerfile>
+    <innerfile refid="_object_pooler_8cs">ObjectPooler.cs</innerfile>
+    <innerfile refid="_pick_up_power_up_8cs">PickUpPowerUp.cs</innerfile>
+    <innerfile refid="_player_controller_8cs">PlayerController.cs</innerfile>
+    <innerfile refid="_projectile_8cs">Projectile.cs</innerfile>
+    <innerfile refid="_random_rotator_8cs">RandomRotator.cs</innerfile>
+    <innerfile refid="_scene_loader_8cs">SceneLoader.cs</innerfile>
+    <innerfile refid="_settings_manager_8cs">SettingsManager.cs</innerfile>
+    <innerfile refid="_weapon_controller_8cs">WeaponController.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/"/>
+  </compounddef>
+</doxygen>

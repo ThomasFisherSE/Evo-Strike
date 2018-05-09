@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_destroy_by_boundary" kind="class" language="C#" prot="public">
+    <compoundname>DestroyByBoundary</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_destroy_by_boundary_1aa48472460eb242d9630efe292cffa3dd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DestroyByBoundary.OnTriggerExit</definition>
+        <argsstring>(Collider other)</argsstring>
+        <name>OnTriggerExit</name>
+        <param>
+          <type>Collider</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Handle collisions with other objects </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The collider of the object that is being collided with.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByBoundary.cs" line="11" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByBoundary.cs" bodystart="11" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="18">
+        <label>DestroyByBoundary</label>
+        <link refid="class_destroy_by_boundary"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="20">
+        <label>DestroyByBoundary</label>
+        <link refid="class_destroy_by_boundary"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByBoundary.cs" line="5" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByBoundary.cs" bodystart="5" bodyend="35"/>
+    <listofallmembers>
+      <member refid="class_destroy_by_boundary_1aa48472460eb242d9630efe292cffa3dd" prot="private" virt="non-virtual"><scope>DestroyByBoundary</scope><name>OnTriggerExit</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

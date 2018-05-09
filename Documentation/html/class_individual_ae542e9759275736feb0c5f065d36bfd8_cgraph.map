@@ -1,0 +1,14 @@
+<map id="Individual.Individual" name="Individual.Individual">
+<area shape="rect" id="node2" href="$class_individual.html#aad9008e000af2bf09346be0ca9258116" title="Set attributes randomly. " alt="" coords="184,107,387,133"/>
+<area shape="rect" id="node3" href="$class_individual.html#a75271d202126e53879bdb51a9fe65ef3" title="Set dodge randomly within a range. " alt="" coords="449,5,611,32"/>
+<area shape="rect" id="node5" href="$class_individual.html#a108e7c67d55c334bcc885e8dc5bb740b" title="Set dodge time randomly within a range. " alt="" coords="435,56,625,83"/>
+<area shape="rect" id="node7" href="$class_individual.html#a1ac91351958ff89363dac0c16612f07d" title="Set dodge wait randomly within a range. " alt="" coords="435,107,625,133"/>
+<area shape="rect" id="node9" href="$class_individual.html#ab66822b58148ba1507d2e27aff8676e7" title="Set speed randomly within a range. " alt="" coords="445,158,615,199"/>
+<area shape="rect" id="node12" href="$class_individual.html#ad6ad54b9dd02fcb02b5a11738585d41c" title="Set fire rate randomly within a range. " alt="" coords="443,224,617,251"/>
+<area shape="rect" id="node4" href="$class_individual.html#a31b0b7114a58803aba9e81b6650fd7cb" title="Set a new dodge value. " alt="" coords="706,5,841,32"/>
+<area shape="rect" id="node6" href="$class_individual.html#aeff5fb1f9a1619c4fb2e880b6f62b311" title="Set a new dodge time range. " alt="" coords="673,56,873,83"/>
+<area shape="rect" id="node8" href="$class_individual.html#a31ca5e7277bc5f8cbe48bde294590095" title="Set a new dodge wait range. " alt="" coords="674,107,873,133"/>
+<area shape="rect" id="node10" href="$class_individual.html#a106bf8917e8f55075f01e39e9c7e2264" title="Set a new speed value. " alt="" coords="706,165,841,192"/>
+<area shape="rect" id="node11" href="$class_mover.html#a7a75a74f9bf6f20d3938c37bb95d8068" title="Set a new speed value. " alt="" coords="921,165,1039,192"/>
+<area shape="rect" id="node13" href="$class_individual.html#ab9a068a2aeac06fc33a22391dba7559a" title="Set a new fire rate range. " alt="" coords="681,224,865,251"/>
+</map>

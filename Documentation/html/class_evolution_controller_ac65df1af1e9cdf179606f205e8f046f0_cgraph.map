@@ -1,0 +1,7 @@
+<map id="EvolutionController.NextGeneration" name="EvolutionController.NextGeneration">
+<area shape="rect" id="node2" href="$class_evolution_controller.html#a56b57730a8b4707ffe1c8b8053871a84" title="Display the most powerful enemy panel. " alt="" coords="213,27,389,69"/>
+<area shape="rect" id="node3" href="$class_individual.html#a5d4fb02c8072b931ffde1a03afb26271" title="Get the accuracy of the individual. " alt="" coords="461,8,616,35"/>
+<area shape="rect" id="node5" href="$class_individual.html#a100f431028b5b9d385348fdb000e3b32" title="Get the number of shots on target the individual made. " alt="" coords="437,60,640,87"/>
+<area shape="rect" id="node4" href="$class_weapon_controller.html#a32d07eb45dc1079a4c82bae18a57f493" title="Accessor for the accuracy attribute. " alt="" coords="688,5,893,32"/>
+<area shape="rect" id="node6" href="$class_weapon_controller.html#aab88ffc7b720e10dce55b93dec090297" title="Accessor for the nbShotsOnTarget attribute. " alt="" coords="691,57,891,98"/>
+</map>

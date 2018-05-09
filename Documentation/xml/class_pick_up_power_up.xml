@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_pick_up_power_up" kind="class" language="C#" prot="public">
+    <compoundname>PickUpPowerUp</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_pick_up_power_up_1a7ae524c7a44e70274c7c767518efe757" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int PickUpPowerUp.powerUpScore</definition>
+        <argsstring></argsstring>
+        <name>powerUpScore</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" line="7" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pick_up_power_up_1af31fa062fa0b10ffce7ce6799ca58827" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PickUpPowerUp.fireRateMultiplier</definition>
+        <argsstring></argsstring>
+        <name>fireRateMultiplier</name>
+        <initializer>= 2.5f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" line="8" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pick_up_power_up_1ac026faee3bf9fe7d7a9066030e909a60" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int PickUpPowerUp.healthBoost</definition>
+        <argsstring></argsstring>
+        <name>healthBoost</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" line="9" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pick_up_power_up_1a77c6017483939ae8eae6fd0c5933e55b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PickUpPowerUp.boostTimer</definition>
+        <argsstring></argsstring>
+        <name>boostTimer</name>
+        <initializer>= 5.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" line="11" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pick_up_power_up_1a63055db7773732a7cd3e7729a91186a6" prot="public" static="no" mutable="no">
+        <type>AudioClip</type>
+        <definition>AudioClip PickUpPowerUp.pickUpSound</definition>
+        <argsstring></argsstring>
+        <name>pickUpSound</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" line="13" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_pick_up_power_up_1ae275d64d0672ce2e9b42fd4bf3f26d48" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject PickUpPowerUp.player</definition>
+        <argsstring></argsstring>
+        <name>player</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" line="15" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pick_up_power_up_1a00017f196051393d19d09204b0f390b2" prot="private" static="no" mutable="no">
+        <type><ref refid="class_game_controller" kindref="compound">GameController</ref></type>
+        <definition>GameController PickUpPowerUp.gc</definition>
+        <argsstring></argsstring>
+        <name>gc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" line="16" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pick_up_power_up_1a4aca8da06ed7b7cb30992f93162b1047" prot="private" static="no" mutable="no">
+        <type><ref refid="class_player_controller" kindref="compound">PlayerController</ref></type>
+        <definition>PlayerController PickUpPowerUp.pc</definition>
+        <argsstring></argsstring>
+        <name>pc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" line="17" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pick_up_power_up_1aaa30b353376c58fc1bc08b7eba40f19c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PickUpPowerUp.isTriggered</definition>
+        <argsstring></argsstring>
+        <name>isTriggered</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" line="19" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_pick_up_power_up_1aa39c6e614163b325973182373a5ab85e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PickUpPowerUp.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>Initialize properties that should be set during run-time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" line="24" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" bodystart="24" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pick_up_power_up_1a82be31cd297bcfe9744017bb4b7cb380" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PickUpPowerUp.OnTriggerEnter</definition>
+        <argsstring>(Collider other)</argsstring>
+        <name>OnTriggerEnter</name>
+        <param>
+          <type>Collider</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Handle collisions with other objects with colliders. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object that has been collided with.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" line="39" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" bodystart="39" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="56">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="55">
+        <label>PickUpPowerUp</label>
+        <link refid="class_pick_up_power_up"/>
+        <childnode refid="56" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="58">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="57">
+        <label>PickUpPowerUp</label>
+        <link refid="class_pick_up_power_up"/>
+        <childnode refid="58" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" line="6" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PickUpPowerUp.cs" bodystart="5" bodyend="75"/>
+    <listofallmembers>
+      <member refid="class_pick_up_power_up_1a77c6017483939ae8eae6fd0c5933e55b" prot="public" virt="non-virtual"><scope>PickUpPowerUp</scope><name>boostTimer</name></member>
+      <member refid="class_pick_up_power_up_1af31fa062fa0b10ffce7ce6799ca58827" prot="public" virt="non-virtual"><scope>PickUpPowerUp</scope><name>fireRateMultiplier</name></member>
+      <member refid="class_pick_up_power_up_1a00017f196051393d19d09204b0f390b2" prot="private" virt="non-virtual"><scope>PickUpPowerUp</scope><name>gc</name></member>
+      <member refid="class_pick_up_power_up_1ac026faee3bf9fe7d7a9066030e909a60" prot="public" virt="non-virtual"><scope>PickUpPowerUp</scope><name>healthBoost</name></member>
+      <member refid="class_pick_up_power_up_1aaa30b353376c58fc1bc08b7eba40f19c" prot="private" virt="non-virtual"><scope>PickUpPowerUp</scope><name>isTriggered</name></member>
+      <member refid="class_pick_up_power_up_1a82be31cd297bcfe9744017bb4b7cb380" prot="private" virt="non-virtual"><scope>PickUpPowerUp</scope><name>OnTriggerEnter</name></member>
+      <member refid="class_pick_up_power_up_1a4aca8da06ed7b7cb30992f93162b1047" prot="private" virt="non-virtual"><scope>PickUpPowerUp</scope><name>pc</name></member>
+      <member refid="class_pick_up_power_up_1a63055db7773732a7cd3e7729a91186a6" prot="public" virt="non-virtual"><scope>PickUpPowerUp</scope><name>pickUpSound</name></member>
+      <member refid="class_pick_up_power_up_1ae275d64d0672ce2e9b42fd4bf3f26d48" prot="private" virt="non-virtual"><scope>PickUpPowerUp</scope><name>player</name></member>
+      <member refid="class_pick_up_power_up_1a7ae524c7a44e70274c7c767518efe757" prot="public" virt="non-virtual"><scope>PickUpPowerUp</scope><name>powerUpScore</name></member>
+      <member refid="class_pick_up_power_up_1aa39c6e614163b325973182373a5ab85e" prot="private" virt="non-virtual"><scope>PickUpPowerUp</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

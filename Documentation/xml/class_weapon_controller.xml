@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_weapon_controller" kind="class" language="C#" prot="public">
+    <compoundname>WeaponController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_weapon_controller_1a963340c5f785bb87fdd6cf0e6d6071d5" prot="public" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject WeaponController.shot</definition>
+        <argsstring></argsstring>
+        <name>shot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" line="8" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_weapon_controller_1aa8f1205518b7c00dcb636ccd9bfb7ed9" prot="public" static="no" mutable="no">
+        <type>Transform</type>
+        <definition>Transform WeaponController.shotSpawn</definition>
+        <argsstring></argsstring>
+        <name>shotSpawn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" line="9" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_weapon_controller_1a82c6c419930686076e2e67c5453e3ac9" prot="public" static="no" mutable="no">
+        <type>Vector2</type>
+        <definition>Vector2 WeaponController.fireRate</definition>
+        <argsstring></argsstring>
+        <name>fireRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" line="11" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_weapon_controller_1a798adbbaf5804e4a4a4f82b4ab6c2754" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float WeaponController.delay</definition>
+        <argsstring></argsstring>
+        <name>delay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" line="13" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_weapon_controller_1a5d3c78ec377501bb9e9bdaca722a7f09" prot="private" static="no" mutable="no">
+        <type>AudioSource</type>
+        <definition>AudioSource WeaponController.audioSource</definition>
+        <argsstring></argsstring>
+        <name>audioSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" line="15" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_weapon_controller_1adde82cf9c8005a6519ba1c12c8c70871" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int WeaponController.nbShots</definition>
+        <argsstring></argsstring>
+        <name>nbShots</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" line="17" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_weapon_controller_1af70adc09a7d186d34b02670a5f85ede0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int WeaponController.nbShotsOnTarget</definition>
+        <argsstring></argsstring>
+        <name>nbShotsOnTarget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" line="18" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_weapon_controller_1a0c5af2301f8dbd21726f480ac85bc15c" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float WeaponController.accuracy</definition>
+        <argsstring></argsstring>
+        <name>accuracy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" line="20" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_weapon_controller_1ab81011b817a7710fdf8359eddf76f895" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void WeaponController.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>Initialize properties that should be set during run-time. Start automatic firing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" line="26" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" bodystart="26" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_weapon_controller_1ac04d8bfb5c717e91d237076a8903229f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void WeaponController.Fire</definition>
+        <argsstring>()</argsstring>
+        <name>Fire</name>
+        <briefdescription>
+<para>Fire a projectile. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" line="44" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" bodystart="44" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_weapon_controller_1ab21b5173574bd1d507709b21be4aec1c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void WeaponController.OnTargetShot</definition>
+        <argsstring>()</argsstring>
+        <name>OnTargetShot</name>
+        <briefdescription>
+<para>Mark that a shot was on target, and update the accuracy. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" line="64" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" bodystart="64" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_weapon_controller_1a32d07eb45dc1079a4c82bae18a57f493" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float WeaponController.GetAccuracy</definition>
+        <argsstring>()</argsstring>
+        <name>GetAccuracy</name>
+        <briefdescription>
+<para>Accessor for the accuracy attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The value of accuracy.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" line="76" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" bodystart="76" bodyend="79"/>
+        <referencedby refid="class_individual_1a5d4fb02c8072b931ffde1a03afb26271" compoundref="_individual_8cs" startline="197" endline="201">Individual.GetAccuracy</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_weapon_controller_1aab88ffc7b720e10dce55b93dec090297" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int WeaponController.GetNbShotsOnTarget</definition>
+        <argsstring>()</argsstring>
+        <name>GetNbShotsOnTarget</name>
+        <briefdescription>
+<para>Accessor for the nbShotsOnTarget attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The value of nbShotsOnTarget</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" line="85" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" bodystart="85" bodyend="88"/>
+        <referencedby refid="class_individual_1a100f431028b5b9d385348fdb000e3b32" compoundref="_individual_8cs" startline="207" endline="211">Individual.GetNbShotsOnTarget</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="82">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="81">
+        <label>WeaponController</label>
+        <link refid="class_weapon_controller"/>
+        <childnode refid="82" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="84">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="83">
+        <label>WeaponController</label>
+        <link refid="class_weapon_controller"/>
+        <childnode refid="84" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" line="6" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/WeaponController.cs" bodystart="5" bodyend="89"/>
+    <listofallmembers>
+      <member refid="class_weapon_controller_1a0c5af2301f8dbd21726f480ac85bc15c" prot="private" virt="non-virtual"><scope>WeaponController</scope><name>accuracy</name></member>
+      <member refid="class_weapon_controller_1a5d3c78ec377501bb9e9bdaca722a7f09" prot="private" virt="non-virtual"><scope>WeaponController</scope><name>audioSource</name></member>
+      <member refid="class_weapon_controller_1a798adbbaf5804e4a4a4f82b4ab6c2754" prot="public" virt="non-virtual"><scope>WeaponController</scope><name>delay</name></member>
+      <member refid="class_weapon_controller_1ac04d8bfb5c717e91d237076a8903229f" prot="private" virt="non-virtual"><scope>WeaponController</scope><name>Fire</name></member>
+      <member refid="class_weapon_controller_1a82c6c419930686076e2e67c5453e3ac9" prot="public" virt="non-virtual"><scope>WeaponController</scope><name>fireRate</name></member>
+      <member refid="class_weapon_controller_1a32d07eb45dc1079a4c82bae18a57f493" prot="public" virt="non-virtual"><scope>WeaponController</scope><name>GetAccuracy</name></member>
+      <member refid="class_weapon_controller_1aab88ffc7b720e10dce55b93dec090297" prot="public" virt="non-virtual"><scope>WeaponController</scope><name>GetNbShotsOnTarget</name></member>
+      <member refid="class_weapon_controller_1adde82cf9c8005a6519ba1c12c8c70871" prot="private" virt="non-virtual"><scope>WeaponController</scope><name>nbShots</name></member>
+      <member refid="class_weapon_controller_1af70adc09a7d186d34b02670a5f85ede0" prot="private" virt="non-virtual"><scope>WeaponController</scope><name>nbShotsOnTarget</name></member>
+      <member refid="class_weapon_controller_1ab21b5173574bd1d507709b21be4aec1c" prot="public" virt="non-virtual"><scope>WeaponController</scope><name>OnTargetShot</name></member>
+      <member refid="class_weapon_controller_1a963340c5f785bb87fdd6cf0e6d6071d5" prot="public" virt="non-virtual"><scope>WeaponController</scope><name>shot</name></member>
+      <member refid="class_weapon_controller_1aa8f1205518b7c00dcb636ccd9bfb7ed9" prot="public" virt="non-virtual"><scope>WeaponController</scope><name>shotSpawn</name></member>
+      <member refid="class_weapon_controller_1ab81011b817a7710fdf8359eddf76f895" prot="private" virt="non-virtual"><scope>WeaponController</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

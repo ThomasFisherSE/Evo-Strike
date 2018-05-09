@@ -1,0 +1,973 @@
+\hypertarget{class_individual}{}\section{Individual Class Reference}
+\label{class_individual}\index{Individual@{Individual}}
+
+
+Collaboration diagram for Individual\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_individual_ae542e9759275736feb0c5f065d36bfd8}{Individual}} (Game\+Object enemy\+Ship\+Object)
+\begin{DoxyCompactList}\small\item\em Create an individual from an enemy ship prefab. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_individual_a9ae7902f014f58e296bdd87083635756}{Individual}} (\mbox{\hyperlink{class_individual}{Individual}} copy)
+\begin{DoxyCompactList}\small\item\em Create an individual given another individual \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_individual_a7a4c37b420810992cc80448fb7e8652d}{Copy\+Genes}} (\mbox{\hyperlink{class_individual}{Individual}} src)
+\begin{DoxyCompactList}\small\item\em Copy genes from an individual \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_individual_a3aba987110bfa0ca5eb4f2a7924524da}{Complete}} (bool survived\+Wave)
+\begin{DoxyCompactList}\small\item\em Mark that the individual has completed the wave. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_individual_a874acf4e26980a4e97fe5301a5c019a8}{Crossover\+Attributes}} (\mbox{\hyperlink{class_individual}{Individual}} father, \mbox{\hyperlink{class_individual}{Individual}} mother)
+\begin{DoxyCompactList}\small\item\em Perform crossover between two parents, keeping attributes within set bounds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_individual_a2b19324cd6e712330c4d1601c95dcffd}{Mutate\+Attributes}} ()
+\begin{DoxyCompactList}\small\item\em Mutate the attributes of an individual \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_af40ad69dad043da7061c07856b6f1457}{Lifetime\+Func}} ()
+\begin{DoxyCompactList}\small\item\em Calculate fitness based on lifetime. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_abf304201269d32a0f40d9a25ce98d8db}{Survival\+Func}} ()
+\begin{DoxyCompactList}\small\item\em Calculate fitness based on survival. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_ae29881ad8bfa0ec8db58c650ac33eaf0}{Accuracy\+Func}} ()
+\begin{DoxyCompactList}\small\item\em Calculate fitness based on accuracy. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_af2d68c02add2e5e553959003e8180a9d}{Nb\+On\+Target\+Func}} ()
+\begin{DoxyCompactList}\small\item\em Calculate fitness based on the number of shots on target. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_a5d4fb02c8072b931ffde1a03afb26271}{Get\+Accuracy}} ()
+\begin{DoxyCompactList}\small\item\em Get the accuracy of the individual. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_a100f431028b5b9d385348fdb000e3b32}{Get\+Nb\+Shots\+On\+Target}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of shots on target the individual made. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_ae28e091935420b6ab5ccda6ce24e1396}{Accurate\+Long\+Life\+Func}} ()
+\begin{DoxyCompactList}\small\item\em Calculate fitness based on lifetime and accuracy. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_a75dd9bebe96f8ff2bad0f60381926085}{Calculate\+Fitness}} (int selected\+Function)
+\begin{DoxyCompactList}\small\item\em Calculate the fitness of the individual. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_individual_aad9008e000af2bf09346be0ca9258116}{Set\+Random\+Attributes}} ()
+\begin{DoxyCompactList}\small\item\em Set attributes randomly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_individual_a75271d202126e53879bdb51a9fe65ef3}{Random\+Dodge}} (float min\+Dodge, float max\+Dodge)
+\begin{DoxyCompactList}\small\item\em Set dodge randomly within a range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_individual_a108e7c67d55c334bcc885e8dc5bb740b}{Random\+Dodge\+Time}} (float min\+Dodge\+Time, float max\+Dodge\+Time)
+\begin{DoxyCompactList}\small\item\em Set dodge time randomly within a range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_individual_a1ac91351958ff89363dac0c16612f07d}{Random\+Dodge\+Wait}} (float min\+Dodge\+Wait, float max\+Dodge\+Wait)
+\begin{DoxyCompactList}\small\item\em Set dodge wait randomly within a range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_individual_ab66822b58148ba1507d2e27aff8676e7}{Random\+Vertical\+Speed}} (float min\+Speed, float max\+Speed)
+\begin{DoxyCompactList}\small\item\em Set speed randomly within a range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_individual_ad6ad54b9dd02fcb02b5a11738585d41c}{Random\+Fire\+Rate}} (float min\+Fire\+Rate, float max\+Fire\+Rate)
+\begin{DoxyCompactList}\small\item\em Set fire rate randomly within a range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_individual_a106bf8917e8f55075f01e39e9c7e2264}{Set\+Speed}} (float s)
+\begin{DoxyCompactList}\small\item\em Set a new speed value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_individual_a31b0b7114a58803aba9e81b6650fd7cb}{Set\+Dodge}} (float d)
+\begin{DoxyCompactList}\small\item\em Set a new dodge value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_individual_aeff5fb1f9a1619c4fb2e880b6f62b311}{Set\+Dodge\+Time\+Range}} (float min, float max)
+\begin{DoxyCompactList}\small\item\em Set a new dodge time range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_individual_a31ca5e7277bc5f8cbe48bde294590095}{Set\+Dodge\+Wait\+Range}} (float min, float max)
+\begin{DoxyCompactList}\small\item\em Set a new dodge wait range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_individual_ab9a068a2aeac06fc33a22391dba7559a}{Set\+Fire\+Rate\+Range}} (float min, float max)
+\begin{DoxyCompactList}\small\item\em Set a new fire rate range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_individual_a6bfcca4478e5e0d0d37acb5afd781314}\label{class_individual_a6bfcca4478e5e0d0d37acb5afd781314}} 
+const float {\bfseries M\+U\+T\+A\+T\+I\+O\+N\+\_\+\+M\+U\+LT} = 0.\+1f
+\item 
+\mbox{\Hypertarget{class_individual_a1f8c48f4f40408ad76d0137f9d3b38c0}\label{class_individual_a1f8c48f4f40408ad76d0137f9d3b38c0}} 
+const int {\bfseries L\+I\+F\+E\+T\+I\+M\+E\+\_\+\+F\+U\+NC} = 0
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_individual_a6dc47b346e6cdd288773b44e6c0fc272}{Min\+Dodge\+Bound}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for min\+Dodge\+Bound. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_individual_adb55c9ec4a4012582a4c35b654db8f21}{Max\+Dodge\+Bound}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for max\+Dodge\+Bound. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_ae3b13d55d1ba206fff541af02308c618}{Min\+Dodge\+Time\+Bound}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for min\+Dodge\+Time\+Bound. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_af7985d4dfe4001bc062d3dc8f778e5a5}{Max\+Dodge\+Time\+Bound}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for max\+Dodge\+Time\+Bound. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_a86b79a3255c7ea9ffa8c063c999cdc0a}{Min\+Dodge\+Wait\+Bound}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for min\+Dodge\+Wait\+Bound. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_a22ae950e01ef3055dd3cd15972e51770}{Max\+Dodge\+Wait\+Bound}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for max\+Dodge\+Wait\+Bound. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_a78a3431b66eef67e58b6f4da5e1c8d63}{Min\+Speed\+Bound}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for min\+Speed\+Bound. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_abad1b2b85eb811524940ea456452c550}{Max\+Speed\+Bound}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for max\+Speed\+Bound. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_a45bb7b475e4b2537cdf888b9e1b13144}{Min\+Fire\+Rate\+Bound}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for min\+Fire\+Rate\+Bound. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_a1096694f11f7b9e729aeabbfe7097eaf}{Max\+Fire\+Rate\+Bound}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for max\+Fire\+Rate\+Bound. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_a02b01142acd16f32fd2faf1864b3627f}{Speed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for speed. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_a8daea02958bdf86b68fc063556a12a56}{Dodge}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for dodge. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_ad5b02d49418b96acb978aeed30bd7149}{Min\+Dodge\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for min\+Dodge\+Time. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_a280784e76616e219c0b9428fd5d78744}{Max\+Dodge\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for max\+Dodge\+Time. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_af61b42078f68777b3ecf9cee2902af7a}{Min\+Dodge\+Wait}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for min\+Dodge\+Wait. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_a625737f01684ea5a2bbe4f887582ee53}{Max\+Dodge\+Wait}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for min\+Dodge\+Wait. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_acf1b957b3e4d0c36d76c07590047cc29}{Min\+Fire\+Rate}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for min\+Fire\+Rate. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_ae94ddacbf2764ce8b1fb2fde1bc2d72c}{Max\+Fire\+Rate}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for max\+Fire\+Rate. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_a5a4701f9a402fe64b8e3c24368e52101}{Fitness}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for fitness. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_individual_a473dd92ebe3c07db394d6bcd0bfcac93}{Enemy\+Ship}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for enemy\+Ship. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_individual_ac7551473ef8d053170dba6810aa69187}{Lifetime}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for lifetime. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_individual_ad4b03453693cb1ab8185c6a4335e86bd}{Survived}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and Mutator for survived. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_individual_ae542e9759275736feb0c5f065d36bfd8}\label{class_individual_ae542e9759275736feb0c5f065d36bfd8}} 
+\index{Individual@{Individual}!Individual@{Individual}}
+\index{Individual@{Individual}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Individual()}{Individual()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Individual.\+Individual (\begin{DoxyParamCaption}\item[{Game\+Object}]{enemy\+Ship\+Object }\end{DoxyParamCaption})}
+
+
+
+Create an individual from an enemy ship prefab. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy\+Ship\+Object} & The enemy ship to create an individual from.\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_ae542e9759275736feb0c5f065d36bfd8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_a9ae7902f014f58e296bdd87083635756}\label{class_individual_a9ae7902f014f58e296bdd87083635756}} 
+\index{Individual@{Individual}!Individual@{Individual}}
+\index{Individual@{Individual}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Individual()}{Individual()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Individual.\+Individual (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_individual}{Individual}}}]{copy }\end{DoxyParamCaption})}
+
+
+
+Create an individual given another individual 
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & The individual to copy.\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_individual_a9ae7902f014f58e296bdd87083635756_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_individual_ae29881ad8bfa0ec8db58c650ac33eaf0}\label{class_individual_ae29881ad8bfa0ec8db58c650ac33eaf0}} 
+\index{Individual@{Individual}!Accuracy\+Func@{Accuracy\+Func}}
+\index{Accuracy\+Func@{Accuracy\+Func}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Accuracy\+Func()}{AccuracyFunc()}}
+{\footnotesize\ttfamily float Individual.\+Accuracy\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculate fitness based on accuracy. 
+
+\begin{DoxyReturn}{Returns}
+The calculated fitness score.
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_ae29881ad8bfa0ec8db58c650ac33eaf0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_ae29881ad8bfa0ec8db58c650ac33eaf0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_ae28e091935420b6ab5ccda6ce24e1396}\label{class_individual_ae28e091935420b6ab5ccda6ce24e1396}} 
+\index{Individual@{Individual}!Accurate\+Long\+Life\+Func@{Accurate\+Long\+Life\+Func}}
+\index{Accurate\+Long\+Life\+Func@{Accurate\+Long\+Life\+Func}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Accurate\+Long\+Life\+Func()}{AccurateLongLifeFunc()}}
+{\footnotesize\ttfamily float Individual.\+Accurate\+Long\+Life\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculate fitness based on lifetime and accuracy. 
+
+\begin{DoxyReturn}{Returns}
+The calculated fitness score.
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_ae28e091935420b6ab5ccda6ce24e1396_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_ae28e091935420b6ab5ccda6ce24e1396_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_a75dd9bebe96f8ff2bad0f60381926085}\label{class_individual_a75dd9bebe96f8ff2bad0f60381926085}} 
+\index{Individual@{Individual}!Calculate\+Fitness@{Calculate\+Fitness}}
+\index{Calculate\+Fitness@{Calculate\+Fitness}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Calculate\+Fitness()}{CalculateFitness()}}
+{\footnotesize\ttfamily float Individual.\+Calculate\+Fitness (\begin{DoxyParamCaption}\item[{int}]{selected\+Function }\end{DoxyParamCaption})}
+
+
+
+Calculate the fitness of the individual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em selected\+Function} & The index of the selected fitness function.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated fitness score.
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_a75dd9bebe96f8ff2bad0f60381926085_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_a3aba987110bfa0ca5eb4f2a7924524da}\label{class_individual_a3aba987110bfa0ca5eb4f2a7924524da}} 
+\index{Individual@{Individual}!Complete@{Complete}}
+\index{Complete@{Complete}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Complete()}{Complete()}}
+{\footnotesize\ttfamily void Individual.\+Complete (\begin{DoxyParamCaption}\item[{bool}]{survived\+Wave }\end{DoxyParamCaption})}
+
+
+
+Mark that the individual has completed the wave. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em survived\+Wave} & Whether the the individual survived or not.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_individual_a7a4c37b420810992cc80448fb7e8652d}\label{class_individual_a7a4c37b420810992cc80448fb7e8652d}} 
+\index{Individual@{Individual}!Copy\+Genes@{Copy\+Genes}}
+\index{Copy\+Genes@{Copy\+Genes}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Copy\+Genes()}{CopyGenes()}}
+{\footnotesize\ttfamily void Individual.\+Copy\+Genes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_individual}{Individual}}}]{src }\end{DoxyParamCaption})}
+
+
+
+Copy genes from an individual 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & The individual to copy genes from.\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_individual_a7a4c37b420810992cc80448fb7e8652d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_a874acf4e26980a4e97fe5301a5c019a8}\label{class_individual_a874acf4e26980a4e97fe5301a5c019a8}} 
+\index{Individual@{Individual}!Crossover\+Attributes@{Crossover\+Attributes}}
+\index{Crossover\+Attributes@{Crossover\+Attributes}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Crossover\+Attributes()}{CrossoverAttributes()}}
+{\footnotesize\ttfamily void Individual.\+Crossover\+Attributes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_individual}{Individual}}}]{father,  }\item[{\mbox{\hyperlink{class_individual}{Individual}}}]{mother }\end{DoxyParamCaption})}
+
+
+
+Perform crossover between two parents, keeping attributes within set bounds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em father} & The first parent.\\
+\hline
+{\em mother} & The second parent.\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_a874acf4e26980a4e97fe5301a5c019a8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_a5d4fb02c8072b931ffde1a03afb26271}\label{class_individual_a5d4fb02c8072b931ffde1a03afb26271}} 
+\index{Individual@{Individual}!Get\+Accuracy@{Get\+Accuracy}}
+\index{Get\+Accuracy@{Get\+Accuracy}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Get\+Accuracy()}{GetAccuracy()}}
+{\footnotesize\ttfamily float Individual.\+Get\+Accuracy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the accuracy of the individual. 
+
+\begin{DoxyReturn}{Returns}
+The accuracy value of the individual.
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_a5d4fb02c8072b931ffde1a03afb26271_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_a5d4fb02c8072b931ffde1a03afb26271_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_a100f431028b5b9d385348fdb000e3b32}\label{class_individual_a100f431028b5b9d385348fdb000e3b32}} 
+\index{Individual@{Individual}!Get\+Nb\+Shots\+On\+Target@{Get\+Nb\+Shots\+On\+Target}}
+\index{Get\+Nb\+Shots\+On\+Target@{Get\+Nb\+Shots\+On\+Target}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Get\+Nb\+Shots\+On\+Target()}{GetNbShotsOnTarget()}}
+{\footnotesize\ttfamily float Individual.\+Get\+Nb\+Shots\+On\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the number of shots on target the individual made. 
+
+\begin{DoxyReturn}{Returns}
+The number of shots on target of the individual.
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_a100f431028b5b9d385348fdb000e3b32_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_a100f431028b5b9d385348fdb000e3b32_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_af40ad69dad043da7061c07856b6f1457}\label{class_individual_af40ad69dad043da7061c07856b6f1457}} 
+\index{Individual@{Individual}!Lifetime\+Func@{Lifetime\+Func}}
+\index{Lifetime\+Func@{Lifetime\+Func}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Lifetime\+Func()}{LifetimeFunc()}}
+{\footnotesize\ttfamily float Individual.\+Lifetime\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculate fitness based on lifetime. 
+
+\begin{DoxyReturn}{Returns}
+The calculated fitness score.
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_af40ad69dad043da7061c07856b6f1457_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_a2b19324cd6e712330c4d1601c95dcffd}\label{class_individual_a2b19324cd6e712330c4d1601c95dcffd}} 
+\index{Individual@{Individual}!Mutate\+Attributes@{Mutate\+Attributes}}
+\index{Mutate\+Attributes@{Mutate\+Attributes}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Mutate\+Attributes()}{MutateAttributes()}}
+{\footnotesize\ttfamily void Individual.\+Mutate\+Attributes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Mutate the attributes of an individual 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_a2b19324cd6e712330c4d1601c95dcffd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_af2d68c02add2e5e553959003e8180a9d}\label{class_individual_af2d68c02add2e5e553959003e8180a9d}} 
+\index{Individual@{Individual}!Nb\+On\+Target\+Func@{Nb\+On\+Target\+Func}}
+\index{Nb\+On\+Target\+Func@{Nb\+On\+Target\+Func}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Nb\+On\+Target\+Func()}{NbOnTargetFunc()}}
+{\footnotesize\ttfamily float Individual.\+Nb\+On\+Target\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculate fitness based on the number of shots on target. 
+
+\begin{DoxyReturn}{Returns}
+The calculated fitness score.
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_af2d68c02add2e5e553959003e8180a9d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_af2d68c02add2e5e553959003e8180a9d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_a75271d202126e53879bdb51a9fe65ef3}\label{class_individual_a75271d202126e53879bdb51a9fe65ef3}} 
+\index{Individual@{Individual}!Random\+Dodge@{Random\+Dodge}}
+\index{Random\+Dodge@{Random\+Dodge}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Random\+Dodge()}{RandomDodge()}}
+{\footnotesize\ttfamily void Individual.\+Random\+Dodge (\begin{DoxyParamCaption}\item[{float}]{min\+Dodge,  }\item[{float}]{max\+Dodge }\end{DoxyParamCaption})}
+
+
+
+Set dodge randomly within a range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Dodge} & The minimum dodge value.\\
+\hline
+{\em max\+Dodge} & The maximum dodge value.\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_individual_a75271d202126e53879bdb51a9fe65ef3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_a75271d202126e53879bdb51a9fe65ef3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_a108e7c67d55c334bcc885e8dc5bb740b}\label{class_individual_a108e7c67d55c334bcc885e8dc5bb740b}} 
+\index{Individual@{Individual}!Random\+Dodge\+Time@{Random\+Dodge\+Time}}
+\index{Random\+Dodge\+Time@{Random\+Dodge\+Time}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Random\+Dodge\+Time()}{RandomDodgeTime()}}
+{\footnotesize\ttfamily void Individual.\+Random\+Dodge\+Time (\begin{DoxyParamCaption}\item[{float}]{min\+Dodge\+Time,  }\item[{float}]{max\+Dodge\+Time }\end{DoxyParamCaption})}
+
+
+
+Set dodge time randomly within a range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Dodge\+Time} & The minimum dodge time.\\
+\hline
+{\em max\+Dodge\+Time} & The maximum dodge time.\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_a108e7c67d55c334bcc885e8dc5bb740b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_a108e7c67d55c334bcc885e8dc5bb740b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_a1ac91351958ff89363dac0c16612f07d}\label{class_individual_a1ac91351958ff89363dac0c16612f07d}} 
+\index{Individual@{Individual}!Random\+Dodge\+Wait@{Random\+Dodge\+Wait}}
+\index{Random\+Dodge\+Wait@{Random\+Dodge\+Wait}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Random\+Dodge\+Wait()}{RandomDodgeWait()}}
+{\footnotesize\ttfamily void Individual.\+Random\+Dodge\+Wait (\begin{DoxyParamCaption}\item[{float}]{min\+Dodge\+Wait,  }\item[{float}]{max\+Dodge\+Wait }\end{DoxyParamCaption})}
+
+
+
+Set dodge wait randomly within a range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Dodge\+Wait} & The minimum dodge wait.\\
+\hline
+{\em max\+Dodge\+Wait} & The maximum dodge wait.\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_a1ac91351958ff89363dac0c16612f07d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_a1ac91351958ff89363dac0c16612f07d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_ad6ad54b9dd02fcb02b5a11738585d41c}\label{class_individual_ad6ad54b9dd02fcb02b5a11738585d41c}} 
+\index{Individual@{Individual}!Random\+Fire\+Rate@{Random\+Fire\+Rate}}
+\index{Random\+Fire\+Rate@{Random\+Fire\+Rate}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Random\+Fire\+Rate()}{RandomFireRate()}}
+{\footnotesize\ttfamily void Individual.\+Random\+Fire\+Rate (\begin{DoxyParamCaption}\item[{float}]{min\+Fire\+Rate,  }\item[{float}]{max\+Fire\+Rate }\end{DoxyParamCaption})}
+
+
+
+Set fire rate randomly within a range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Fire\+Rate} & The minimum fire rate value.\\
+\hline
+{\em max\+Fire\+Rate} & The maximum fire rate value.\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_ad6ad54b9dd02fcb02b5a11738585d41c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_ad6ad54b9dd02fcb02b5a11738585d41c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_ab66822b58148ba1507d2e27aff8676e7}\label{class_individual_ab66822b58148ba1507d2e27aff8676e7}} 
+\index{Individual@{Individual}!Random\+Vertical\+Speed@{Random\+Vertical\+Speed}}
+\index{Random\+Vertical\+Speed@{Random\+Vertical\+Speed}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Random\+Vertical\+Speed()}{RandomVerticalSpeed()}}
+{\footnotesize\ttfamily void Individual.\+Random\+Vertical\+Speed (\begin{DoxyParamCaption}\item[{float}]{min\+Speed,  }\item[{float}]{max\+Speed }\end{DoxyParamCaption})}
+
+
+
+Set speed randomly within a range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Speed} & The minimum speed value.\\
+\hline
+{\em max\+Speed} & The maximum speed value.\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_ab66822b58148ba1507d2e27aff8676e7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_ab66822b58148ba1507d2e27aff8676e7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_a31b0b7114a58803aba9e81b6650fd7cb}\label{class_individual_a31b0b7114a58803aba9e81b6650fd7cb}} 
+\index{Individual@{Individual}!Set\+Dodge@{Set\+Dodge}}
+\index{Set\+Dodge@{Set\+Dodge}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Set\+Dodge()}{SetDodge()}}
+{\footnotesize\ttfamily void Individual.\+Set\+Dodge (\begin{DoxyParamCaption}\item[{float}]{d }\end{DoxyParamCaption})}
+
+
+
+Set a new dodge value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The new dodge value.\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_a31b0b7114a58803aba9e81b6650fd7cb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_aeff5fb1f9a1619c4fb2e880b6f62b311}\label{class_individual_aeff5fb1f9a1619c4fb2e880b6f62b311}} 
+\index{Individual@{Individual}!Set\+Dodge\+Time\+Range@{Set\+Dodge\+Time\+Range}}
+\index{Set\+Dodge\+Time\+Range@{Set\+Dodge\+Time\+Range}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Set\+Dodge\+Time\+Range()}{SetDodgeTimeRange()}}
+{\footnotesize\ttfamily void Individual.\+Set\+Dodge\+Time\+Range (\begin{DoxyParamCaption}\item[{float}]{min,  }\item[{float}]{max }\end{DoxyParamCaption})}
+
+
+
+Set a new dodge time range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The new minimum dodge time.\\
+\hline
+{\em max} & The new maximum dodge time.\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_aeff5fb1f9a1619c4fb2e880b6f62b311_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_a31ca5e7277bc5f8cbe48bde294590095}\label{class_individual_a31ca5e7277bc5f8cbe48bde294590095}} 
+\index{Individual@{Individual}!Set\+Dodge\+Wait\+Range@{Set\+Dodge\+Wait\+Range}}
+\index{Set\+Dodge\+Wait\+Range@{Set\+Dodge\+Wait\+Range}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Set\+Dodge\+Wait\+Range()}{SetDodgeWaitRange()}}
+{\footnotesize\ttfamily void Individual.\+Set\+Dodge\+Wait\+Range (\begin{DoxyParamCaption}\item[{float}]{min,  }\item[{float}]{max }\end{DoxyParamCaption})}
+
+
+
+Set a new dodge wait range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The new minimum dodge wait.\\
+\hline
+{\em max} & The new maximum dodge wait.\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_a31ca5e7277bc5f8cbe48bde294590095_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_ab9a068a2aeac06fc33a22391dba7559a}\label{class_individual_ab9a068a2aeac06fc33a22391dba7559a}} 
+\index{Individual@{Individual}!Set\+Fire\+Rate\+Range@{Set\+Fire\+Rate\+Range}}
+\index{Set\+Fire\+Rate\+Range@{Set\+Fire\+Rate\+Range}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Set\+Fire\+Rate\+Range()}{SetFireRateRange()}}
+{\footnotesize\ttfamily void Individual.\+Set\+Fire\+Rate\+Range (\begin{DoxyParamCaption}\item[{float}]{min,  }\item[{float}]{max }\end{DoxyParamCaption})}
+
+
+
+Set a new fire rate range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The new minimum fire rate.\\
+\hline
+{\em max} & The new maximum fire rate.\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_ab9a068a2aeac06fc33a22391dba7559a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_aad9008e000af2bf09346be0ca9258116}\label{class_individual_aad9008e000af2bf09346be0ca9258116}} 
+\index{Individual@{Individual}!Set\+Random\+Attributes@{Set\+Random\+Attributes}}
+\index{Set\+Random\+Attributes@{Set\+Random\+Attributes}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Set\+Random\+Attributes()}{SetRandomAttributes()}}
+{\footnotesize\ttfamily void Individual.\+Set\+Random\+Attributes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set attributes randomly. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_aad9008e000af2bf09346be0ca9258116_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_aad9008e000af2bf09346be0ca9258116_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_a106bf8917e8f55075f01e39e9c7e2264}\label{class_individual_a106bf8917e8f55075f01e39e9c7e2264}} 
+\index{Individual@{Individual}!Set\+Speed@{Set\+Speed}}
+\index{Set\+Speed@{Set\+Speed}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Set\+Speed()}{SetSpeed()}}
+{\footnotesize\ttfamily void Individual.\+Set\+Speed (\begin{DoxyParamCaption}\item[{float}]{s }\end{DoxyParamCaption})}
+
+
+
+Set a new speed value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The new speed value.\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{class_individual_a106bf8917e8f55075f01e39e9c7e2264_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_a106bf8917e8f55075f01e39e9c7e2264_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_individual_abf304201269d32a0f40d9a25ce98d8db}\label{class_individual_abf304201269d32a0f40d9a25ce98d8db}} 
+\index{Individual@{Individual}!Survival\+Func@{Survival\+Func}}
+\index{Survival\+Func@{Survival\+Func}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Survival\+Func()}{SurvivalFunc()}}
+{\footnotesize\ttfamily float Individual.\+Survival\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculate fitness based on survival. 
+
+\begin{DoxyReturn}{Returns}
+The calculated fitness score.
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_individual_abf304201269d32a0f40d9a25ce98d8db_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_individual_a8daea02958bdf86b68fc063556a12a56}\label{class_individual_a8daea02958bdf86b68fc063556a12a56}} 
+\index{Individual@{Individual}!Dodge@{Dodge}}
+\index{Dodge@{Dodge}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Dodge}{Dodge}}
+{\footnotesize\ttfamily float Individual.\+Dodge\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for dodge. 
+
+\mbox{\Hypertarget{class_individual_a473dd92ebe3c07db394d6bcd0bfcac93}\label{class_individual_a473dd92ebe3c07db394d6bcd0bfcac93}} 
+\index{Individual@{Individual}!Enemy\+Ship@{Enemy\+Ship}}
+\index{Enemy\+Ship@{Enemy\+Ship}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Enemy\+Ship}{EnemyShip}}
+{\footnotesize\ttfamily Game\+Object Individual.\+Enemy\+Ship\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for enemy\+Ship. 
+
+\mbox{\Hypertarget{class_individual_a5a4701f9a402fe64b8e3c24368e52101}\label{class_individual_a5a4701f9a402fe64b8e3c24368e52101}} 
+\index{Individual@{Individual}!Fitness@{Fitness}}
+\index{Fitness@{Fitness}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Fitness}{Fitness}}
+{\footnotesize\ttfamily float Individual.\+Fitness\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for fitness. 
+
+\mbox{\Hypertarget{class_individual_ac7551473ef8d053170dba6810aa69187}\label{class_individual_ac7551473ef8d053170dba6810aa69187}} 
+\index{Individual@{Individual}!Lifetime@{Lifetime}}
+\index{Lifetime@{Lifetime}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Lifetime}{Lifetime}}
+{\footnotesize\ttfamily float Individual.\+Lifetime\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for lifetime. 
+
+\mbox{\Hypertarget{class_individual_adb55c9ec4a4012582a4c35b654db8f21}\label{class_individual_adb55c9ec4a4012582a4c35b654db8f21}} 
+\index{Individual@{Individual}!Max\+Dodge\+Bound@{Max\+Dodge\+Bound}}
+\index{Max\+Dodge\+Bound@{Max\+Dodge\+Bound}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Max\+Dodge\+Bound}{MaxDodgeBound}}
+{\footnotesize\ttfamily int Individual.\+Max\+Dodge\+Bound\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for max\+Dodge\+Bound. 
+
+\mbox{\Hypertarget{class_individual_a280784e76616e219c0b9428fd5d78744}\label{class_individual_a280784e76616e219c0b9428fd5d78744}} 
+\index{Individual@{Individual}!Max\+Dodge\+Time@{Max\+Dodge\+Time}}
+\index{Max\+Dodge\+Time@{Max\+Dodge\+Time}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Max\+Dodge\+Time}{MaxDodgeTime}}
+{\footnotesize\ttfamily float Individual.\+Max\+Dodge\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for max\+Dodge\+Time. 
+
+\mbox{\Hypertarget{class_individual_af7985d4dfe4001bc062d3dc8f778e5a5}\label{class_individual_af7985d4dfe4001bc062d3dc8f778e5a5}} 
+\index{Individual@{Individual}!Max\+Dodge\+Time\+Bound@{Max\+Dodge\+Time\+Bound}}
+\index{Max\+Dodge\+Time\+Bound@{Max\+Dodge\+Time\+Bound}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Max\+Dodge\+Time\+Bound}{MaxDodgeTimeBound}}
+{\footnotesize\ttfamily float Individual.\+Max\+Dodge\+Time\+Bound\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for max\+Dodge\+Time\+Bound. 
+
+\mbox{\Hypertarget{class_individual_a625737f01684ea5a2bbe4f887582ee53}\label{class_individual_a625737f01684ea5a2bbe4f887582ee53}} 
+\index{Individual@{Individual}!Max\+Dodge\+Wait@{Max\+Dodge\+Wait}}
+\index{Max\+Dodge\+Wait@{Max\+Dodge\+Wait}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Max\+Dodge\+Wait}{MaxDodgeWait}}
+{\footnotesize\ttfamily float Individual.\+Max\+Dodge\+Wait\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for min\+Dodge\+Wait. 
+
+\mbox{\Hypertarget{class_individual_a22ae950e01ef3055dd3cd15972e51770}\label{class_individual_a22ae950e01ef3055dd3cd15972e51770}} 
+\index{Individual@{Individual}!Max\+Dodge\+Wait\+Bound@{Max\+Dodge\+Wait\+Bound}}
+\index{Max\+Dodge\+Wait\+Bound@{Max\+Dodge\+Wait\+Bound}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Max\+Dodge\+Wait\+Bound}{MaxDodgeWaitBound}}
+{\footnotesize\ttfamily float Individual.\+Max\+Dodge\+Wait\+Bound\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for max\+Dodge\+Wait\+Bound. 
+
+\mbox{\Hypertarget{class_individual_ae94ddacbf2764ce8b1fb2fde1bc2d72c}\label{class_individual_ae94ddacbf2764ce8b1fb2fde1bc2d72c}} 
+\index{Individual@{Individual}!Max\+Fire\+Rate@{Max\+Fire\+Rate}}
+\index{Max\+Fire\+Rate@{Max\+Fire\+Rate}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Max\+Fire\+Rate}{MaxFireRate}}
+{\footnotesize\ttfamily float Individual.\+Max\+Fire\+Rate\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for max\+Fire\+Rate. 
+
+\mbox{\Hypertarget{class_individual_a1096694f11f7b9e729aeabbfe7097eaf}\label{class_individual_a1096694f11f7b9e729aeabbfe7097eaf}} 
+\index{Individual@{Individual}!Max\+Fire\+Rate\+Bound@{Max\+Fire\+Rate\+Bound}}
+\index{Max\+Fire\+Rate\+Bound@{Max\+Fire\+Rate\+Bound}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Max\+Fire\+Rate\+Bound}{MaxFireRateBound}}
+{\footnotesize\ttfamily float Individual.\+Max\+Fire\+Rate\+Bound\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for max\+Fire\+Rate\+Bound. 
+
+\mbox{\Hypertarget{class_individual_abad1b2b85eb811524940ea456452c550}\label{class_individual_abad1b2b85eb811524940ea456452c550}} 
+\index{Individual@{Individual}!Max\+Speed\+Bound@{Max\+Speed\+Bound}}
+\index{Max\+Speed\+Bound@{Max\+Speed\+Bound}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Max\+Speed\+Bound}{MaxSpeedBound}}
+{\footnotesize\ttfamily float Individual.\+Max\+Speed\+Bound\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for max\+Speed\+Bound. 
+
+\mbox{\Hypertarget{class_individual_a6dc47b346e6cdd288773b44e6c0fc272}\label{class_individual_a6dc47b346e6cdd288773b44e6c0fc272}} 
+\index{Individual@{Individual}!Min\+Dodge\+Bound@{Min\+Dodge\+Bound}}
+\index{Min\+Dodge\+Bound@{Min\+Dodge\+Bound}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Min\+Dodge\+Bound}{MinDodgeBound}}
+{\footnotesize\ttfamily int Individual.\+Min\+Dodge\+Bound\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for min\+Dodge\+Bound. 
+
+\mbox{\Hypertarget{class_individual_ad5b02d49418b96acb978aeed30bd7149}\label{class_individual_ad5b02d49418b96acb978aeed30bd7149}} 
+\index{Individual@{Individual}!Min\+Dodge\+Time@{Min\+Dodge\+Time}}
+\index{Min\+Dodge\+Time@{Min\+Dodge\+Time}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Min\+Dodge\+Time}{MinDodgeTime}}
+{\footnotesize\ttfamily float Individual.\+Min\+Dodge\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for min\+Dodge\+Time. 
+
+\mbox{\Hypertarget{class_individual_ae3b13d55d1ba206fff541af02308c618}\label{class_individual_ae3b13d55d1ba206fff541af02308c618}} 
+\index{Individual@{Individual}!Min\+Dodge\+Time\+Bound@{Min\+Dodge\+Time\+Bound}}
+\index{Min\+Dodge\+Time\+Bound@{Min\+Dodge\+Time\+Bound}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Min\+Dodge\+Time\+Bound}{MinDodgeTimeBound}}
+{\footnotesize\ttfamily float Individual.\+Min\+Dodge\+Time\+Bound\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for min\+Dodge\+Time\+Bound. 
+
+\mbox{\Hypertarget{class_individual_af61b42078f68777b3ecf9cee2902af7a}\label{class_individual_af61b42078f68777b3ecf9cee2902af7a}} 
+\index{Individual@{Individual}!Min\+Dodge\+Wait@{Min\+Dodge\+Wait}}
+\index{Min\+Dodge\+Wait@{Min\+Dodge\+Wait}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Min\+Dodge\+Wait}{MinDodgeWait}}
+{\footnotesize\ttfamily float Individual.\+Min\+Dodge\+Wait\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for min\+Dodge\+Wait. 
+
+\mbox{\Hypertarget{class_individual_a86b79a3255c7ea9ffa8c063c999cdc0a}\label{class_individual_a86b79a3255c7ea9ffa8c063c999cdc0a}} 
+\index{Individual@{Individual}!Min\+Dodge\+Wait\+Bound@{Min\+Dodge\+Wait\+Bound}}
+\index{Min\+Dodge\+Wait\+Bound@{Min\+Dodge\+Wait\+Bound}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Min\+Dodge\+Wait\+Bound}{MinDodgeWaitBound}}
+{\footnotesize\ttfamily float Individual.\+Min\+Dodge\+Wait\+Bound\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for min\+Dodge\+Wait\+Bound. 
+
+\mbox{\Hypertarget{class_individual_acf1b957b3e4d0c36d76c07590047cc29}\label{class_individual_acf1b957b3e4d0c36d76c07590047cc29}} 
+\index{Individual@{Individual}!Min\+Fire\+Rate@{Min\+Fire\+Rate}}
+\index{Min\+Fire\+Rate@{Min\+Fire\+Rate}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Min\+Fire\+Rate}{MinFireRate}}
+{\footnotesize\ttfamily float Individual.\+Min\+Fire\+Rate\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for min\+Fire\+Rate. 
+
+\mbox{\Hypertarget{class_individual_a45bb7b475e4b2537cdf888b9e1b13144}\label{class_individual_a45bb7b475e4b2537cdf888b9e1b13144}} 
+\index{Individual@{Individual}!Min\+Fire\+Rate\+Bound@{Min\+Fire\+Rate\+Bound}}
+\index{Min\+Fire\+Rate\+Bound@{Min\+Fire\+Rate\+Bound}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Min\+Fire\+Rate\+Bound}{MinFireRateBound}}
+{\footnotesize\ttfamily float Individual.\+Min\+Fire\+Rate\+Bound\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for min\+Fire\+Rate\+Bound. 
+
+\mbox{\Hypertarget{class_individual_a78a3431b66eef67e58b6f4da5e1c8d63}\label{class_individual_a78a3431b66eef67e58b6f4da5e1c8d63}} 
+\index{Individual@{Individual}!Min\+Speed\+Bound@{Min\+Speed\+Bound}}
+\index{Min\+Speed\+Bound@{Min\+Speed\+Bound}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Min\+Speed\+Bound}{MinSpeedBound}}
+{\footnotesize\ttfamily float Individual.\+Min\+Speed\+Bound\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for min\+Speed\+Bound. 
+
+\mbox{\Hypertarget{class_individual_a02b01142acd16f32fd2faf1864b3627f}\label{class_individual_a02b01142acd16f32fd2faf1864b3627f}} 
+\index{Individual@{Individual}!Speed@{Speed}}
+\index{Speed@{Speed}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Speed}{Speed}}
+{\footnotesize\ttfamily float Individual.\+Speed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for speed. 
+
+\mbox{\Hypertarget{class_individual_ad4b03453693cb1ab8185c6a4335e86bd}\label{class_individual_ad4b03453693cb1ab8185c6a4335e86bd}} 
+\index{Individual@{Individual}!Survived@{Survived}}
+\index{Survived@{Survived}!Individual@{Individual}}
+\subsubsection{\texorpdfstring{Survived}{Survived}}
+{\footnotesize\ttfamily bool Individual.\+Survived\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and Mutator for survived. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Y\+:/\+Users/\+Thomas Fisher/\+Documents/\+Git\+Hub/\+Evolutionary\+Game/\+Assets/\+Scripts/Individual.\+cs\end{DoxyCompactItemize}

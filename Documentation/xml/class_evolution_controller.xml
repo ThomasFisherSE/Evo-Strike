@@ -1,0 +1,698 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_evolution_controller" kind="class" language="C#" prot="public">
+    <compoundname>EvolutionController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_evolution_controller_1add611a253f17fafbc59c6b2fe6b922ad" prot="private" static="no" mutable="no">
+        <type><ref refid="class_game_controller" kindref="compound">GameController</ref></type>
+        <definition>GameController EvolutionController.gc</definition>
+        <argsstring></argsstring>
+        <name>gc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="10" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1a5f586d24178ad7f2e87c19691cae43bc" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvolutionController.generation</definition>
+        <argsstring></argsstring>
+        <name>generation</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="13" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1a0c8378ec6f79dd92aafdbf58da42c86a" prot="private" static="no" mutable="no">
+        <type>List&lt; GameObject &gt;</type>
+        <definition>List&lt;GameObject&gt; EvolutionController.enemyShips</definition>
+        <argsstring></argsstring>
+        <name>enemyShips</name>
+        <initializer>= new List&lt;GameObject&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="21" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1ade46c015a39024b5f58a166476f1fa97" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_individual" kindref="compound">Individual</ref> &gt;</type>
+        <definition>List&lt;Individual&gt; EvolutionController.livingPopulation</definition>
+        <argsstring></argsstring>
+        <name>livingPopulation</name>
+        <initializer>= new List&lt;<ref refid="class_individual" kindref="compound">Individual</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="22" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1a91312b148c69d877102e9b4f0bfa8fcb" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_individual" kindref="compound">Individual</ref> &gt;</type>
+        <definition>List&lt;Individual&gt; EvolutionController.prevPopulation</definition>
+        <argsstring></argsstring>
+        <name>prevPopulation</name>
+        <initializer>= new List&lt;<ref refid="class_individual" kindref="compound">Individual</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="23" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1acf1ac0a3b6f14070b0f4c2b8a40fe90d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvolutionController.chromosomeLength</definition>
+        <argsstring></argsstring>
+        <name>chromosomeLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="24" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1aba1ee95451168b8ed24d34b0a757db1c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_individual" kindref="compound">Individual</ref></type>
+        <definition>Individual EvolutionController.fittestIndividual</definition>
+        <argsstring></argsstring>
+        <name>fittestIndividual</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="26" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1a403d5775802a7cb00a5a744990986178" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvolutionController.bestFitnessScore</definition>
+        <argsstring></argsstring>
+        <name>bestFitnessScore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="27" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1ae7788697203a0dbf98b0a098db4d5ad3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvolutionController.enemiesLeft</definition>
+        <argsstring></argsstring>
+        <name>enemiesLeft</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="29" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1ac223d400093554d815eee5095fdc1d4d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EvolutionController.spawningComplete</definition>
+        <argsstring></argsstring>
+        <name>spawningComplete</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="30" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1adc8d124f4e4d5e0565ff7e6cc57e7fe7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EvolutionController.waveComplete</definition>
+        <argsstring></argsstring>
+        <name>waveComplete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="31" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1ac27d50abae23f5a92a2f686fc1a4a2d1" prot="private" static="no" mutable="no">
+        <type>StreamWriter</type>
+        <definition>StreamWriter EvolutionController.sw</definition>
+        <argsstring></argsstring>
+        <name>sw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="45" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_evolution_controller_1ada8a8ec6761c7ea18f189df1e04363b6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvolutionController.populationSize</definition>
+        <argsstring></argsstring>
+        <name>populationSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="12" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1ad82c4809cb4a13f28075aa4790e7f9a1" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvolutionController.mutationRate</definition>
+        <argsstring></argsstring>
+        <name>mutationRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="14" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1a33b0f4219444033d4eb774c0157f9482" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvolutionController.crossoverRate</definition>
+        <argsstring></argsstring>
+        <name>crossoverRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="15" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1a1fcf72c71aa6a22df6e6e1560cc5bf9f" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvolutionController.spawnWait</definition>
+        <argsstring></argsstring>
+        <name>spawnWait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="16" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1a6bd06587ebfa42a6140c4eb19e502635" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvolutionController.enemyStatsWait</definition>
+        <argsstring></argsstring>
+        <name>enemyStatsWait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="17" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1aecc61fd2861b5d3ec6ccdcf7c577c3ca" prot="public" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject EvolutionController.enemyShipPrefab</definition>
+        <argsstring></argsstring>
+        <name>enemyShipPrefab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="19" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1af8a4c642db3742e8d6481ffcbe84ba2e" prot="public" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text EvolutionController.enemyStatsTitleText</definition>
+        <argsstring></argsstring>
+        <name>enemyStatsTitleText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="33" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1a4b17bfe9a4d2ce96ef7247a72974fe88" prot="public" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text EvolutionController.speedText</definition>
+        <argsstring></argsstring>
+        <name>speedText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="34" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1a0edadfd98d38cc69a7dd506e65f8f97f" prot="public" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text EvolutionController.fireRateText</definition>
+        <argsstring></argsstring>
+        <name>fireRateText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="35" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1af795d5ac3b55058fe65db8ae6c4ab9f5" prot="public" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text EvolutionController.dodgeText</definition>
+        <argsstring></argsstring>
+        <name>dodgeText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="36" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1a21fc0e733ee44d2885d7e00b22f8460a" prot="public" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text EvolutionController.dodgeFrequencyText</definition>
+        <argsstring></argsstring>
+        <name>dodgeFrequencyText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="37" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1a50f68dee9f616c26995473fc6a4de63f" prot="public" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text EvolutionController.timeAliveText</definition>
+        <argsstring></argsstring>
+        <name>timeAliveText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="38" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1a69190de729e5d8eef1d1cf46de2bc152" prot="public" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text EvolutionController.survivedText</definition>
+        <argsstring></argsstring>
+        <name>survivedText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="39" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1a7532ecd157f47efa09e365c868289676" prot="public" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text EvolutionController.accuracyText</definition>
+        <argsstring></argsstring>
+        <name>accuracyText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="40" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1a17182a83179f115f9708381d9b3d5ce9" prot="public" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text EvolutionController.shotsOnTargetText</definition>
+        <argsstring></argsstring>
+        <name>shotsOnTargetText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="41" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evolution_controller_1a0b18581ce864c56f877294da1f28e2b9" prot="public" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject EvolutionController.statsPanel</definition>
+        <argsstring></argsstring>
+        <name>statsPanel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="43" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_evolution_controller_1a1649ff1641add0d5982e8eec77dc195d" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool EvolutionController.WaveComplete</definition>
+        <argsstring></argsstring>
+        <name>WaveComplete</name>
+        <briefdescription>
+<para>Accessor and mutator for waveComplete attribute. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="351" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="352" bodyend="362"/>
+        <referencedby refid="class_evolution_controller_1a07a968a7b94e9afd6fa0dd6755b6d07c" compoundref="_evolution_controller_8cs" startline="153" endline="174">AddCompletedEnemy</referencedby>
+        <referencedby refid="class_evolution_controller_1ac65df1af1e9cdf179606f205e8f046f0" compoundref="_evolution_controller_8cs" startline="297" endline="308">NextGeneration</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_evolution_controller_1a1f5c6f777133971fb18af4e032c20ab1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvolutionController.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>Prepare attributes which need to be set at run-time, and write the header of the statistics file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="50" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="50" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evolution_controller_1a7882ed1ac17cf9cb79a8559c3fa47676" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator EvolutionController.SpawnInitialPopulation</definition>
+        <argsstring>()</argsstring>
+        <name>SpawnInitialPopulation</name>
+        <briefdescription>
+<para>Spawn the initial population of enemies. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="75" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="75" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evolution_controller_1a07a968a7b94e9afd6fa0dd6755b6d07c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvolutionController.AddCompletedEnemy</definition>
+        <argsstring>(GameObject enemy, bool survivedWave)</argsstring>
+        <name>AddCompletedEnemy</name>
+        <param>
+          <type>GameObject</type>
+          <declname>enemy</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>survivedWave</declname>
+        </param>
+        <briefdescription>
+<para>Mark that an enemy has completed the wave (whether it survived or not). Use this to check if the wave is complete (all enemies completed the wave). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>enemy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enemy that has completed the wave.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>survivedWave</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether or not the enemy survived.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="153" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="153" bodyend="174"/>
+        <references refid="class_evolution_controller_1a1649ff1641add0d5982e8eec77dc195d" compoundref="_evolution_controller_8cs" startline="352" endline="362">WaveComplete</references>
+      </memberdef>
+      <memberdef kind="function" id="class_evolution_controller_1ac65df1af1e9cdf179606f205e8f046f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvolutionController.NextGeneration</definition>
+        <argsstring>()</argsstring>
+        <name>NextGeneration</name>
+        <briefdescription>
+<para>Start the next generation of enemies. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="297" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="297" bodyend="308"/>
+        <references refid="class_evolution_controller_1a56b57730a8b4707ffe1c8b8053871a84" compoundref="_evolution_controller_8cs" startline="314" endline="346">DisplayMostPowerfulEnemy</references>
+        <references refid="class_evolution_controller_1a1649ff1641add0d5982e8eec77dc195d" compoundref="_evolution_controller_8cs" startline="352" endline="362">WaveComplete</references>
+      </memberdef>
+      <memberdef kind="function" id="class_evolution_controller_1a56b57730a8b4707ffe1c8b8053871a84" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator EvolutionController.DisplayMostPowerfulEnemy</definition>
+        <argsstring>()</argsstring>
+        <name>DisplayMostPowerfulEnemy</name>
+        <briefdescription>
+<para>Display the most powerful enemy panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A WaitForSeconds IEnumerator, allowing the coroutine to wait for some time.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="314" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="314" bodyend="346"/>
+        <references refid="class_game_controller_1a92b2683fc2816c409a0f727914607e36" compoundref="_game_controller_8cs" startline="293" endline="303">GameController.WaveNumber</references>
+        <references refid="class_individual_1a02b01142acd16f32fd2faf1864b3627f" compoundref="_individual_8cs" startline="568" endline="578">Individual.Speed</references>
+        <references refid="class_individual_1acf1b957b3e4d0c36d76c07590047cc29" compoundref="_individual_8cs" startline="664" endline="674">Individual.MinFireRate</references>
+        <references refid="class_individual_1ae94ddacbf2764ce8b1fb2fde1bc2d72c" compoundref="_individual_8cs" startline="680" endline="690">Individual.MaxFireRate</references>
+        <references refid="class_individual_1a8daea02958bdf86b68fc063556a12a56" compoundref="_individual_8cs" startline="584" endline="594">Individual.Dodge</references>
+        <references refid="class_individual_1af61b42078f68777b3ecf9cee2902af7a" compoundref="_individual_8cs" startline="632" endline="642">Individual.MinDodgeWait</references>
+        <references refid="class_individual_1a625737f01684ea5a2bbe4f887582ee53" compoundref="_individual_8cs" startline="648" endline="658">Individual.MaxDodgeWait</references>
+        <references refid="class_individual_1ac7551473ef8d053170dba6810aa69187" compoundref="_individual_8cs" startline="728" endline="738">Individual.Lifetime</references>
+        <references refid="class_individual_1ad4b03453693cb1ab8185c6a4335e86bd" compoundref="_individual_8cs" startline="744" endline="754">Individual.Survived</references>
+        <references refid="class_individual_1a5d4fb02c8072b931ffde1a03afb26271" compoundref="_individual_8cs" startline="197" endline="201">Individual.GetAccuracy</references>
+        <references refid="class_individual_1a100f431028b5b9d385348fdb000e3b32" compoundref="_individual_8cs" startline="207" endline="211">Individual.GetNbShotsOnTarget</references>
+        <referencedby refid="class_evolution_controller_1ac65df1af1e9cdf179606f205e8f046f0" compoundref="_evolution_controller_8cs" startline="297" endline="308">NextGeneration</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_evolution_controller_1a37cd7937848daa73b9ba8222133d590e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvolutionController.OnDestroy</definition>
+        <argsstring>()</argsstring>
+        <name>OnDestroy</name>
+        <briefdescription>
+<para>Finish and close the statistics file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="65" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="65" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evolution_controller_1a580fa4d7523ca3d643217a925ef6295d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_individual" kindref="compound">Individual</ref></type>
+        <definition>Individual EvolutionController.NewIndividual</definition>
+        <argsstring>()</argsstring>
+        <name>NewIndividual</name>
+        <briefdescription>
+<para>Instantiate an enemy ship and pair it with an <ref refid="class_individual" kindref="compound">Individual</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The newly created individual.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="102" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="102" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evolution_controller_1aecb41078a5608538c4898ad829df5719" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvolutionController.UpdateFitnessScores</definition>
+        <argsstring>(List&lt; Individual &gt; population)</argsstring>
+        <name>UpdateFitnessScores</name>
+        <param>
+          <type>List&lt; <ref refid="class_individual" kindref="compound">Individual</ref> &gt;</type>
+          <declname>population</declname>
+        </param>
+        <briefdescription>
+<para>Update fitness scores for a population. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>population</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list of individuals for which fitness scores will be calculated.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="122" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="122" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evolution_controller_1a80cda2fcb747fcdda8a26795234fbef0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvolutionController.Crossover</definition>
+        <argsstring>(Individual father, Individual mother, Individual babyF, Individual babyM)</argsstring>
+        <name>Crossover</name>
+        <param>
+          <type><ref refid="class_individual" kindref="compound">Individual</ref></type>
+          <declname>father</declname>
+        </param>
+        <param>
+          <type><ref refid="class_individual" kindref="compound">Individual</ref></type>
+          <declname>mother</declname>
+        </param>
+        <param>
+          <type><ref refid="class_individual" kindref="compound">Individual</ref></type>
+          <declname>babyF</declname>
+        </param>
+        <param>
+          <type><ref refid="class_individual" kindref="compound">Individual</ref></type>
+          <declname>babyM</declname>
+        </param>
+        <briefdescription>
+<para>Perform crossover between a father and mother to produce two offspring. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>father</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first parent.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mother</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second parent.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>babyF</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A baby that favors the genes of its father.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>babyM</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A baby that favors the genes of its mother.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="183" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="183" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evolution_controller_1a9e9d3764dd25a061ef92dc16579e4e92" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator EvolutionController.EvolveEnemies</definition>
+        <argsstring>()</argsstring>
+        <name>EvolveEnemies</name>
+        <briefdescription>
+<para>Evolve all the enemies from the previous population. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A WaitForSeconds IEnumerator, allowing the coroutine to wait for some time.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="210" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="210" bodyend="292"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="35">
+        <label>EvolutionController</label>
+        <link refid="class_evolution_controller"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="37">
+        <label>EvolutionController</label>
+        <link refid="class_evolution_controller"/>
+        <childnode refid="38" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" line="9" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/EvolutionController.cs" bodystart="8" bodyend="363"/>
+    <listofallmembers>
+      <member refid="class_evolution_controller_1a7532ecd157f47efa09e365c868289676" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>accuracyText</name></member>
+      <member refid="class_evolution_controller_1a07a968a7b94e9afd6fa0dd6755b6d07c" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>AddCompletedEnemy</name></member>
+      <member refid="class_evolution_controller_1a403d5775802a7cb00a5a744990986178" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>bestFitnessScore</name></member>
+      <member refid="class_evolution_controller_1acf1ac0a3b6f14070b0f4c2b8a40fe90d" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>chromosomeLength</name></member>
+      <member refid="class_evolution_controller_1a80cda2fcb747fcdda8a26795234fbef0" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>Crossover</name></member>
+      <member refid="class_evolution_controller_1a33b0f4219444033d4eb774c0157f9482" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>crossoverRate</name></member>
+      <member refid="class_evolution_controller_1a56b57730a8b4707ffe1c8b8053871a84" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>DisplayMostPowerfulEnemy</name></member>
+      <member refid="class_evolution_controller_1a21fc0e733ee44d2885d7e00b22f8460a" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>dodgeFrequencyText</name></member>
+      <member refid="class_evolution_controller_1af795d5ac3b55058fe65db8ae6c4ab9f5" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>dodgeText</name></member>
+      <member refid="class_evolution_controller_1ae7788697203a0dbf98b0a098db4d5ad3" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>enemiesLeft</name></member>
+      <member refid="class_evolution_controller_1aecc61fd2861b5d3ec6ccdcf7c577c3ca" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>enemyShipPrefab</name></member>
+      <member refid="class_evolution_controller_1a0c8378ec6f79dd92aafdbf58da42c86a" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>enemyShips</name></member>
+      <member refid="class_evolution_controller_1af8a4c642db3742e8d6481ffcbe84ba2e" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>enemyStatsTitleText</name></member>
+      <member refid="class_evolution_controller_1a6bd06587ebfa42a6140c4eb19e502635" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>enemyStatsWait</name></member>
+      <member refid="class_evolution_controller_1a9e9d3764dd25a061ef92dc16579e4e92" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>EvolveEnemies</name></member>
+      <member refid="class_evolution_controller_1a0edadfd98d38cc69a7dd506e65f8f97f" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>fireRateText</name></member>
+      <member refid="class_evolution_controller_1aba1ee95451168b8ed24d34b0a757db1c" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>fittestIndividual</name></member>
+      <member refid="class_evolution_controller_1add611a253f17fafbc59c6b2fe6b922ad" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>gc</name></member>
+      <member refid="class_evolution_controller_1a5f586d24178ad7f2e87c19691cae43bc" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>generation</name></member>
+      <member refid="class_evolution_controller_1ade46c015a39024b5f58a166476f1fa97" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>livingPopulation</name></member>
+      <member refid="class_evolution_controller_1ad82c4809cb4a13f28075aa4790e7f9a1" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>mutationRate</name></member>
+      <member refid="class_evolution_controller_1a580fa4d7523ca3d643217a925ef6295d" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>NewIndividual</name></member>
+      <member refid="class_evolution_controller_1ac65df1af1e9cdf179606f205e8f046f0" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>NextGeneration</name></member>
+      <member refid="class_evolution_controller_1a37cd7937848daa73b9ba8222133d590e" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>OnDestroy</name></member>
+      <member refid="class_evolution_controller_1ada8a8ec6761c7ea18f189df1e04363b6" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>populationSize</name></member>
+      <member refid="class_evolution_controller_1a91312b148c69d877102e9b4f0bfa8fcb" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>prevPopulation</name></member>
+      <member refid="class_evolution_controller_1a17182a83179f115f9708381d9b3d5ce9" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>shotsOnTargetText</name></member>
+      <member refid="class_evolution_controller_1ac223d400093554d815eee5095fdc1d4d" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>spawningComplete</name></member>
+      <member refid="class_evolution_controller_1a7882ed1ac17cf9cb79a8559c3fa47676" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>SpawnInitialPopulation</name></member>
+      <member refid="class_evolution_controller_1a1fcf72c71aa6a22df6e6e1560cc5bf9f" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>spawnWait</name></member>
+      <member refid="class_evolution_controller_1a4b17bfe9a4d2ce96ef7247a72974fe88" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>speedText</name></member>
+      <member refid="class_evolution_controller_1a1f5c6f777133971fb18af4e032c20ab1" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>Start</name></member>
+      <member refid="class_evolution_controller_1a0b18581ce864c56f877294da1f28e2b9" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>statsPanel</name></member>
+      <member refid="class_evolution_controller_1a69190de729e5d8eef1d1cf46de2bc152" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>survivedText</name></member>
+      <member refid="class_evolution_controller_1ac27d50abae23f5a92a2f686fc1a4a2d1" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>sw</name></member>
+      <member refid="class_evolution_controller_1a50f68dee9f616c26995473fc6a4de63f" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>timeAliveText</name></member>
+      <member refid="class_evolution_controller_1aecb41078a5608538c4898ad829df5719" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>UpdateFitnessScores</name></member>
+      <member refid="class_evolution_controller_1adc8d124f4e4d5e0565ff7e6cc57e7fe7" prot="private" virt="non-virtual"><scope>EvolutionController</scope><name>waveComplete</name></member>
+      <member refid="class_evolution_controller_1a1649ff1641add0d5982e8eec77dc195d" prot="public" virt="non-virtual"><scope>EvolutionController</scope><name>WaveComplete</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

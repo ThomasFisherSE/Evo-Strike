@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_settings_manager" kind="class" language="C#" prot="public">
+    <compoundname>SettingsManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_settings_manager_1aeb178646a8cc54153eb3d6bc6b2a5d5f" prot="public" static="no" mutable="no">
+        <type>Toggle</type>
+        <definition>Toggle SettingsManager.fullscreenToggle</definition>
+        <argsstring></argsstring>
+        <name>fullscreenToggle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="7" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_settings_manager_1ac8e5588fbf4e9c627655961a46bce8da" prot="public" static="no" mutable="no">
+        <type>Dropdown</type>
+        <definition>Dropdown SettingsManager.textureQualityDropdown</definition>
+        <argsstring></argsstring>
+        <name>textureQualityDropdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="8" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_settings_manager_1a976721de4c42b799ef30a9de3205f0c7" prot="public" static="no" mutable="no">
+        <type>Dropdown</type>
+        <definition>Dropdown SettingsManager.resolutionDropdown</definition>
+        <argsstring></argsstring>
+        <name>resolutionDropdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="9" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_settings_manager_1a9915352526fb5ea3c95040d9e0ea70e8" prot="public" static="no" mutable="no">
+        <type>Dropdown</type>
+        <definition>Dropdown SettingsManager.antiAliasingDropdown</definition>
+        <argsstring></argsstring>
+        <name>antiAliasingDropdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="10" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_settings_manager_1ad0826d167efa606e5132e12d1fb02e20" prot="public" static="no" mutable="no">
+        <type>Dropdown</type>
+        <definition>Dropdown SettingsManager.vSyncDropdown</definition>
+        <argsstring></argsstring>
+        <name>vSyncDropdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="11" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_settings_manager_1af608040b3d8be12b48202463dea09e78" prot="public" static="no" mutable="no">
+        <type>Slider</type>
+        <definition>Slider SettingsManager.volumeSlider</definition>
+        <argsstring></argsstring>
+        <name>volumeSlider</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="12" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_settings_manager_1a9607a85ca00e52135c608e895dc01214" prot="public" static="no" mutable="no">
+        <type>Resolution []</type>
+        <definition>Resolution [] SettingsManager.resolutions</definition>
+        <argsstring></argsstring>
+        <name>resolutions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="14" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_settings_manager_1aceed727e77a7db402a170fdaf94e9798" prot="public" static="no" mutable="no">
+        <type><ref refid="class_game_settings" kindref="compound">GameSettings</ref></type>
+        <definition>GameSettings SettingsManager.gameSettings</definition>
+        <argsstring></argsstring>
+        <name>gameSettings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="15" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_settings_manager_1ad8435914e4f7e4fd7fc873c781f4db28" prot="public" static="no" mutable="no">
+        <type>AudioSource</type>
+        <definition>AudioSource SettingsManager.audioSrc</definition>
+        <argsstring></argsstring>
+        <name>audioSrc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="17" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_settings_manager_1a4723633cf92b5efcbfdf4cea23786805" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SettingsManager.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>Initialize properties that should be set during run-time. Set the default values of UI components. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="23" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_settings_manager_1aa685a939bdf4c3e9854dd895ee45d5cf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SettingsManager.OnEnable</definition>
+        <argsstring>()</argsstring>
+        <name>OnEnable</name>
+        <briefdescription>
+<para>Initialize the values of options UI components. Sets up listeners for UI components. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="32" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="32" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_settings_manager_1ac690ec7be2f8760959c819ff5235fa60" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SettingsManager.OnFullscreenToggle</definition>
+        <argsstring>()</argsstring>
+        <name>OnFullscreenToggle</name>
+        <briefdescription>
+<para>Toggle fullscreen mode. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="53" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_settings_manager_1a4b9cc3fc84f2c5b2a5f79010a71ddf44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SettingsManager.OnResolutionChange</definition>
+        <argsstring>()</argsstring>
+        <name>OnResolutionChange</name>
+        <briefdescription>
+<para>Change the screen resolution to the chosen option. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="61" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="class_settings_manager_1ac64e635b27333995bccd8cdd01e66471" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SettingsManager.OnTextureQualityChange</definition>
+        <argsstring>()</argsstring>
+        <name>OnTextureQualityChange</name>
+        <briefdescription>
+<para>Change the texture quality to the chosen option. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="69" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="69" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_settings_manager_1a9098e096f294c8289f888d1cef3d88e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SettingsManager.OnAntiAliasingChange</definition>
+        <argsstring>()</argsstring>
+        <name>OnAntiAliasingChange</name>
+        <briefdescription>
+<para>Change the anti-aliasing method to the chosen option. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="77" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_settings_manager_1aba04234da5db424bda53e733270e8d35" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SettingsManager.OnVSyncChange</definition>
+        <argsstring>()</argsstring>
+        <name>OnVSyncChange</name>
+        <briefdescription>
+<para>Change the V-Sync method to the chosen option. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="85" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="85" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_settings_manager_1a6d25a3155a5df19d54cfd1cb166fb4f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SettingsManager.OnVolumeChange</definition>
+        <argsstring>()</argsstring>
+        <name>OnVolumeChange</name>
+        <briefdescription>
+<para>Change and save the volume to the chosen value. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="93" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="93" bodyend="98"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="76">
+        <label>SettingsManager</label>
+        <link refid="class_settings_manager"/>
+        <childnode refid="77" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="78">
+        <label>SettingsManager</label>
+        <link refid="class_settings_manager"/>
+        <childnode refid="79" relation="public-inheritance">
+        </childnode>
+        <childnode refid="80" relation="usage">
+          <edgelabel>+gameSettings</edgelabel>
+        </childnode>
+      </node>
+      <node id="80">
+        <label>GameSettings</label>
+        <link refid="class_game_settings"/>
+      </node>
+      <node id="79">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" line="6" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SettingsManager.cs" bodystart="6" bodyend="99"/>
+    <listofallmembers>
+      <member refid="class_settings_manager_1a9915352526fb5ea3c95040d9e0ea70e8" prot="public" virt="non-virtual"><scope>SettingsManager</scope><name>antiAliasingDropdown</name></member>
+      <member refid="class_settings_manager_1ad8435914e4f7e4fd7fc873c781f4db28" prot="public" virt="non-virtual"><scope>SettingsManager</scope><name>audioSrc</name></member>
+      <member refid="class_settings_manager_1aeb178646a8cc54153eb3d6bc6b2a5d5f" prot="public" virt="non-virtual"><scope>SettingsManager</scope><name>fullscreenToggle</name></member>
+      <member refid="class_settings_manager_1aceed727e77a7db402a170fdaf94e9798" prot="public" virt="non-virtual"><scope>SettingsManager</scope><name>gameSettings</name></member>
+      <member refid="class_settings_manager_1a9098e096f294c8289f888d1cef3d88e8" prot="public" virt="non-virtual"><scope>SettingsManager</scope><name>OnAntiAliasingChange</name></member>
+      <member refid="class_settings_manager_1aa685a939bdf4c3e9854dd895ee45d5cf" prot="private" virt="non-virtual"><scope>SettingsManager</scope><name>OnEnable</name></member>
+      <member refid="class_settings_manager_1ac690ec7be2f8760959c819ff5235fa60" prot="public" virt="non-virtual"><scope>SettingsManager</scope><name>OnFullscreenToggle</name></member>
+      <member refid="class_settings_manager_1a4b9cc3fc84f2c5b2a5f79010a71ddf44" prot="public" virt="non-virtual"><scope>SettingsManager</scope><name>OnResolutionChange</name></member>
+      <member refid="class_settings_manager_1ac64e635b27333995bccd8cdd01e66471" prot="public" virt="non-virtual"><scope>SettingsManager</scope><name>OnTextureQualityChange</name></member>
+      <member refid="class_settings_manager_1a6d25a3155a5df19d54cfd1cb166fb4f7" prot="public" virt="non-virtual"><scope>SettingsManager</scope><name>OnVolumeChange</name></member>
+      <member refid="class_settings_manager_1aba04234da5db424bda53e733270e8d35" prot="public" virt="non-virtual"><scope>SettingsManager</scope><name>OnVSyncChange</name></member>
+      <member refid="class_settings_manager_1a976721de4c42b799ef30a9de3205f0c7" prot="public" virt="non-virtual"><scope>SettingsManager</scope><name>resolutionDropdown</name></member>
+      <member refid="class_settings_manager_1a9607a85ca00e52135c608e895dc01214" prot="public" virt="non-virtual"><scope>SettingsManager</scope><name>resolutions</name></member>
+      <member refid="class_settings_manager_1a4723633cf92b5efcbfdf4cea23786805" prot="private" virt="non-virtual"><scope>SettingsManager</scope><name>Start</name></member>
+      <member refid="class_settings_manager_1ac8e5588fbf4e9c627655961a46bce8da" prot="public" virt="non-virtual"><scope>SettingsManager</scope><name>textureQualityDropdown</name></member>
+      <member refid="class_settings_manager_1af608040b3d8be12b48202463dea09e78" prot="public" virt="non-virtual"><scope>SettingsManager</scope><name>volumeSlider</name></member>
+      <member refid="class_settings_manager_1ad0826d167efa606e5132e12d1fb02e20" prot="public" virt="non-virtual"><scope>SettingsManager</scope><name>vSyncDropdown</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

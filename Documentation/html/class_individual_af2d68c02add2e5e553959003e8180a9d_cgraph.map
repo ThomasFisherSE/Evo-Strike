@@ -1,0 +1,4 @@
+<map id="Individual.NbOnTargetFunc" name="Individual.NbOnTargetFunc">
+<area shape="rect" id="node2" href="$class_individual.html#a100f431028b5b9d385348fdb000e3b32" title="Get the number of shots on target the individual made. " alt="" coords="229,13,432,39"/>
+<area shape="rect" id="node3" href="$class_weapon_controller.html#aab88ffc7b720e10dce55b93dec090297" title="Accessor for the nbShotsOnTarget attribute. " alt="" coords="480,5,680,47"/>
+</map>

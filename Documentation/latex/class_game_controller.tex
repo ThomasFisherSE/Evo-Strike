@@ -1,0 +1,174 @@
+\hypertarget{class_game_controller}{}\section{Game\+Controller Class Reference}
+\label{class_game_controller}\index{Game\+Controller@{Game\+Controller}}
+
+
+Inheritance diagram for Game\+Controller\+:
+% FIG 0
+
+
+Collaboration diagram for Game\+Controller\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_controller_a956f2ce4aae2c7f4f4bd17a2b7e01af8}{Update\+Health}} ()
+\begin{DoxyCompactList}\small\item\em Update the health UI \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_controller_a867b359e465ba013eec7f1ee03b75118}{Game\+Over}} ()
+\begin{DoxyCompactList}\small\item\em Mark that the game is over. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_controller_a313aab47cf055f36c3d0ae5de701a00e}{Add\+Score}} (int score\+To\+Add)
+\begin{DoxyCompactList}\small\item\em Add to the player\textquotesingle{}s score. \end{DoxyCompactList}\item 
+I\+Enumerator \mbox{\hyperlink{class_game_controller_ae866cbc811f8f18f599b2f238d8e086f}{Fade\+Text}} (float fade\+Time, Text text)
+\begin{DoxyCompactList}\small\item\em Fade UI text until it is transparent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_controller_ad59d43bc8b212847eaae1e877d8c1a31}\label{class_game_controller_ad59d43bc8b212847eaae1e877d8c1a31}} 
+Text {\bfseries score\+Text}
+\item 
+\mbox{\Hypertarget{class_game_controller_a2364f485d5cc3b7c98c2beca308baac7}\label{class_game_controller_a2364f485d5cc3b7c98c2beca308baac7}} 
+float {\bfseries score\+Fade\+Time} = 1
+\item 
+\mbox{\Hypertarget{class_game_controller_ac92cdd0620c3036f2e9452c62c9035f2}\label{class_game_controller_ac92cdd0620c3036f2e9452c62c9035f2}} 
+Text {\bfseries add\+Score\+Text}
+\item 
+\mbox{\Hypertarget{class_game_controller_a68dea27fd0de9061889d2664697af64f}\label{class_game_controller_a68dea27fd0de9061889d2664697af64f}} 
+Text {\bfseries restart\+Text}
+\item 
+\mbox{\Hypertarget{class_game_controller_aba4351ee1c41d1af6c44c2cb106a4b67}\label{class_game_controller_aba4351ee1c41d1af6c44c2cb106a4b67}} 
+Text {\bfseries game\+Over\+Text}
+\item 
+\mbox{\Hypertarget{class_game_controller_a2b41479a4e6d411f57b3d65ce48d9a1e}\label{class_game_controller_a2b41479a4e6d411f57b3d65ce48d9a1e}} 
+Text {\bfseries wave\+Text}
+\item 
+\mbox{\Hypertarget{class_game_controller_a0969244bf06abfdb01f50f380979a086}\label{class_game_controller_a0969244bf06abfdb01f50f380979a086}} 
+Text {\bfseries health\+Text}
+\item 
+\mbox{\Hypertarget{class_game_controller_ad75a108cba99e7ddf43b9dc06ed0bce2}\label{class_game_controller_ad75a108cba99e7ddf43b9dc06ed0bce2}} 
+Game\+Object \mbox{[}$\,$\mbox{]} {\bfseries power\+Ups}
+\item 
+\mbox{\Hypertarget{class_game_controller_abc7b85296bb959ed30d3861a36f5580d}\label{class_game_controller_abc7b85296bb959ed30d3861a36f5580d}} 
+Game\+Object \mbox{[}$\,$\mbox{]} {\bfseries hazards}
+\item 
+\mbox{\Hypertarget{class_game_controller_a5e4f56c23896d4b528da579f93335896}\label{class_game_controller_a5e4f56c23896d4b528da579f93335896}} 
+Vector3 {\bfseries spawn\+Values}
+\item 
+\mbox{\Hypertarget{class_game_controller_a973f0e7d25e3b260cf0aa51730584ada}\label{class_game_controller_a973f0e7d25e3b260cf0aa51730584ada}} 
+int {\bfseries hazard\+Count}
+\item 
+\mbox{\Hypertarget{class_game_controller_a8ba28d6303a0160af8934acd78201cb6}\label{class_game_controller_a8ba28d6303a0160af8934acd78201cb6}} 
+float {\bfseries power\+Up\+Chance}
+\item 
+\mbox{\Hypertarget{class_game_controller_a27c91a14de3982813ad3d8245d0134d7}\label{class_game_controller_a27c91a14de3982813ad3d8245d0134d7}} 
+float {\bfseries spawn\+Wait}
+\item 
+\mbox{\Hypertarget{class_game_controller_a9b6f96c29d3ee0f2c692c30ed2b12835}\label{class_game_controller_a9b6f96c29d3ee0f2c692c30ed2b12835}} 
+float {\bfseries start\+Wait}
+\item 
+\mbox{\Hypertarget{class_game_controller_ad210270b367c1c439d35e8177d989019}\label{class_game_controller_ad210270b367c1c439d35e8177d989019}} 
+float {\bfseries wave\+Wait}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_game_controller_ad358e1f216faf442ea6115ce732563d0}{Min\+X\+Spawn}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessors and mutators for min\+X\+Spawn \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_game_controller_a748b86a151833049c4c9a5e9d8487f16}{Max\+X\+Spawn}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessors and mutators for max\+X\+Spawn \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_game_controller_a92b2683fc2816c409a0f727914607e36}{Wave\+Number}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessors and mutators for wave\+Number \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_controller_a313aab47cf055f36c3d0ae5de701a00e}\label{class_game_controller_a313aab47cf055f36c3d0ae5de701a00e}} 
+\index{Game\+Controller@{Game\+Controller}!Add\+Score@{Add\+Score}}
+\index{Add\+Score@{Add\+Score}!Game\+Controller@{Game\+Controller}}
+\subsubsection{\texorpdfstring{Add\+Score()}{AddScore()}}
+{\footnotesize\ttfamily void Game\+Controller.\+Add\+Score (\begin{DoxyParamCaption}\item[{int}]{score\+To\+Add }\end{DoxyParamCaption})}
+
+
+
+Add to the player\textquotesingle{}s score. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score\+To\+Add} & The number of points to add to the score.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_controller_ae866cbc811f8f18f599b2f238d8e086f}\label{class_game_controller_ae866cbc811f8f18f599b2f238d8e086f}} 
+\index{Game\+Controller@{Game\+Controller}!Fade\+Text@{Fade\+Text}}
+\index{Fade\+Text@{Fade\+Text}!Game\+Controller@{Game\+Controller}}
+\subsubsection{\texorpdfstring{Fade\+Text()}{FadeText()}}
+{\footnotesize\ttfamily I\+Enumerator Game\+Controller.\+Fade\+Text (\begin{DoxyParamCaption}\item[{float}]{fade\+Time,  }\item[{Text}]{text }\end{DoxyParamCaption})}
+
+
+
+Fade UI text until it is transparent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fade\+Time} & The time that the text takes to fade completely.\\
+\hline
+{\em text} & The text to be faded.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A null I\+E\+Numerator, so that the method can be ran as a couroutine.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_controller_a867b359e465ba013eec7f1ee03b75118}\label{class_game_controller_a867b359e465ba013eec7f1ee03b75118}} 
+\index{Game\+Controller@{Game\+Controller}!Game\+Over@{Game\+Over}}
+\index{Game\+Over@{Game\+Over}!Game\+Controller@{Game\+Controller}}
+\subsubsection{\texorpdfstring{Game\+Over()}{GameOver()}}
+{\footnotesize\ttfamily void Game\+Controller.\+Game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Mark that the game is over. 
+
+\mbox{\Hypertarget{class_game_controller_a956f2ce4aae2c7f4f4bd17a2b7e01af8}\label{class_game_controller_a956f2ce4aae2c7f4f4bd17a2b7e01af8}} 
+\index{Game\+Controller@{Game\+Controller}!Update\+Health@{Update\+Health}}
+\index{Update\+Health@{Update\+Health}!Game\+Controller@{Game\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Health()}{UpdateHealth()}}
+{\footnotesize\ttfamily void Game\+Controller.\+Update\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Update the health UI 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_game_controller_a748b86a151833049c4c9a5e9d8487f16}\label{class_game_controller_a748b86a151833049c4c9a5e9d8487f16}} 
+\index{Game\+Controller@{Game\+Controller}!Max\+X\+Spawn@{Max\+X\+Spawn}}
+\index{Max\+X\+Spawn@{Max\+X\+Spawn}!Game\+Controller@{Game\+Controller}}
+\subsubsection{\texorpdfstring{Max\+X\+Spawn}{MaxXSpawn}}
+{\footnotesize\ttfamily float Game\+Controller.\+Max\+X\+Spawn\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessors and mutators for max\+X\+Spawn 
+
+\mbox{\Hypertarget{class_game_controller_ad358e1f216faf442ea6115ce732563d0}\label{class_game_controller_ad358e1f216faf442ea6115ce732563d0}} 
+\index{Game\+Controller@{Game\+Controller}!Min\+X\+Spawn@{Min\+X\+Spawn}}
+\index{Min\+X\+Spawn@{Min\+X\+Spawn}!Game\+Controller@{Game\+Controller}}
+\subsubsection{\texorpdfstring{Min\+X\+Spawn}{MinXSpawn}}
+{\footnotesize\ttfamily float Game\+Controller.\+Min\+X\+Spawn\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessors and mutators for min\+X\+Spawn 
+
+\mbox{\Hypertarget{class_game_controller_a92b2683fc2816c409a0f727914607e36}\label{class_game_controller_a92b2683fc2816c409a0f727914607e36}} 
+\index{Game\+Controller@{Game\+Controller}!Wave\+Number@{Wave\+Number}}
+\index{Wave\+Number@{Wave\+Number}!Game\+Controller@{Game\+Controller}}
+\subsubsection{\texorpdfstring{Wave\+Number}{WaveNumber}}
+{\footnotesize\ttfamily int Game\+Controller.\+Wave\+Number\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessors and mutators for wave\+Number 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Y\+:/\+Users/\+Thomas Fisher/\+Documents/\+Git\+Hub/\+Evolutionary\+Game/\+Assets/\+Scripts/Game\+Controller.\+cs\end{DoxyCompactItemize}

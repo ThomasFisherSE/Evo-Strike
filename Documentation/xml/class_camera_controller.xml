@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_camera_controller" kind="class" language="C#" prot="public">
+    <compoundname>CameraController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_camera_controller_1a8393464679e71c7fe4f5e972e75f201e" prot="public" static="no" mutable="no">
+        <type>Camera</type>
+        <definition>Camera CameraController.mainCamera</definition>
+        <argsstring></argsstring>
+        <name>mainCamera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/CameraController.cs" line="7" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/CameraController.cs" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_camera_controller_1a6f3d21e4def9e7187bb8adf1f2e2805f" prot="public" static="no" mutable="no">
+        <type>Camera</type>
+        <definition>Camera CameraController.thirdPersonCamera</definition>
+        <argsstring></argsstring>
+        <name>thirdPersonCamera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/CameraController.cs" line="8" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/CameraController.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_camera_controller_1ad4abbad45fd18466e95aa74e9bcfc186" prot="private" static="no" mutable="no">
+        <type>Queue&lt; Camera &gt;</type>
+        <definition>Queue&lt;Camera&gt; CameraController.cameraQueue</definition>
+        <argsstring></argsstring>
+        <name>cameraQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/CameraController.cs" line="10" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/CameraController.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_camera_controller_1ad080265900cc717782b6847277c13ad3" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject CameraController.bg</definition>
+        <argsstring></argsstring>
+        <name>bg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/CameraController.cs" line="11" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/CameraController.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_camera_controller_1ad4a238c6f7db3ee003302a245d860860" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CameraController.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>Initialize camera queue and prepare properties that need to be found during run-time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/CameraController.cs" line="16" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/CameraController.cs" bodystart="16" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_controller_1a7c4f486f4bcbd1d54a346fdce9707bd5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CameraController.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <briefdescription>
+<para>When &apos;ChangeView&apos; is pressed, change the selected camera view </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/CameraController.cs" line="28" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/CameraController.cs" bodystart="28" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="10">
+        <label>CameraController</label>
+        <link refid="class_camera_controller"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="12">
+        <label>CameraController</label>
+        <link refid="class_camera_controller"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/CameraController.cs" line="5" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/CameraController.cs" bodystart="5" bodyend="47"/>
+    <listofallmembers>
+      <member refid="class_camera_controller_1ad080265900cc717782b6847277c13ad3" prot="private" virt="non-virtual"><scope>CameraController</scope><name>bg</name></member>
+      <member refid="class_camera_controller_1ad4abbad45fd18466e95aa74e9bcfc186" prot="private" virt="non-virtual"><scope>CameraController</scope><name>cameraQueue</name></member>
+      <member refid="class_camera_controller_1a8393464679e71c7fe4f5e972e75f201e" prot="public" virt="non-virtual"><scope>CameraController</scope><name>mainCamera</name></member>
+      <member refid="class_camera_controller_1ad4a238c6f7db3ee003302a245d860860" prot="private" virt="non-virtual"><scope>CameraController</scope><name>Start</name></member>
+      <member refid="class_camera_controller_1a6f3d21e4def9e7187bb8adf1f2e2805f" prot="public" virt="non-virtual"><scope>CameraController</scope><name>thirdPersonCamera</name></member>
+      <member refid="class_camera_controller_1a7c4f486f4bcbd1d54a346fdce9707bd5" prot="private" virt="non-virtual"><scope>CameraController</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

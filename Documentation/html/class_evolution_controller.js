@@ -1,0 +1,25 @@
+var class_evolution_controller =
+[
+    [ "AddCompletedEnemy", "class_evolution_controller.html#a07a968a7b94e9afd6fa0dd6755b6d07c", null ],
+    [ "DisplayMostPowerfulEnemy", "class_evolution_controller.html#a56b57730a8b4707ffe1c8b8053871a84", null ],
+    [ "NextGeneration", "class_evolution_controller.html#ac65df1af1e9cdf179606f205e8f046f0", null ],
+    [ "SpawnInitialPopulation", "class_evolution_controller.html#a7882ed1ac17cf9cb79a8559c3fa47676", null ],
+    [ "Start", "class_evolution_controller.html#a1f5c6f777133971fb18af4e032c20ab1", null ],
+    [ "accuracyText", "class_evolution_controller.html#a7532ecd157f47efa09e365c868289676", null ],
+    [ "crossoverRate", "class_evolution_controller.html#a33b0f4219444033d4eb774c0157f9482", null ],
+    [ "dodgeFrequencyText", "class_evolution_controller.html#a21fc0e733ee44d2885d7e00b22f8460a", null ],
+    [ "dodgeText", "class_evolution_controller.html#af795d5ac3b55058fe65db8ae6c4ab9f5", null ],
+    [ "enemyShipPrefab", "class_evolution_controller.html#aecc61fd2861b5d3ec6ccdcf7c577c3ca", null ],
+    [ "enemyStatsTitleText", "class_evolution_controller.html#af8a4c642db3742e8d6481ffcbe84ba2e", null ],
+    [ "enemyStatsWait", "class_evolution_controller.html#a6bd06587ebfa42a6140c4eb19e502635", null ],
+    [ "fireRateText", "class_evolution_controller.html#a0edadfd98d38cc69a7dd506e65f8f97f", null ],
+    [ "mutationRate", "class_evolution_controller.html#ad82c4809cb4a13f28075aa4790e7f9a1", null ],
+    [ "populationSize", "class_evolution_controller.html#ada8a8ec6761c7ea18f189df1e04363b6", null ],
+    [ "shotsOnTargetText", "class_evolution_controller.html#a17182a83179f115f9708381d9b3d5ce9", null ],
+    [ "spawnWait", "class_evolution_controller.html#a1fcf72c71aa6a22df6e6e1560cc5bf9f", null ],
+    [ "speedText", "class_evolution_controller.html#a4b17bfe9a4d2ce96ef7247a72974fe88", null ],
+    [ "statsPanel", "class_evolution_controller.html#a0b18581ce864c56f877294da1f28e2b9", null ],
+    [ "survivedText", "class_evolution_controller.html#a69190de729e5d8eef1d1cf46de2bc152", null ],
+    [ "timeAliveText", "class_evolution_controller.html#a50f68dee9f616c26995473fc6a4de63f", null ],
+    [ "WaveComplete", "class_evolution_controller.html#a1649ff1641add0d5982e8eec77dc195d", null ]
+];

@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_random_rotator" kind="class" language="C#" prot="public">
+    <compoundname>RandomRotator</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_random_rotator_1afaec47e23d30e8bd3161a628d9338e92" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float RandomRotator.tumble</definition>
+        <argsstring></argsstring>
+        <name>tumble</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/RandomRotator.cs" line="6" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/RandomRotator.cs" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_random_rotator_1a2524fe6464d46bf3f6f1f886fee77fce" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RandomRotator.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>Initialize properties that should be set during run-time. Start rotating the attached object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/RandomRotator.cs" line="12" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/RandomRotator.cs" bodystart="12" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="68">
+        <label>RandomRotator</label>
+        <link refid="class_random_rotator"/>
+        <childnode refid="69" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="70">
+        <label>RandomRotator</label>
+        <link refid="class_random_rotator"/>
+        <childnode refid="71" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/RandomRotator.cs" line="5" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/RandomRotator.cs" bodystart="5" bodyend="17"/>
+    <listofallmembers>
+      <member refid="class_random_rotator_1a2524fe6464d46bf3f6f1f886fee77fce" prot="private" virt="non-virtual"><scope>RandomRotator</scope><name>Start</name></member>
+      <member refid="class_random_rotator_1afaec47e23d30e8bd3161a628d9338e92" prot="public" virt="non-virtual"><scope>RandomRotator</scope><name>tumble</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

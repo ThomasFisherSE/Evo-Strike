@@ -1,0 +1,684 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_game_controller" kind="class" language="C#" prot="public">
+    <compoundname>GameController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_game_controller_1ad59d43bc8b212847eaae1e877d8c1a31" prot="public" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text GameController.scoreText</definition>
+        <argsstring></argsstring>
+        <name>scoreText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="8" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a2364f485d5cc3b7c98c2beca308baac7" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GameController.scoreFadeTime</definition>
+        <argsstring></argsstring>
+        <name>scoreFadeTime</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="11" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1ac92cdd0620c3036f2e9452c62c9035f2" prot="public" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text GameController.addScoreText</definition>
+        <argsstring></argsstring>
+        <name>addScoreText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="13" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a68dea27fd0de9061889d2664697af64f" prot="public" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text GameController.restartText</definition>
+        <argsstring></argsstring>
+        <name>restartText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="14" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1aba4351ee1c41d1af6c44c2cb106a4b67" prot="public" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text GameController.gameOverText</definition>
+        <argsstring></argsstring>
+        <name>gameOverText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="15" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a2b41479a4e6d411f57b3d65ce48d9a1e" prot="public" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text GameController.waveText</definition>
+        <argsstring></argsstring>
+        <name>waveText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="16" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a0969244bf06abfdb01f50f380979a086" prot="public" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text GameController.healthText</definition>
+        <argsstring></argsstring>
+        <name>healthText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="17" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1ad75a108cba99e7ddf43b9dc06ed0bce2" prot="public" static="no" mutable="no">
+        <type>GameObject []</type>
+        <definition>GameObject [] GameController.powerUps</definition>
+        <argsstring></argsstring>
+        <name>powerUps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="24" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1abc7b85296bb959ed30d3861a36f5580d" prot="public" static="no" mutable="no">
+        <type>GameObject []</type>
+        <definition>GameObject [] GameController.hazards</definition>
+        <argsstring></argsstring>
+        <name>hazards</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="25" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a5e4f56c23896d4b528da579f93335896" prot="public" static="no" mutable="no">
+        <type>Vector3</type>
+        <definition>Vector3 GameController.spawnValues</definition>
+        <argsstring></argsstring>
+        <name>spawnValues</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="26" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a973f0e7d25e3b260cf0aa51730584ada" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameController.hazardCount</definition>
+        <argsstring></argsstring>
+        <name>hazardCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="27" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a8ba28d6303a0160af8934acd78201cb6" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GameController.powerUpChance</definition>
+        <argsstring></argsstring>
+        <name>powerUpChance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="28" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a27c91a14de3982813ad3d8245d0134d7" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GameController.spawnWait</definition>
+        <argsstring></argsstring>
+        <name>spawnWait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="29" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a9b6f96c29d3ee0f2c692c30ed2b12835" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GameController.startWait</definition>
+        <argsstring></argsstring>
+        <name>startWait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="30" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1ad210270b367c1c439d35e8177d989019" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GameController.waveWait</definition>
+        <argsstring></argsstring>
+        <name>waveWait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="31" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_game_controller_1a5262f16a935aa930f813ff9c0dc060f2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameController.score</definition>
+        <argsstring></argsstring>
+        <name>score</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="9" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a761b6aaa4f7b60c37fc45c3c5f47e728" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameController.waveNumber</definition>
+        <argsstring></argsstring>
+        <name>waveNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="19" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1aeae400ea0c604655ce5801818a5a44a1" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GameController.gameOver</definition>
+        <argsstring></argsstring>
+        <name>gameOver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="21" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1aeea923e78ddd573296687317e638a937" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GameController.restart</definition>
+        <argsstring></argsstring>
+        <name>restart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="22" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1aa252db656811cd7e265a8efc71be3f6c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_player_controller" kindref="compound">PlayerController</ref></type>
+        <definition>PlayerController GameController.playerController</definition>
+        <argsstring></argsstring>
+        <name>playerController</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="33" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a5c0fc9e419241d12424456125136def7" prot="private" static="no" mutable="no">
+        <type><ref refid="class_evolution_controller" kindref="compound">EvolutionController</ref></type>
+        <definition>EvolutionController GameController.evolutionController</definition>
+        <argsstring></argsstring>
+        <name>evolutionController</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="34" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a34d3f9b469b52d1695d0c8378f0a46a5" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GameController.camDistance</definition>
+        <argsstring></argsstring>
+        <name>camDistance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="35" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a38f89195dfac1619472dfbbcbfce6e50" prot="private" static="no" mutable="no">
+        <type>Vector2</type>
+        <definition>Vector2 GameController.bottomCorner</definition>
+        <argsstring></argsstring>
+        <name>bottomCorner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="37" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a78742e945c9079890b9fed5a41b4bcfe" prot="private" static="no" mutable="no">
+        <type>Vector2</type>
+        <definition>Vector2 GameController.topCorner</definition>
+        <argsstring></argsstring>
+        <name>topCorner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="37" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a0ec20c17f9226b70b5521b4c95022068" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GameController.minXSpawn</definition>
+        <argsstring></argsstring>
+        <name>minXSpawn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="39" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a3ff35d362a4246c1377634a66750ec32" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GameController.maxXSpawn</definition>
+        <argsstring></argsstring>
+        <name>maxXSpawn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="39" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1affcabf46571294b1219f0967586427d3" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GameController.zSpawn</definition>
+        <argsstring></argsstring>
+        <name>zSpawn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="39" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_game_controller_1ad358e1f216faf442ea6115ce732563d0" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float GameController.MinXSpawn</definition>
+        <argsstring></argsstring>
+        <name>MinXSpawn</name>
+        <briefdescription>
+<para>Accessors and mutators for minXSpawn </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="260" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="261" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="property" id="class_game_controller_1a748b86a151833049c4c9a5e9d8487f16" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float GameController.MaxXSpawn</definition>
+        <argsstring></argsstring>
+        <name>MaxXSpawn</name>
+        <briefdescription>
+<para>Accessors and mutators for maxXSpawn </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="276" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="277" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="property" id="class_game_controller_1a92b2683fc2816c409a0f727914607e36" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int GameController.WaveNumber</definition>
+        <argsstring></argsstring>
+        <name>WaveNumber</name>
+        <briefdescription>
+<para>Accessors and mutators for waveNumber </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="292" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="293" bodyend="303"/>
+        <referencedby refid="class_evolution_controller_1a56b57730a8b4707ffe1c8b8053871a84" compoundref="_evolution_controller_8cs" startline="314" endline="346">EvolutionController.DisplayMostPowerfulEnemy</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_game_controller_1a97788a7aa0f09c8d748781683e5f045b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>Initialise properties that need to be set during run-time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="44" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="44" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1a5a89277529cadb49af7d55eba3bbf056" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <briefdescription>
+<para>Check for input from the player to restart the game / go to the main menu. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="111" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="111" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1a21f5360f5ef719ad46b68668d7a0c69a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.RestartLevel</definition>
+        <argsstring>()</argsstring>
+        <name>RestartLevel</name>
+        <briefdescription>
+<para>Restart the level. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="136" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="136" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1a46eceb5ab3f1167f11ebc202ce6d98db" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.UpdateScore</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateScore</name>
+        <briefdescription>
+<para>Update the score UI </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="145" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="145" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1aaece49e67943edbf460e51234ecc8ad6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator GameController.SpawnHazards</definition>
+        <argsstring>()</argsstring>
+        <name>SpawnHazards</name>
+        <briefdescription>
+<para>Spawn asteroids for the wave. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A WaitForSeconds IEnumerator, allowing the couroutine to wait for some time.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="154" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="154" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1ae44bd464d25a837a5651e8633969beaa" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator GameController.SpawnWaves</definition>
+        <argsstring>()</argsstring>
+        <name>SpawnWaves</name>
+        <briefdescription>
+<para>Continuously spawns waves until the game is over. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A WaitForSeconds IEnumerator, allowing the couroutine to wait for some time.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="177" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="177" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1aa07782bd271675559594d3181f81ced6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator GameController.AddScoreMessage</definition>
+        <argsstring>(string message, float delay)</argsstring>
+        <name>AddScoreMessage</name>
+        <param>
+          <type>string</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>delay</declname>
+        </param>
+        <briefdescription>
+<para>Display a temporary UI message showing recently added points. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message to display.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time the message should be displayed for.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A WaitForSeconds IEnumerator, allowing the couroutine to wait for some time.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="229" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="229" bodyend="235"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_game_controller_1a956f2ce4aae2c7f4f4bd17a2b7e01af8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.UpdateHealth</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateHealth</name>
+        <briefdescription>
+<para>Update the health UI </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="80" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="80" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1a867b359e465ba013eec7f1ee03b75118" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.GameOver</definition>
+        <argsstring>()</argsstring>
+        <name>GameOver</name>
+        <briefdescription>
+<para>Mark that the game is over. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="88" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="88" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1a313aab47cf055f36c3d0ae5de701a00e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.AddScore</definition>
+        <argsstring>(int scoreToAdd)</argsstring>
+        <name>AddScore</name>
+        <param>
+          <type>int</type>
+          <declname>scoreToAdd</declname>
+        </param>
+        <briefdescription>
+<para>Add to the player&apos;s score. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scoreToAdd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of points to add to the score.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="98" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="98" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1ae866cbc811f8f18f599b2f238d8e086f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator GameController.FadeText</definition>
+        <argsstring>(float fadeTime, Text text)</argsstring>
+        <name>FadeText</name>
+        <param>
+          <type>float</type>
+          <declname>fadeTime</declname>
+        </param>
+        <param>
+          <type>Text</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+<para>Fade UI text until it is transparent. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fadeTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time that the text takes to fade completely.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text to be faded.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A null IENumerator, so that the method can be ran as a couroutine.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="243" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="243" bodyend="254"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="39">
+        <label>GameController</label>
+        <link refid="class_game_controller"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="41">
+        <label>GameController</label>
+        <link refid="class_game_controller"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" line="7" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameController.cs" bodystart="7" bodyend="305"/>
+    <listofallmembers>
+      <member refid="class_game_controller_1a313aab47cf055f36c3d0ae5de701a00e" prot="public" virt="non-virtual"><scope>GameController</scope><name>AddScore</name></member>
+      <member refid="class_game_controller_1aa07782bd271675559594d3181f81ced6" prot="private" virt="non-virtual"><scope>GameController</scope><name>AddScoreMessage</name></member>
+      <member refid="class_game_controller_1ac92cdd0620c3036f2e9452c62c9035f2" prot="public" virt="non-virtual"><scope>GameController</scope><name>addScoreText</name></member>
+      <member refid="class_game_controller_1a38f89195dfac1619472dfbbcbfce6e50" prot="private" virt="non-virtual"><scope>GameController</scope><name>bottomCorner</name></member>
+      <member refid="class_game_controller_1a34d3f9b469b52d1695d0c8378f0a46a5" prot="private" virt="non-virtual"><scope>GameController</scope><name>camDistance</name></member>
+      <member refid="class_game_controller_1a5c0fc9e419241d12424456125136def7" prot="private" virt="non-virtual"><scope>GameController</scope><name>evolutionController</name></member>
+      <member refid="class_game_controller_1ae866cbc811f8f18f599b2f238d8e086f" prot="public" virt="non-virtual"><scope>GameController</scope><name>FadeText</name></member>
+      <member refid="class_game_controller_1a867b359e465ba013eec7f1ee03b75118" prot="public" virt="non-virtual"><scope>GameController</scope><name>GameOver</name></member>
+      <member refid="class_game_controller_1aeae400ea0c604655ce5801818a5a44a1" prot="private" virt="non-virtual"><scope>GameController</scope><name>gameOver</name></member>
+      <member refid="class_game_controller_1aba4351ee1c41d1af6c44c2cb106a4b67" prot="public" virt="non-virtual"><scope>GameController</scope><name>gameOverText</name></member>
+      <member refid="class_game_controller_1a973f0e7d25e3b260cf0aa51730584ada" prot="public" virt="non-virtual"><scope>GameController</scope><name>hazardCount</name></member>
+      <member refid="class_game_controller_1abc7b85296bb959ed30d3861a36f5580d" prot="public" virt="non-virtual"><scope>GameController</scope><name>hazards</name></member>
+      <member refid="class_game_controller_1a0969244bf06abfdb01f50f380979a086" prot="public" virt="non-virtual"><scope>GameController</scope><name>healthText</name></member>
+      <member refid="class_game_controller_1a3ff35d362a4246c1377634a66750ec32" prot="private" virt="non-virtual"><scope>GameController</scope><name>maxXSpawn</name></member>
+      <member refid="class_game_controller_1a748b86a151833049c4c9a5e9d8487f16" prot="public" virt="non-virtual"><scope>GameController</scope><name>MaxXSpawn</name></member>
+      <member refid="class_game_controller_1a0ec20c17f9226b70b5521b4c95022068" prot="private" virt="non-virtual"><scope>GameController</scope><name>minXSpawn</name></member>
+      <member refid="class_game_controller_1ad358e1f216faf442ea6115ce732563d0" prot="public" virt="non-virtual"><scope>GameController</scope><name>MinXSpawn</name></member>
+      <member refid="class_game_controller_1aa252db656811cd7e265a8efc71be3f6c" prot="private" virt="non-virtual"><scope>GameController</scope><name>playerController</name></member>
+      <member refid="class_game_controller_1a8ba28d6303a0160af8934acd78201cb6" prot="public" virt="non-virtual"><scope>GameController</scope><name>powerUpChance</name></member>
+      <member refid="class_game_controller_1ad75a108cba99e7ddf43b9dc06ed0bce2" prot="public" virt="non-virtual"><scope>GameController</scope><name>powerUps</name></member>
+      <member refid="class_game_controller_1aeea923e78ddd573296687317e638a937" prot="private" virt="non-virtual"><scope>GameController</scope><name>restart</name></member>
+      <member refid="class_game_controller_1a21f5360f5ef719ad46b68668d7a0c69a" prot="private" virt="non-virtual"><scope>GameController</scope><name>RestartLevel</name></member>
+      <member refid="class_game_controller_1a68dea27fd0de9061889d2664697af64f" prot="public" virt="non-virtual"><scope>GameController</scope><name>restartText</name></member>
+      <member refid="class_game_controller_1a5262f16a935aa930f813ff9c0dc060f2" prot="private" virt="non-virtual"><scope>GameController</scope><name>score</name></member>
+      <member refid="class_game_controller_1a2364f485d5cc3b7c98c2beca308baac7" prot="public" virt="non-virtual"><scope>GameController</scope><name>scoreFadeTime</name></member>
+      <member refid="class_game_controller_1ad59d43bc8b212847eaae1e877d8c1a31" prot="public" virt="non-virtual"><scope>GameController</scope><name>scoreText</name></member>
+      <member refid="class_game_controller_1aaece49e67943edbf460e51234ecc8ad6" prot="private" virt="non-virtual"><scope>GameController</scope><name>SpawnHazards</name></member>
+      <member refid="class_game_controller_1a5e4f56c23896d4b528da579f93335896" prot="public" virt="non-virtual"><scope>GameController</scope><name>spawnValues</name></member>
+      <member refid="class_game_controller_1a27c91a14de3982813ad3d8245d0134d7" prot="public" virt="non-virtual"><scope>GameController</scope><name>spawnWait</name></member>
+      <member refid="class_game_controller_1ae44bd464d25a837a5651e8633969beaa" prot="private" virt="non-virtual"><scope>GameController</scope><name>SpawnWaves</name></member>
+      <member refid="class_game_controller_1a97788a7aa0f09c8d748781683e5f045b" prot="private" virt="non-virtual"><scope>GameController</scope><name>Start</name></member>
+      <member refid="class_game_controller_1a9b6f96c29d3ee0f2c692c30ed2b12835" prot="public" virt="non-virtual"><scope>GameController</scope><name>startWait</name></member>
+      <member refid="class_game_controller_1a78742e945c9079890b9fed5a41b4bcfe" prot="private" virt="non-virtual"><scope>GameController</scope><name>topCorner</name></member>
+      <member refid="class_game_controller_1a5a89277529cadb49af7d55eba3bbf056" prot="private" virt="non-virtual"><scope>GameController</scope><name>Update</name></member>
+      <member refid="class_game_controller_1a956f2ce4aae2c7f4f4bd17a2b7e01af8" prot="public" virt="non-virtual"><scope>GameController</scope><name>UpdateHealth</name></member>
+      <member refid="class_game_controller_1a46eceb5ab3f1167f11ebc202ce6d98db" prot="private" virt="non-virtual"><scope>GameController</scope><name>UpdateScore</name></member>
+      <member refid="class_game_controller_1a761b6aaa4f7b60c37fc45c3c5f47e728" prot="private" virt="non-virtual"><scope>GameController</scope><name>waveNumber</name></member>
+      <member refid="class_game_controller_1a92b2683fc2816c409a0f727914607e36" prot="public" virt="non-virtual"><scope>GameController</scope><name>WaveNumber</name></member>
+      <member refid="class_game_controller_1a2b41479a4e6d411f57b3d65ce48d9a1e" prot="public" virt="non-virtual"><scope>GameController</scope><name>waveText</name></member>
+      <member refid="class_game_controller_1ad210270b367c1c439d35e8177d989019" prot="public" virt="non-virtual"><scope>GameController</scope><name>waveWait</name></member>
+      <member refid="class_game_controller_1affcabf46571294b1219f0967586427d3" prot="private" virt="non-virtual"><scope>GameController</scope><name>zSpawn</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

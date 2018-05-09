@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_object_pooler" kind="class" language="C#" prot="public">
+    <compoundname>ObjectPooler</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_object_pooler_1a16b3421a0733ea0d0669b01864f01fd0" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_object_pooler" kindref="compound">ObjectPooler</ref></type>
+        <definition>ObjectPooler ObjectPooler.SharedInstance</definition>
+        <argsstring></argsstring>
+        <name>SharedInstance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" line="6" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_object_pooler_1a46632fc0e61865fbef3cd7571cd2cc72" prot="public" static="no" mutable="no">
+        <type>List&lt; GameObject &gt;</type>
+        <definition>List&lt;GameObject&gt; ObjectPooler.pooledObjects</definition>
+        <argsstring></argsstring>
+        <name>pooledObjects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" line="8" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_pooler_1a2ab87dde01570d72e5709cc93545f6a8" prot="public" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject ObjectPooler.objectToPool</definition>
+        <argsstring></argsstring>
+        <name>objectToPool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" line="9" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_pooler_1ac5fc11973644b39a3afb46ef93e1cb0a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ObjectPooler.amountToPool</definition>
+        <argsstring></argsstring>
+        <name>amountToPool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" line="10" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_object_pooler_1a70d051560c3e2cae00fd79c7965a7b5a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ObjectPooler.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <briefdescription>
+<para>Set the static object pooler shared instance. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" line="15" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" bodystart="15" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_object_pooler_1a1dba23c22bff2e767a21e3787bef0f0a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ObjectPooler.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>Initialize properties that should be set during run-time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" line="23" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" bodystart="23" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_object_pooler_1a101205cb37c92020450d499bc8f2bad3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>GameObject</type>
+        <definition>GameObject ObjectPooler.GetPooledObject</definition>
+        <argsstring>()</argsstring>
+        <name>GetPooledObject</name>
+        <briefdescription>
+<para>Find an inactive pooled object from the list of pooled objects. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" line="42" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" bodystart="42" bodyend="55"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="52">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="51">
+        <label>ObjectPooler</label>
+        <link refid="class_object_pooler"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="54">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="53">
+        <label>ObjectPooler</label>
+        <link refid="class_object_pooler"/>
+        <childnode refid="54" relation="public-inheritance">
+        </childnode>
+        <childnode refid="53" relation="usage">
+          <edgelabel>+SharedInstance</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" line="5" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/ObjectPooler.cs" bodystart="5" bodyend="56"/>
+    <listofallmembers>
+      <member refid="class_object_pooler_1ac5fc11973644b39a3afb46ef93e1cb0a" prot="public" virt="non-virtual"><scope>ObjectPooler</scope><name>amountToPool</name></member>
+      <member refid="class_object_pooler_1a70d051560c3e2cae00fd79c7965a7b5a" prot="private" virt="non-virtual"><scope>ObjectPooler</scope><name>Awake</name></member>
+      <member refid="class_object_pooler_1a101205cb37c92020450d499bc8f2bad3" prot="public" virt="non-virtual"><scope>ObjectPooler</scope><name>GetPooledObject</name></member>
+      <member refid="class_object_pooler_1a2ab87dde01570d72e5709cc93545f6a8" prot="public" virt="non-virtual"><scope>ObjectPooler</scope><name>objectToPool</name></member>
+      <member refid="class_object_pooler_1a46632fc0e61865fbef3cd7571cd2cc72" prot="public" virt="non-virtual"><scope>ObjectPooler</scope><name>pooledObjects</name></member>
+      <member refid="class_object_pooler_1a16b3421a0733ea0d0669b01864f01fd0" prot="public" virt="non-virtual"><scope>ObjectPooler</scope><name>SharedInstance</name></member>
+      <member refid="class_object_pooler_1a1dba23c22bff2e767a21e3787bef0f0a" prot="private" virt="non-virtual"><scope>ObjectPooler</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,410 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.14">
+  <compound refid="class_audio_controller" kind="class"><name>AudioController</name>
+    <member refid="class_audio_controller_1a9f54b63fdcc425116ff24c93775a1338" kind="function"><name>Start</name></member>
+  </compound>
+  <compound refid="class_b_g_scroller" kind="class"><name>BGScroller</name>
+    <member refid="class_b_g_scroller_1a31ae764c810451258f69c9e15def429f" kind="variable"><name>scrollSpeed</name></member>
+    <member refid="class_b_g_scroller_1a46faf810b1e34e9ec6fd11838b6ced3e" kind="variable"><name>tileSize</name></member>
+    <member refid="class_b_g_scroller_1aeeaa39460879994b538440af714336d3" kind="variable"><name>startPosition</name></member>
+    <member refid="class_b_g_scroller_1a7828067d39d4fe21cf4587dac494b59d" kind="function"><name>Start</name></member>
+    <member refid="class_b_g_scroller_1a317fd0b2bb09e0ff6c281bd1be64c751" kind="function"><name>Update</name></member>
+  </compound>
+  <compound refid="class_boundary" kind="class"><name>Boundary</name>
+    <member refid="class_boundary_1a69e0d35c4e1591bffb1e08303f927a42" kind="variable"><name>zMin</name></member>
+    <member refid="class_boundary_1a34a127a10b5b0cfe43345643ca65d437" kind="variable"><name>zMax</name></member>
+    <member refid="class_boundary_1aec99ac1f07d618a9490f8c9a2af5fddf" kind="variable"><name>xMin</name></member>
+    <member refid="class_boundary_1aa4572ed0b32067b1748ffb3d64ede21f" kind="variable"><name>xMax</name></member>
+    <member refid="class_boundary_1aad22a17a16d35571a86617ec1463a835" kind="function"><name>GetXMin</name></member>
+    <member refid="class_boundary_1af72d98e6c2b86e0237901a833d8f77b5" kind="function"><name>GetXMax</name></member>
+    <member refid="class_boundary_1a5f3b05328e51a92d0fa7ddc5556b6c33" kind="function"><name>SetX</name></member>
+  </compound>
+  <compound refid="class_camera_controller" kind="class"><name>CameraController</name>
+    <member refid="class_camera_controller_1a8393464679e71c7fe4f5e972e75f201e" kind="variable"><name>mainCamera</name></member>
+    <member refid="class_camera_controller_1a6f3d21e4def9e7187bb8adf1f2e2805f" kind="variable"><name>thirdPersonCamera</name></member>
+    <member refid="class_camera_controller_1ad4abbad45fd18466e95aa74e9bcfc186" kind="variable"><name>cameraQueue</name></member>
+    <member refid="class_camera_controller_1ad080265900cc717782b6847277c13ad3" kind="variable"><name>bg</name></member>
+    <member refid="class_camera_controller_1ad4a238c6f7db3ee003302a245d860860" kind="function"><name>Start</name></member>
+    <member refid="class_camera_controller_1a7c4f486f4bcbd1d54a346fdce9707bd5" kind="function"><name>Update</name></member>
+  </compound>
+  <compound refid="class_camera_follow" kind="class"><name>CameraFollow</name>
+    <member refid="class_camera_follow_1a2ef2d3655fd0cb86d18e6324b75c0a59" kind="variable"><name>target</name></member>
+    <member refid="class_camera_follow_1a623c485e39b82f268a356463829fd8b9" kind="function"><name>Update</name></member>
+  </compound>
+  <compound refid="class_destroy_by_boundary" kind="class"><name>DestroyByBoundary</name>
+    <member refid="class_destroy_by_boundary_1aa48472460eb242d9630efe292cffa3dd" kind="function"><name>OnTriggerExit</name></member>
+  </compound>
+  <compound refid="class_destroy_by_contact" kind="class"><name>DestroyByContact</name>
+    <member refid="class_destroy_by_contact_1ade43cde1e97c99e08a7def340e7bd81f" kind="variable"><name>scoreValue</name></member>
+    <member refid="class_destroy_by_contact_1ab3754c09fbf46c8526cd1b7c44d3dd23" kind="variable"><name>explosion</name></member>
+    <member refid="class_destroy_by_contact_1a8b4e88cc021761ce871cd133a077c60d" kind="variable"><name>playerExplosion</name></member>
+    <member refid="class_destroy_by_contact_1ace735383e8ae32b9828cee9769ce5dfb" kind="variable"><name>playerDamaged</name></member>
+    <member refid="class_destroy_by_contact_1a63dfba8123259d0ab982f3d6e3420653" kind="variable"><name>powerUps</name></member>
+    <member refid="class_destroy_by_contact_1a012ac98f060806df9787beec51725443" kind="variable"><name>powerUpRate</name></member>
+    <member refid="class_destroy_by_contact_1a5b1028eb3813e88fdb44ce7cc2990800" kind="variable"><name>gameController</name></member>
+    <member refid="class_destroy_by_contact_1af887e6bcb189a6ed939c6045b9a4594a" kind="variable"><name>evolutionController</name></member>
+    <member refid="class_destroy_by_contact_1a84f4e146adb00e2df2a0a074f99ab223" kind="variable"><name>playerController</name></member>
+    <member refid="class_destroy_by_contact_1a2558acd9590e95d9aff33452a0f86149" kind="variable"><name>isTriggered</name></member>
+    <member refid="class_destroy_by_contact_1a60f7d6987e0f900b96836c6657b993a2" kind="function"><name>Start</name></member>
+    <member refid="class_destroy_by_contact_1adfceb575b50130137de899d8bf99724b" kind="function"><name>OnTriggerEnter</name></member>
+  </compound>
+  <compound refid="class_destroy_by_time" kind="class"><name>DestroyByTime</name>
+    <member refid="class_destroy_by_time_1a185bd89e592c3a5405ff469bcb0bc29c" kind="variable"><name>lifeTime</name></member>
+    <member refid="class_destroy_by_time_1a0ac6f52b53d41ea5e4c6ea7a8a832dc9" kind="function"><name>Start</name></member>
+  </compound>
+  <compound refid="class_dodge_a_i" kind="class"><name>DodgeAI</name>
+    <member refid="class_dodge_a_i_1a2d5aacdc97bac4dbac78f88fed0cc2d5" kind="variable"><name>gc</name></member>
+    <member refid="class_dodge_a_i_1a6611dadb91ffa5e9c52e6241a8ff1e87" kind="variable"><name>playerTransform</name></member>
+    <member refid="class_dodge_a_i_1a9f98a66751142d44c053d9653cbf60d3" kind="variable"><name>currentSpeed</name></member>
+    <member refid="class_dodge_a_i_1a9fdc443a5c2b80fe22f58c98f8dd733d" kind="variable"><name>targetPosition</name></member>
+    <member refid="class_dodge_a_i_1a985cf5452412d29c906881ddcf9c95c1" kind="variable"><name>rb</name></member>
+    <member refid="class_dodge_a_i_1aedc8e94ad6e4332b1a7d1e796152cf0a" kind="variable"><name>tilt</name></member>
+    <member refid="class_dodge_a_i_1ae3a74fed41f444919b11ee60cace7514" kind="variable"><name>maxDodgeAmount</name></member>
+    <member refid="class_dodge_a_i_1af0a4a558673576582d6bff31c2239489" kind="variable"><name>smoothing</name></member>
+    <member refid="class_dodge_a_i_1a6754c13da5310c168cf1c1c2a96a7e54" kind="variable"><name>startWait</name></member>
+    <member refid="class_dodge_a_i_1ad1cc8757e5e23683a73d8510897fa277" kind="variable"><name>dodgeTime</name></member>
+    <member refid="class_dodge_a_i_1a09b82accde63395584defbf0dc156460" kind="variable"><name>dodgeWait</name></member>
+    <member refid="class_dodge_a_i_1a1ebd76c246c5f81eb39cad7233a5840d" kind="variable"><name>boundary</name></member>
+    <member refid="class_dodge_a_i_1a48a9eef733eb05a99b30cd1163fc4cee" kind="function"><name>Start</name></member>
+    <member refid="class_dodge_a_i_1a4e2c44d9da1afb0fc37aeafd7dc60e05" kind="function"><name>FixedUpdate</name></member>
+    <member refid="class_dodge_a_i_1ab256f554f957ebdb753f2cee4b9bff30" kind="function"><name>Dodge</name></member>
+  </compound>
+  <compound refid="class_evolution_controller" kind="class"><name>EvolutionController</name>
+    <member refid="class_evolution_controller_1add611a253f17fafbc59c6b2fe6b922ad" kind="variable"><name>gc</name></member>
+    <member refid="class_evolution_controller_1a5f586d24178ad7f2e87c19691cae43bc" kind="variable"><name>generation</name></member>
+    <member refid="class_evolution_controller_1a0c8378ec6f79dd92aafdbf58da42c86a" kind="variable"><name>enemyShips</name></member>
+    <member refid="class_evolution_controller_1ade46c015a39024b5f58a166476f1fa97" kind="variable"><name>livingPopulation</name></member>
+    <member refid="class_evolution_controller_1a91312b148c69d877102e9b4f0bfa8fcb" kind="variable"><name>prevPopulation</name></member>
+    <member refid="class_evolution_controller_1acf1ac0a3b6f14070b0f4c2b8a40fe90d" kind="variable"><name>chromosomeLength</name></member>
+    <member refid="class_evolution_controller_1aba1ee95451168b8ed24d34b0a757db1c" kind="variable"><name>fittestIndividual</name></member>
+    <member refid="class_evolution_controller_1a403d5775802a7cb00a5a744990986178" kind="variable"><name>bestFitnessScore</name></member>
+    <member refid="class_evolution_controller_1ae7788697203a0dbf98b0a098db4d5ad3" kind="variable"><name>enemiesLeft</name></member>
+    <member refid="class_evolution_controller_1ac223d400093554d815eee5095fdc1d4d" kind="variable"><name>spawningComplete</name></member>
+    <member refid="class_evolution_controller_1adc8d124f4e4d5e0565ff7e6cc57e7fe7" kind="variable"><name>waveComplete</name></member>
+    <member refid="class_evolution_controller_1ac27d50abae23f5a92a2f686fc1a4a2d1" kind="variable"><name>sw</name></member>
+    <member refid="class_evolution_controller_1ada8a8ec6761c7ea18f189df1e04363b6" kind="variable"><name>populationSize</name></member>
+    <member refid="class_evolution_controller_1ad82c4809cb4a13f28075aa4790e7f9a1" kind="variable"><name>mutationRate</name></member>
+    <member refid="class_evolution_controller_1a33b0f4219444033d4eb774c0157f9482" kind="variable"><name>crossoverRate</name></member>
+    <member refid="class_evolution_controller_1a1fcf72c71aa6a22df6e6e1560cc5bf9f" kind="variable"><name>spawnWait</name></member>
+    <member refid="class_evolution_controller_1a6bd06587ebfa42a6140c4eb19e502635" kind="variable"><name>enemyStatsWait</name></member>
+    <member refid="class_evolution_controller_1aecc61fd2861b5d3ec6ccdcf7c577c3ca" kind="variable"><name>enemyShipPrefab</name></member>
+    <member refid="class_evolution_controller_1af8a4c642db3742e8d6481ffcbe84ba2e" kind="variable"><name>enemyStatsTitleText</name></member>
+    <member refid="class_evolution_controller_1a4b17bfe9a4d2ce96ef7247a72974fe88" kind="variable"><name>speedText</name></member>
+    <member refid="class_evolution_controller_1a0edadfd98d38cc69a7dd506e65f8f97f" kind="variable"><name>fireRateText</name></member>
+    <member refid="class_evolution_controller_1af795d5ac3b55058fe65db8ae6c4ab9f5" kind="variable"><name>dodgeText</name></member>
+    <member refid="class_evolution_controller_1a21fc0e733ee44d2885d7e00b22f8460a" kind="variable"><name>dodgeFrequencyText</name></member>
+    <member refid="class_evolution_controller_1a50f68dee9f616c26995473fc6a4de63f" kind="variable"><name>timeAliveText</name></member>
+    <member refid="class_evolution_controller_1a69190de729e5d8eef1d1cf46de2bc152" kind="variable"><name>survivedText</name></member>
+    <member refid="class_evolution_controller_1a7532ecd157f47efa09e365c868289676" kind="variable"><name>accuracyText</name></member>
+    <member refid="class_evolution_controller_1a17182a83179f115f9708381d9b3d5ce9" kind="variable"><name>shotsOnTargetText</name></member>
+    <member refid="class_evolution_controller_1a0b18581ce864c56f877294da1f28e2b9" kind="variable"><name>statsPanel</name></member>
+    <member refid="class_evolution_controller_1a1649ff1641add0d5982e8eec77dc195d" kind="property"><name>WaveComplete</name></member>
+    <member refid="class_evolution_controller_1a1f5c6f777133971fb18af4e032c20ab1" kind="function"><name>Start</name></member>
+    <member refid="class_evolution_controller_1a7882ed1ac17cf9cb79a8559c3fa47676" kind="function"><name>SpawnInitialPopulation</name></member>
+    <member refid="class_evolution_controller_1a07a968a7b94e9afd6fa0dd6755b6d07c" kind="function"><name>AddCompletedEnemy</name></member>
+    <member refid="class_evolution_controller_1ac65df1af1e9cdf179606f205e8f046f0" kind="function"><name>NextGeneration</name></member>
+    <member refid="class_evolution_controller_1a56b57730a8b4707ffe1c8b8053871a84" kind="function"><name>DisplayMostPowerfulEnemy</name></member>
+    <member refid="class_evolution_controller_1a37cd7937848daa73b9ba8222133d590e" kind="function"><name>OnDestroy</name></member>
+    <member refid="class_evolution_controller_1a580fa4d7523ca3d643217a925ef6295d" kind="function"><name>NewIndividual</name></member>
+    <member refid="class_evolution_controller_1aecb41078a5608538c4898ad829df5719" kind="function"><name>UpdateFitnessScores</name></member>
+    <member refid="class_evolution_controller_1a80cda2fcb747fcdda8a26795234fbef0" kind="function"><name>Crossover</name></member>
+    <member refid="class_evolution_controller_1a9e9d3764dd25a061ef92dc16579e4e92" kind="function"><name>EvolveEnemies</name></member>
+  </compound>
+  <compound refid="class_game_controller" kind="class"><name>GameController</name>
+    <member refid="class_game_controller_1ad59d43bc8b212847eaae1e877d8c1a31" kind="variable"><name>scoreText</name></member>
+    <member refid="class_game_controller_1a2364f485d5cc3b7c98c2beca308baac7" kind="variable"><name>scoreFadeTime</name></member>
+    <member refid="class_game_controller_1ac92cdd0620c3036f2e9452c62c9035f2" kind="variable"><name>addScoreText</name></member>
+    <member refid="class_game_controller_1a68dea27fd0de9061889d2664697af64f" kind="variable"><name>restartText</name></member>
+    <member refid="class_game_controller_1aba4351ee1c41d1af6c44c2cb106a4b67" kind="variable"><name>gameOverText</name></member>
+    <member refid="class_game_controller_1a2b41479a4e6d411f57b3d65ce48d9a1e" kind="variable"><name>waveText</name></member>
+    <member refid="class_game_controller_1a0969244bf06abfdb01f50f380979a086" kind="variable"><name>healthText</name></member>
+    <member refid="class_game_controller_1ad75a108cba99e7ddf43b9dc06ed0bce2" kind="variable"><name>powerUps</name></member>
+    <member refid="class_game_controller_1abc7b85296bb959ed30d3861a36f5580d" kind="variable"><name>hazards</name></member>
+    <member refid="class_game_controller_1a5e4f56c23896d4b528da579f93335896" kind="variable"><name>spawnValues</name></member>
+    <member refid="class_game_controller_1a973f0e7d25e3b260cf0aa51730584ada" kind="variable"><name>hazardCount</name></member>
+    <member refid="class_game_controller_1a8ba28d6303a0160af8934acd78201cb6" kind="variable"><name>powerUpChance</name></member>
+    <member refid="class_game_controller_1a27c91a14de3982813ad3d8245d0134d7" kind="variable"><name>spawnWait</name></member>
+    <member refid="class_game_controller_1a9b6f96c29d3ee0f2c692c30ed2b12835" kind="variable"><name>startWait</name></member>
+    <member refid="class_game_controller_1ad210270b367c1c439d35e8177d989019" kind="variable"><name>waveWait</name></member>
+    <member refid="class_game_controller_1a5262f16a935aa930f813ff9c0dc060f2" kind="variable"><name>score</name></member>
+    <member refid="class_game_controller_1a761b6aaa4f7b60c37fc45c3c5f47e728" kind="variable"><name>waveNumber</name></member>
+    <member refid="class_game_controller_1aeae400ea0c604655ce5801818a5a44a1" kind="variable"><name>gameOver</name></member>
+    <member refid="class_game_controller_1aeea923e78ddd573296687317e638a937" kind="variable"><name>restart</name></member>
+    <member refid="class_game_controller_1aa252db656811cd7e265a8efc71be3f6c" kind="variable"><name>playerController</name></member>
+    <member refid="class_game_controller_1a5c0fc9e419241d12424456125136def7" kind="variable"><name>evolutionController</name></member>
+    <member refid="class_game_controller_1a34d3f9b469b52d1695d0c8378f0a46a5" kind="variable"><name>camDistance</name></member>
+    <member refid="class_game_controller_1a38f89195dfac1619472dfbbcbfce6e50" kind="variable"><name>bottomCorner</name></member>
+    <member refid="class_game_controller_1a78742e945c9079890b9fed5a41b4bcfe" kind="variable"><name>topCorner</name></member>
+    <member refid="class_game_controller_1a0ec20c17f9226b70b5521b4c95022068" kind="variable"><name>minXSpawn</name></member>
+    <member refid="class_game_controller_1a3ff35d362a4246c1377634a66750ec32" kind="variable"><name>maxXSpawn</name></member>
+    <member refid="class_game_controller_1affcabf46571294b1219f0967586427d3" kind="variable"><name>zSpawn</name></member>
+    <member refid="class_game_controller_1ad358e1f216faf442ea6115ce732563d0" kind="property"><name>MinXSpawn</name></member>
+    <member refid="class_game_controller_1a748b86a151833049c4c9a5e9d8487f16" kind="property"><name>MaxXSpawn</name></member>
+    <member refid="class_game_controller_1a92b2683fc2816c409a0f727914607e36" kind="property"><name>WaveNumber</name></member>
+    <member refid="class_game_controller_1a97788a7aa0f09c8d748781683e5f045b" kind="function"><name>Start</name></member>
+    <member refid="class_game_controller_1a5a89277529cadb49af7d55eba3bbf056" kind="function"><name>Update</name></member>
+    <member refid="class_game_controller_1a21f5360f5ef719ad46b68668d7a0c69a" kind="function"><name>RestartLevel</name></member>
+    <member refid="class_game_controller_1a46eceb5ab3f1167f11ebc202ce6d98db" kind="function"><name>UpdateScore</name></member>
+    <member refid="class_game_controller_1aaece49e67943edbf460e51234ecc8ad6" kind="function"><name>SpawnHazards</name></member>
+    <member refid="class_game_controller_1ae44bd464d25a837a5651e8633969beaa" kind="function"><name>SpawnWaves</name></member>
+    <member refid="class_game_controller_1aa07782bd271675559594d3181f81ced6" kind="function"><name>AddScoreMessage</name></member>
+    <member refid="class_game_controller_1a956f2ce4aae2c7f4f4bd17a2b7e01af8" kind="function"><name>UpdateHealth</name></member>
+    <member refid="class_game_controller_1a867b359e465ba013eec7f1ee03b75118" kind="function"><name>GameOver</name></member>
+    <member refid="class_game_controller_1a313aab47cf055f36c3d0ae5de701a00e" kind="function"><name>AddScore</name></member>
+    <member refid="class_game_controller_1ae866cbc811f8f18f599b2f238d8e086f" kind="function"><name>FadeText</name></member>
+  </compound>
+  <compound refid="class_game_settings" kind="class"><name>GameSettings</name>
+    <member refid="class_game_settings_1a04d31e94fa2b8f63162fa6665693185c" kind="variable"><name>textureQuality</name></member>
+    <member refid="class_game_settings_1a4bb98b524482d324a8a998378c0cbfc5" kind="variable"><name>antiAliasing</name></member>
+    <member refid="class_game_settings_1a9a7ad0eaf12caa2ab5669a261bc29a6f" kind="variable"><name>vSync</name></member>
+    <member refid="class_game_settings_1ae8b3f7d7c601c87a936146420ed12ee1" kind="variable"><name>resolutionIndex</name></member>
+    <member refid="class_game_settings_1a34b5a36a0be6ded2b302ebc0f818401c" kind="variable"><name>fullscreen</name></member>
+    <member refid="class_game_settings_1a859eadc59901c35d0e6621f5a7d8e5a2" kind="variable"><name>globalVolume</name></member>
+  </compound>
+  <compound refid="class_individual" kind="class"><name>Individual</name>
+    <member refid="class_individual_1a6bfcca4478e5e0d0d37acb5afd781314" kind="variable"><name>MUTATION_MULT</name></member>
+    <member refid="class_individual_1a1f8c48f4f40408ad76d0137f9d3b38c0" kind="variable"><name>LIFETIME_FUNC</name></member>
+    <member refid="class_individual_1aab79ee2ef4e45612d38696315ded9f66" kind="variable"><name>SURVIVAL_FUNC</name></member>
+    <member refid="class_individual_1a255153d2dd42b742afc0518481f720f2" kind="variable"><name>ACCURACY_FUNC</name></member>
+    <member refid="class_individual_1abc6086aff52dc765ead43e5c0421c1ee" kind="variable"><name>NB_ON_TARGET_FUNC</name></member>
+    <member refid="class_individual_1a0feffb40e0c95081946a3206ff0c93c4" kind="variable"><name>ACCURATE_LONG_LIFE_FUNC</name></member>
+    <member refid="class_individual_1abb420cd0ce70375b52b2e3a5c27c3368" kind="variable"><name>dodgeAI</name></member>
+    <member refid="class_individual_1ae0328e190c92d86f7d0d9e66553b6d32" kind="variable"><name>mover</name></member>
+    <member refid="class_individual_1a5217e0c273989dbe5997475dad888cbe" kind="variable"><name>weaponController</name></member>
+    <member refid="class_individual_1a181036de302ffada5875fc814364577e" kind="variable"><name>enemyShip</name></member>
+    <member refid="class_individual_1a7f051c19849cead5ba3e37fe5fa27d0f" kind="variable"><name>speed</name></member>
+    <member refid="class_individual_1a07be20a3af23e591907f5bd0591b5dc8" kind="variable"><name>dodge</name></member>
+    <member refid="class_individual_1a5f262026a4a3ba8d22f8c2fbd3bd4762" kind="variable"><name>minDodgeTime</name></member>
+    <member refid="class_individual_1ae6a09912c0060fff79bd95dead535604" kind="variable"><name>maxDodgeTime</name></member>
+    <member refid="class_individual_1ad09d5de9d0c0221da38423f12a4cad14" kind="variable"><name>minDodgeWait</name></member>
+    <member refid="class_individual_1a3c070a056ec4065fa27e52e17f5d1e0a" kind="variable"><name>maxDodgeWait</name></member>
+    <member refid="class_individual_1a6008f0e0726cb19b16d56f7eb21fcdc0" kind="variable"><name>minFireRate</name></member>
+    <member refid="class_individual_1a0e7001fe9892bf459b0f5f7c6376acc6" kind="variable"><name>maxFireRate</name></member>
+    <member refid="class_individual_1a9ea56d7d13479becd3804f13dca75d77" kind="variable"><name>fitness</name></member>
+    <member refid="class_individual_1aa3ffe968be2140c573e6acd5174f9527" kind="variable"><name>minDodgeBound</name></member>
+    <member refid="class_individual_1a1a7484c161583b6db216ed47325e46de" kind="variable"><name>maxDodgeBound</name></member>
+    <member refid="class_individual_1ac9c437a68f1bbb91325622551782fa0f" kind="variable"><name>minDodgeTimeBound</name></member>
+    <member refid="class_individual_1a66fba6da7895f053a0e104a72baf488a" kind="variable"><name>maxDodgeTimeBound</name></member>
+    <member refid="class_individual_1a37e4dd4a0303515881cec12c281cbc90" kind="variable"><name>minDodgeWaitBound</name></member>
+    <member refid="class_individual_1a0eb7461783f6f104fde989a48798e544" kind="variable"><name>maxDodgeWaitBound</name></member>
+    <member refid="class_individual_1a9c742fb99f1d90eb029be42c1aefbfaa" kind="variable"><name>minSpeedBound</name></member>
+    <member refid="class_individual_1a80fb57c9c84603c6cdbcf5a7c4859a82" kind="variable"><name>maxSpeedBound</name></member>
+    <member refid="class_individual_1a325421da693fc8d3b170c677f39addba" kind="variable"><name>minFireRateBound</name></member>
+    <member refid="class_individual_1aa981c9b3f959be4ef59d2c280d4b82c3" kind="variable"><name>maxFireRateBound</name></member>
+    <member refid="class_individual_1ab082166ac88b99c14e44270b34a46588" kind="variable"><name>creationTime</name></member>
+    <member refid="class_individual_1a568afafa685ca5a5c26214e6be1a14df" kind="variable"><name>lifetime</name></member>
+    <member refid="class_individual_1a0033ac258e9b8bedfebe8dddef66e39a" kind="variable"><name>accuracy</name></member>
+    <member refid="class_individual_1a6669096694cc246094b26ca656b63d47" kind="variable"><name>nbShotsOnTarget</name></member>
+    <member refid="class_individual_1ab1ec189d9d07c07546d2f8719f49f8b2" kind="variable"><name>survived</name></member>
+    <member refid="class_individual_1a5429be2ba79b3089c98bac739f693660" kind="variable"><name>item</name></member>
+    <member refid="class_individual_1a6dc47b346e6cdd288773b44e6c0fc272" kind="property"><name>MinDodgeBound</name></member>
+    <member refid="class_individual_1adb55c9ec4a4012582a4c35b654db8f21" kind="property"><name>MaxDodgeBound</name></member>
+    <member refid="class_individual_1ae3b13d55d1ba206fff541af02308c618" kind="property"><name>MinDodgeTimeBound</name></member>
+    <member refid="class_individual_1af7985d4dfe4001bc062d3dc8f778e5a5" kind="property"><name>MaxDodgeTimeBound</name></member>
+    <member refid="class_individual_1a86b79a3255c7ea9ffa8c063c999cdc0a" kind="property"><name>MinDodgeWaitBound</name></member>
+    <member refid="class_individual_1a22ae950e01ef3055dd3cd15972e51770" kind="property"><name>MaxDodgeWaitBound</name></member>
+    <member refid="class_individual_1a78a3431b66eef67e58b6f4da5e1c8d63" kind="property"><name>MinSpeedBound</name></member>
+    <member refid="class_individual_1abad1b2b85eb811524940ea456452c550" kind="property"><name>MaxSpeedBound</name></member>
+    <member refid="class_individual_1a45bb7b475e4b2537cdf888b9e1b13144" kind="property"><name>MinFireRateBound</name></member>
+    <member refid="class_individual_1a1096694f11f7b9e729aeabbfe7097eaf" kind="property"><name>MaxFireRateBound</name></member>
+    <member refid="class_individual_1a02b01142acd16f32fd2faf1864b3627f" kind="property"><name>Speed</name></member>
+    <member refid="class_individual_1a8daea02958bdf86b68fc063556a12a56" kind="property"><name>Dodge</name></member>
+    <member refid="class_individual_1ad5b02d49418b96acb978aeed30bd7149" kind="property"><name>MinDodgeTime</name></member>
+    <member refid="class_individual_1a280784e76616e219c0b9428fd5d78744" kind="property"><name>MaxDodgeTime</name></member>
+    <member refid="class_individual_1af61b42078f68777b3ecf9cee2902af7a" kind="property"><name>MinDodgeWait</name></member>
+    <member refid="class_individual_1a625737f01684ea5a2bbe4f887582ee53" kind="property"><name>MaxDodgeWait</name></member>
+    <member refid="class_individual_1acf1b957b3e4d0c36d76c07590047cc29" kind="property"><name>MinFireRate</name></member>
+    <member refid="class_individual_1ae94ddacbf2764ce8b1fb2fde1bc2d72c" kind="property"><name>MaxFireRate</name></member>
+    <member refid="class_individual_1a5a4701f9a402fe64b8e3c24368e52101" kind="property"><name>Fitness</name></member>
+    <member refid="class_individual_1a473dd92ebe3c07db394d6bcd0bfcac93" kind="property"><name>EnemyShip</name></member>
+    <member refid="class_individual_1ac7551473ef8d053170dba6810aa69187" kind="property"><name>Lifetime</name></member>
+    <member refid="class_individual_1ad4b03453693cb1ab8185c6a4335e86bd" kind="property"><name>Survived</name></member>
+    <member refid="class_individual_1ae542e9759275736feb0c5f065d36bfd8" kind="function"><name>Individual</name></member>
+    <member refid="class_individual_1a9ae7902f014f58e296bdd87083635756" kind="function"><name>Individual</name></member>
+    <member refid="class_individual_1a7a4c37b420810992cc80448fb7e8652d" kind="function"><name>CopyGenes</name></member>
+    <member refid="class_individual_1a3aba987110bfa0ca5eb4f2a7924524da" kind="function"><name>Complete</name></member>
+    <member refid="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" kind="function"><name>CrossoverAttributes</name></member>
+    <member refid="class_individual_1a2b19324cd6e712330c4d1601c95dcffd" kind="function"><name>MutateAttributes</name></member>
+    <member refid="class_individual_1af40ad69dad043da7061c07856b6f1457" kind="function"><name>LifetimeFunc</name></member>
+    <member refid="class_individual_1abf304201269d32a0f40d9a25ce98d8db" kind="function"><name>SurvivalFunc</name></member>
+    <member refid="class_individual_1ae29881ad8bfa0ec8db58c650ac33eaf0" kind="function"><name>AccuracyFunc</name></member>
+    <member refid="class_individual_1af2d68c02add2e5e553959003e8180a9d" kind="function"><name>NbOnTargetFunc</name></member>
+    <member refid="class_individual_1a5d4fb02c8072b931ffde1a03afb26271" kind="function"><name>GetAccuracy</name></member>
+    <member refid="class_individual_1a100f431028b5b9d385348fdb000e3b32" kind="function"><name>GetNbShotsOnTarget</name></member>
+    <member refid="class_individual_1ae28e091935420b6ab5ccda6ce24e1396" kind="function"><name>AccurateLongLifeFunc</name></member>
+    <member refid="class_individual_1a75dd9bebe96f8ff2bad0f60381926085" kind="function"><name>CalculateFitness</name></member>
+    <member refid="class_individual_1aad9008e000af2bf09346be0ca9258116" kind="function"><name>SetRandomAttributes</name></member>
+    <member refid="class_individual_1a75271d202126e53879bdb51a9fe65ef3" kind="function"><name>RandomDodge</name></member>
+    <member refid="class_individual_1a108e7c67d55c334bcc885e8dc5bb740b" kind="function"><name>RandomDodgeTime</name></member>
+    <member refid="class_individual_1a1ac91351958ff89363dac0c16612f07d" kind="function"><name>RandomDodgeWait</name></member>
+    <member refid="class_individual_1ab66822b58148ba1507d2e27aff8676e7" kind="function"><name>RandomVerticalSpeed</name></member>
+    <member refid="class_individual_1ad6ad54b9dd02fcb02b5a11738585d41c" kind="function"><name>RandomFireRate</name></member>
+    <member refid="class_individual_1a106bf8917e8f55075f01e39e9c7e2264" kind="function"><name>SetSpeed</name></member>
+    <member refid="class_individual_1a31b0b7114a58803aba9e81b6650fd7cb" kind="function"><name>SetDodge</name></member>
+    <member refid="class_individual_1aeff5fb1f9a1619c4fb2e880b6f62b311" kind="function"><name>SetDodgeTimeRange</name></member>
+    <member refid="class_individual_1a31ca5e7277bc5f8cbe48bde294590095" kind="function"><name>SetDodgeWaitRange</name></member>
+    <member refid="class_individual_1ab9a068a2aeac06fc33a22391dba7559a" kind="function"><name>SetFireRateRange</name></member>
+    <member refid="class_individual_1ab70b5e71b329b22977d5f17c5fc93cb0" kind="function"><name>CrossoverPoint</name></member>
+  </compound>
+  <compound refid="class_mover" kind="class"><name>Mover</name>
+    <member refid="class_mover_1a42234f06ee744991fac244af8fc526b9" kind="variable"><name>speed</name></member>
+    <member refid="class_mover_1a80eb1fc6933e0505f5d278268ccc80b2" kind="variable"><name>rb</name></member>
+    <member refid="class_mover_1a7e9f8bdd8d341cb8bca462b9391c2cb2" kind="function"><name>Start</name></member>
+    <member refid="class_mover_1a7a75a74f9bf6f20d3938c37bb95d8068" kind="function"><name>SetSpeed</name></member>
+  </compound>
+  <compound refid="class_object_pooler" kind="class"><name>ObjectPooler</name>
+    <member refid="class_object_pooler_1a16b3421a0733ea0d0669b01864f01fd0" kind="variable"><name>SharedInstance</name></member>
+    <member refid="class_object_pooler_1a46632fc0e61865fbef3cd7571cd2cc72" kind="variable"><name>pooledObjects</name></member>
+    <member refid="class_object_pooler_1a2ab87dde01570d72e5709cc93545f6a8" kind="variable"><name>objectToPool</name></member>
+    <member refid="class_object_pooler_1ac5fc11973644b39a3afb46ef93e1cb0a" kind="variable"><name>amountToPool</name></member>
+    <member refid="class_object_pooler_1a70d051560c3e2cae00fd79c7965a7b5a" kind="function"><name>Awake</name></member>
+    <member refid="class_object_pooler_1a1dba23c22bff2e767a21e3787bef0f0a" kind="function"><name>Start</name></member>
+    <member refid="class_object_pooler_1a101205cb37c92020450d499bc8f2bad3" kind="function"><name>GetPooledObject</name></member>
+  </compound>
+  <compound refid="class_pick_up_power_up" kind="class"><name>PickUpPowerUp</name>
+    <member refid="class_pick_up_power_up_1a7ae524c7a44e70274c7c767518efe757" kind="variable"><name>powerUpScore</name></member>
+    <member refid="class_pick_up_power_up_1af31fa062fa0b10ffce7ce6799ca58827" kind="variable"><name>fireRateMultiplier</name></member>
+    <member refid="class_pick_up_power_up_1ac026faee3bf9fe7d7a9066030e909a60" kind="variable"><name>healthBoost</name></member>
+    <member refid="class_pick_up_power_up_1a77c6017483939ae8eae6fd0c5933e55b" kind="variable"><name>boostTimer</name></member>
+    <member refid="class_pick_up_power_up_1a63055db7773732a7cd3e7729a91186a6" kind="variable"><name>pickUpSound</name></member>
+    <member refid="class_pick_up_power_up_1ae275d64d0672ce2e9b42fd4bf3f26d48" kind="variable"><name>player</name></member>
+    <member refid="class_pick_up_power_up_1a00017f196051393d19d09204b0f390b2" kind="variable"><name>gc</name></member>
+    <member refid="class_pick_up_power_up_1a4aca8da06ed7b7cb30992f93162b1047" kind="variable"><name>pc</name></member>
+    <member refid="class_pick_up_power_up_1aaa30b353376c58fc1bc08b7eba40f19c" kind="variable"><name>isTriggered</name></member>
+    <member refid="class_pick_up_power_up_1aa39c6e614163b325973182373a5ab85e" kind="function"><name>Start</name></member>
+    <member refid="class_pick_up_power_up_1a82be31cd297bcfe9744017bb4b7cb380" kind="function"><name>OnTriggerEnter</name></member>
+  </compound>
+  <compound refid="class_player_controller" kind="class"><name>PlayerController</name>
+    <member refid="class_player_controller_1a87c421c67c2b3736edd1753ec135f23a" kind="variable"><name>audioSource</name></member>
+    <member refid="class_player_controller_1a1b4c9da3015ca090107b36349b8584b6" kind="variable"><name>nextFire</name></member>
+    <member refid="class_player_controller_1a7816d8bf32a9641bd6be9dcd3fcb188a" kind="variable"><name>health</name></member>
+    <member refid="class_player_controller_1a0928605583f0563cd84fe43119d336ec" kind="variable"><name>speed</name></member>
+    <member refid="class_player_controller_1ac3e62babe8d87ccdfc0216fac5fe1688" kind="variable"><name>tilt</name></member>
+    <member refid="class_player_controller_1a246c2caafdd1c1fd28d6c1c11a553f77" kind="variable"><name>boundary</name></member>
+    <member refid="class_player_controller_1ab4e097e87d1e1fd90c0874c9949e0b51" kind="variable"><name>shot</name></member>
+    <member refid="class_player_controller_1a8dc27fe958c8056b075693cfc02fdae3" kind="variable"><name>shotSound</name></member>
+    <member refid="class_player_controller_1a721f59742cc9c01ffd623af9dcef111a" kind="variable"><name>shotSpawns</name></member>
+    <member refid="class_player_controller_1aec1e8f25c69ea198fe38f965307437a4" kind="variable"><name>fireRate</name></member>
+    <member refid="class_player_controller_1ae1117d9c4da3193181cddad2c814e467" kind="function"><name>Start</name></member>
+    <member refid="class_player_controller_1ae8bc83dffb99867a04be016473ed2c43" kind="function"><name>Update</name></member>
+    <member refid="class_player_controller_1abfb438d2c081a81ce315258ba2f32c0f" kind="function"><name>TempFireRateBoost</name></member>
+    <member refid="class_player_controller_1ae5bdb1b48571f67c3f722a58b6f404d4" kind="function"><name>FixedUpdate</name></member>
+    <member refid="class_player_controller_1aec106145be8e43f9367dd27bd79cbb4b" kind="function"><name>FireRateBoost</name></member>
+  </compound>
+  <compound refid="class_projectile" kind="class"><name>Projectile</name>
+    <member refid="class_projectile_1a08b05673dcd2da844c04ad812f04b3aa" kind="variable"><name>speed</name></member>
+    <member refid="class_projectile_1a158c4e21385fa618230014ba575bcce4" kind="variable"><name>target</name></member>
+    <member refid="class_projectile_1a4596d92f9f87914e71e586be061cc980" kind="variable"><name>onTargetDistance</name></member>
+    <member refid="class_projectile_1afefd187c90c8062e3736f56833e2c3a6" kind="variable"><name>rb</name></member>
+    <member refid="class_projectile_1a233b67fa6608a122a718e35446395a7f" kind="variable"><name>weaponController</name></member>
+    <member refid="class_projectile_1a486f556f109327a2bce3418d301d78fb" kind="variable"><name>closestDistance</name></member>
+    <member refid="class_projectile_1ac7e861ae0d04774ce1ce5832dcd2281f" kind="function"><name>Start</name></member>
+    <member refid="class_projectile_1a003e4365f5c68afdebfbefa39a3fd7bc" kind="function"><name>Update</name></member>
+    <member refid="class_projectile_1ae06356f84161bee1020a1496e0c6f0a5" kind="function"><name>OnDestroy</name></member>
+    <member refid="class_projectile_1aa970af64aceeb97c400baf2641959255" kind="function"><name>SetWeaponController</name></member>
+    <member refid="class_projectile_1a60cfef3d08ba24bcb0663ca8f15e201c" kind="function"><name>SetSpeed</name></member>
+  </compound>
+  <compound refid="class_random_rotator" kind="class"><name>RandomRotator</name>
+    <member refid="class_random_rotator_1afaec47e23d30e8bd3161a628d9338e92" kind="variable"><name>tumble</name></member>
+    <member refid="class_random_rotator_1a2524fe6464d46bf3f6f1f886fee77fce" kind="function"><name>Start</name></member>
+  </compound>
+  <compound refid="class_scene_loader" kind="class"><name>SceneLoader</name>
+    <member refid="class_scene_loader_1aaf7c66c5998e289756c09cca08239e9f" kind="function"><name>Start</name></member>
+    <member refid="class_scene_loader_1a2cb6f7a1f1336315a297adcac195c05a" kind="function"><name>LoadScene</name></member>
+    <member refid="class_scene_loader_1a6e71b5a31f735d3187e8375383bdfe5d" kind="function"><name>QuitGame</name></member>
+  </compound>
+  <compound refid="class_settings_manager" kind="class"><name>SettingsManager</name>
+    <member refid="class_settings_manager_1aeb178646a8cc54153eb3d6bc6b2a5d5f" kind="variable"><name>fullscreenToggle</name></member>
+    <member refid="class_settings_manager_1ac8e5588fbf4e9c627655961a46bce8da" kind="variable"><name>textureQualityDropdown</name></member>
+    <member refid="class_settings_manager_1a976721de4c42b799ef30a9de3205f0c7" kind="variable"><name>resolutionDropdown</name></member>
+    <member refid="class_settings_manager_1a9915352526fb5ea3c95040d9e0ea70e8" kind="variable"><name>antiAliasingDropdown</name></member>
+    <member refid="class_settings_manager_1ad0826d167efa606e5132e12d1fb02e20" kind="variable"><name>vSyncDropdown</name></member>
+    <member refid="class_settings_manager_1af608040b3d8be12b48202463dea09e78" kind="variable"><name>volumeSlider</name></member>
+    <member refid="class_settings_manager_1a9607a85ca00e52135c608e895dc01214" kind="variable"><name>resolutions</name></member>
+    <member refid="class_settings_manager_1aceed727e77a7db402a170fdaf94e9798" kind="variable"><name>gameSettings</name></member>
+    <member refid="class_settings_manager_1ad8435914e4f7e4fd7fc873c781f4db28" kind="variable"><name>audioSrc</name></member>
+    <member refid="class_settings_manager_1a4723633cf92b5efcbfdf4cea23786805" kind="function"><name>Start</name></member>
+    <member refid="class_settings_manager_1aa685a939bdf4c3e9854dd895ee45d5cf" kind="function"><name>OnEnable</name></member>
+    <member refid="class_settings_manager_1ac690ec7be2f8760959c819ff5235fa60" kind="function"><name>OnFullscreenToggle</name></member>
+    <member refid="class_settings_manager_1a4b9cc3fc84f2c5b2a5f79010a71ddf44" kind="function"><name>OnResolutionChange</name></member>
+    <member refid="class_settings_manager_1ac64e635b27333995bccd8cdd01e66471" kind="function"><name>OnTextureQualityChange</name></member>
+    <member refid="class_settings_manager_1a9098e096f294c8289f888d1cef3d88e8" kind="function"><name>OnAntiAliasingChange</name></member>
+    <member refid="class_settings_manager_1aba04234da5db424bda53e733270e8d35" kind="function"><name>OnVSyncChange</name></member>
+    <member refid="class_settings_manager_1a6d25a3155a5df19d54cfd1cb166fb4f7" kind="function"><name>OnVolumeChange</name></member>
+  </compound>
+  <compound refid="class_weapon_controller" kind="class"><name>WeaponController</name>
+    <member refid="class_weapon_controller_1a963340c5f785bb87fdd6cf0e6d6071d5" kind="variable"><name>shot</name></member>
+    <member refid="class_weapon_controller_1aa8f1205518b7c00dcb636ccd9bfb7ed9" kind="variable"><name>shotSpawn</name></member>
+    <member refid="class_weapon_controller_1a82c6c419930686076e2e67c5453e3ac9" kind="variable"><name>fireRate</name></member>
+    <member refid="class_weapon_controller_1a798adbbaf5804e4a4a4f82b4ab6c2754" kind="variable"><name>delay</name></member>
+    <member refid="class_weapon_controller_1a5d3c78ec377501bb9e9bdaca722a7f09" kind="variable"><name>audioSource</name></member>
+    <member refid="class_weapon_controller_1adde82cf9c8005a6519ba1c12c8c70871" kind="variable"><name>nbShots</name></member>
+    <member refid="class_weapon_controller_1af70adc09a7d186d34b02670a5f85ede0" kind="variable"><name>nbShotsOnTarget</name></member>
+    <member refid="class_weapon_controller_1a0c5af2301f8dbd21726f480ac85bc15c" kind="variable"><name>accuracy</name></member>
+    <member refid="class_weapon_controller_1ab81011b817a7710fdf8359eddf76f895" kind="function"><name>Start</name></member>
+    <member refid="class_weapon_controller_1ac04d8bfb5c717e91d237076a8903229f" kind="function"><name>Fire</name></member>
+    <member refid="class_weapon_controller_1ab21b5173574bd1d507709b21be4aec1c" kind="function"><name>OnTargetShot</name></member>
+    <member refid="class_weapon_controller_1a32d07eb45dc1079a4c82bae18a57f493" kind="function"><name>GetAccuracy</name></member>
+    <member refid="class_weapon_controller_1aab88ffc7b720e10dce55b93dec090297" kind="function"><name>GetNbShotsOnTarget</name></member>
+  </compound>
+  <compound refid="namespace_system_1_1_collections" kind="namespace"><name>System::Collections</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespace_system_1_1_i_o" kind="namespace"><name>System::IO</name>
+  </compound>
+  <compound refid="namespace_system_1_1_linq" kind="namespace"><name>System::Linq</name>
+  </compound>
+  <compound refid="namespace_unity_engine" kind="namespace"><name>UnityEngine</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_scene_management" kind="namespace"><name>UnityEngine::SceneManagement</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_u_i" kind="namespace"><name>UnityEngine::UI</name>
+  </compound>
+  <compound refid="_audio_controller_8cs" kind="file"><name>AudioController.cs</name>
+  </compound>
+  <compound refid="_b_g_scroller_8cs" kind="file"><name>BGScroller.cs</name>
+  </compound>
+  <compound refid="_camera_controller_8cs" kind="file"><name>CameraController.cs</name>
+  </compound>
+  <compound refid="_camera_follow_8cs" kind="file"><name>CameraFollow.cs</name>
+  </compound>
+  <compound refid="_destroy_by_boundary_8cs" kind="file"><name>DestroyByBoundary.cs</name>
+  </compound>
+  <compound refid="_destroy_by_contact_8cs" kind="file"><name>DestroyByContact.cs</name>
+  </compound>
+  <compound refid="_destroy_by_time_8cs" kind="file"><name>DestroyByTime.cs</name>
+  </compound>
+  <compound refid="_dodge_a_i_8cs" kind="file"><name>DodgeAI.cs</name>
+  </compound>
+  <compound refid="_evolution_controller_8cs" kind="file"><name>EvolutionController.cs</name>
+  </compound>
+  <compound refid="_game_controller_8cs" kind="file"><name>GameController.cs</name>
+  </compound>
+  <compound refid="_game_settings_8cs" kind="file"><name>GameSettings.cs</name>
+  </compound>
+  <compound refid="_individual_8cs" kind="file"><name>Individual.cs</name>
+  </compound>
+  <compound refid="_mover_8cs" kind="file"><name>Mover.cs</name>
+  </compound>
+  <compound refid="_object_pooler_8cs" kind="file"><name>ObjectPooler.cs</name>
+  </compound>
+  <compound refid="_pick_up_power_up_8cs" kind="file"><name>PickUpPowerUp.cs</name>
+  </compound>
+  <compound refid="_player_controller_8cs" kind="file"><name>PlayerController.cs</name>
+  </compound>
+  <compound refid="_projectile_8cs" kind="file"><name>Projectile.cs</name>
+  </compound>
+  <compound refid="_random_rotator_8cs" kind="file"><name>RandomRotator.cs</name>
+  </compound>
+  <compound refid="_scene_loader_8cs" kind="file"><name>SceneLoader.cs</name>
+  </compound>
+  <compound refid="_settings_manager_8cs" kind="file"><name>SettingsManager.cs</name>
+  </compound>
+  <compound refid="_weapon_controller_8cs" kind="file"><name>WeaponController.cs</name>
+  </compound>
+  <compound refid="dir_84bbf7b3c7f28a5a18725745e1505219" kind="dir"><name>Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets</name>
+  </compound>
+  <compound refid="dir_f13b41af88cf68434578284aaf699e39" kind="dir"><name>Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts</name>
+  </compound>
+</doxygenindex>

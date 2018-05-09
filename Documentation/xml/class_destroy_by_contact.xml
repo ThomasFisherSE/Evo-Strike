@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_destroy_by_contact" kind="class" language="C#" prot="public">
+    <compoundname>DestroyByContact</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_destroy_by_contact_1ade43cde1e97c99e08a7def340e7bd81f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DestroyByContact.scoreValue</definition>
+        <argsstring></argsstring>
+        <name>scoreValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" line="8" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_destroy_by_contact_1ab3754c09fbf46c8526cd1b7c44d3dd23" prot="public" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject DestroyByContact.explosion</definition>
+        <argsstring></argsstring>
+        <name>explosion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" line="12" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_destroy_by_contact_1a8b4e88cc021761ce871cd133a077c60d" prot="public" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject DestroyByContact.playerExplosion</definition>
+        <argsstring></argsstring>
+        <name>playerExplosion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" line="13" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_destroy_by_contact_1ace735383e8ae32b9828cee9769ce5dfb" prot="public" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject DestroyByContact.playerDamaged</definition>
+        <argsstring></argsstring>
+        <name>playerDamaged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" line="14" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_destroy_by_contact_1a63dfba8123259d0ab982f3d6e3420653" prot="public" static="no" mutable="no">
+        <type>GameObject []</type>
+        <definition>GameObject [] DestroyByContact.powerUps</definition>
+        <argsstring></argsstring>
+        <name>powerUps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" line="16" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_destroy_by_contact_1a012ac98f060806df9787beec51725443" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float DestroyByContact.powerUpRate</definition>
+        <argsstring></argsstring>
+        <name>powerUpRate</name>
+        <initializer>= 1.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" line="18" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_destroy_by_contact_1a5b1028eb3813e88fdb44ce7cc2990800" prot="private" static="no" mutable="no">
+        <type><ref refid="class_game_controller" kindref="compound">GameController</ref></type>
+        <definition>GameController DestroyByContact.gameController</definition>
+        <argsstring></argsstring>
+        <name>gameController</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" line="9" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_destroy_by_contact_1af887e6bcb189a6ed939c6045b9a4594a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_evolution_controller" kindref="compound">EvolutionController</ref></type>
+        <definition>EvolutionController DestroyByContact.evolutionController</definition>
+        <argsstring></argsstring>
+        <name>evolutionController</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" line="10" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_destroy_by_contact_1a84f4e146adb00e2df2a0a074f99ab223" prot="private" static="no" mutable="no">
+        <type><ref refid="class_player_controller" kindref="compound">PlayerController</ref></type>
+        <definition>PlayerController DestroyByContact.playerController</definition>
+        <argsstring></argsstring>
+        <name>playerController</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" line="11" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_destroy_by_contact_1a2558acd9590e95d9aff33452a0f86149" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool DestroyByContact.isTriggered</definition>
+        <argsstring></argsstring>
+        <name>isTriggered</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" line="20" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_destroy_by_contact_1a60f7d6987e0f900b96836c6657b993a2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DestroyByContact.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>Prepare class properties that need to be set during run-time </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" line="25" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" bodystart="25" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_destroy_by_contact_1adfceb575b50130137de899d8bf99724b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DestroyByContact.OnTriggerEnter</definition>
+        <argsstring>(Collider other)</argsstring>
+        <name>OnTriggerEnter</name>
+        <param>
+          <type>Collider</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Handle collisions with other objects </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The collider of the object that is being collided with.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" line="58" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" bodystart="58" bodyend="139"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="23">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="22">
+        <label>DestroyByContact</label>
+        <link refid="class_destroy_by_contact"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="25">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="24">
+        <label>DestroyByContact</label>
+        <link refid="class_destroy_by_contact"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" line="7" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DestroyByContact.cs" bodystart="6" bodyend="140"/>
+    <listofallmembers>
+      <member refid="class_destroy_by_contact_1af887e6bcb189a6ed939c6045b9a4594a" prot="private" virt="non-virtual"><scope>DestroyByContact</scope><name>evolutionController</name></member>
+      <member refid="class_destroy_by_contact_1ab3754c09fbf46c8526cd1b7c44d3dd23" prot="public" virt="non-virtual"><scope>DestroyByContact</scope><name>explosion</name></member>
+      <member refid="class_destroy_by_contact_1a5b1028eb3813e88fdb44ce7cc2990800" prot="private" virt="non-virtual"><scope>DestroyByContact</scope><name>gameController</name></member>
+      <member refid="class_destroy_by_contact_1a2558acd9590e95d9aff33452a0f86149" prot="private" virt="non-virtual"><scope>DestroyByContact</scope><name>isTriggered</name></member>
+      <member refid="class_destroy_by_contact_1adfceb575b50130137de899d8bf99724b" prot="private" virt="non-virtual"><scope>DestroyByContact</scope><name>OnTriggerEnter</name></member>
+      <member refid="class_destroy_by_contact_1a84f4e146adb00e2df2a0a074f99ab223" prot="private" virt="non-virtual"><scope>DestroyByContact</scope><name>playerController</name></member>
+      <member refid="class_destroy_by_contact_1ace735383e8ae32b9828cee9769ce5dfb" prot="public" virt="non-virtual"><scope>DestroyByContact</scope><name>playerDamaged</name></member>
+      <member refid="class_destroy_by_contact_1a8b4e88cc021761ce871cd133a077c60d" prot="public" virt="non-virtual"><scope>DestroyByContact</scope><name>playerExplosion</name></member>
+      <member refid="class_destroy_by_contact_1a012ac98f060806df9787beec51725443" prot="public" virt="non-virtual"><scope>DestroyByContact</scope><name>powerUpRate</name></member>
+      <member refid="class_destroy_by_contact_1a63dfba8123259d0ab982f3d6e3420653" prot="public" virt="non-virtual"><scope>DestroyByContact</scope><name>powerUps</name></member>
+      <member refid="class_destroy_by_contact_1ade43cde1e97c99e08a7def340e7bd81f" prot="public" virt="non-virtual"><scope>DestroyByContact</scope><name>scoreValue</name></member>
+      <member refid="class_destroy_by_contact_1a60f7d6987e0f900b96836c6657b993a2" prot="private" virt="non-virtual"><scope>DestroyByContact</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

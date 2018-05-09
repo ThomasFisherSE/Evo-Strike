@@ -1,0 +1,8 @@
+<map id="WeaponController.GetAccuracy" name="WeaponController.GetAccuracy">
+<area shape="rect" id="node2" href="$class_individual.html#a5d4fb02c8072b931ffde1a03afb26271" title="Get the accuracy of the individual. " alt="" coords="259,71,413,98"/>
+<area shape="rect" id="node3" href="$class_evolution_controller.html#a56b57730a8b4707ffe1c8b8053871a84" title="Display the most powerful enemy panel. " alt="" coords="477,5,653,47"/>
+<area shape="rect" id="node5" href="$class_individual.html#ae29881ad8bfa0ec8db58c650ac33eaf0" title="Calculate fitness based on accuracy. " alt="" coords="483,71,646,98"/>
+<area shape="rect" id="node7" href="$class_individual.html#ae28e091935420b6ab5ccda6ce24e1396" title="Calculate fitness based on lifetime and accuracy. " alt="" coords="461,122,668,149"/>
+<area shape="rect" id="node4" href="$class_evolution_controller.html#ac65df1af1e9cdf179606f205e8f046f0" title="Start the next generation of enemies. " alt="" coords="723,5,883,47"/>
+<area shape="rect" id="node6" href="$class_individual.html#a75dd9bebe96f8ff2bad0f60381926085" title="Calculate the fitness of the individual. " alt="" coords="716,97,891,123"/>
+</map>

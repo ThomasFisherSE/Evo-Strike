@@ -1,0 +1,8 @@
+<map id="Individual.CrossoverAttributes" name="Individual.CrossoverAttributes">
+<area shape="rect" id="node2" href="$class_individual.html#a106bf8917e8f55075f01e39e9c7e2264" title="Set a new speed value. " alt="" coords="277,5,411,32"/>
+<area shape="rect" id="node4" href="$class_individual.html#a31b0b7114a58803aba9e81b6650fd7cb" title="Set a new dodge value. " alt="" coords="277,56,411,83"/>
+<area shape="rect" id="node5" href="$class_individual.html#aeff5fb1f9a1619c4fb2e880b6f62b311" title="Set a new dodge time range. " alt="" coords="244,107,444,133"/>
+<area shape="rect" id="node6" href="$class_individual.html#a31ca5e7277bc5f8cbe48bde294590095" title="Set a new dodge wait range. " alt="" coords="245,157,443,184"/>
+<area shape="rect" id="node7" href="$class_individual.html#ab9a068a2aeac06fc33a22391dba7559a" title="Set a new fire rate range. " alt="" coords="252,208,436,235"/>
+<area shape="rect" id="node3" href="$class_mover.html#a7a75a74f9bf6f20d3938c37bb95d8068" title="Set a new speed value. " alt="" coords="492,5,609,32"/>
+</map>

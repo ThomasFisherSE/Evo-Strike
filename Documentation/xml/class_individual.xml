@@ -1,0 +1,1687 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_individual" kind="class" language="C#" prot="public">
+    <compoundname>Individual</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_individual_1a6bfcca4478e5e0d0d37acb5afd781314" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float Individual.MUTATION_MULT</definition>
+        <argsstring></argsstring>
+        <name>MUTATION_MULT</name>
+        <initializer>= 0.1f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="8" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a1f8c48f4f40408ad76d0137f9d3b38c0" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int Individual.LIFETIME_FUNC</definition>
+        <argsstring></argsstring>
+        <name>LIFETIME_FUNC</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="10" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_individual_1aab79ee2ef4e45612d38696315ded9f66" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int Individual.SURVIVAL_FUNC</definition>
+        <argsstring></argsstring>
+        <name>SURVIVAL_FUNC</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="10" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a255153d2dd42b742afc0518481f720f2" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int Individual.ACCURACY_FUNC</definition>
+        <argsstring></argsstring>
+        <name>ACCURACY_FUNC</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="10" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1abc6086aff52dc765ead43e5c0421c1ee" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int Individual.NB_ON_TARGET_FUNC</definition>
+        <argsstring></argsstring>
+        <name>NB_ON_TARGET_FUNC</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="10" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a0feffb40e0c95081946a3206ff0c93c4" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int Individual.ACCURATE_LONG_LIFE_FUNC</definition>
+        <argsstring></argsstring>
+        <name>ACCURATE_LONG_LIFE_FUNC</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="10" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1abb420cd0ce70375b52b2e3a5c27c3368" prot="private" static="no" mutable="no">
+        <type><ref refid="class_dodge_a_i" kindref="compound">DodgeAI</ref></type>
+        <definition>DodgeAI Individual.dodgeAI</definition>
+        <argsstring></argsstring>
+        <name>dodgeAI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="13" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1ae0328e190c92d86f7d0d9e66553b6d32" prot="private" static="no" mutable="no">
+        <type><ref refid="class_mover" kindref="compound">Mover</ref></type>
+        <definition>Mover Individual.mover</definition>
+        <argsstring></argsstring>
+        <name>mover</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="14" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a5217e0c273989dbe5997475dad888cbe" prot="private" static="no" mutable="no">
+        <type><ref refid="class_weapon_controller" kindref="compound">WeaponController</ref></type>
+        <definition>WeaponController Individual.weaponController</definition>
+        <argsstring></argsstring>
+        <name>weaponController</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="15" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a181036de302ffada5875fc814364577e" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject Individual.enemyShip</definition>
+        <argsstring></argsstring>
+        <name>enemyShip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="17" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a7f051c19849cead5ba3e37fe5fa27d0f" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="20" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a07be20a3af23e591907f5bd0591b5dc8" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.dodge</definition>
+        <argsstring></argsstring>
+        <name>dodge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="20" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a5f262026a4a3ba8d22f8c2fbd3bd4762" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.minDodgeTime</definition>
+        <argsstring></argsstring>
+        <name>minDodgeTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="20" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1ae6a09912c0060fff79bd95dead535604" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.maxDodgeTime</definition>
+        <argsstring></argsstring>
+        <name>maxDodgeTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="20" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1ad09d5de9d0c0221da38423f12a4cad14" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.minDodgeWait</definition>
+        <argsstring></argsstring>
+        <name>minDodgeWait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="21" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a3c070a056ec4065fa27e52e17f5d1e0a" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.maxDodgeWait</definition>
+        <argsstring></argsstring>
+        <name>maxDodgeWait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="21" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a6008f0e0726cb19b16d56f7eb21fcdc0" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.minFireRate</definition>
+        <argsstring></argsstring>
+        <name>minFireRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="21" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a0e7001fe9892bf459b0f5f7c6376acc6" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.maxFireRate</definition>
+        <argsstring></argsstring>
+        <name>maxFireRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="21" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a9ea56d7d13479becd3804f13dca75d77" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.fitness</definition>
+        <argsstring></argsstring>
+        <name>fitness</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="23" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1aa3ffe968be2140c573e6acd5174f9527" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Individual.minDodgeBound</definition>
+        <argsstring></argsstring>
+        <name>minDodgeBound</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="26" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a1a7484c161583b6db216ed47325e46de" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Individual.maxDodgeBound</definition>
+        <argsstring></argsstring>
+        <name>maxDodgeBound</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="26" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1ac9c437a68f1bbb91325622551782fa0f" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.minDodgeTimeBound</definition>
+        <argsstring></argsstring>
+        <name>minDodgeTimeBound</name>
+        <initializer>= 0.1f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="27" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a66fba6da7895f053a0e104a72baf488a" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.maxDodgeTimeBound</definition>
+        <argsstring></argsstring>
+        <name>maxDodgeTimeBound</name>
+        <initializer>= 2.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="27" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a37e4dd4a0303515881cec12c281cbc90" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.minDodgeWaitBound</definition>
+        <argsstring></argsstring>
+        <name>minDodgeWaitBound</name>
+        <initializer>= 0.1f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="28" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a0eb7461783f6f104fde989a48798e544" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.maxDodgeWaitBound</definition>
+        <argsstring></argsstring>
+        <name>maxDodgeWaitBound</name>
+        <initializer>= 3.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="28" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a9c742fb99f1d90eb029be42c1aefbfaa" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.minSpeedBound</definition>
+        <argsstring></argsstring>
+        <name>minSpeedBound</name>
+        <initializer>= -6.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="31" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a80fb57c9c84603c6cdbcf5a7c4859a82" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.maxSpeedBound</definition>
+        <argsstring></argsstring>
+        <name>maxSpeedBound</name>
+        <initializer>= -2f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="31" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a325421da693fc8d3b170c677f39addba" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.minFireRateBound</definition>
+        <argsstring></argsstring>
+        <name>minFireRateBound</name>
+        <initializer>= 1.5f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="34" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1aa981c9b3f959be4ef59d2c280d4b82c3" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.maxFireRateBound</definition>
+        <argsstring></argsstring>
+        <name>maxFireRateBound</name>
+        <initializer>= 4.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="34" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1ab082166ac88b99c14e44270b34a46588" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.creationTime</definition>
+        <argsstring></argsstring>
+        <name>creationTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="36" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a568afafa685ca5a5c26214e6be1a14df" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.lifetime</definition>
+        <argsstring></argsstring>
+        <name>lifetime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="36" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a0033ac258e9b8bedfebe8dddef66e39a" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Individual.accuracy</definition>
+        <argsstring></argsstring>
+        <name>accuracy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="38" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a6669096694cc246094b26ca656b63d47" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Individual.nbShotsOnTarget</definition>
+        <argsstring></argsstring>
+        <name>nbShotsOnTarget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="39" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1ab1ec189d9d07c07546d2f8719f49f8b2" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Individual.survived</definition>
+        <argsstring></argsstring>
+        <name>survived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="41" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_individual_1a5429be2ba79b3089c98bac739f693660" prot="private" static="no" mutable="no">
+        <type><ref refid="class_individual" kindref="compound">Individual</ref></type>
+        <definition>Individual Individual.item</definition>
+        <argsstring></argsstring>
+        <name>item</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="42" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_individual_1a6dc47b346e6cdd288773b44e6c0fc272" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int Individual.MinDodgeBound</definition>
+        <argsstring></argsstring>
+        <name>MinDodgeBound</name>
+        <briefdescription>
+<para>Accessor and Mutator for minDodgeBound. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="407" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="408" bodyend="418"/>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1adb55c9ec4a4012582a4c35b654db8f21" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int Individual.MaxDodgeBound</definition>
+        <argsstring></argsstring>
+        <name>MaxDodgeBound</name>
+        <briefdescription>
+<para>Accessor and Mutator for maxDodgeBound. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="423" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="424" bodyend="434"/>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1ae3b13d55d1ba206fff541af02308c618" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.MinDodgeTimeBound</definition>
+        <argsstring></argsstring>
+        <name>MinDodgeTimeBound</name>
+        <briefdescription>
+<para>Accessor and Mutator for minDodgeTimeBound. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="439" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="440" bodyend="450"/>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1af7985d4dfe4001bc062d3dc8f778e5a5" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.MaxDodgeTimeBound</definition>
+        <argsstring></argsstring>
+        <name>MaxDodgeTimeBound</name>
+        <briefdescription>
+<para>Accessor and Mutator for maxDodgeTimeBound. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="455" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="456" bodyend="466"/>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1a86b79a3255c7ea9ffa8c063c999cdc0a" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.MinDodgeWaitBound</definition>
+        <argsstring></argsstring>
+        <name>MinDodgeWaitBound</name>
+        <briefdescription>
+<para>Accessor and Mutator for minDodgeWaitBound. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="471" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="472" bodyend="482"/>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1a22ae950e01ef3055dd3cd15972e51770" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.MaxDodgeWaitBound</definition>
+        <argsstring></argsstring>
+        <name>MaxDodgeWaitBound</name>
+        <briefdescription>
+<para>Accessor and Mutator for maxDodgeWaitBound. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="487" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="488" bodyend="498"/>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1a78a3431b66eef67e58b6f4da5e1c8d63" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.MinSpeedBound</definition>
+        <argsstring></argsstring>
+        <name>MinSpeedBound</name>
+        <briefdescription>
+<para>Accessor and Mutator for minSpeedBound. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="503" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="504" bodyend="514"/>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1abad1b2b85eb811524940ea456452c550" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.MaxSpeedBound</definition>
+        <argsstring></argsstring>
+        <name>MaxSpeedBound</name>
+        <briefdescription>
+<para>Accessor and Mutator for maxSpeedBound. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="519" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="520" bodyend="530"/>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1a45bb7b475e4b2537cdf888b9e1b13144" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.MinFireRateBound</definition>
+        <argsstring></argsstring>
+        <name>MinFireRateBound</name>
+        <briefdescription>
+<para>Accessor and Mutator for minFireRateBound. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="535" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="536" bodyend="546"/>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1a1096694f11f7b9e729aeabbfe7097eaf" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.MaxFireRateBound</definition>
+        <argsstring></argsstring>
+        <name>MaxFireRateBound</name>
+        <briefdescription>
+<para>Accessor and Mutator for maxFireRateBound. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="551" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="552" bodyend="562"/>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1a02b01142acd16f32fd2faf1864b3627f" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.Speed</definition>
+        <argsstring></argsstring>
+        <name>Speed</name>
+        <briefdescription>
+<para>Accessor and Mutator for speed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="567" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="568" bodyend="578"/>
+        <referencedby refid="class_evolution_controller_1a56b57730a8b4707ffe1c8b8053871a84" compoundref="_evolution_controller_8cs" startline="314" endline="346">EvolutionController.DisplayMostPowerfulEnemy</referencedby>
+        <referencedby refid="class_individual_1a7a4c37b420810992cc80448fb7e8652d" compoundref="_individual_8cs" startline="80" endline="94">CopyGenes</referencedby>
+        <referencedby refid="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" compoundref="_individual_8cs" startline="122" endline="139">CrossoverAttributes</referencedby>
+        <referencedby refid="class_individual_1a106bf8917e8f55075f01e39e9c7e2264" compoundref="_individual_8cs" startline="351" endline="355">SetSpeed</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1a8daea02958bdf86b68fc063556a12a56" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.Dodge</definition>
+        <argsstring></argsstring>
+        <name>Dodge</name>
+        <briefdescription>
+<para>Accessor and Mutator for dodge. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="583" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="584" bodyend="594"/>
+        <referencedby refid="class_evolution_controller_1a56b57730a8b4707ffe1c8b8053871a84" compoundref="_evolution_controller_8cs" startline="314" endline="346">EvolutionController.DisplayMostPowerfulEnemy</referencedby>
+        <referencedby refid="class_individual_1a7a4c37b420810992cc80448fb7e8652d" compoundref="_individual_8cs" startline="80" endline="94">CopyGenes</referencedby>
+        <referencedby refid="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" compoundref="_individual_8cs" startline="122" endline="139">CrossoverAttributes</referencedby>
+        <referencedby refid="class_individual_1a31b0b7114a58803aba9e81b6650fd7cb" compoundref="_individual_8cs" startline="361" endline="365">SetDodge</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1ad5b02d49418b96acb978aeed30bd7149" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.MinDodgeTime</definition>
+        <argsstring></argsstring>
+        <name>MinDodgeTime</name>
+        <briefdescription>
+<para>Accessor and Mutator for minDodgeTime. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="599" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="600" bodyend="610"/>
+        <referencedby refid="class_individual_1a7a4c37b420810992cc80448fb7e8652d" compoundref="_individual_8cs" startline="80" endline="94">CopyGenes</referencedby>
+        <referencedby refid="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" compoundref="_individual_8cs" startline="122" endline="139">CrossoverAttributes</referencedby>
+        <referencedby refid="class_individual_1aeff5fb1f9a1619c4fb2e880b6f62b311" compoundref="_individual_8cs" startline="372" endline="377">SetDodgeTimeRange</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1a280784e76616e219c0b9428fd5d78744" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.MaxDodgeTime</definition>
+        <argsstring></argsstring>
+        <name>MaxDodgeTime</name>
+        <briefdescription>
+<para>Accessor and Mutator for maxDodgeTime. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="615" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="616" bodyend="626"/>
+        <referencedby refid="class_individual_1a7a4c37b420810992cc80448fb7e8652d" compoundref="_individual_8cs" startline="80" endline="94">CopyGenes</referencedby>
+        <referencedby refid="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" compoundref="_individual_8cs" startline="122" endline="139">CrossoverAttributes</referencedby>
+        <referencedby refid="class_individual_1aeff5fb1f9a1619c4fb2e880b6f62b311" compoundref="_individual_8cs" startline="372" endline="377">SetDodgeTimeRange</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1af61b42078f68777b3ecf9cee2902af7a" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.MinDodgeWait</definition>
+        <argsstring></argsstring>
+        <name>MinDodgeWait</name>
+        <briefdescription>
+<para>Accessor and Mutator for minDodgeWait. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="631" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="632" bodyend="642"/>
+        <referencedby refid="class_evolution_controller_1a56b57730a8b4707ffe1c8b8053871a84" compoundref="_evolution_controller_8cs" startline="314" endline="346">EvolutionController.DisplayMostPowerfulEnemy</referencedby>
+        <referencedby refid="class_individual_1a7a4c37b420810992cc80448fb7e8652d" compoundref="_individual_8cs" startline="80" endline="94">CopyGenes</referencedby>
+        <referencedby refid="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" compoundref="_individual_8cs" startline="122" endline="139">CrossoverAttributes</referencedby>
+        <referencedby refid="class_individual_1a31ca5e7277bc5f8cbe48bde294590095" compoundref="_individual_8cs" startline="384" endline="389">SetDodgeWaitRange</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1a625737f01684ea5a2bbe4f887582ee53" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.MaxDodgeWait</definition>
+        <argsstring></argsstring>
+        <name>MaxDodgeWait</name>
+        <briefdescription>
+<para>Accessor and Mutator for minDodgeWait. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="647" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="648" bodyend="658"/>
+        <referencedby refid="class_evolution_controller_1a56b57730a8b4707ffe1c8b8053871a84" compoundref="_evolution_controller_8cs" startline="314" endline="346">EvolutionController.DisplayMostPowerfulEnemy</referencedby>
+        <referencedby refid="class_individual_1a7a4c37b420810992cc80448fb7e8652d" compoundref="_individual_8cs" startline="80" endline="94">CopyGenes</referencedby>
+        <referencedby refid="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" compoundref="_individual_8cs" startline="122" endline="139">CrossoverAttributes</referencedby>
+        <referencedby refid="class_individual_1a31ca5e7277bc5f8cbe48bde294590095" compoundref="_individual_8cs" startline="384" endline="389">SetDodgeWaitRange</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1acf1b957b3e4d0c36d76c07590047cc29" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.MinFireRate</definition>
+        <argsstring></argsstring>
+        <name>MinFireRate</name>
+        <briefdescription>
+<para>Accessor and Mutator for minFireRate. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="663" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="664" bodyend="674"/>
+        <referencedby refid="class_evolution_controller_1a56b57730a8b4707ffe1c8b8053871a84" compoundref="_evolution_controller_8cs" startline="314" endline="346">EvolutionController.DisplayMostPowerfulEnemy</referencedby>
+        <referencedby refid="class_individual_1a7a4c37b420810992cc80448fb7e8652d" compoundref="_individual_8cs" startline="80" endline="94">CopyGenes</referencedby>
+        <referencedby refid="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" compoundref="_individual_8cs" startline="122" endline="139">CrossoverAttributes</referencedby>
+        <referencedby refid="class_individual_1ab9a068a2aeac06fc33a22391dba7559a" compoundref="_individual_8cs" startline="396" endline="401">SetFireRateRange</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1ae94ddacbf2764ce8b1fb2fde1bc2d72c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.MaxFireRate</definition>
+        <argsstring></argsstring>
+        <name>MaxFireRate</name>
+        <briefdescription>
+<para>Accessor and Mutator for maxFireRate. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="679" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="680" bodyend="690"/>
+        <referencedby refid="class_evolution_controller_1a56b57730a8b4707ffe1c8b8053871a84" compoundref="_evolution_controller_8cs" startline="314" endline="346">EvolutionController.DisplayMostPowerfulEnemy</referencedby>
+        <referencedby refid="class_individual_1a7a4c37b420810992cc80448fb7e8652d" compoundref="_individual_8cs" startline="80" endline="94">CopyGenes</referencedby>
+        <referencedby refid="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" compoundref="_individual_8cs" startline="122" endline="139">CrossoverAttributes</referencedby>
+        <referencedby refid="class_individual_1ab9a068a2aeac06fc33a22391dba7559a" compoundref="_individual_8cs" startline="396" endline="401">SetFireRateRange</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1a5a4701f9a402fe64b8e3c24368e52101" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.Fitness</definition>
+        <argsstring></argsstring>
+        <name>Fitness</name>
+        <briefdescription>
+<para>Accessor and Mutator for fitness. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="695" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="696" bodyend="706"/>
+        <referencedby refid="class_individual_1a75dd9bebe96f8ff2bad0f60381926085" compoundref="_individual_8cs" startline="227" endline="260">CalculateFitness</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1a473dd92ebe3c07db394d6bcd0bfcac93" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>GameObject</type>
+        <definition>GameObject Individual.EnemyShip</definition>
+        <argsstring></argsstring>
+        <name>EnemyShip</name>
+        <briefdescription>
+<para>Accessor and Mutator for enemyShip. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="711" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="712" bodyend="722"/>
+        <referencedby refid="class_individual_1ae542e9759275736feb0c5f065d36bfd8" compoundref="_individual_8cs" startline="51" endline="64">Individual</referencedby>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1ac7551473ef8d053170dba6810aa69187" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float Individual.Lifetime</definition>
+        <argsstring></argsstring>
+        <name>Lifetime</name>
+        <briefdescription>
+<para>Accessor and Mutator for lifetime. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="727" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="728" bodyend="738"/>
+        <referencedby refid="class_evolution_controller_1a56b57730a8b4707ffe1c8b8053871a84" compoundref="_evolution_controller_8cs" startline="314" endline="346">EvolutionController.DisplayMostPowerfulEnemy</referencedby>
+        <referencedby refid="class_individual_1a3aba987110bfa0ca5eb4f2a7924524da" compoundref="_individual_8cs" startline="100" endline="104">Complete</referencedby>
+        <referencedby refid="class_individual_1af40ad69dad043da7061c07856b6f1457" compoundref="_individual_8cs" startline="161" endline="164">LifetimeFunc</referencedby>
+        <referencedby refid="class_individual_1ae28e091935420b6ab5ccda6ce24e1396" compoundref="_individual_8cs" startline="217" endline="220">AccurateLongLifeFunc</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_individual_1ad4b03453693cb1ab8185c6a4335e86bd" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool Individual.Survived</definition>
+        <argsstring></argsstring>
+        <name>Survived</name>
+        <briefdescription>
+<para>Accessor and Mutator for survived. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="743" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="744" bodyend="754"/>
+        <referencedby refid="class_evolution_controller_1a56b57730a8b4707ffe1c8b8053871a84" compoundref="_evolution_controller_8cs" startline="314" endline="346">EvolutionController.DisplayMostPowerfulEnemy</referencedby>
+        <referencedby refid="class_individual_1a3aba987110bfa0ca5eb4f2a7924524da" compoundref="_individual_8cs" startline="100" endline="104">Complete</referencedby>
+        <referencedby refid="class_individual_1abf304201269d32a0f40d9a25ce98d8db" compoundref="_individual_8cs" startline="170" endline="173">SurvivalFunc</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_individual_1ae542e9759275736feb0c5f065d36bfd8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Individual.Individual</definition>
+        <argsstring>(GameObject enemyShipObject)</argsstring>
+        <name>Individual</name>
+        <param>
+          <type>GameObject</type>
+          <declname>enemyShipObject</declname>
+        </param>
+        <briefdescription>
+<para>Create an individual from an enemy ship prefab. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>enemyShipObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enemy ship to create an individual from.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="51" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="51" bodyend="64"/>
+        <references refid="class_individual_1a473dd92ebe3c07db394d6bcd0bfcac93" compoundref="_individual_8cs" startline="712" endline="722">EnemyShip</references>
+        <references refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</references>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1a9ae7902f014f58e296bdd87083635756" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Individual.Individual</definition>
+        <argsstring>(Individual copy)</argsstring>
+        <name>Individual</name>
+        <param>
+          <type><ref refid="class_individual" kindref="compound">Individual</ref></type>
+          <declname>copy</declname>
+        </param>
+        <briefdescription>
+<para>Create an individual given another individual </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>copy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The individual to copy.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="70" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="70" bodyend="73"/>
+        <references refid="class_individual_1a7a4c37b420810992cc80448fb7e8652d" compoundref="_individual_8cs" startline="80" endline="94">CopyGenes</references>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1a7a4c37b420810992cc80448fb7e8652d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Individual.CopyGenes</definition>
+        <argsstring>(Individual src)</argsstring>
+        <name>CopyGenes</name>
+        <param>
+          <type><ref refid="class_individual" kindref="compound">Individual</ref></type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+<para>Copy genes from an individual </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The individual to copy genes from.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="80" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="80" bodyend="94"/>
+        <references refid="class_individual_1a02b01142acd16f32fd2faf1864b3627f" compoundref="_individual_8cs" startline="568" endline="578">Speed</references>
+        <references refid="class_individual_1a8daea02958bdf86b68fc063556a12a56" compoundref="_individual_8cs" startline="584" endline="594">Dodge</references>
+        <references refid="class_individual_1ad5b02d49418b96acb978aeed30bd7149" compoundref="_individual_8cs" startline="600" endline="610">MinDodgeTime</references>
+        <references refid="class_individual_1a280784e76616e219c0b9428fd5d78744" compoundref="_individual_8cs" startline="616" endline="626">MaxDodgeTime</references>
+        <references refid="class_individual_1af61b42078f68777b3ecf9cee2902af7a" compoundref="_individual_8cs" startline="632" endline="642">MinDodgeWait</references>
+        <references refid="class_individual_1a625737f01684ea5a2bbe4f887582ee53" compoundref="_individual_8cs" startline="648" endline="658">MaxDodgeWait</references>
+        <references refid="class_individual_1acf1b957b3e4d0c36d76c07590047cc29" compoundref="_individual_8cs" startline="664" endline="674">MinFireRate</references>
+        <references refid="class_individual_1ae94ddacbf2764ce8b1fb2fde1bc2d72c" compoundref="_individual_8cs" startline="680" endline="690">MaxFireRate</references>
+        <referencedby refid="class_individual_1a9ae7902f014f58e296bdd87083635756" compoundref="_individual_8cs" startline="70" endline="73">Individual</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1a3aba987110bfa0ca5eb4f2a7924524da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Individual.Complete</definition>
+        <argsstring>(bool survivedWave)</argsstring>
+        <name>Complete</name>
+        <param>
+          <type>bool</type>
+          <declname>survivedWave</declname>
+        </param>
+        <briefdescription>
+<para>Mark that the individual has completed the wave. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>survivedWave</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether the the individual survived or not.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="100" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="100" bodyend="104"/>
+        <references refid="class_individual_1ac7551473ef8d053170dba6810aa69187" compoundref="_individual_8cs" startline="728" endline="738">Lifetime</references>
+        <references refid="class_individual_1ad4b03453693cb1ab8185c6a4335e86bd" compoundref="_individual_8cs" startline="744" endline="754">Survived</references>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Individual.CrossoverAttributes</definition>
+        <argsstring>(Individual father, Individual mother)</argsstring>
+        <name>CrossoverAttributes</name>
+        <param>
+          <type><ref refid="class_individual" kindref="compound">Individual</ref></type>
+          <declname>father</declname>
+        </param>
+        <param>
+          <type><ref refid="class_individual" kindref="compound">Individual</ref></type>
+          <declname>mother</declname>
+        </param>
+        <briefdescription>
+<para>Perform crossover between two parents, keeping attributes within set bounds. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>father</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first parent.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mother</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second parent.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="122" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="122" bodyend="139"/>
+        <references refid="class_individual_1a106bf8917e8f55075f01e39e9c7e2264" compoundref="_individual_8cs" startline="351" endline="355">SetSpeed</references>
+        <references refid="class_individual_1a02b01142acd16f32fd2faf1864b3627f" compoundref="_individual_8cs" startline="568" endline="578">Speed</references>
+        <references refid="class_individual_1a31b0b7114a58803aba9e81b6650fd7cb" compoundref="_individual_8cs" startline="361" endline="365">SetDodge</references>
+        <references refid="class_individual_1a8daea02958bdf86b68fc063556a12a56" compoundref="_individual_8cs" startline="584" endline="594">Dodge</references>
+        <references refid="class_individual_1aeff5fb1f9a1619c4fb2e880b6f62b311" compoundref="_individual_8cs" startline="372" endline="377">SetDodgeTimeRange</references>
+        <references refid="class_individual_1ad5b02d49418b96acb978aeed30bd7149" compoundref="_individual_8cs" startline="600" endline="610">MinDodgeTime</references>
+        <references refid="class_individual_1a280784e76616e219c0b9428fd5d78744" compoundref="_individual_8cs" startline="616" endline="626">MaxDodgeTime</references>
+        <references refid="class_individual_1a31ca5e7277bc5f8cbe48bde294590095" compoundref="_individual_8cs" startline="384" endline="389">SetDodgeWaitRange</references>
+        <references refid="class_individual_1af61b42078f68777b3ecf9cee2902af7a" compoundref="_individual_8cs" startline="632" endline="642">MinDodgeWait</references>
+        <references refid="class_individual_1a625737f01684ea5a2bbe4f887582ee53" compoundref="_individual_8cs" startline="648" endline="658">MaxDodgeWait</references>
+        <references refid="class_individual_1ab9a068a2aeac06fc33a22391dba7559a" compoundref="_individual_8cs" startline="396" endline="401">SetFireRateRange</references>
+        <references refid="class_individual_1acf1b957b3e4d0c36d76c07590047cc29" compoundref="_individual_8cs" startline="664" endline="674">MinFireRate</references>
+        <references refid="class_individual_1ae94ddacbf2764ce8b1fb2fde1bc2d72c" compoundref="_individual_8cs" startline="680" endline="690">MaxFireRate</references>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1a2b19324cd6e712330c4d1601c95dcffd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Individual.MutateAttributes</definition>
+        <argsstring>()</argsstring>
+        <name>MutateAttributes</name>
+        <briefdescription>
+<para>Mutate the attributes of an individual </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="144" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="144" bodyend="153"/>
+        <references refid="class_individual_1ab66822b58148ba1507d2e27aff8676e7" compoundref="_individual_8cs" startline="327" endline="330">RandomVerticalSpeed</references>
+        <references refid="class_individual_1a75271d202126e53879bdb51a9fe65ef3" compoundref="_individual_8cs" startline="293" endline="296">RandomDodge</references>
+        <references refid="class_individual_1a108e7c67d55c334bcc885e8dc5bb740b" compoundref="_individual_8cs" startline="303" endline="308">RandomDodgeTime</references>
+        <references refid="class_individual_1a1ac91351958ff89363dac0c16612f07d" compoundref="_individual_8cs" startline="315" endline="320">RandomDodgeWait</references>
+        <references refid="class_individual_1ad6ad54b9dd02fcb02b5a11738585d41c" compoundref="_individual_8cs" startline="337" endline="342">RandomFireRate</references>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1af40ad69dad043da7061c07856b6f1457" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Individual.LifetimeFunc</definition>
+        <argsstring>()</argsstring>
+        <name>LifetimeFunc</name>
+        <briefdescription>
+<para>Calculate fitness based on lifetime. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The calculated fitness score.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="161" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="161" bodyend="164"/>
+        <references refid="class_individual_1ac7551473ef8d053170dba6810aa69187" compoundref="_individual_8cs" startline="728" endline="738">Lifetime</references>
+        <referencedby refid="class_individual_1a75dd9bebe96f8ff2bad0f60381926085" compoundref="_individual_8cs" startline="227" endline="260">CalculateFitness</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1abf304201269d32a0f40d9a25ce98d8db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Individual.SurvivalFunc</definition>
+        <argsstring>()</argsstring>
+        <name>SurvivalFunc</name>
+        <briefdescription>
+<para>Calculate fitness based on survival. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The calculated fitness score.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="170" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="170" bodyend="173"/>
+        <references refid="class_individual_1ad4b03453693cb1ab8185c6a4335e86bd" compoundref="_individual_8cs" startline="744" endline="754">Survived</references>
+        <referencedby refid="class_individual_1a75dd9bebe96f8ff2bad0f60381926085" compoundref="_individual_8cs" startline="227" endline="260">CalculateFitness</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1ae29881ad8bfa0ec8db58c650ac33eaf0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Individual.AccuracyFunc</definition>
+        <argsstring>()</argsstring>
+        <name>AccuracyFunc</name>
+        <briefdescription>
+<para>Calculate fitness based on accuracy. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The calculated fitness score.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="179" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="179" bodyend="182"/>
+        <references refid="class_individual_1a5d4fb02c8072b931ffde1a03afb26271" compoundref="_individual_8cs" startline="197" endline="201">GetAccuracy</references>
+        <referencedby refid="class_individual_1a75dd9bebe96f8ff2bad0f60381926085" compoundref="_individual_8cs" startline="227" endline="260">CalculateFitness</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1af2d68c02add2e5e553959003e8180a9d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Individual.NbOnTargetFunc</definition>
+        <argsstring>()</argsstring>
+        <name>NbOnTargetFunc</name>
+        <briefdescription>
+<para>Calculate fitness based on the number of shots on target. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The calculated fitness score.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="188" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="188" bodyend="191"/>
+        <references refid="class_individual_1a100f431028b5b9d385348fdb000e3b32" compoundref="_individual_8cs" startline="207" endline="211">GetNbShotsOnTarget</references>
+        <referencedby refid="class_individual_1a75dd9bebe96f8ff2bad0f60381926085" compoundref="_individual_8cs" startline="227" endline="260">CalculateFitness</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1a5d4fb02c8072b931ffde1a03afb26271" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Individual.GetAccuracy</definition>
+        <argsstring>()</argsstring>
+        <name>GetAccuracy</name>
+        <briefdescription>
+<para>Get the accuracy of the individual. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The accuracy value of the individual.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="197" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="197" bodyend="201"/>
+        <references refid="class_weapon_controller_1a32d07eb45dc1079a4c82bae18a57f493" compoundref="_weapon_controller_8cs" startline="76" endline="79">WeaponController.GetAccuracy</references>
+        <referencedby refid="class_evolution_controller_1a56b57730a8b4707ffe1c8b8053871a84" compoundref="_evolution_controller_8cs" startline="314" endline="346">EvolutionController.DisplayMostPowerfulEnemy</referencedby>
+        <referencedby refid="class_individual_1ae29881ad8bfa0ec8db58c650ac33eaf0" compoundref="_individual_8cs" startline="179" endline="182">AccuracyFunc</referencedby>
+        <referencedby refid="class_individual_1ae28e091935420b6ab5ccda6ce24e1396" compoundref="_individual_8cs" startline="217" endline="220">AccurateLongLifeFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1a100f431028b5b9d385348fdb000e3b32" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Individual.GetNbShotsOnTarget</definition>
+        <argsstring>()</argsstring>
+        <name>GetNbShotsOnTarget</name>
+        <briefdescription>
+<para>Get the number of shots on target the individual made. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of shots on target of the individual.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="207" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="207" bodyend="211"/>
+        <references refid="class_weapon_controller_1aab88ffc7b720e10dce55b93dec090297" compoundref="_weapon_controller_8cs" startline="85" endline="88">WeaponController.GetNbShotsOnTarget</references>
+        <referencedby refid="class_evolution_controller_1a56b57730a8b4707ffe1c8b8053871a84" compoundref="_evolution_controller_8cs" startline="314" endline="346">EvolutionController.DisplayMostPowerfulEnemy</referencedby>
+        <referencedby refid="class_individual_1af2d68c02add2e5e553959003e8180a9d" compoundref="_individual_8cs" startline="188" endline="191">NbOnTargetFunc</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1ae28e091935420b6ab5ccda6ce24e1396" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Individual.AccurateLongLifeFunc</definition>
+        <argsstring>()</argsstring>
+        <name>AccurateLongLifeFunc</name>
+        <briefdescription>
+<para>Calculate fitness based on lifetime and accuracy. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The calculated fitness score.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="217" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="217" bodyend="220"/>
+        <references refid="class_individual_1a5d4fb02c8072b931ffde1a03afb26271" compoundref="_individual_8cs" startline="197" endline="201">GetAccuracy</references>
+        <references refid="class_individual_1ac7551473ef8d053170dba6810aa69187" compoundref="_individual_8cs" startline="728" endline="738">Lifetime</references>
+        <referencedby refid="class_individual_1a75dd9bebe96f8ff2bad0f60381926085" compoundref="_individual_8cs" startline="227" endline="260">CalculateFitness</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1a75dd9bebe96f8ff2bad0f60381926085" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Individual.CalculateFitness</definition>
+        <argsstring>(int selectedFunction)</argsstring>
+        <name>CalculateFitness</name>
+        <param>
+          <type>int</type>
+          <declname>selectedFunction</declname>
+        </param>
+        <briefdescription>
+<para>Calculate the fitness of the individual. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>selectedFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the selected fitness function.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The calculated fitness score.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="227" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="227" bodyend="260"/>
+        <references refid="class_individual_1a5a4701f9a402fe64b8e3c24368e52101" compoundref="_individual_8cs" startline="696" endline="706">Fitness</references>
+        <references refid="class_individual_1af40ad69dad043da7061c07856b6f1457" compoundref="_individual_8cs" startline="161" endline="164">LifetimeFunc</references>
+        <references refid="class_individual_1abf304201269d32a0f40d9a25ce98d8db" compoundref="_individual_8cs" startline="170" endline="173">SurvivalFunc</references>
+        <references refid="class_individual_1ae29881ad8bfa0ec8db58c650ac33eaf0" compoundref="_individual_8cs" startline="179" endline="182">AccuracyFunc</references>
+        <references refid="class_individual_1af2d68c02add2e5e553959003e8180a9d" compoundref="_individual_8cs" startline="188" endline="191">NbOnTargetFunc</references>
+        <references refid="class_individual_1ae28e091935420b6ab5ccda6ce24e1396" compoundref="_individual_8cs" startline="217" endline="220">AccurateLongLifeFunc</references>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1aad9008e000af2bf09346be0ca9258116" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Individual.SetRandomAttributes</definition>
+        <argsstring>()</argsstring>
+        <name>SetRandomAttributes</name>
+        <briefdescription>
+<para>Set attributes randomly. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="269" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="269" bodyend="286"/>
+        <references refid="class_individual_1a473dd92ebe3c07db394d6bcd0bfcac93" compoundref="_individual_8cs" startline="712" endline="722">EnemyShip</references>
+        <references refid="class_individual_1a75271d202126e53879bdb51a9fe65ef3" compoundref="_individual_8cs" startline="293" endline="296">RandomDodge</references>
+        <references refid="class_individual_1a6dc47b346e6cdd288773b44e6c0fc272" compoundref="_individual_8cs" startline="408" endline="418">MinDodgeBound</references>
+        <references refid="class_individual_1adb55c9ec4a4012582a4c35b654db8f21" compoundref="_individual_8cs" startline="424" endline="434">MaxDodgeBound</references>
+        <references refid="class_individual_1a108e7c67d55c334bcc885e8dc5bb740b" compoundref="_individual_8cs" startline="303" endline="308">RandomDodgeTime</references>
+        <references refid="class_individual_1ae3b13d55d1ba206fff541af02308c618" compoundref="_individual_8cs" startline="440" endline="450">MinDodgeTimeBound</references>
+        <references refid="class_individual_1af7985d4dfe4001bc062d3dc8f778e5a5" compoundref="_individual_8cs" startline="456" endline="466">MaxDodgeTimeBound</references>
+        <references refid="class_individual_1a1ac91351958ff89363dac0c16612f07d" compoundref="_individual_8cs" startline="315" endline="320">RandomDodgeWait</references>
+        <references refid="class_individual_1a86b79a3255c7ea9ffa8c063c999cdc0a" compoundref="_individual_8cs" startline="472" endline="482">MinDodgeWaitBound</references>
+        <references refid="class_individual_1a22ae950e01ef3055dd3cd15972e51770" compoundref="_individual_8cs" startline="488" endline="498">MaxDodgeWaitBound</references>
+        <references refid="class_individual_1ab66822b58148ba1507d2e27aff8676e7" compoundref="_individual_8cs" startline="327" endline="330">RandomVerticalSpeed</references>
+        <references refid="class_individual_1a78a3431b66eef67e58b6f4da5e1c8d63" compoundref="_individual_8cs" startline="504" endline="514">MinSpeedBound</references>
+        <references refid="class_individual_1abad1b2b85eb811524940ea456452c550" compoundref="_individual_8cs" startline="520" endline="530">MaxSpeedBound</references>
+        <references refid="class_individual_1ad6ad54b9dd02fcb02b5a11738585d41c" compoundref="_individual_8cs" startline="337" endline="342">RandomFireRate</references>
+        <references refid="class_individual_1a45bb7b475e4b2537cdf888b9e1b13144" compoundref="_individual_8cs" startline="536" endline="546">MinFireRateBound</references>
+        <references refid="class_individual_1a1096694f11f7b9e729aeabbfe7097eaf" compoundref="_individual_8cs" startline="552" endline="562">MaxFireRateBound</references>
+        <referencedby refid="class_individual_1ae542e9759275736feb0c5f065d36bfd8" compoundref="_individual_8cs" startline="51" endline="64">Individual</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1a75271d202126e53879bdb51a9fe65ef3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Individual.RandomDodge</definition>
+        <argsstring>(float minDodge, float maxDodge)</argsstring>
+        <name>RandomDodge</name>
+        <param>
+          <type>float</type>
+          <declname>minDodge</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>maxDodge</declname>
+        </param>
+        <briefdescription>
+<para>Set dodge randomly within a range. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>minDodge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum dodge value.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxDodge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum dodge value.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="293" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="293" bodyend="296"/>
+        <references refid="class_individual_1a31b0b7114a58803aba9e81b6650fd7cb" compoundref="_individual_8cs" startline="361" endline="365">SetDodge</references>
+        <referencedby refid="class_individual_1a2b19324cd6e712330c4d1601c95dcffd" compoundref="_individual_8cs" startline="144" endline="153">MutateAttributes</referencedby>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1a108e7c67d55c334bcc885e8dc5bb740b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Individual.RandomDodgeTime</definition>
+        <argsstring>(float minDodgeTime, float maxDodgeTime)</argsstring>
+        <name>RandomDodgeTime</name>
+        <param>
+          <type>float</type>
+          <declname>minDodgeTime</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>maxDodgeTime</declname>
+        </param>
+        <briefdescription>
+<para>Set dodge time randomly within a range. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>minDodgeTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum dodge time.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxDodgeTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum dodge time.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="303" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="303" bodyend="308"/>
+        <references refid="class_individual_1aeff5fb1f9a1619c4fb2e880b6f62b311" compoundref="_individual_8cs" startline="372" endline="377">SetDodgeTimeRange</references>
+        <referencedby refid="class_individual_1a2b19324cd6e712330c4d1601c95dcffd" compoundref="_individual_8cs" startline="144" endline="153">MutateAttributes</referencedby>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1a1ac91351958ff89363dac0c16612f07d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Individual.RandomDodgeWait</definition>
+        <argsstring>(float minDodgeWait, float maxDodgeWait)</argsstring>
+        <name>RandomDodgeWait</name>
+        <param>
+          <type>float</type>
+          <declname>minDodgeWait</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>maxDodgeWait</declname>
+        </param>
+        <briefdescription>
+<para>Set dodge wait randomly within a range. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>minDodgeWait</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum dodge wait.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxDodgeWait</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum dodge wait.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="315" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="315" bodyend="320"/>
+        <references refid="class_individual_1a31ca5e7277bc5f8cbe48bde294590095" compoundref="_individual_8cs" startline="384" endline="389">SetDodgeWaitRange</references>
+        <referencedby refid="class_individual_1a2b19324cd6e712330c4d1601c95dcffd" compoundref="_individual_8cs" startline="144" endline="153">MutateAttributes</referencedby>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1ab66822b58148ba1507d2e27aff8676e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Individual.RandomVerticalSpeed</definition>
+        <argsstring>(float minSpeed, float maxSpeed)</argsstring>
+        <name>RandomVerticalSpeed</name>
+        <param>
+          <type>float</type>
+          <declname>minSpeed</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>maxSpeed</declname>
+        </param>
+        <briefdescription>
+<para>Set speed randomly within a range. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>minSpeed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum speed value.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxSpeed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum speed value.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="327" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="327" bodyend="330"/>
+        <references refid="class_individual_1a106bf8917e8f55075f01e39e9c7e2264" compoundref="_individual_8cs" startline="351" endline="355">SetSpeed</references>
+        <referencedby refid="class_individual_1a2b19324cd6e712330c4d1601c95dcffd" compoundref="_individual_8cs" startline="144" endline="153">MutateAttributes</referencedby>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1ad6ad54b9dd02fcb02b5a11738585d41c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Individual.RandomFireRate</definition>
+        <argsstring>(float minFireRate, float maxFireRate)</argsstring>
+        <name>RandomFireRate</name>
+        <param>
+          <type>float</type>
+          <declname>minFireRate</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>maxFireRate</declname>
+        </param>
+        <briefdescription>
+<para>Set fire rate randomly within a range. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>minFireRate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum fire rate value.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxFireRate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum fire rate value.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="337" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="337" bodyend="342"/>
+        <references refid="class_individual_1ab9a068a2aeac06fc33a22391dba7559a" compoundref="_individual_8cs" startline="396" endline="401">SetFireRateRange</references>
+        <referencedby refid="class_individual_1a2b19324cd6e712330c4d1601c95dcffd" compoundref="_individual_8cs" startline="144" endline="153">MutateAttributes</referencedby>
+        <referencedby refid="class_individual_1aad9008e000af2bf09346be0ca9258116" compoundref="_individual_8cs" startline="269" endline="286">SetRandomAttributes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1a106bf8917e8f55075f01e39e9c7e2264" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Individual.SetSpeed</definition>
+        <argsstring>(float s)</argsstring>
+        <name>SetSpeed</name>
+        <param>
+          <type>float</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Set a new speed value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new speed value.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="351" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="351" bodyend="355"/>
+        <references refid="class_mover_1a7a75a74f9bf6f20d3938c37bb95d8068" compoundref="_mover_8cs" startline="24" endline="30">Mover.SetSpeed</references>
+        <references refid="class_individual_1a02b01142acd16f32fd2faf1864b3627f" compoundref="_individual_8cs" startline="568" endline="578">Speed</references>
+        <referencedby refid="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" compoundref="_individual_8cs" startline="122" endline="139">CrossoverAttributes</referencedby>
+        <referencedby refid="class_individual_1ab66822b58148ba1507d2e27aff8676e7" compoundref="_individual_8cs" startline="327" endline="330">RandomVerticalSpeed</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1a31b0b7114a58803aba9e81b6650fd7cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Individual.SetDodge</definition>
+        <argsstring>(float d)</argsstring>
+        <name>SetDodge</name>
+        <param>
+          <type>float</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+<para>Set a new dodge value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new dodge value.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="361" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="361" bodyend="365"/>
+        <references refid="class_individual_1a8daea02958bdf86b68fc063556a12a56" compoundref="_individual_8cs" startline="584" endline="594">Dodge</references>
+        <referencedby refid="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" compoundref="_individual_8cs" startline="122" endline="139">CrossoverAttributes</referencedby>
+        <referencedby refid="class_individual_1a75271d202126e53879bdb51a9fe65ef3" compoundref="_individual_8cs" startline="293" endline="296">RandomDodge</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1aeff5fb1f9a1619c4fb2e880b6f62b311" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Individual.SetDodgeTimeRange</definition>
+        <argsstring>(float min, float max)</argsstring>
+        <name>SetDodgeTimeRange</name>
+        <param>
+          <type>float</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+<para>Set a new dodge time range. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new minimum dodge time.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new maximum dodge time.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="372" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="372" bodyend="377"/>
+        <references refid="class_individual_1ad5b02d49418b96acb978aeed30bd7149" compoundref="_individual_8cs" startline="600" endline="610">MinDodgeTime</references>
+        <references refid="class_individual_1a280784e76616e219c0b9428fd5d78744" compoundref="_individual_8cs" startline="616" endline="626">MaxDodgeTime</references>
+        <referencedby refid="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" compoundref="_individual_8cs" startline="122" endline="139">CrossoverAttributes</referencedby>
+        <referencedby refid="class_individual_1a108e7c67d55c334bcc885e8dc5bb740b" compoundref="_individual_8cs" startline="303" endline="308">RandomDodgeTime</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1a31ca5e7277bc5f8cbe48bde294590095" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Individual.SetDodgeWaitRange</definition>
+        <argsstring>(float min, float max)</argsstring>
+        <name>SetDodgeWaitRange</name>
+        <param>
+          <type>float</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+<para>Set a new dodge wait range. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new minimum dodge wait.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new maximum dodge wait.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="384" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="384" bodyend="389"/>
+        <references refid="class_individual_1af61b42078f68777b3ecf9cee2902af7a" compoundref="_individual_8cs" startline="632" endline="642">MinDodgeWait</references>
+        <references refid="class_individual_1a625737f01684ea5a2bbe4f887582ee53" compoundref="_individual_8cs" startline="648" endline="658">MaxDodgeWait</references>
+        <referencedby refid="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" compoundref="_individual_8cs" startline="122" endline="139">CrossoverAttributes</referencedby>
+        <referencedby refid="class_individual_1a1ac91351958ff89363dac0c16612f07d" compoundref="_individual_8cs" startline="315" endline="320">RandomDodgeWait</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_individual_1ab9a068a2aeac06fc33a22391dba7559a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Individual.SetFireRateRange</definition>
+        <argsstring>(float min, float max)</argsstring>
+        <name>SetFireRateRange</name>
+        <param>
+          <type>float</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+<para>Set a new fire rate range. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new minimum fire rate.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new maximum fire rate.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="396" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="396" bodyend="401"/>
+        <references refid="class_individual_1acf1b957b3e4d0c36d76c07590047cc29" compoundref="_individual_8cs" startline="664" endline="674">MinFireRate</references>
+        <references refid="class_individual_1ae94ddacbf2764ce8b1fb2fde1bc2d72c" compoundref="_individual_8cs" startline="680" endline="690">MaxFireRate</references>
+        <referencedby refid="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" compoundref="_individual_8cs" startline="122" endline="139">CrossoverAttributes</referencedby>
+        <referencedby refid="class_individual_1ad6ad54b9dd02fcb02b5a11738585d41c" compoundref="_individual_8cs" startline="337" endline="342">RandomFireRate</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_individual_1ab70b5e71b329b22977d5f17c5fc93cb0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Individual.CrossoverPoint</definition>
+        <argsstring>(float x, float y)</argsstring>
+        <name>CrossoverPoint</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Calculate the crossover point between two values. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first value.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second value.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The calculated crossover point between x and y.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="112" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="112" bodyend="115"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="46">
+        <label>Individual</label>
+        <link refid="class_individual"/>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" line="6" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Individual.cs" bodystart="5" bodyend="757"/>
+    <listofallmembers>
+      <member refid="class_individual_1a0033ac258e9b8bedfebe8dddef66e39a" prot="private" virt="non-virtual"><scope>Individual</scope><name>accuracy</name></member>
+      <member refid="class_individual_1a255153d2dd42b742afc0518481f720f2" prot="private" virt="non-virtual"><scope>Individual</scope><name>ACCURACY_FUNC</name></member>
+      <member refid="class_individual_1ae29881ad8bfa0ec8db58c650ac33eaf0" prot="public" virt="non-virtual"><scope>Individual</scope><name>AccuracyFunc</name></member>
+      <member refid="class_individual_1a0feffb40e0c95081946a3206ff0c93c4" prot="private" virt="non-virtual"><scope>Individual</scope><name>ACCURATE_LONG_LIFE_FUNC</name></member>
+      <member refid="class_individual_1ae28e091935420b6ab5ccda6ce24e1396" prot="public" virt="non-virtual"><scope>Individual</scope><name>AccurateLongLifeFunc</name></member>
+      <member refid="class_individual_1a75dd9bebe96f8ff2bad0f60381926085" prot="public" virt="non-virtual"><scope>Individual</scope><name>CalculateFitness</name></member>
+      <member refid="class_individual_1a3aba987110bfa0ca5eb4f2a7924524da" prot="public" virt="non-virtual"><scope>Individual</scope><name>Complete</name></member>
+      <member refid="class_individual_1a7a4c37b420810992cc80448fb7e8652d" prot="public" virt="non-virtual"><scope>Individual</scope><name>CopyGenes</name></member>
+      <member refid="class_individual_1ab082166ac88b99c14e44270b34a46588" prot="private" virt="non-virtual"><scope>Individual</scope><name>creationTime</name></member>
+      <member refid="class_individual_1a874acf4e26980a4e97fe5301a5c019a8" prot="public" virt="non-virtual"><scope>Individual</scope><name>CrossoverAttributes</name></member>
+      <member refid="class_individual_1ab70b5e71b329b22977d5f17c5fc93cb0" prot="private" virt="non-virtual"><scope>Individual</scope><name>CrossoverPoint</name></member>
+      <member refid="class_individual_1a8daea02958bdf86b68fc063556a12a56" prot="public" virt="non-virtual"><scope>Individual</scope><name>Dodge</name></member>
+      <member refid="class_individual_1a07be20a3af23e591907f5bd0591b5dc8" prot="private" virt="non-virtual"><scope>Individual</scope><name>dodge</name></member>
+      <member refid="class_individual_1abb420cd0ce70375b52b2e3a5c27c3368" prot="private" virt="non-virtual"><scope>Individual</scope><name>dodgeAI</name></member>
+      <member refid="class_individual_1a181036de302ffada5875fc814364577e" prot="private" virt="non-virtual"><scope>Individual</scope><name>enemyShip</name></member>
+      <member refid="class_individual_1a473dd92ebe3c07db394d6bcd0bfcac93" prot="public" virt="non-virtual"><scope>Individual</scope><name>EnemyShip</name></member>
+      <member refid="class_individual_1a9ea56d7d13479becd3804f13dca75d77" prot="private" virt="non-virtual"><scope>Individual</scope><name>fitness</name></member>
+      <member refid="class_individual_1a5a4701f9a402fe64b8e3c24368e52101" prot="public" virt="non-virtual"><scope>Individual</scope><name>Fitness</name></member>
+      <member refid="class_individual_1a5d4fb02c8072b931ffde1a03afb26271" prot="public" virt="non-virtual"><scope>Individual</scope><name>GetAccuracy</name></member>
+      <member refid="class_individual_1a100f431028b5b9d385348fdb000e3b32" prot="public" virt="non-virtual"><scope>Individual</scope><name>GetNbShotsOnTarget</name></member>
+      <member refid="class_individual_1ae542e9759275736feb0c5f065d36bfd8" prot="public" virt="non-virtual"><scope>Individual</scope><name>Individual</name></member>
+      <member refid="class_individual_1a9ae7902f014f58e296bdd87083635756" prot="public" virt="non-virtual"><scope>Individual</scope><name>Individual</name></member>
+      <member refid="class_individual_1a5429be2ba79b3089c98bac739f693660" prot="private" virt="non-virtual"><scope>Individual</scope><name>item</name></member>
+      <member refid="class_individual_1ac7551473ef8d053170dba6810aa69187" prot="public" virt="non-virtual"><scope>Individual</scope><name>Lifetime</name></member>
+      <member refid="class_individual_1a568afafa685ca5a5c26214e6be1a14df" prot="private" virt="non-virtual"><scope>Individual</scope><name>lifetime</name></member>
+      <member refid="class_individual_1a1f8c48f4f40408ad76d0137f9d3b38c0" prot="public" virt="non-virtual"><scope>Individual</scope><name>LIFETIME_FUNC</name></member>
+      <member refid="class_individual_1af40ad69dad043da7061c07856b6f1457" prot="public" virt="non-virtual"><scope>Individual</scope><name>LifetimeFunc</name></member>
+      <member refid="class_individual_1adb55c9ec4a4012582a4c35b654db8f21" prot="public" virt="non-virtual"><scope>Individual</scope><name>MaxDodgeBound</name></member>
+      <member refid="class_individual_1a1a7484c161583b6db216ed47325e46de" prot="private" virt="non-virtual"><scope>Individual</scope><name>maxDodgeBound</name></member>
+      <member refid="class_individual_1a280784e76616e219c0b9428fd5d78744" prot="public" virt="non-virtual"><scope>Individual</scope><name>MaxDodgeTime</name></member>
+      <member refid="class_individual_1ae6a09912c0060fff79bd95dead535604" prot="private" virt="non-virtual"><scope>Individual</scope><name>maxDodgeTime</name></member>
+      <member refid="class_individual_1af7985d4dfe4001bc062d3dc8f778e5a5" prot="public" virt="non-virtual"><scope>Individual</scope><name>MaxDodgeTimeBound</name></member>
+      <member refid="class_individual_1a66fba6da7895f053a0e104a72baf488a" prot="private" virt="non-virtual"><scope>Individual</scope><name>maxDodgeTimeBound</name></member>
+      <member refid="class_individual_1a3c070a056ec4065fa27e52e17f5d1e0a" prot="private" virt="non-virtual"><scope>Individual</scope><name>maxDodgeWait</name></member>
+      <member refid="class_individual_1a625737f01684ea5a2bbe4f887582ee53" prot="public" virt="non-virtual"><scope>Individual</scope><name>MaxDodgeWait</name></member>
+      <member refid="class_individual_1a22ae950e01ef3055dd3cd15972e51770" prot="public" virt="non-virtual"><scope>Individual</scope><name>MaxDodgeWaitBound</name></member>
+      <member refid="class_individual_1a0eb7461783f6f104fde989a48798e544" prot="private" virt="non-virtual"><scope>Individual</scope><name>maxDodgeWaitBound</name></member>
+      <member refid="class_individual_1a0e7001fe9892bf459b0f5f7c6376acc6" prot="private" virt="non-virtual"><scope>Individual</scope><name>maxFireRate</name></member>
+      <member refid="class_individual_1ae94ddacbf2764ce8b1fb2fde1bc2d72c" prot="public" virt="non-virtual"><scope>Individual</scope><name>MaxFireRate</name></member>
+      <member refid="class_individual_1a1096694f11f7b9e729aeabbfe7097eaf" prot="public" virt="non-virtual"><scope>Individual</scope><name>MaxFireRateBound</name></member>
+      <member refid="class_individual_1aa981c9b3f959be4ef59d2c280d4b82c3" prot="private" virt="non-virtual"><scope>Individual</scope><name>maxFireRateBound</name></member>
+      <member refid="class_individual_1abad1b2b85eb811524940ea456452c550" prot="public" virt="non-virtual"><scope>Individual</scope><name>MaxSpeedBound</name></member>
+      <member refid="class_individual_1a80fb57c9c84603c6cdbcf5a7c4859a82" prot="private" virt="non-virtual"><scope>Individual</scope><name>maxSpeedBound</name></member>
+      <member refid="class_individual_1a6dc47b346e6cdd288773b44e6c0fc272" prot="public" virt="non-virtual"><scope>Individual</scope><name>MinDodgeBound</name></member>
+      <member refid="class_individual_1aa3ffe968be2140c573e6acd5174f9527" prot="private" virt="non-virtual"><scope>Individual</scope><name>minDodgeBound</name></member>
+      <member refid="class_individual_1ad5b02d49418b96acb978aeed30bd7149" prot="public" virt="non-virtual"><scope>Individual</scope><name>MinDodgeTime</name></member>
+      <member refid="class_individual_1a5f262026a4a3ba8d22f8c2fbd3bd4762" prot="private" virt="non-virtual"><scope>Individual</scope><name>minDodgeTime</name></member>
+      <member refid="class_individual_1ae3b13d55d1ba206fff541af02308c618" prot="public" virt="non-virtual"><scope>Individual</scope><name>MinDodgeTimeBound</name></member>
+      <member refid="class_individual_1ac9c437a68f1bbb91325622551782fa0f" prot="private" virt="non-virtual"><scope>Individual</scope><name>minDodgeTimeBound</name></member>
+      <member refid="class_individual_1af61b42078f68777b3ecf9cee2902af7a" prot="public" virt="non-virtual"><scope>Individual</scope><name>MinDodgeWait</name></member>
+      <member refid="class_individual_1ad09d5de9d0c0221da38423f12a4cad14" prot="private" virt="non-virtual"><scope>Individual</scope><name>minDodgeWait</name></member>
+      <member refid="class_individual_1a86b79a3255c7ea9ffa8c063c999cdc0a" prot="public" virt="non-virtual"><scope>Individual</scope><name>MinDodgeWaitBound</name></member>
+      <member refid="class_individual_1a37e4dd4a0303515881cec12c281cbc90" prot="private" virt="non-virtual"><scope>Individual</scope><name>minDodgeWaitBound</name></member>
+      <member refid="class_individual_1a6008f0e0726cb19b16d56f7eb21fcdc0" prot="private" virt="non-virtual"><scope>Individual</scope><name>minFireRate</name></member>
+      <member refid="class_individual_1acf1b957b3e4d0c36d76c07590047cc29" prot="public" virt="non-virtual"><scope>Individual</scope><name>MinFireRate</name></member>
+      <member refid="class_individual_1a45bb7b475e4b2537cdf888b9e1b13144" prot="public" virt="non-virtual"><scope>Individual</scope><name>MinFireRateBound</name></member>
+      <member refid="class_individual_1a325421da693fc8d3b170c677f39addba" prot="private" virt="non-virtual"><scope>Individual</scope><name>minFireRateBound</name></member>
+      <member refid="class_individual_1a9c742fb99f1d90eb029be42c1aefbfaa" prot="private" virt="non-virtual"><scope>Individual</scope><name>minSpeedBound</name></member>
+      <member refid="class_individual_1a78a3431b66eef67e58b6f4da5e1c8d63" prot="public" virt="non-virtual"><scope>Individual</scope><name>MinSpeedBound</name></member>
+      <member refid="class_individual_1ae0328e190c92d86f7d0d9e66553b6d32" prot="private" virt="non-virtual"><scope>Individual</scope><name>mover</name></member>
+      <member refid="class_individual_1a2b19324cd6e712330c4d1601c95dcffd" prot="public" virt="non-virtual"><scope>Individual</scope><name>MutateAttributes</name></member>
+      <member refid="class_individual_1a6bfcca4478e5e0d0d37acb5afd781314" prot="public" virt="non-virtual"><scope>Individual</scope><name>MUTATION_MULT</name></member>
+      <member refid="class_individual_1abc6086aff52dc765ead43e5c0421c1ee" prot="private" virt="non-virtual"><scope>Individual</scope><name>NB_ON_TARGET_FUNC</name></member>
+      <member refid="class_individual_1af2d68c02add2e5e553959003e8180a9d" prot="public" virt="non-virtual"><scope>Individual</scope><name>NbOnTargetFunc</name></member>
+      <member refid="class_individual_1a6669096694cc246094b26ca656b63d47" prot="private" virt="non-virtual"><scope>Individual</scope><name>nbShotsOnTarget</name></member>
+      <member refid="class_individual_1a75271d202126e53879bdb51a9fe65ef3" prot="public" virt="non-virtual"><scope>Individual</scope><name>RandomDodge</name></member>
+      <member refid="class_individual_1a108e7c67d55c334bcc885e8dc5bb740b" prot="public" virt="non-virtual"><scope>Individual</scope><name>RandomDodgeTime</name></member>
+      <member refid="class_individual_1a1ac91351958ff89363dac0c16612f07d" prot="public" virt="non-virtual"><scope>Individual</scope><name>RandomDodgeWait</name></member>
+      <member refid="class_individual_1ad6ad54b9dd02fcb02b5a11738585d41c" prot="public" virt="non-virtual"><scope>Individual</scope><name>RandomFireRate</name></member>
+      <member refid="class_individual_1ab66822b58148ba1507d2e27aff8676e7" prot="public" virt="non-virtual"><scope>Individual</scope><name>RandomVerticalSpeed</name></member>
+      <member refid="class_individual_1a31b0b7114a58803aba9e81b6650fd7cb" prot="public" virt="non-virtual"><scope>Individual</scope><name>SetDodge</name></member>
+      <member refid="class_individual_1aeff5fb1f9a1619c4fb2e880b6f62b311" prot="public" virt="non-virtual"><scope>Individual</scope><name>SetDodgeTimeRange</name></member>
+      <member refid="class_individual_1a31ca5e7277bc5f8cbe48bde294590095" prot="public" virt="non-virtual"><scope>Individual</scope><name>SetDodgeWaitRange</name></member>
+      <member refid="class_individual_1ab9a068a2aeac06fc33a22391dba7559a" prot="public" virt="non-virtual"><scope>Individual</scope><name>SetFireRateRange</name></member>
+      <member refid="class_individual_1aad9008e000af2bf09346be0ca9258116" prot="public" virt="non-virtual"><scope>Individual</scope><name>SetRandomAttributes</name></member>
+      <member refid="class_individual_1a106bf8917e8f55075f01e39e9c7e2264" prot="public" virt="non-virtual"><scope>Individual</scope><name>SetSpeed</name></member>
+      <member refid="class_individual_1a02b01142acd16f32fd2faf1864b3627f" prot="public" virt="non-virtual"><scope>Individual</scope><name>Speed</name></member>
+      <member refid="class_individual_1a7f051c19849cead5ba3e37fe5fa27d0f" prot="private" virt="non-virtual"><scope>Individual</scope><name>speed</name></member>
+      <member refid="class_individual_1aab79ee2ef4e45612d38696315ded9f66" prot="private" virt="non-virtual"><scope>Individual</scope><name>SURVIVAL_FUNC</name></member>
+      <member refid="class_individual_1abf304201269d32a0f40d9a25ce98d8db" prot="public" virt="non-virtual"><scope>Individual</scope><name>SurvivalFunc</name></member>
+      <member refid="class_individual_1ab1ec189d9d07c07546d2f8719f49f8b2" prot="private" virt="non-virtual"><scope>Individual</scope><name>survived</name></member>
+      <member refid="class_individual_1ad4b03453693cb1ab8185c6a4335e86bd" prot="public" virt="non-virtual"><scope>Individual</scope><name>Survived</name></member>
+      <member refid="class_individual_1a5217e0c273989dbe5997475dad888cbe" prot="private" virt="non-virtual"><scope>Individual</scope><name>weaponController</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

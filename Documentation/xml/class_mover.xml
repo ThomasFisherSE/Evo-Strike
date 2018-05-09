@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_mover" kind="class" language="C#" prot="public">
+    <compoundname>Mover</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_mover_1a42234f06ee744991fac244af8fc526b9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Mover.speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Mover.cs" line="6" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Mover.cs" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_mover_1a80eb1fc6933e0505f5d278268ccc80b2" prot="private" static="no" mutable="no">
+        <type>Rigidbody</type>
+        <definition>Rigidbody Mover.rb</definition>
+        <argsstring></argsstring>
+        <name>rb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Mover.cs" line="8" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Mover.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_mover_1a7e9f8bdd8d341cb8bca462b9391c2cb2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Mover.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>Set properties that should be set during run-time. Set the velocity of the attached object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Mover.cs" line="14" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Mover.cs" bodystart="14" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_mover_1a7a75a74f9bf6f20d3938c37bb95d8068" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Mover.SetSpeed</definition>
+        <argsstring>(float s)</argsstring>
+        <name>SetSpeed</name>
+        <param>
+          <type>float</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Set a new speed value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new speed value.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Mover.cs" line="24" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Mover.cs" bodystart="24" bodyend="30"/>
+        <referencedby refid="class_individual_1a106bf8917e8f55075f01e39e9c7e2264" compoundref="_individual_8cs" startline="351" endline="355">Individual.SetSpeed</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="47">
+        <label>Mover</label>
+        <link refid="class_mover"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="49">
+        <label>Mover</label>
+        <link refid="class_mover"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Mover.cs" line="5" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Mover.cs" bodystart="5" bodyend="31"/>
+    <listofallmembers>
+      <member refid="class_mover_1a80eb1fc6933e0505f5d278268ccc80b2" prot="private" virt="non-virtual"><scope>Mover</scope><name>rb</name></member>
+      <member refid="class_mover_1a7a75a74f9bf6f20d3938c37bb95d8068" prot="public" virt="non-virtual"><scope>Mover</scope><name>SetSpeed</name></member>
+      <member refid="class_mover_1a42234f06ee744991fac244af8fc526b9" prot="public" virt="non-virtual"><scope>Mover</scope><name>speed</name></member>
+      <member refid="class_mover_1a7e9f8bdd8d341cb8bca462b9391c2cb2" prot="private" virt="non-virtual"><scope>Mover</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

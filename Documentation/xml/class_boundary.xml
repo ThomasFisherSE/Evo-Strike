@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_boundary" kind="class" language="C#" prot="public">
+    <compoundname>Boundary</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_boundary_1a69e0d35c4e1591bffb1e08303f927a42" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Boundary.zMin</definition>
+        <argsstring></argsstring>
+        <name>zMin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" line="8" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_boundary_1a34a127a10b5b0cfe43345643ca65d437" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Boundary.zMax</definition>
+        <argsstring></argsstring>
+        <name>zMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" line="8" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_boundary_1aec99ac1f07d618a9490f8c9a2af5fddf" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Boundary.xMin</definition>
+        <argsstring></argsstring>
+        <name>xMin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" line="9" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_boundary_1aa4572ed0b32067b1748ffb3d64ede21f" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Boundary.xMax</definition>
+        <argsstring></argsstring>
+        <name>xMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" line="9" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_boundary_1aad22a17a16d35571a86617ec1463a835" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Boundary.GetXMin</definition>
+        <argsstring>()</argsstring>
+        <name>GetXMin</name>
+        <briefdescription>
+<para>Accessor for the minimum x value of the boundary. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The value of xMin.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" line="15" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" bodystart="15" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_boundary_1af72d98e6c2b86e0237901a833d8f77b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Boundary.GetXMax</definition>
+        <argsstring>()</argsstring>
+        <name>GetXMax</name>
+        <briefdescription>
+<para>Accessor for the maximum x value of the boundary. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The value of xMax.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" line="24" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_boundary_1a5f3b05328e51a92d0fa7ddc5556b6c33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Boundary.SetX</definition>
+        <argsstring>(float min, float max)</argsstring>
+        <name>SetX</name>
+        <param>
+          <type>float</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+<para>Set a new range in x for the boundary. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new minimum x value of the boundary.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new maximum x value of the boundary.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" line="34" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" bodystart="34" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="9">
+        <label>Boundary</label>
+        <link refid="class_boundary"/>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" line="7" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/PlayerController.cs" bodystart="6" bodyend="39"/>
+    <listofallmembers>
+      <member refid="class_boundary_1af72d98e6c2b86e0237901a833d8f77b5" prot="public" virt="non-virtual"><scope>Boundary</scope><name>GetXMax</name></member>
+      <member refid="class_boundary_1aad22a17a16d35571a86617ec1463a835" prot="public" virt="non-virtual"><scope>Boundary</scope><name>GetXMin</name></member>
+      <member refid="class_boundary_1a5f3b05328e51a92d0fa7ddc5556b6c33" prot="public" virt="non-virtual"><scope>Boundary</scope><name>SetX</name></member>
+      <member refid="class_boundary_1aa4572ed0b32067b1748ffb3d64ede21f" prot="private" virt="non-virtual"><scope>Boundary</scope><name>xMax</name></member>
+      <member refid="class_boundary_1aec99ac1f07d618a9490f8c9a2af5fddf" prot="private" virt="non-virtual"><scope>Boundary</scope><name>xMin</name></member>
+      <member refid="class_boundary_1a34a127a10b5b0cfe43345643ca65d437" prot="private" virt="non-virtual"><scope>Boundary</scope><name>zMax</name></member>
+      <member refid="class_boundary_1a69e0d35c4e1591bffb1e08303f927a42" prot="public" virt="non-virtual"><scope>Boundary</scope><name>zMin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

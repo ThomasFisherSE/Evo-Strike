@@ -1,0 +1,5 @@
+<map id="Individual.RandomDodgeWait" name="Individual.RandomDodgeWait">
+<area shape="rect" id="node2" href="$class_individual.html#a2b19324cd6e712330c4d1601c95dcffd" title="Mutate the attributes of an individual " alt="" coords="258,5,433,32"/>
+<area shape="rect" id="node3" href="$class_individual.html#aad9008e000af2bf09346be0ca9258116" title="Set attributes randomly. " alt="" coords="244,56,447,83"/>
+<area shape="rect" id="node4" href="$class_individual.html#ae542e9759275736feb0c5f065d36bfd8" title="Create an individual from an enemy ship prefab. " alt="" coords="495,56,625,83"/>
+</map>

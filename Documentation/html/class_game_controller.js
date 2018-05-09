@@ -1,0 +1,25 @@
+var class_game_controller =
+[
+    [ "AddScore", "class_game_controller.html#a313aab47cf055f36c3d0ae5de701a00e", null ],
+    [ "FadeText", "class_game_controller.html#ae866cbc811f8f18f599b2f238d8e086f", null ],
+    [ "GameOver", "class_game_controller.html#a867b359e465ba013eec7f1ee03b75118", null ],
+    [ "UpdateHealth", "class_game_controller.html#a956f2ce4aae2c7f4f4bd17a2b7e01af8", null ],
+    [ "addScoreText", "class_game_controller.html#ac92cdd0620c3036f2e9452c62c9035f2", null ],
+    [ "gameOverText", "class_game_controller.html#aba4351ee1c41d1af6c44c2cb106a4b67", null ],
+    [ "hazardCount", "class_game_controller.html#a973f0e7d25e3b260cf0aa51730584ada", null ],
+    [ "hazards", "class_game_controller.html#abc7b85296bb959ed30d3861a36f5580d", null ],
+    [ "healthText", "class_game_controller.html#a0969244bf06abfdb01f50f380979a086", null ],
+    [ "powerUpChance", "class_game_controller.html#a8ba28d6303a0160af8934acd78201cb6", null ],
+    [ "powerUps", "class_game_controller.html#ad75a108cba99e7ddf43b9dc06ed0bce2", null ],
+    [ "restartText", "class_game_controller.html#a68dea27fd0de9061889d2664697af64f", null ],
+    [ "scoreFadeTime", "class_game_controller.html#a2364f485d5cc3b7c98c2beca308baac7", null ],
+    [ "scoreText", "class_game_controller.html#ad59d43bc8b212847eaae1e877d8c1a31", null ],
+    [ "spawnValues", "class_game_controller.html#a5e4f56c23896d4b528da579f93335896", null ],
+    [ "spawnWait", "class_game_controller.html#a27c91a14de3982813ad3d8245d0134d7", null ],
+    [ "startWait", "class_game_controller.html#a9b6f96c29d3ee0f2c692c30ed2b12835", null ],
+    [ "waveText", "class_game_controller.html#a2b41479a4e6d411f57b3d65ce48d9a1e", null ],
+    [ "waveWait", "class_game_controller.html#ad210270b367c1c439d35e8177d989019", null ],
+    [ "MaxXSpawn", "class_game_controller.html#a748b86a151833049c4c9a5e9d8487f16", null ],
+    [ "MinXSpawn", "class_game_controller.html#ad358e1f216faf442ea6115ce732563d0", null ],
+    [ "WaveNumber", "class_game_controller.html#a92b2683fc2816c409a0f727914607e36", null ]
+];

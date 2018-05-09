@@ -1,0 +1,25 @@
+var annotated_dup =
+[
+    [ "AudioController", "class_audio_controller.html", null ],
+    [ "BGScroller", "class_b_g_scroller.html", "class_b_g_scroller" ],
+    [ "Boundary", "class_boundary.html", "class_boundary" ],
+    [ "CameraController", "class_camera_controller.html", "class_camera_controller" ],
+    [ "CameraFollow", "class_camera_follow.html", "class_camera_follow" ],
+    [ "DestroyByBoundary", "class_destroy_by_boundary.html", null ],
+    [ "DestroyByContact", "class_destroy_by_contact.html", "class_destroy_by_contact" ],
+    [ "DestroyByTime", "class_destroy_by_time.html", "class_destroy_by_time" ],
+    [ "DodgeAI", "class_dodge_a_i.html", "class_dodge_a_i" ],
+    [ "EvolutionController", "class_evolution_controller.html", "class_evolution_controller" ],
+    [ "GameController", "class_game_controller.html", "class_game_controller" ],
+    [ "GameSettings", "class_game_settings.html", "class_game_settings" ],
+    [ "Individual", "class_individual.html", "class_individual" ],
+    [ "Mover", "class_mover.html", "class_mover" ],
+    [ "ObjectPooler", "class_object_pooler.html", "class_object_pooler" ],
+    [ "PickUpPowerUp", "class_pick_up_power_up.html", "class_pick_up_power_up" ],
+    [ "PlayerController", "class_player_controller.html", "class_player_controller" ],
+    [ "Projectile", "class_projectile.html", "class_projectile" ],
+    [ "RandomRotator", "class_random_rotator.html", "class_random_rotator" ],
+    [ "SceneLoader", "class_scene_loader.html", "class_scene_loader" ],
+    [ "SettingsManager", "class_settings_manager.html", "class_settings_manager" ],
+    [ "WeaponController", "class_weapon_controller.html", "class_weapon_controller" ]
+];

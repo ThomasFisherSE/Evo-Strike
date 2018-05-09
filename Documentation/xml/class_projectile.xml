@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_projectile" kind="class" language="C#" prot="public">
+    <compoundname>Projectile</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_projectile_1a08b05673dcd2da844c04ad812f04b3aa" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Projectile.speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" line="7" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_projectile_1a158c4e21385fa618230014ba575bcce4" prot="public" static="no" mutable="no">
+        <type>Transform</type>
+        <definition>Transform Projectile.target</definition>
+        <argsstring></argsstring>
+        <name>target</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" line="9" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_projectile_1a4596d92f9f87914e71e586be061cc980" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Projectile.onTargetDistance</definition>
+        <argsstring></argsstring>
+        <name>onTargetDistance</name>
+        <initializer>= 5.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" line="11" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_projectile_1afefd187c90c8062e3736f56833e2c3a6" prot="private" static="no" mutable="no">
+        <type>Rigidbody</type>
+        <definition>Rigidbody Projectile.rb</definition>
+        <argsstring></argsstring>
+        <name>rb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" line="13" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_projectile_1a233b67fa6608a122a718e35446395a7f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_weapon_controller" kindref="compound">WeaponController</ref></type>
+        <definition>WeaponController Projectile.weaponController</definition>
+        <argsstring></argsstring>
+        <name>weaponController</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" line="14" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_projectile_1a486f556f109327a2bce3418d301d78fb" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Projectile.closestDistance</definition>
+        <argsstring></argsstring>
+        <name>closestDistance</name>
+        <initializer>= 999f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" line="16" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_projectile_1ac7e861ae0d04774ce1ce5832dcd2281f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Projectile.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>Initialize properties that should be set during run-time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" line="21" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" bodystart="21" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_projectile_1a003e4365f5c68afdebfbefa39a3fd7bc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Projectile.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <briefdescription>
+<para>Update the closest distance of the projectile to its target. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" line="30" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" bodystart="30" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_projectile_1ae06356f84161bee1020a1496e0c6f0a5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Projectile.OnDestroy</definition>
+        <argsstring>()</argsstring>
+        <name>OnDestroy</name>
+        <briefdescription>
+<para>Check if the shot was on target. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" line="64" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" bodystart="64" bodyend="71"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_projectile_1aa970af64aceeb97c400baf2641959255" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Projectile.SetWeaponController</definition>
+        <argsstring>(WeaponController wc)</argsstring>
+        <name>SetWeaponController</name>
+        <param>
+          <type><ref refid="class_weapon_controller" kindref="compound">WeaponController</ref></type>
+          <declname>wc</declname>
+        </param>
+        <briefdescription>
+<para>Set a new weapon controller. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>wc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new weapon controller.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" line="44" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_projectile_1a60cfef3d08ba24bcb0663ca8f15e201c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Projectile.SetSpeed</definition>
+        <argsstring>(float s)</argsstring>
+        <name>SetSpeed</name>
+        <param>
+          <type>float</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Set a new speed value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new speed value.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" line="53" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" bodystart="53" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="64">
+        <label>Projectile</label>
+        <link refid="class_projectile"/>
+        <childnode refid="65" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="66">
+        <label>Projectile</label>
+        <link refid="class_projectile"/>
+        <childnode refid="67" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" line="5" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/Projectile.cs" bodystart="5" bodyend="72"/>
+    <listofallmembers>
+      <member refid="class_projectile_1a486f556f109327a2bce3418d301d78fb" prot="private" virt="non-virtual"><scope>Projectile</scope><name>closestDistance</name></member>
+      <member refid="class_projectile_1ae06356f84161bee1020a1496e0c6f0a5" prot="private" virt="non-virtual"><scope>Projectile</scope><name>OnDestroy</name></member>
+      <member refid="class_projectile_1a4596d92f9f87914e71e586be061cc980" prot="public" virt="non-virtual"><scope>Projectile</scope><name>onTargetDistance</name></member>
+      <member refid="class_projectile_1afefd187c90c8062e3736f56833e2c3a6" prot="private" virt="non-virtual"><scope>Projectile</scope><name>rb</name></member>
+      <member refid="class_projectile_1a60cfef3d08ba24bcb0663ca8f15e201c" prot="public" virt="non-virtual"><scope>Projectile</scope><name>SetSpeed</name></member>
+      <member refid="class_projectile_1aa970af64aceeb97c400baf2641959255" prot="public" virt="non-virtual"><scope>Projectile</scope><name>SetWeaponController</name></member>
+      <member refid="class_projectile_1a08b05673dcd2da844c04ad812f04b3aa" prot="public" virt="non-virtual"><scope>Projectile</scope><name>speed</name></member>
+      <member refid="class_projectile_1ac7e861ae0d04774ce1ce5832dcd2281f" prot="private" virt="non-virtual"><scope>Projectile</scope><name>Start</name></member>
+      <member refid="class_projectile_1a158c4e21385fa618230014ba575bcce4" prot="public" virt="non-virtual"><scope>Projectile</scope><name>target</name></member>
+      <member refid="class_projectile_1a003e4365f5c68afdebfbefa39a3fd7bc" prot="private" virt="non-virtual"><scope>Projectile</scope><name>Update</name></member>
+      <member refid="class_projectile_1a233b67fa6608a122a718e35446395a7f" prot="private" virt="non-virtual"><scope>Projectile</scope><name>weaponController</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

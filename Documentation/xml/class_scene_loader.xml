@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_scene_loader" kind="class" language="C#" prot="public">
+    <compoundname>SceneLoader</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_scene_loader_1aaf7c66c5998e289756c09cca08239e9f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneLoader.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>Initialize properties that should be set during run-time. Set the scene volume to the player&apos;s chosen volume. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SceneLoader.cs" line="12" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SceneLoader.cs" bodystart="12" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_scene_loader_1a2cb6f7a1f1336315a297adcac195c05a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneLoader.LoadScene</definition>
+        <argsstring>(int level)</argsstring>
+        <name>LoadScene</name>
+        <param>
+          <type>int</type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>Load a scene. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the scene to load.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SceneLoader.cs" line="26" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SceneLoader.cs" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_scene_loader_1a6e71b5a31f735d3187e8375383bdfe5d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneLoader.QuitGame</definition>
+        <argsstring>()</argsstring>
+        <name>QuitGame</name>
+        <briefdescription>
+<para>Exit the game. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SceneLoader.cs" line="34" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SceneLoader.cs" bodystart="34" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="72">
+        <label>SceneLoader</label>
+        <link refid="class_scene_loader"/>
+        <childnode refid="73" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="74">
+        <label>SceneLoader</label>
+        <link refid="class_scene_loader"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SceneLoader.cs" line="6" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/SceneLoader.cs" bodystart="6" bodyend="42"/>
+    <listofallmembers>
+      <member refid="class_scene_loader_1a2cb6f7a1f1336315a297adcac195c05a" prot="public" virt="non-virtual"><scope>SceneLoader</scope><name>LoadScene</name></member>
+      <member refid="class_scene_loader_1a6e71b5a31f735d3187e8375383bdfe5d" prot="public" virt="non-virtual"><scope>SceneLoader</scope><name>QuitGame</name></member>
+      <member refid="class_scene_loader_1aaf7c66c5998e289756c09cca08239e9f" prot="private" virt="non-virtual"><scope>SceneLoader</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

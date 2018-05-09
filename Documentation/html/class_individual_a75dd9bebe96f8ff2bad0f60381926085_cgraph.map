@@ -1,0 +1,11 @@
+<map id="Individual.CalculateFitness" name="Individual.CalculateFitness">
+<area shape="rect" id="node2" href="$class_individual.html#af40ad69dad043da7061c07856b6f1457" title="Calculate fitness based on lifetime. " alt="" coords="255,5,407,32"/>
+<area shape="rect" id="node3" href="$class_individual.html#abf304201269d32a0f40d9a25ce98d8db" title="Calculate fitness based on survival. " alt="" coords="256,56,407,83"/>
+<area shape="rect" id="node4" href="$class_individual.html#ae29881ad8bfa0ec8db58c650ac33eaf0" title="Calculate fitness based on accuracy. " alt="" coords="250,107,413,133"/>
+<area shape="rect" id="node7" href="$class_individual.html#af2d68c02add2e5e553959003e8180a9d" title="Calculate fitness based on the number of shots on target. " alt="" coords="243,208,419,235"/>
+<area shape="rect" id="node10" href="$class_individual.html#ae28e091935420b6ab5ccda6ce24e1396" title="Calculate fitness based on lifetime and accuracy. " alt="" coords="228,157,435,184"/>
+<area shape="rect" id="node5" href="$class_individual.html#a5d4fb02c8072b931ffde1a03afb26271" title="Get the accuracy of the individual. " alt="" coords="507,128,661,155"/>
+<area shape="rect" id="node6" href="$class_weapon_controller.html#a32d07eb45dc1079a4c82bae18a57f493" title="Accessor for the accuracy attribute. " alt="" coords="733,128,939,155"/>
+<area shape="rect" id="node8" href="$class_individual.html#a100f431028b5b9d385348fdb000e3b32" title="Get the number of shots on target the individual made. " alt="" coords="483,208,685,235"/>
+<area shape="rect" id="node9" href="$class_weapon_controller.html#aab88ffc7b720e10dce55b93dec090297" title="Accessor for the nbShotsOnTarget attribute. " alt="" coords="736,201,936,242"/>
+</map>

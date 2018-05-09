@@ -1,0 +1,7 @@
+<map id="Individual.SetFireRateRange" name="Individual.SetFireRateRange">
+<area shape="rect" id="node2" href="$class_individual.html#a874acf4e26980a4e97fe5301a5c019a8" title="Perform crossover between two parents, keeping attributes within set bounds. " alt="" coords="237,5,428,32"/>
+<area shape="rect" id="node3" href="$class_individual.html#ad6ad54b9dd02fcb02b5a11738585d41c" title="Set fire rate randomly within a range. " alt="" coords="245,56,420,83"/>
+<area shape="rect" id="node4" href="$class_individual.html#a2b19324cd6e712330c4d1601c95dcffd" title="Mutate the attributes of an individual " alt="" coords="490,31,665,57"/>
+<area shape="rect" id="node5" href="$class_individual.html#aad9008e000af2bf09346be0ca9258116" title="Set attributes randomly. " alt="" coords="476,81,679,108"/>
+<area shape="rect" id="node6" href="$class_individual.html#ae542e9759275736feb0c5f065d36bfd8" title="Create an individual from an enemy ship prefab. " alt="" coords="727,81,857,108"/>
+</map>

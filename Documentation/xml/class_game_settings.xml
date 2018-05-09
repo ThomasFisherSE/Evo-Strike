@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_game_settings" kind="class" language="C#" prot="public">
+    <compoundname>GameSettings</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_game_settings_1a04d31e94fa2b8f63162fa6665693185c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameSettings.textureQuality</definition>
+        <argsstring></argsstring>
+        <name>textureQuality</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameSettings.cs" line="5" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameSettings.cs" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_settings_1a4bb98b524482d324a8a998378c0cbfc5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameSettings.antiAliasing</definition>
+        <argsstring></argsstring>
+        <name>antiAliasing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameSettings.cs" line="6" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameSettings.cs" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_settings_1a9a7ad0eaf12caa2ab5669a261bc29a6f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameSettings.vSync</definition>
+        <argsstring></argsstring>
+        <name>vSync</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameSettings.cs" line="7" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameSettings.cs" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_settings_1ae8b3f7d7c601c87a936146420ed12ee1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameSettings.resolutionIndex</definition>
+        <argsstring></argsstring>
+        <name>resolutionIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameSettings.cs" line="8" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameSettings.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_settings_1a34b5a36a0be6ded2b302ebc0f818401c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GameSettings.fullscreen</definition>
+        <argsstring></argsstring>
+        <name>fullscreen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameSettings.cs" line="9" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameSettings.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_settings_1a859eadc59901c35d0e6621f5a7d8e5a2" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GameSettings.globalVolume</definition>
+        <argsstring></argsstring>
+        <name>globalVolume</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameSettings.cs" line="10" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameSettings.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Handles the game settings. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="44">
+        <label>GameSettings</label>
+        <link refid="class_game_settings"/>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameSettings.cs" line="4" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/GameSettings.cs" bodystart="4" bodyend="11"/>
+    <listofallmembers>
+      <member refid="class_game_settings_1a4bb98b524482d324a8a998378c0cbfc5" prot="public" virt="non-virtual"><scope>GameSettings</scope><name>antiAliasing</name></member>
+      <member refid="class_game_settings_1a34b5a36a0be6ded2b302ebc0f818401c" prot="public" virt="non-virtual"><scope>GameSettings</scope><name>fullscreen</name></member>
+      <member refid="class_game_settings_1a859eadc59901c35d0e6621f5a7d8e5a2" prot="public" virt="non-virtual"><scope>GameSettings</scope><name>globalVolume</name></member>
+      <member refid="class_game_settings_1ae8b3f7d7c601c87a936146420ed12ee1" prot="public" virt="non-virtual"><scope>GameSettings</scope><name>resolutionIndex</name></member>
+      <member refid="class_game_settings_1a04d31e94fa2b8f63162fa6665693185c" prot="public" virt="non-virtual"><scope>GameSettings</scope><name>textureQuality</name></member>
+      <member refid="class_game_settings_1a9a7ad0eaf12caa2ab5669a261bc29a6f" prot="public" virt="non-virtual"><scope>GameSettings</scope><name>vSync</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,184 @@
+\hypertarget{class_evolution_controller}{}\section{Evolution\+Controller Class Reference}
+\label{class_evolution_controller}\index{Evolution\+Controller@{Evolution\+Controller}}
+
+
+Inheritance diagram for Evolution\+Controller\+:
+% FIG 0
+
+
+Collaboration diagram for Evolution\+Controller\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_evolution_controller_a1f5c6f777133971fb18af4e032c20ab1}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Prepare attributes which need to be set at run-\/time, and write the header of the statistics file. \end{DoxyCompactList}\item 
+I\+Enumerator \mbox{\hyperlink{class_evolution_controller_a7882ed1ac17cf9cb79a8559c3fa47676}{Spawn\+Initial\+Population}} ()
+\begin{DoxyCompactList}\small\item\em Spawn the initial population of enemies. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_evolution_controller_a07a968a7b94e9afd6fa0dd6755b6d07c}{Add\+Completed\+Enemy}} (Game\+Object enemy, bool survived\+Wave)
+\begin{DoxyCompactList}\small\item\em Mark that an enemy has completed the wave (whether it survived or not). Use this to check if the wave is complete (all enemies completed the wave). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_evolution_controller_ac65df1af1e9cdf179606f205e8f046f0}{Next\+Generation}} ()
+\begin{DoxyCompactList}\small\item\em Start the next generation of enemies. \end{DoxyCompactList}\item 
+I\+Enumerator \mbox{\hyperlink{class_evolution_controller_a56b57730a8b4707ffe1c8b8053871a84}{Display\+Most\+Powerful\+Enemy}} ()
+\begin{DoxyCompactList}\small\item\em Display the most powerful enemy panel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_ada8a8ec6761c7ea18f189df1e04363b6}\label{class_evolution_controller_ada8a8ec6761c7ea18f189df1e04363b6}} 
+int {\bfseries population\+Size}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_ad82c4809cb4a13f28075aa4790e7f9a1}\label{class_evolution_controller_ad82c4809cb4a13f28075aa4790e7f9a1}} 
+float {\bfseries mutation\+Rate}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_a33b0f4219444033d4eb774c0157f9482}\label{class_evolution_controller_a33b0f4219444033d4eb774c0157f9482}} 
+float {\bfseries crossover\+Rate}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_a1fcf72c71aa6a22df6e6e1560cc5bf9f}\label{class_evolution_controller_a1fcf72c71aa6a22df6e6e1560cc5bf9f}} 
+float {\bfseries spawn\+Wait}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_a6bd06587ebfa42a6140c4eb19e502635}\label{class_evolution_controller_a6bd06587ebfa42a6140c4eb19e502635}} 
+float {\bfseries enemy\+Stats\+Wait}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_aecc61fd2861b5d3ec6ccdcf7c577c3ca}\label{class_evolution_controller_aecc61fd2861b5d3ec6ccdcf7c577c3ca}} 
+Game\+Object {\bfseries enemy\+Ship\+Prefab}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_af8a4c642db3742e8d6481ffcbe84ba2e}\label{class_evolution_controller_af8a4c642db3742e8d6481ffcbe84ba2e}} 
+Text {\bfseries enemy\+Stats\+Title\+Text}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_a4b17bfe9a4d2ce96ef7247a72974fe88}\label{class_evolution_controller_a4b17bfe9a4d2ce96ef7247a72974fe88}} 
+Text {\bfseries speed\+Text}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_a0edadfd98d38cc69a7dd506e65f8f97f}\label{class_evolution_controller_a0edadfd98d38cc69a7dd506e65f8f97f}} 
+Text {\bfseries fire\+Rate\+Text}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_af795d5ac3b55058fe65db8ae6c4ab9f5}\label{class_evolution_controller_af795d5ac3b55058fe65db8ae6c4ab9f5}} 
+Text {\bfseries dodge\+Text}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_a21fc0e733ee44d2885d7e00b22f8460a}\label{class_evolution_controller_a21fc0e733ee44d2885d7e00b22f8460a}} 
+Text {\bfseries dodge\+Frequency\+Text}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_a50f68dee9f616c26995473fc6a4de63f}\label{class_evolution_controller_a50f68dee9f616c26995473fc6a4de63f}} 
+Text {\bfseries time\+Alive\+Text}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_a69190de729e5d8eef1d1cf46de2bc152}\label{class_evolution_controller_a69190de729e5d8eef1d1cf46de2bc152}} 
+Text {\bfseries survived\+Text}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_a7532ecd157f47efa09e365c868289676}\label{class_evolution_controller_a7532ecd157f47efa09e365c868289676}} 
+Text {\bfseries accuracy\+Text}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_a17182a83179f115f9708381d9b3d5ce9}\label{class_evolution_controller_a17182a83179f115f9708381d9b3d5ce9}} 
+Text {\bfseries shots\+On\+Target\+Text}
+\item 
+\mbox{\Hypertarget{class_evolution_controller_a0b18581ce864c56f877294da1f28e2b9}\label{class_evolution_controller_a0b18581ce864c56f877294da1f28e2b9}} 
+Game\+Object {\bfseries stats\+Panel}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_evolution_controller_a1649ff1641add0d5982e8eec77dc195d}{Wave\+Complete}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor and mutator for wave\+Complete attribute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_evolution_controller_a07a968a7b94e9afd6fa0dd6755b6d07c}\label{class_evolution_controller_a07a968a7b94e9afd6fa0dd6755b6d07c}} 
+\index{Evolution\+Controller@{Evolution\+Controller}!Add\+Completed\+Enemy@{Add\+Completed\+Enemy}}
+\index{Add\+Completed\+Enemy@{Add\+Completed\+Enemy}!Evolution\+Controller@{Evolution\+Controller}}
+\subsubsection{\texorpdfstring{Add\+Completed\+Enemy()}{AddCompletedEnemy()}}
+{\footnotesize\ttfamily void Evolution\+Controller.\+Add\+Completed\+Enemy (\begin{DoxyParamCaption}\item[{Game\+Object}]{enemy,  }\item[{bool}]{survived\+Wave }\end{DoxyParamCaption})}
+
+
+
+Mark that an enemy has completed the wave (whether it survived or not). Use this to check if the wave is complete (all enemies completed the wave). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy} & The enemy that has completed the wave.\\
+\hline
+{\em survived\+Wave} & Whether or not the enemy survived.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_evolution_controller_a56b57730a8b4707ffe1c8b8053871a84}\label{class_evolution_controller_a56b57730a8b4707ffe1c8b8053871a84}} 
+\index{Evolution\+Controller@{Evolution\+Controller}!Display\+Most\+Powerful\+Enemy@{Display\+Most\+Powerful\+Enemy}}
+\index{Display\+Most\+Powerful\+Enemy@{Display\+Most\+Powerful\+Enemy}!Evolution\+Controller@{Evolution\+Controller}}
+\subsubsection{\texorpdfstring{Display\+Most\+Powerful\+Enemy()}{DisplayMostPowerfulEnemy()}}
+{\footnotesize\ttfamily I\+Enumerator Evolution\+Controller.\+Display\+Most\+Powerful\+Enemy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Display the most powerful enemy panel. 
+
+\begin{DoxyReturn}{Returns}
+A Wait\+For\+Seconds I\+Enumerator, allowing the coroutine to wait for some time.
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_evolution_controller_a56b57730a8b4707ffe1c8b8053871a84_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_evolution_controller_a56b57730a8b4707ffe1c8b8053871a84_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_evolution_controller_ac65df1af1e9cdf179606f205e8f046f0}\label{class_evolution_controller_ac65df1af1e9cdf179606f205e8f046f0}} 
+\index{Evolution\+Controller@{Evolution\+Controller}!Next\+Generation@{Next\+Generation}}
+\index{Next\+Generation@{Next\+Generation}!Evolution\+Controller@{Evolution\+Controller}}
+\subsubsection{\texorpdfstring{Next\+Generation()}{NextGeneration()}}
+{\footnotesize\ttfamily void Evolution\+Controller.\+Next\+Generation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start the next generation of enemies. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_evolution_controller_ac65df1af1e9cdf179606f205e8f046f0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_evolution_controller_a7882ed1ac17cf9cb79a8559c3fa47676}\label{class_evolution_controller_a7882ed1ac17cf9cb79a8559c3fa47676}} 
+\index{Evolution\+Controller@{Evolution\+Controller}!Spawn\+Initial\+Population@{Spawn\+Initial\+Population}}
+\index{Spawn\+Initial\+Population@{Spawn\+Initial\+Population}!Evolution\+Controller@{Evolution\+Controller}}
+\subsubsection{\texorpdfstring{Spawn\+Initial\+Population()}{SpawnInitialPopulation()}}
+{\footnotesize\ttfamily I\+Enumerator Evolution\+Controller.\+Spawn\+Initial\+Population (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Spawn the initial population of enemies. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_evolution_controller_a1f5c6f777133971fb18af4e032c20ab1}\label{class_evolution_controller_a1f5c6f777133971fb18af4e032c20ab1}} 
+\index{Evolution\+Controller@{Evolution\+Controller}!Start@{Start}}
+\index{Start@{Start}!Evolution\+Controller@{Evolution\+Controller}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Evolution\+Controller.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prepare attributes which need to be set at run-\/time, and write the header of the statistics file. 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_evolution_controller_a1649ff1641add0d5982e8eec77dc195d}\label{class_evolution_controller_a1649ff1641add0d5982e8eec77dc195d}} 
+\index{Evolution\+Controller@{Evolution\+Controller}!Wave\+Complete@{Wave\+Complete}}
+\index{Wave\+Complete@{Wave\+Complete}!Evolution\+Controller@{Evolution\+Controller}}
+\subsubsection{\texorpdfstring{Wave\+Complete}{WaveComplete}}
+{\footnotesize\ttfamily bool Evolution\+Controller.\+Wave\+Complete\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accessor and mutator for wave\+Complete attribute. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Y\+:/\+Users/\+Thomas Fisher/\+Documents/\+Git\+Hub/\+Evolutionary\+Game/\+Assets/\+Scripts/Evolution\+Controller.\+cs\end{DoxyCompactItemize}

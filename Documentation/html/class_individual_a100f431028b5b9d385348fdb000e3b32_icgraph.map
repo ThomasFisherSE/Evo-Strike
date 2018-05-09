@@ -1,0 +1,6 @@
+<map id="Individual.GetNbShotsOnTarget" name="Individual.GetNbShotsOnTarget">
+<area shape="rect" id="node2" href="$class_evolution_controller.html#a56b57730a8b4707ffe1c8b8053871a84" title="Display the most powerful enemy panel. " alt="" coords="256,5,432,47"/>
+<area shape="rect" id="node4" href="$class_individual.html#af2d68c02add2e5e553959003e8180a9d" title="Calculate fitness based on the number of shots on target. " alt="" coords="256,71,432,98"/>
+<area shape="rect" id="node3" href="$class_evolution_controller.html#ac65df1af1e9cdf179606f205e8f046f0" title="Start the next generation of enemies. " alt="" coords="487,5,647,47"/>
+<area shape="rect" id="node5" href="$class_individual.html#a75dd9bebe96f8ff2bad0f60381926085" title="Calculate the fitness of the individual. " alt="" coords="480,71,655,98"/>
+</map>

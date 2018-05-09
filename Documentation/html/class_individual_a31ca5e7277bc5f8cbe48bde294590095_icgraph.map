@@ -1,0 +1,7 @@
+<map id="Individual.SetDodgeWaitRange" name="Individual.SetDodgeWaitRange">
+<area shape="rect" id="node2" href="$class_individual.html#a874acf4e26980a4e97fe5301a5c019a8" title="Perform crossover between two parents, keeping attributes within set bounds. " alt="" coords="252,5,443,32"/>
+<area shape="rect" id="node3" href="$class_individual.html#a1ac91351958ff89363dac0c16612f07d" title="Set dodge wait randomly within a range. " alt="" coords="252,56,443,83"/>
+<area shape="rect" id="node4" href="$class_individual.html#a2b19324cd6e712330c4d1601c95dcffd" title="Mutate the attributes of an individual " alt="" coords="505,31,679,57"/>
+<area shape="rect" id="node5" href="$class_individual.html#aad9008e000af2bf09346be0ca9258116" title="Set attributes randomly. " alt="" coords="491,81,693,108"/>
+<area shape="rect" id="node6" href="$class_individual.html#ae542e9759275736feb0c5f065d36bfd8" title="Create an individual from an enemy ship prefab. " alt="" coords="741,81,872,108"/>
+</map>

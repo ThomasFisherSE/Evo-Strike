@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_dodge_a_i" kind="class" language="C#" prot="public">
+    <compoundname>DodgeAI</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_dodge_a_i_1a2d5aacdc97bac4dbac78f88fed0cc2d5" prot="private" static="no" mutable="no">
+        <type><ref refid="class_game_controller" kindref="compound">GameController</ref></type>
+        <definition>GameController DodgeAI.gc</definition>
+        <argsstring></argsstring>
+        <name>gc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="7" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dodge_a_i_1a6611dadb91ffa5e9c52e6241a8ff1e87" prot="private" static="no" mutable="no">
+        <type>Transform</type>
+        <definition>Transform DodgeAI.playerTransform</definition>
+        <argsstring></argsstring>
+        <name>playerTransform</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="17" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dodge_a_i_1a9f98a66751142d44c053d9653cbf60d3" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float DodgeAI.currentSpeed</definition>
+        <argsstring></argsstring>
+        <name>currentSpeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="18" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dodge_a_i_1a9fdc443a5c2b80fe22f58c98f8dd733d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float DodgeAI.targetPosition</definition>
+        <argsstring></argsstring>
+        <name>targetPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="19" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dodge_a_i_1a985cf5452412d29c906881ddcf9c95c1" prot="private" static="no" mutable="no">
+        <type>Rigidbody</type>
+        <definition>Rigidbody DodgeAI.rb</definition>
+        <argsstring></argsstring>
+        <name>rb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="20" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_dodge_a_i_1aedc8e94ad6e4332b1a7d1e796152cf0a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float DodgeAI.tilt</definition>
+        <argsstring></argsstring>
+        <name>tilt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="9" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dodge_a_i_1ae3a74fed41f444919b11ee60cace7514" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float DodgeAI.maxDodgeAmount</definition>
+        <argsstring></argsstring>
+        <name>maxDodgeAmount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="10" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dodge_a_i_1af0a4a558673576582d6bff31c2239489" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float DodgeAI.smoothing</definition>
+        <argsstring></argsstring>
+        <name>smoothing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="11" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dodge_a_i_1a6754c13da5310c168cf1c1c2a96a7e54" prot="public" static="no" mutable="no">
+        <type>Vector2</type>
+        <definition>Vector2 DodgeAI.startWait</definition>
+        <argsstring></argsstring>
+        <name>startWait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="12" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dodge_a_i_1ad1cc8757e5e23683a73d8510897fa277" prot="public" static="no" mutable="no">
+        <type>Vector2</type>
+        <definition>Vector2 DodgeAI.dodgeTime</definition>
+        <argsstring></argsstring>
+        <name>dodgeTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="13" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dodge_a_i_1a09b82accde63395584defbf0dc156460" prot="public" static="no" mutable="no">
+        <type>Vector2</type>
+        <definition>Vector2 DodgeAI.dodgeWait</definition>
+        <argsstring></argsstring>
+        <name>dodgeWait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="14" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dodge_a_i_1a1ebd76c246c5f81eb39cad7233a5840d" prot="public" static="no" mutable="no">
+        <type><ref refid="class_boundary" kindref="compound">Boundary</ref></type>
+        <definition>Boundary DodgeAI.boundary</definition>
+        <argsstring></argsstring>
+        <name>boundary</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="15" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_dodge_a_i_1a48a9eef733eb05a99b30cd1163fc4cee" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DodgeAI.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>Prepare properties that need to be set at run-time, and start the dodge algorithm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="25" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="25" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_dodge_a_i_1a4e2c44d9da1afb0fc37aeafd7dc60e05" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DodgeAI.FixedUpdate</definition>
+        <argsstring>()</argsstring>
+        <name>FixedUpdate</name>
+        <briefdescription>
+<para>Move towards the dodge target </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="40" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="40" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_dodge_a_i_1ab256f554f957ebdb753f2cee4b9bff30" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator DodgeAI.Dodge</definition>
+        <argsstring>()</argsstring>
+        <name>Dodge</name>
+        <briefdescription>
+<para>Set a random dodge target position </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A WaitForSeconds IENumerator, causing the coroutine to wait for some time.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="63" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="63" bodyend="91"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="31">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="30">
+        <label>DodgeAI</label>
+        <link refid="class_dodge_a_i"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="34">
+        <label>Boundary</label>
+        <link refid="class_boundary"/>
+      </node>
+      <node id="33">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="32">
+        <label>DodgeAI</label>
+        <link refid="class_dodge_a_i"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+        <childnode refid="34" relation="usage">
+          <edgelabel>+boundary</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" line="5" column="1" bodyfile="Y:/Users/Thomas Fisher/Documents/GitHub/EvolutionaryGame/Assets/Scripts/DodgeAI.cs" bodystart="5" bodyend="92"/>
+    <listofallmembers>
+      <member refid="class_dodge_a_i_1a1ebd76c246c5f81eb39cad7233a5840d" prot="public" virt="non-virtual"><scope>DodgeAI</scope><name>boundary</name></member>
+      <member refid="class_dodge_a_i_1a9f98a66751142d44c053d9653cbf60d3" prot="private" virt="non-virtual"><scope>DodgeAI</scope><name>currentSpeed</name></member>
+      <member refid="class_dodge_a_i_1ab256f554f957ebdb753f2cee4b9bff30" prot="private" virt="non-virtual"><scope>DodgeAI</scope><name>Dodge</name></member>
+      <member refid="class_dodge_a_i_1ad1cc8757e5e23683a73d8510897fa277" prot="public" virt="non-virtual"><scope>DodgeAI</scope><name>dodgeTime</name></member>
+      <member refid="class_dodge_a_i_1a09b82accde63395584defbf0dc156460" prot="public" virt="non-virtual"><scope>DodgeAI</scope><name>dodgeWait</name></member>
+      <member refid="class_dodge_a_i_1a4e2c44d9da1afb0fc37aeafd7dc60e05" prot="private" virt="non-virtual"><scope>DodgeAI</scope><name>FixedUpdate</name></member>
+      <member refid="class_dodge_a_i_1a2d5aacdc97bac4dbac78f88fed0cc2d5" prot="private" virt="non-virtual"><scope>DodgeAI</scope><name>gc</name></member>
+      <member refid="class_dodge_a_i_1ae3a74fed41f444919b11ee60cace7514" prot="public" virt="non-virtual"><scope>DodgeAI</scope><name>maxDodgeAmount</name></member>
+      <member refid="class_dodge_a_i_1a6611dadb91ffa5e9c52e6241a8ff1e87" prot="private" virt="non-virtual"><scope>DodgeAI</scope><name>playerTransform</name></member>
+      <member refid="class_dodge_a_i_1a985cf5452412d29c906881ddcf9c95c1" prot="private" virt="non-virtual"><scope>DodgeAI</scope><name>rb</name></member>
+      <member refid="class_dodge_a_i_1af0a4a558673576582d6bff31c2239489" prot="public" virt="non-virtual"><scope>DodgeAI</scope><name>smoothing</name></member>
+      <member refid="class_dodge_a_i_1a48a9eef733eb05a99b30cd1163fc4cee" prot="private" virt="non-virtual"><scope>DodgeAI</scope><name>Start</name></member>
+      <member refid="class_dodge_a_i_1a6754c13da5310c168cf1c1c2a96a7e54" prot="public" virt="non-virtual"><scope>DodgeAI</scope><name>startWait</name></member>
+      <member refid="class_dodge_a_i_1a9fdc443a5c2b80fe22f58c98f8dd733d" prot="private" virt="non-virtual"><scope>DodgeAI</scope><name>targetPosition</name></member>
+      <member refid="class_dodge_a_i_1aedc8e94ad6e4332b1a7d1e796152cf0a" prot="public" virt="non-virtual"><scope>DodgeAI</scope><name>tilt</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
