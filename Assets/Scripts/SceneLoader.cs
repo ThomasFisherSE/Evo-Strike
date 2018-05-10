@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
+    public const int GAME = 1;
+    private int currentIdx;
+    private static int prevIdx = 0;
 
     /// <summary>
     /// Initialize properties that should be set during run-time.
@@ -11,11 +14,26 @@ public class SceneLoader : MonoBehaviour {
     /// </summary>
     private void Start()
     {
+        currentIdx = SceneManager.GetActiveScene().buildIndex;
+
         AudioSource audioSrc = GetComponent<AudioSource>();
 
         if (audioSrc != null)
         {
             audioSrc.volume = PlayerPrefs.GetFloat("MasterVol");
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetButton("Cancel"))
+        {
+            LoadScene(prevIdx);
+        }
+
+        if (Input.GetButton("Submit"))
+        {
+            LoadScene(GAME);
         }
     }
 
@@ -25,6 +43,7 @@ public class SceneLoader : MonoBehaviour {
     /// <param name="level">The index of the scene to load.</param>
     public void LoadScene(int level)
     {
+        prevIdx = currentIdx;
         SceneManager.LoadScene(level);
     }
 

@@ -118,12 +118,12 @@ public class GameController : MonoBehaviour {
 
         if (restart)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetButton("Submit") || Input.GetKeyDown(KeyCode.R))
             {
                 RestartLevel();
             }
 
-            if (Input.GetKeyDown(KeyCode.M))
+            if (Input.GetButton("Cancel") || Input.GetKeyDown(KeyCode.M))
             {
                 SceneManager.LoadScene(0);
             }
