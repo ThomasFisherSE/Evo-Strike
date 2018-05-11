@@ -128,7 +128,16 @@ public class EvolutionController : MonoBehaviour
         {
             Individual currentIndividual = population[i];
 
-            float currentFitness = currentIndividual.CalculateFitness(Individual.ACCURATE_LONG_LIFE_FUNC);
+            int selectedFitnessFunc = (int)PlayerPrefs.GetFloat("FitnessFunc");
+
+            if (selectedFitnessFunc < 0 || selectedFitnessFunc > (Individual.NB_OF_FUNCTIONS - 1))
+            {
+                selectedFitnessFunc = Individual.DEFAULT_FUNC;
+            }
+
+            Debug.Log("Updating fitness scores using fitness function #" + selectedFitnessFunc);
+            
+            float currentFitness = currentIndividual.CalculateFitness(selectedFitnessFunc);
 
             if (currentFitness > bestFitnessScore)
             {

@@ -8,6 +8,8 @@ public class Individual
     public const float MUTATION_MULT = 0.1f;
 
     public const int LIFETIME_FUNC = 0, SURVIVAL_FUNC = 1, ACCURACY_FUNC = 2, NB_ON_TARGET_FUNC = 3, ACCURATE_LONG_LIFE_FUNC = 4;
+    public const int DEFAULT_FUNC = ACCURATE_LONG_LIFE_FUNC;
+    public const int NB_OF_FUNCTIONS = 5;
     #endregion
     #region Properties
     private DodgeAI dodgeAI;

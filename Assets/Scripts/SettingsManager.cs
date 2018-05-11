@@ -9,21 +9,13 @@ public class SettingsManager : MonoBehaviour {
     public Dropdown resolutionDropdown;
     public Dropdown antiAliasingDropdown;
     public Dropdown vSyncDropdown;
+    public Dropdown fitnessFuncDropdown;
     public Slider volumeSlider;
     
     public Resolution[] resolutions;
     public GameSettings gameSettings;
 
     public AudioSource audioSrc;
-
-    /// <summary>
-    /// Initialize properties that should be set during run-time.
-    /// Set the default values of UI components.
-    /// </summary>
-    private void Start()
-    {
-        volumeSlider.value = PlayerPrefs.GetFloat("MasterVol");
-    }
 
     /// <summary>
     /// Initialize the values of options UI components.
@@ -38,15 +30,30 @@ public class SettingsManager : MonoBehaviour {
         antiAliasingDropdown.onValueChanged.AddListener(delegate { OnAntiAliasingChange(); });
         vSyncDropdown.onValueChanged.AddListener(delegate { OnVSyncChange(); });
         volumeSlider.onValueChanged.AddListener(delegate { OnVolumeChange(); });
-
+        fitnessFuncDropdown.onValueChanged.AddListener(delegate { OnFitnessFuncChange(); });
         resolutions = Screen.resolutions;
 
         foreach(Resolution resolution in resolutions)
         {
             resolutionDropdown.options.Add(new Dropdown.OptionData(resolution.ToString()));
         }
-	}
+
+        volumeSlider.value = PlayerPrefs.GetFloat("MasterVol");
+        fitnessFuncDropdown.value = (int)PlayerPrefs.GetFloat("FitnessFunc");
+
+        fullscreenToggle.isOn = Screen.fullScreen;
+        textureQualityDropdown.value = QualitySettings.masterTextureLimit;
+        antiAliasingDropdown.value = QualitySettings.antiAliasing;
+        vSyncDropdown.value = QualitySettings.vSyncCount;
+    }
 	
+    public void OnFitnessFuncChange()
+    {
+        gameSettings.fitnessFunc = fitnessFuncDropdown.value;
+        PlayerPrefs.SetFloat("FitnessFunc", gameSettings.fitnessFunc);
+        PlayerPrefs.Save();
+    }
+
 	/// <summary>
     /// Toggle fullscreen mode.
     /// </summary>
@@ -60,6 +67,7 @@ public class SettingsManager : MonoBehaviour {
     /// </summary>
     public void OnResolutionChange()
     {
+        gameSettings.resolutionIndex = resolutionDropdown.value;
         Screen.SetResolution(resolutions[resolutionDropdown.value].width, resolutions[resolutionDropdown.value].height, Screen.fullScreen);
     }
 

@@ -7,5 +7,8 @@ public class GameSettings {
     public int vSync;
     public int resolutionIndex;
     public bool fullscreen;
+
     public float globalVolume;
+
+    public int fitnessFunc;
 }

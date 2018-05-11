@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
-    public const int GAME = 1;
+    public const int MAIN_MENU = 0, GAME = 1, CREDITS = 2, OPTIONS = 3;
+
     private int currentIdx;
     private static int prevIdx = 0;
 
@@ -24,6 +25,9 @@ public class SceneLoader : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Check for navigation button input
+    /// </summary>
     private void Update()
     {
         if (Input.GetButton("Cancel"))
@@ -33,7 +37,10 @@ public class SceneLoader : MonoBehaviour {
 
         if (Input.GetButton("Submit"))
         {
-            LoadScene(GAME);
+            if (currentIdx == MAIN_MENU)
+            {
+                LoadScene(GAME);
+            }
         }
     }
 
