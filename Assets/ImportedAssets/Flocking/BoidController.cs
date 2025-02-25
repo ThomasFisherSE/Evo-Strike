@@ -53,7 +53,7 @@ public class BoidController : MonoBehaviour
 		foreach (BoidFlocking boid in boids)
 		{
 			center += boid.transform.localPosition;
-			velocity += boid.GetComponent<Rigidbody>().velocity;
+			velocity += boid.GetComponent<Rigidbody>().linearVelocity;
 		}
 		flockCenter = center / flockSize;
 		flockVelocity = velocity / flockSize;

@@ -30,7 +30,7 @@ public class DodgeAI : MonoBehaviour {
 
         rb = GetComponent<Rigidbody>();
 
-        currentSpeed = rb.velocity.z;
+        currentSpeed = rb.linearVelocity.z;
         StartCoroutine(Dodge());
 	}
 	
@@ -45,15 +45,15 @@ public class DodgeAI : MonoBehaviour {
             playerTransform = player.transform;
         }
 
-        float newDodge = Mathf.MoveTowards(rb.velocity.x, targetPosition, Time.deltaTime * smoothing);
-        rb.velocity = new Vector3(newDodge, 0.0f, currentSpeed);
+        float newDodge = Mathf.MoveTowards(rb.linearVelocity.x, targetPosition, Time.deltaTime * smoothing);
+        rb.linearVelocity = new Vector3(newDodge, 0.0f, currentSpeed);
 
         rb.position = new Vector3(
             Mathf.Clamp(rb.position.x, boundary.GetXMin(), boundary.GetXMax()),
             0.0f,
             Mathf.Clamp(rb.position.z, boundary.zMin - 1, boundary.zMax));
 
-        rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
+        rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.linearVelocity.x * -tilt);
     }
 
     /// <summary>

@@ -1,7 +1,8 @@
-﻿using System.Collections;
+﻿/*
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class SettingsManager : MonoBehaviour {
     public Toggle fullscreenToggle;
@@ -105,3 +106,4 @@ public class SettingsManager : MonoBehaviour {
         PlayerPrefs.Save();
     }
 }
+*/
